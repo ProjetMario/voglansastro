@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+const { title = 'Voglans Astro', description = 'Site élégant tricolore', className = '' } = Astro.props;
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+  </head>
+  <body class={`min-h-dvh ${className}`}>
+    <header class="sticky top-0 z-10 bg-[hsl(var(--background))]/80 backdrop-blur border-b border-[hsl(var(--border))]">
+      <div class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+        <a href="/" class="font-semibold tracking-tight text-lg">Voglans</a>
+        <nav class="flex items-center gap-6 text-sm">
+          <a href="/" class="hover:text-[hsl(var(--primary))] transition-colors">Accueil</a>
+          <a href="/about" class="hover:text-[hsl(var(--primary))] transition-colors">À propos</a>
+          <a href="/contact" class="hover:text-[hsl(var(--primary))] transition-colors">Contact</a>
+          <a href="/cta" class="inline-flex items-center rounded-md px-3.5 py-2 bg-[hsl(var(--primary))] text-white hover:brightness-110 transition">
+            Commencer
+          </a>
+        </nav>
+      </div>
+      <div class="tricolor-rule"><div></div><div></div><div></div></div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[hsl(var(--border))] py-10 mt-12">
+      <div class="mx-auto max-w-6xl px-6 text-sm text-neutral-600">
+        © {new Date().getFullYear()} Voglans — Tous droits réservés.
+      </div>
+    </footer>
+  </body>
+</html>
