@@ -15,11 +15,45 @@ import {
   Building,
   Home
 } from 'lucide-react';
+
+// Article Schema pour SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Investir à Voglans : les clés du marché 2025",
+  "description": "Analyse des prix, des rendements locatifs et des quartiers porteurs autour du lac du Bourget pour réussir votre investissement immobilier à Voglans.",
+  "image": "https://agencevoglans.fr/images/blog/investir-voglans.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
+    }
+  },
+  "datePublished": "2025-09-18T09:00:00+02:00",
+  "dateModified": "2025-09-18T09:00:00+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agencevoglans.fr/blog/investir-voglans-savoie"
+  },
+  "articleSection": "Investissement immobilier",
+  "keywords": ["investir Voglans", "marché immobilier Voglans", "rendement locatif Savoie", "investissement lac du Bourget"]
+};
 ---
 
 <Base
   title="Investir à Voglans et autour du Lac du Bourget"
   description="Analyse du marché immobilier de Voglans, rendements locatifs et conseils pour réussir votre investissement.">
+  
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
   <!-- Hero Section Ultra-Moderne -->
   <HeroUltra>
     <div slot="badge">

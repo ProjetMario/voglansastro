@@ -20,12 +20,45 @@ import {
 import { formatDate } from '@/lib/utils';
 
 const publishDate = new Date('2025-01-15');
+
+// Article Schema pour SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Le marché immobilier à Voglans en 2025",
+  "description": "Analyse complète du marché immobilier à Voglans et en Savoie en 2025. Tendances, prix, et opportunités d'investissement.",
+  "image": "https://agencevoglans.fr/images/blog/marche-voglans-2025.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
+    }
+  },
+  "datePublished": "2025-01-15T10:00:00+02:00",
+  "dateModified": "2025-01-15T10:00:00+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agencevoglans.fr/blog/marche-immobilier-voglans-2025"
+  },
+  "articleSection": "Marché immobilier",
+  "keywords": ["marché immobilier Voglans", "prix immobilier Savoie 2025", "tendances immobilier Voglans", "opportunités immobilier"]
+};
 ---
 
 <Base
   title="Le marché immobilier à Voglans en 2025 - L'Agence de Voglans"
   description="Analyse complète du marché immobilier à Voglans et en Savoie en 2025. Tendances, prix, et opportunités d'investissement."
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
   <!-- Hero Section Ultra-Moderne -->
   <HeroUltra>
     <div slot="badge">

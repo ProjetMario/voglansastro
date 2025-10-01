@@ -133,6 +133,54 @@ const localBusinessSchema = {
     }
   ]
 };
+
+// FAQ Schema - Optimise pour les featured snippets Google
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": `Combien de temps pour vendre un bien immobilier à ${name} ?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Le délai moyen de vente à ${name} varie selon le type de bien et le marché local. L'Agence de Voglans vous accompagne pour optimiser ce délai grâce à notre expertise locale et notre connaissance approfondie du marché immobilier en Savoie. Nous mettons en place une stratégie de vente personnalisée pour maximiser vos chances de vendre rapidement au meilleur prix.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `Quel est le prix moyen au m² à ${name} ?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Le prix moyen au m² à ${name} varie selon les quartiers, le type de bien (maison, appartement) et ses caractéristiques. Pour obtenir une estimation précise et personnalisée de votre bien immobilier à ${name}, contactez L'Agence de Voglans. Notre estimation est 100% gratuite, sans engagement, et vous recevrez un rapport détaillé sous 48h.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'estimation immobilière est-elle vraiment gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, notre estimation immobilière est 100% gratuite et sans aucun engagement. L'Agence de Voglans vous fournit un rapport d'estimation détaillé sous 48h, basé sur notre connaissance approfondie du marché local et des transactions récentes dans votre secteur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `Pourquoi choisir L'Agence de Voglans pour vendre à ${name} ?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `L'Agence de Voglans est une agence 100% locale et humaine, spécialisée dans l'immobilier en Savoie. Notre expertise du marché de ${name} et notre accompagnement personnalisé vous garantissent une vente optimisée. Nous proposons des honoraires transparents, un service digital moderne et une relation humaine de proximité.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se déroule une estimation immobilière ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre processus d'estimation est simple : 1) Vous remplissez le formulaire en ligne avec les informations sur votre bien. 2) Nous analysons votre bien et le marché local. 3) Vous recevez votre estimation détaillée sous 48h. 4) Si vous le souhaitez, nous vous accompagnons dans votre projet de vente avec un suivi personnalisé."
+      }
+    }
+  ]
+};
 ---
 
 <Base 
@@ -160,6 +208,7 @@ const localBusinessSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <!-- Hero Section -->

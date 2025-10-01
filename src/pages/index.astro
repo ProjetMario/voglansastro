@@ -28,9 +28,77 @@ import {
   Users
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
+
+// WebSite Schema avec SearchAction pour Sitelinks Google
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "L'Agence de Voglans",
+  "url": "https://agencevoglans.fr",
+  "description": "Agence immobilière 100% locale et humaine spécialisée dans la vente, l'achat et l'estimation de biens immobiliers à Voglans et en Savoie.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://agencevoglans.fr/estimation/{search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// Organization Schema pour Knowledge Panel
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "L'Agence de Voglans",
+  "alternateName": "Agence de Voglans",
+  "url": "https://agencevoglans.fr",
+  "logo": "https://agencevoglans.fr/images/logo-agence-voglans.png",
+  "description": "Agence immobilière 100% locale et humaine à Voglans, Savoie. Expertise en vente, achat et estimation immobilière.",
+  "telephone": "+33757830262",
+  "email": "contact@agencevoglans.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Voglans",
+    "addressLocality": "Voglans",
+    "postalCode": "73420",
+    "addressRegion": "Savoie",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.6167,
+    "longitude": 5.8833
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Voglans"
+    },
+    {
+      "@type": "City",
+      "name": "Chambéry"
+    },
+    {
+      "@type": "City",
+      "name": "Aix-les-Bains"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Savoie"
+    }
+  ],
+  "sameAs": [
+    "https://agencevoglans.fr"
+  ]
+};
 ---
 
 <Base title="L'Agence de Voglans | Immobilier d'Exception en Savoie">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </Fragment>
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/80">
     <!-- Fond animé avec particules -->
     <div class="absolute inset-0">
