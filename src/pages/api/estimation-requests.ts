@@ -1,4 +1,3 @@
----
 import type { APIRoute } from 'astro';
 import { writeFile, readFile, mkdir } from 'fs/promises';
 import path from 'path';

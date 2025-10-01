@@ -1,4 +1,3 @@
----
 import type { APIRoute } from 'astro';
 import jwt from 'jsonwebtoken';
 
