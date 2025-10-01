@@ -1,0 +1,117 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import SEO from '@/components/SEO.astro';
+import { siteConfig } from '@/lib/utils';
+import '@/styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noIndex?: boolean;
+}
+
+const {
+  title = siteConfig.name,
+  description = siteConfig.description,
+  image = '/images/og-default.jpg',
+  type = 'website',
+  noIndex = false,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- SEO Component -->
+    <SEO 
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      noindex={noIndex}
+    />
+    
+    <!-- Preconnect pour Google Fonts (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS Prefetch pour améliorer les performances -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <Navigation />
+    
+    <main class="pt-16 lg:pt-18">
+      <slot />
+    </main>
+    
+    <Footer />
+    
+    <!-- Scroll to top button -->
+    <button
+      id="scroll-to-top"
+      class="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:shadow-xl hover:scale-110 z-40"
+      aria-label="Retour en haut"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+      </svg>
+    </button>
+
+    <script>
+      // Scroll to top functionality
+      const scrollToTopButton = document.getElementById('scroll-to-top');
+      
+      function toggleScrollToTop() {
+        if (window.scrollY > 300) {
+          scrollToTopButton?.classList.remove('opacity-0', 'invisible');
+          scrollToTopButton?.classList.add('opacity-100', 'visible');
+        } else {
+          scrollToTopButton?.classList.add('opacity-0', 'invisible');
+          scrollToTopButton?.classList.remove('opacity-100', 'visible');
+        }
+      }
+      
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true });
+      scrollToTopButton?.addEventListener('click', scrollToTop);
+      
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      // Observe elements with animation classes
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        animatedElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

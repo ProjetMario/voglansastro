@@ -1,0 +1,305 @@
+---
+import Base from '../layouts/Base.astro';
+import { COMMUNES, getCommunesByZone } from '../data/communes';
+import { MapPin, Search } from 'lucide-react';
+
+export const prerender = true;
+
+// Grouper les communes par zone
+const communesByZone = {
+  'Chambéry': getCommunesByZone('Chambéry'),
+  'Aix-les-Bains': getCommunesByZone('Aix-les-Bains'),
+  'Voglans': getCommunesByZone('Voglans')
+};
+
+const totalCommunes = COMMUNES.length;
+---
+
+<Base 
+  title="Notre Zone d'Intervention en Savoie | Agence de Voglans"
+  description="Découvrez toutes les communes où nous intervenons : Chambéry, Aix-les-Bains, Voglans et 30 communes de Savoie. Estimation immobilière gratuite partout."
+>
+  <Fragment slot="head">
+    <link rel="canonical" href={new URL('/zone-intervention', Astro.site)} />
+    <meta name="keywords" content="zone intervention agence immobilière, Chambéry, Aix-les-Bains, Voglans, Savoie, estimation immobilière" />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary/5 via-white to-primary/5 py-20">
+    <div class="absolute inset-0 luxury-pattern opacity-2"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <MapPin className="w-4 h-4" />
+          {totalCommunes} communes couvertes
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight text-foreground leading-tight">
+          Notre zone d'intervention en <span class="text-primary">Savoie</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-8 font-light leading-relaxed">
+          De Chambéry à Aix-les-Bains, en passant par le lac du Bourget, nous intervenons dans toute la région pour vos projets immobiliers.
+        </p>
+
+        <!-- Barre de recherche -->
+        <div class="max-w-2xl mx-auto">
+          <div class="relative">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted" />
+            <input
+              type="text"
+              id="search-communes"
+              placeholder="Rechercher une commune..."
+              class="w-full pl-12 pr-4 py-4 border-2 border-primary/20 rounded-full focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-lg"
+            />
+          </div>
+          <p class="text-sm text-muted mt-3">
+            Tapez le nom d'une commune pour voir si nous y intervenons
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Liste des communes par zone -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Pôle Chambéry -->
+        <div class="mb-16" data-zone="chambery">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h2 class="text-3xl font-semibold text-foreground">Pôle Chambéry</h2>
+              <p class="text-muted">{communesByZone['Chambéry'].length} communes</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="communes-chambery">
+            {communesByZone['Chambéry'].map((commune) => (
+              <a 
+                href={`/estimation/${commune.slug}`}
+                class="commune-card group bg-gradient-to-br from-white to-primary/5 rounded-xl p-6 border-2 border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                data-commune-name={commune.name.toLowerCase()}
+              >
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {commune.name}
+                    </h3>
+                    <p class="text-sm text-muted">
+                      {commune.dept}
+                    </p>
+                  </div>
+                  <svg 
+                    class="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </div>
+                <p class="text-sm text-muted">
+                  Estimation immobilière gratuite
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Pôle Aix-les-Bains -->
+        <div class="mb-16" data-zone="aix-les-bains">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h2 class="text-3xl font-semibold text-foreground">Pôle Aix-les-Bains / Lac du Bourget</h2>
+              <p class="text-muted">{communesByZone['Aix-les-Bains'].length} communes</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="communes-aix">
+            {communesByZone['Aix-les-Bains'].map((commune) => (
+              <a 
+                href={`/estimation/${commune.slug}`}
+                class="commune-card group bg-gradient-to-br from-white to-primary/5 rounded-xl p-6 border-2 border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                data-commune-name={commune.name.toLowerCase()}
+              >
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {commune.name}
+                    </h3>
+                    <p class="text-sm text-muted">
+                      {commune.dept}
+                    </p>
+                  </div>
+                  <svg 
+                    class="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </div>
+                <p class="text-sm text-muted">
+                  Estimation immobilière gratuite
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Pôle Voglans -->
+        <div class="mb-16" data-zone="voglans">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h2 class="text-3xl font-semibold text-foreground">Pôle Voglans</h2>
+              <p class="text-muted">{communesByZone['Voglans'].length} communes</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="communes-voglans">
+            {communesByZone['Voglans'].map((commune) => (
+              <a 
+                href={`/estimation/${commune.slug}`}
+                class="commune-card group bg-gradient-to-br from-white to-primary/5 rounded-xl p-6 border-2 border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                data-commune-name={commune.name.toLowerCase()}
+              >
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {commune.name}
+                    </h3>
+                    <p class="text-sm text-muted">
+                      {commune.dept}
+                    </p>
+                  </div>
+                  <svg 
+                    class="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </div>
+                <p class="text-sm text-muted">
+                  Estimation immobilière gratuite
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Message si aucun résultat -->
+        <div id="no-results" class="hidden text-center py-12">
+          <div class="w-16 h-16 bg-muted/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Search className="w-8 h-8 text-muted" />
+          </div>
+          <h3 class="text-2xl font-semibold text-foreground mb-2">Aucune commune trouvée</h3>
+          <p class="text-muted mb-6">
+            Essayez avec un autre nom ou contactez-nous pour vérifier si nous intervenons dans votre secteur.
+          </p>
+          <a href="/contact" class="btn-primary px-8 py-3 rounded-full inline-flex items-center gap-2">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+          Votre commune n'est pas dans la liste ?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Contactez-nous ! Nous étudions toutes les demandes et pouvons intervenir dans d'autres secteurs de Savoie.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:0757830262" 
+            class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            07 57 83 02 62
+          </a>
+          <a 
+            href="/contact" 
+            class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Formulaire de contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de recherche -->
+  <script>
+    const searchInput = document.getElementById('search-communes') as HTMLInputElement;
+    const communeCards = document.querySelectorAll('.commune-card');
+    const noResults = document.getElementById('no-results');
+    const zones = document.querySelectorAll('[data-zone]');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        communeCards.forEach((card) => {
+          const communeName = card.getAttribute('data-commune-name') || '';
+          const matches = communeName.includes(query);
+          
+          if (matches || query === '') {
+            (card as HTMLElement).style.display = '';
+            visibleCount++;
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+
+        // Gérer l'affichage des zones vides
+        zones.forEach((zone) => {
+          const zoneCards = zone.querySelectorAll('.commune-card');
+          const visibleZoneCards = Array.from(zoneCards).filter(
+            (card) => (card as HTMLElement).style.display !== 'none'
+          );
+          
+          if (visibleZoneCards.length === 0 && query !== '') {
+            (zone as HTMLElement).style.display = 'none';
+          } else {
+            (zone as HTMLElement).style.display = '';
+          }
+        });
+
+        // Afficher/masquer le message "aucun résultat"
+        if (noResults) {
+          if (visibleCount === 0 && query !== '') {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+      });
+    }
+  </script>
+</Base>

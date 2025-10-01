@@ -1,0 +1,99 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = '/images/og-default.jpg',
+  type = 'website',
+  noindex = false
+} = Astro.props;
+
+const siteUrl = 'https://agencevoglans.fr';
+const fullTitle = title.includes('L\'Agence de Voglans') ? title : `${title} | L'Agence de Voglans`;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const imageUrl = new URL(image, siteUrl).href;
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content="immobilier Voglans, agence immobilière Savoie, vente maison Voglans, achat appartement Chambéry, estimation immobilière gratuite" />
+<meta name="author" content="L'Agence de Voglans" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="L'Agence de Voglans" />
+<meta property="og:locale" content="fr_FR" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageUrl} />
+
+<!-- Additional SEO -->
+<meta name="theme-color" content="#1E5F4F" />
+<meta name="msapplication-TileColor" content="#1E5F4F" />
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="FR-73" />
+<meta name="geo.placename" content="Voglans, Savoie" />
+<meta name="geo.position" content="45.6167;5.8833" />
+<meta name="ICBM" content="45.6167, 5.8833" />
+
+<!-- Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "L'Agence de Voglans",
+  "description": "Agence immobilière locale spécialisée dans la vente, l'achat et l'estimation de biens immobiliers à Voglans et en Savoie.",
+  "url": "https://agencevoglans.fr",
+  "telephone": "07 57 83 02 62",
+  "email": "contact@agencevoglans.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Voglans",
+    "addressLocality": "Voglans",
+    "postalCode": "73420",
+    "addressRegion": "Savoie",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.6167,
+    "longitude": 5.8833
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Savoie, Auvergne-Rhône-Alpes"
+  },
+  "serviceType": [
+    "Vente immobilière",
+    "Achat immobilier",
+    "Estimation immobilière",
+    "Conseil immobilier"
+  ],
+  "priceRange": "€€",
+  "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-12:00"
+}
+</script>

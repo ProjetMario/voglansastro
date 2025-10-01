@@ -1,0 +1,201 @@
+---
+import Base from '../../layouts/Base.astro';
+import { COMMUNES, getCommuneBySlug, type Commune } from '../../data/communes';
+import CityHero from '../../components/city/CityHero.astro';
+import CityBenefits from '../../components/city/CityBenefits.astro';
+import CitySteps from '../../components/city/CitySteps.astro';
+import CityLocalContext from '../../components/city/CityLocalContext.astro';
+import CitySEOContent from '../../components/city/CitySEOContent.astro';
+import CityFAQ from '../../components/city/CityFAQ.astro';
+import EstimationForm from '../../components/city/EstimationForm';
+import CityNearby from '../../components/city/CityNearby.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return COMMUNES.map((commune) => ({
+    params: { slug: commune.slug },
+    props: { commune }
+  }));
+}
+
+interface Props {
+  commune: Commune;
+}
+
+const { commune } = Astro.props;
+const { name, slug, zone, dept, meta, localContext, communesProches } = commune;
+
+// Canonical URL
+const canonicalURL = new URL(`/estimation/${slug}`, Astro.site);
+
+// Breadcrumbs JSON-LD
+const breadcrumbsSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": Astro.site?.toString()
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Zone d'intervention",
+      "item": new URL('/zone-intervention', Astro.site).toString()
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": `Estimation ${name}`,
+      "item": canonicalURL.toString()
+    }
+  ]
+};
+
+// Service Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Estimation immobilière",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "L'Agence de Voglans",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "93 Chemin de la Combe",
+      "addressLocality": "Voglans",
+      "postalCode": "73420",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33757830262",
+    "email": "contact@agencevoglans.fr"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": name,
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": dept
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Estimation immobilière gratuite et sans engagement"
+  }
+};
+
+// LocalBusiness Schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "L'Agence de Voglans",
+  "description": `Agence immobilière 100% locale & Humaine intervenant à ${name} et dans toute la Savoie`,
+  "url": Astro.site?.toString(),
+  "telephone": "+33757830262",
+  "email": "contact@agencevoglans.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "93 Chemin de la Combe",
+    "addressLocality": "Voglans",
+    "postalCode": "73420",
+    "addressRegion": "Auvergne-Rhône-Alpes",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "45.5933",
+    "longitude": "5.8933"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "€€",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": name
+    }
+  ]
+};
+---
+
+<Base 
+  title={meta.title}
+  description={meta.description}
+>
+  <!-- SEO Meta Tags -->
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <CityHero name={name} zone={zone} />
+
+  <!-- Preuves & Bénéfices -->
+  <CityBenefits name={name} zone={zone} />
+
+  <!-- Méthodologie -->
+  <CitySteps name={name} zone={zone} />
+
+  <!-- Contexte Local (SEO) -->
+  <CityLocalContext 
+    name={name} 
+    zone={zone} 
+    atouts={localContext.atouts}
+    biens={localContext.biens}
+  />
+
+  <!-- SEO Content -->
+  <CitySEOContent name={name} seoContent={commune.seoContent} />
+
+  <!-- FAQ -->
+  <CityFAQ 
+    name={name} 
+    communesProches={communesProches}
+    allCommunes={COMMUNES}
+  />
+
+  <!-- Formulaire d'estimation (React Island) -->
+  <EstimationForm client:visible cityName={name} />
+
+  <!-- Communes proches (Interliens) -->
+  <CityNearby 
+    communesProches={communesProches}
+    allCommunes={COMMUNES}
+    currentSlug={slug}
+  />
+</Base>

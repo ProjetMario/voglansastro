@@ -1,0 +1,25 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  className?: string;
+}
+
+const { size = 'md', className = '' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-8 h-8',
+  md: 'w-12 h-12', 
+  lg: 'w-16 h-16',
+  xl: 'w-24 h-24'
+};
+---
+
+<!-- Logo de L'Agence de Voglans -->
+<div class={`${sizeClasses[size]} ${className} flex-shrink-0`}>
+  <!-- Votre vrai logo -->
+  <img 
+    src="/images/logo-agence-voglans.png" 
+    alt="L'Agence de Voglans - Logo" 
+    class="w-full h-full object-contain"
+  />
+</div>

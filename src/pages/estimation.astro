@@ -1,0 +1,476 @@
+---
+import Base from '@/layouts/Base.astro';
+import HeroUltra from '@/components/ui/HeroUltra.astro';
+import BadgeUltra from '@/components/ui/BadgeUltra.astro';
+import ButtonUltra from '@/components/ui/ButtonUltra.astro';
+import CardUltra from '@/components/ui/CardUltra.astro';
+import {
+  MapPin,
+  Home,
+  Maximize,
+  Calendar,
+  User,
+  Mail,
+  Phone,
+  ArrowRight,
+  ArrowLeft,
+  CheckCircle,
+  Clock,
+  Shield,
+  Star,
+  Calculator,
+  TrendingUp,
+  Award,
+  Target,
+  Sparkles,
+  Building,
+  Users,
+  HandHeart,
+  Eye,
+  DollarSign,
+  Crown,
+  Zap,
+  Globe,
+  Camera,
+  FileText,
+  Key,
+  Briefcase,
+  ChevronDown,
+  Play,
+  Send,
+  MessageCircle,
+  TrendingDown,
+  Activity,
+  BarChart3,
+  AlertCircle
+} from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+---
+
+<Base
+  title="Estimation Gratuite | L'Agence de Voglans - Expertise Immobilière en Savoie"
+  description="Estimation précise et gratuite de votre bien immobilier en Savoie. Analyse de marché approfondie et rapport détaillé sous 48h avec expertise locale."
+>
+  <!-- Section d'estimation IA immédiate -->
+  <section class="py-16 bg-gradient-to-br from-primary/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-green-400/10 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+          <Zap className="w-4 h-4" />
+          <span>Estimation IA Instantanée</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          Obtenez votre estimation en <span class="bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">quelques secondes</span>
+        </h2>
+
+        <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">
+          Grâce à l'intelligence artificielle et aux données DVF officielles, découvrez la valeur de votre bien immédiatement
+        </p>
+
+        <!-- Formulaire rapide -->
+        <div class="bg-white rounded-3xl shadow-2xl border border-primary/10 p-8 max-w-3xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <label for="quick-city" class="block text-sm font-semibold mb-2 text-foreground">Ville *</label>
+              <input id="quick-city" type="text" placeholder="Ex: Voglans, Chambéry..."
+                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300" />
+            </div>
+            <div>
+              <label for="quick-type" class="block text-sm font-semibold mb-2 text-foreground">Type *</label>
+              <select id="quick-type" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                <option value="">Sélectionner</option>
+                <option value="maison">Maison</option>
+                <option value="appartement">Appartement</option>
+                <option value="terrain">Terrain</option>
+              </select>
+            </div>
+            <div>
+              <label for="quick-surface" class="block text-sm font-semibold mb-2 text-foreground">Surface (m²) *</label>
+              <input id="quick-surface" type="number" placeholder="120"
+                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300" />
+            </div>
+          </div>
+
+          <button id="estimate-now-btn" type="button"
+                  class="group relative bg-gradient-to-r from-primary to-green-400 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Calculator className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span>Estimer maintenant</span>
+          </button>
+
+          <!-- Zone d'affichage des résultats IA -->
+          <div id="estimation-results" class="hidden mt-8 max-w-2xl mx-auto">
+            <div class="bg-gradient-to-br from-primary/5 to-green-400/5 rounded-2xl p-8 border border-primary/10">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-green-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Calculator className="w-8 h-8 text-white" />
+                </div>
+                <h4 class="text-2xl font-bold mb-2 text-foreground">Estimation IA</h4>
+                <p class="text-muted">Basée sur les données DVF et l'analyse de marché</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="text-center">
+                  <div class="text-3xl font-black text-primary mb-1" id="estimated-value">€</div>
+                  <div class="text-sm text-muted">Estimation centrale</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-xl font-semibold text-green-600 mb-1" id="confidence-range">€</div>
+                  <div class="text-sm text-muted">Fourchette de confiance</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-xl font-semibold text-blue-600 mb-1" id="price-per-m2">€/m²</div>
+                  <div class="text-sm text-muted">Prix au m²</div>
+                </div>
+              </div>
+
+              <div class="bg-white/50 rounded-xl p-4 mb-6">
+                <div class="flex items-center justify-center gap-4 text-sm">
+                  <span class="flex items-center gap-2">
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span id="market-trend">Marché stable</span>
+                  </span>
+                  <span class="flex items-center gap-2">
+                    <BarChart3 className="w-4 h-4 text-primary" />
+                    <span id="transactions-count">15 transactions analysées</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <p class="text-sm text-muted mb-4">Cette estimation est donnée à titre indicatif et ne remplace pas une expertise professionnelle complète.</p>
+                <button id="request-full-estimation" class="bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-300">
+                  Demander une estimation complète
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire traditionnel -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h3 class="text-3xl font-bold mb-4 text-foreground">Formulaire d'estimation traditionnel</h3>
+          <p class="text-muted">Pour une analyse plus approfondie sous 48h</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl border border-primary/10 p-8">
+          <form class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label for="property-type" class="block text-lg font-semibold mb-3 text-foreground">Type de bien *</label>
+                <select id="property-type" name="property-type" required
+                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg bg-white">
+                  <option value="">Sélectionnez le type</option>
+                  <option value="maison">Maison</option>
+                  <option value="appartement">Appartement</option>
+                  <option value="terrain">Terrain</option>
+                  <option value="commerce">Local commercial</option>
+                  <option value="bureau">Bureau</option>
+                </select>
+              </div>
+              <div>
+                <label for="ville" class="block text-lg font-semibold mb-3 text-foreground">Ville *</label>
+                <input id="ville" name="ville" type="text" required
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="Ex: Voglans, Chambéry..." />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <label for="surface" class="block text-lg font-semibold mb-3 text-foreground">Surface habitable (m²) *</label>
+                <input id="surface" name="surface" type="number" required
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="150" />
+              </div>
+              <div>
+                <label for="pieces" class="block text-lg font-semibold mb-3 text-foreground">Nombre de pièces *</label>
+                <input id="pieces" name="pieces" type="number" required
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="5" />
+              </div>
+              <div>
+                <label for="annee-construction" class="block text-lg font-semibold mb-3 text-foreground">Année de construction</label>
+                <input id="annee-construction" name="annee-construction" type="number"
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="2010" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label for="nom" class="block text-lg font-semibold mb-3 text-foreground">Nom et prénom *</label>
+                <input id="nom" name="nom" type="text" required
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="Votre nom complet" />
+              </div>
+              <div>
+                <label for="email" class="block text-lg font-semibold mb-3 text-foreground">Email *</label>
+                <input id="email" name="email" type="email" required
+                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                       placeholder="votre.email@exemple.fr" />
+              </div>
+            </div>
+
+            <div>
+              <label for="telephone" class="block text-lg font-semibold mb-3 text-foreground">Téléphone *</label>
+              <input id="telephone" name="telephone" type="tel" required
+                     class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg"
+                     placeholder="06 12 34 56 78" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-lg font-semibold mb-3 text-foreground">Informations complémentaires</label>
+              <textarea id="message" name="message" rows="4"
+                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-lg resize-none"
+                        placeholder="Décrivez votre bien, vos projets, vos questions..."></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit"
+                      class="group relative bg-gradient-to-r from-primary to-green-400 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-4 hover:scale-105">
+                <Calculator className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                <span>OBTENIR MON ESTIMATION GRATUITE</span>
+                <div class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full animate-pulse">
+                  48H
+                </div>
+              </button>
+            </div>
+
+            <div class="text-center text-sm text-muted">
+              <p>* Champs obligatoires • Réponse garantie sous 48h ouvrées • Service 100% gratuit</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Gestion de l'estimation IA immédiate
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM chargé, initialisation de l\'estimation IA...');
+
+    const estimateBtn = document.getElementById('estimate-now-btn') as HTMLButtonElement;
+    const resultsDiv = document.getElementById('estimation-results') as HTMLElement;
+    const estimatedValue = document.getElementById('estimated-value') as HTMLElement;
+    const confidenceRange = document.getElementById('confidence-range') as HTMLElement;
+    const pricePerM2 = document.getElementById('price-per-m2') as HTMLElement;
+    const marketTrend = document.getElementById('market-trend') as HTMLElement;
+    const transactionsCount = document.getElementById('transactions-count') as HTMLElement;
+    const requestFullBtn = document.getElementById('request-full-estimation') as HTMLButtonElement;
+
+    // Éléments du formulaire rapide
+    const quickCity = document.getElementById('quick-city') as HTMLInputElement;
+    const quickType = document.getElementById('quick-type') as HTMLSelectElement;
+    const quickSurface = document.getElementById('quick-surface') as HTMLInputElement;
+
+    console.log('Éléments trouvés:', {
+      estimateBtn: !!estimateBtn,
+      resultsDiv: !!resultsDiv,
+      estimatedValue: !!estimatedValue,
+      quickCity: !!quickCity,
+      quickType: !!quickType,
+      quickSurface: !!quickSurface
+    });
+
+    if (!estimateBtn || !quickCity || !quickType || !quickSurface) {
+      console.error('Éléments DOM manquants !');
+      return;
+    }
+
+    estimateBtn.addEventListener('click', async () => {
+      console.log('Bouton d\'estimation cliqué');
+
+      const city = quickCity.value.trim();
+      const propertyType = quickType.value;
+      const surface = quickSurface.value;
+
+      console.log('Valeurs saisies:', { city, propertyType, surface });
+
+      if (!city || !propertyType || !surface) {
+        console.log('Champs manquants détectés');
+        alert('Veuillez remplir tous les champs obligatoires');
+        return;
+      }
+
+      // Afficher un indicateur de chargement
+      estimateBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Calcul en cours...</span>
+      `;
+      estimateBtn.disabled = true;
+
+      try {
+        // Test de l'API d'estimation DVF
+        console.log('Test de l\'API d\'estimation DVF...');
+        const testResponse = await fetch('/api/estimation?city=test&propertyType=maison&surface=100');
+        console.log('Test API status:', testResponse.status);
+
+        if (!testResponse.ok) {
+          throw new Error(`API d'estimation non accessible: ${testResponse.status}`);
+        }
+
+        // Appel réel à l'API DVF pour l'estimation IA
+        console.log('Appel API d\'estimation en cours...');
+        const estimationResponse = await fetch(`/api/estimation?city=${encodeURIComponent(city)}&propertyType=${propertyType}&surface=${surface}`);
+        console.log('Réponse d\'estimation reçue:', estimationResponse.status);
+
+        if (!estimationResponse.ok) {
+          throw new Error(`Erreur HTTP estimation: ${estimationResponse.status}`);
+        }
+
+        const estimationData = await estimationResponse.json();
+        console.log('Données d\'estimation reçues:', estimationData);
+
+        if (estimationData.success) {
+          // Afficher les résultats d'estimation IA
+          const { estimatedValue: estimate, confidenceRange: range, pricePerM2: ppm2, marketTrend: trend, data: dvfData } = estimationData;
+
+          console.log('Données d\'estimation:', { estimate, range, ppm2, trend, dvfData });
+
+          if (!estimatedValue || !confidenceRange || !pricePerM2 || !marketTrend || !transactionsCount) {
+            throw new Error('Éléments d\'affichage manquants');
+          }
+
+          estimatedValue.textContent = new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'EUR',
+            maximumFractionDigits: 0
+          }).format(estimate.estimatedValue);
+
+          confidenceRange.textContent = `${new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'EUR',
+            maximumFractionDigits: 0
+          }).format(range.min)} - ${new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'EUR',
+            maximumFractionDigits: 0
+          }).format(range.max)}`;
+
+          pricePerM2.textContent = `${new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'EUR',
+            maximumFractionDigits: 0
+          }).format(ppm2)}/m²`;
+
+          // Afficher la tendance du marché
+          const trendColors = {
+            'increasing': 'text-green-600',
+            'decreasing': 'text-red-600',
+            'stable': 'text-blue-600'
+          };
+
+          const trendIcons = {
+            'increasing': '📈',
+            'decreasing': '📉',
+            'stable': '➡️'
+          };
+
+          marketTrend.textContent = `${trendIcons[trend as keyof typeof trendIcons]} Marché ${trend === 'increasing' ? 'en hausse' : trend === 'decreasing' ? 'en baisse' : 'stable'}`;
+          marketTrend.className = trendColors[trend as keyof typeof trendColors];
+
+          transactionsCount.textContent = `${dvfData.totalTransactions} transactions analysées`;
+
+          // Afficher les résultats
+          resultsDiv.classList.remove('hidden');
+
+          // Animation d'apparition
+          resultsDiv.style.opacity = '0';
+          resultsDiv.style.transform = 'translateY(20px)';
+
+          setTimeout(() => {
+            resultsDiv.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            resultsDiv.style.opacity = '1';
+            resultsDiv.style.transform = 'translateY(0)';
+          }, 100);
+
+          console.log('Résultats d\'estimation affichés avec succès');
+
+          // Envoyer la notification à l'agence
+          try {
+            console.log('Envoi de la notification...');
+            const notificationResponse = await fetch('/api/estimation-requests', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                type: 'ia',
+                clientInfo: {
+                  nom: 'Utilisateur anonyme', // Vous pouvez ajouter un formulaire de contact
+                  email: 'contact@agencevoglans.fr', // Email de notification
+                  telephone: 'Non renseigné',
+                  ville: city,
+                  propertyType: propertyType,
+                  surface: parseInt(surface)
+                },
+                estimationData: {
+                  estimatedValue: estimate.estimatedValue,
+                  confidenceRange: range,
+                  marketTrend: trend
+                },
+                source: 'estimation_ia'
+              })
+            });
+
+            if (notificationResponse.ok) {
+              console.log('Notification envoyée avec succès');
+            } else {
+              console.warn('Erreur lors de l\'envoi de la notification');
+            }
+          } catch (notificationError) {
+            console.warn('Impossible d\'envoyer la notification:', notificationError);
+          }
+
+        } else {
+          throw new Error(estimationData.error || 'Erreur lors du calcul');
+        }
+
+      } catch (error) {
+        console.error('Erreur complète:', error);
+        alert(`Erreur lors du calcul de l'estimation: ${error.message}. Vérifiez la console pour plus de détails.`);
+      } finally {
+        // Réinitialiser le bouton
+        estimateBtn.innerHTML = `
+          <Calculator class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+          <span>Estimer maintenant</span>
+        `;
+        estimateBtn.disabled = false;
+        console.log('Bouton réinitialisé');
+      }
+    });
+
+    // Gestion du bouton "Demander une estimation complète"
+    requestFullBtn?.addEventListener('click', () => {
+      console.log('Bouton estimation complète cliqué');
+      // Scroll vers le formulaire traditionnel
+      const form = document.querySelector('form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Pré-remplir les champs avec les données du formulaire rapide
+        const cityInput = document.getElementById('ville') as HTMLInputElement;
+        const typeInput = document.getElementById('property-type') as HTMLSelectElement;
+        const surfaceInput = document.getElementById('surface') as HTMLInputElement;
+
+        if (cityInput) cityInput.value = quickCity?.value || '';
+        if (typeInput) typeInput.value = quickType?.value || '';
+        if (surfaceInput) surfaceInput.value = quickSurface?.value || '';
+
+        console.log('Formulaire pré-rempli');
+      }
+    });
+  });
+</script>

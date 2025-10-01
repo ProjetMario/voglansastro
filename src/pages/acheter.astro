@@ -1,0 +1,394 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import PropertyCard from '@/components/PropertyCard.astro';
+import {
+  Search,
+  SlidersHorizontal,
+  MapPin,
+  Home,
+  Euro,
+  Maximize,
+  Calculator,
+  Phone,
+  Star,
+  Sparkles,
+  ArrowRight,
+  CheckCircle,
+  Building,
+  Users,
+  HandHeart,
+  Eye,
+  DollarSign,
+  Briefcase,
+  Target,
+  Award,
+  TrendingUp,
+  ChevronDown,
+  Play,
+  Filter,
+  Grid3X3,
+  List
+} from 'lucide-react';
+
+// Simulation de données - à remplacer par les vraies données des Content Collections
+const properties = [
+  {
+    slug: 'maison-voglans-moderne',
+    data: {
+      title: 'Maison moderne avec vue sur le lac',
+      type: 'maison',
+      ville: 'Voglans',
+      surface: 150,
+      pieces: 5,
+      prix: 485000,
+      images: ['/images/properties/villa-1.jpg'],
+      energie: 'A',
+      badges: ['exclusivite']
+    }
+  },
+  {
+    slug: 'appartement-chambery-centre',
+    data: {
+      title: 'Appartement T3 centre-ville rénové',
+      type: 'appartement',
+      ville: 'Chambéry',
+      surface: 75,
+      pieces: 3,
+      prix: 285000,
+      images: ['/images/properties/appart-1.jpg'],
+      energie: 'C',
+      badges: ['nouveau']
+    }
+  },
+  {
+    slug: 'villa-aix-les-bains',
+    data: {
+      title: 'Villa d\'exception avec piscine',
+      type: 'maison',
+      ville: 'Aix-les-Bains',
+      surface: 220,
+      pieces: 7,
+      prix: 750000,
+      images: ['/images/properties/villa-1.jpg'],
+      energie: 'A',
+      badges: ['exclusivite']
+    }
+  }
+];
+---
+
+<Base
+  title="Acheter | L'Agence de Voglans - Biens Immobiliers en Savoie"
+  description="Découvrez notre sélection de biens immobiliers à vendre en Savoie. Maisons, appartements, terrains avec accompagnement personnalisé et expertise locale."
+>
+  <!-- Hero Section Révolutionnaire -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/80">
+    <!-- Fond animé avec particules -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full animate-spin opacity-20" style="animation-duration: 20s;"></div>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        L'Agence de Voglans vient d'ouvrir ses portes en 2025 ! Nous constituons actuellement notre portefeuille de biens d'exception en Savoie. 
+        <strong>Votre bien idéal arrive bientôt.</strong>
+      </p>
+    </div>
+
+    <!-- Barre de recherche rapide -->
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg border border-border p-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Localisation -->
+          <div class="relative">
+            <label class="form-label mb-2 block">Localisation</label>
+            <div class="relative">
+              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted" />
+              <select class="form-input pl-10 w-full">
+                <option value="">Toutes les villes</option>
+                <option value="voglans">Voglans</option>
+                <option value="chambery">Chambéry</option>
+                <option value="aix-les-bains">Aix-les-Bains</option>
+                <option value="annecy">Annecy</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Type -->
+          <div class="relative">
+            <label class="form-label mb-2 block">Type de bien</label>
+            <div class="relative">
+              <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted" />
+              <select class="form-input pl-10 w-full">
+                <option value="">Tous types</option>
+                <option value="maison">Maison</option>
+                <option value="appartement">Appartement</option>
+                <option value="terrain">Terrain</option>
+                <option value="local-commercial">Local commercial</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <div class="relative">
+            <label class="form-label mb-2 block">Budget max</label>
+            <div class="relative">
+              <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted" />
+              <select class="form-input pl-10 w-full">
+                <option value="">Pas de limite</option>
+                <option value="200000">200 000 €</option>
+                <option value="300000">300 000 €</option>
+                <option value="400000">400 000 €</option>
+                <option value="500000">500 000 €</option>
+                <option value="750000">750 000 €</option>
+                <option value="1000000">1 000 000 €</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Surface -->
+          <div class="relative">
+            <label class="form-label mb-2 block">Surface min</label>
+            <div class="relative">
+              <Maximize className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted" />
+              <select class="form-input pl-10 w-full">
+                <option value="">Toutes surfaces</option>
+                <option value="50">50 m²</option>
+                <option value="80">80 m²</option>
+                <option value="100">100 m²</option>
+                <option value="150">150 m²</option>
+                <option value="200">200 m²</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <button class="btn btn-primary flex-1">
+            <Search className="w-4 h-4" />
+            Rechercher
+          </button>
+          <button class="btn btn-secondary">
+            <SlidersHorizontal className="w-4 h-4" />
+            Filtres avancés
+          </button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Résultats -->
+  <Section>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Sidebar Filtres (Desktop) -->
+      <aside class="hidden lg:block w-80 flex-shrink-0">
+        <div class="sticky top-24">
+          <div class="card">
+            <h3 class="font-semibold mb-6">Affiner votre recherche</h3>
+            
+            <!-- Prix -->
+            <div class="mb-6">
+              <label class="form-label mb-3 block">Fourchette de prix</label>
+              <div class="grid grid-cols-2 gap-3">
+                <input 
+                  type="number" 
+                  placeholder="Min" 
+                  class="form-input text-sm"
+                />
+                <input 
+                  type="number" 
+                  placeholder="Max" 
+                  class="form-input text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Surface -->
+            <div class="mb-6">
+              <label class="form-label mb-3 block">Surface (m²)</label>
+              <div class="grid grid-cols-2 gap-3">
+                <input 
+                  type="number" 
+                  placeholder="Min" 
+                  class="form-input text-sm"
+                />
+                <input 
+                  type="number" 
+                  placeholder="Max" 
+                  class="form-input text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Pièces -->
+            <div class="mb-6">
+              <label class="form-label mb-3 block">Nombre de pièces</label>
+              <div class="grid grid-cols-4 gap-2">
+                {[1, 2, 3, 4].map(num => (
+                  <button class="btn btn-secondary text-sm py-2">
+                    {num}+
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <!-- DPE -->
+            <div class="mb-6">
+              <label class="form-label mb-3 block">Classe énergétique</label>
+              <div class="flex flex-wrap gap-2">
+                {['A', 'B', 'C', 'D', 'E', 'F', 'G'].map(classe => (
+                  <button class="w-8 h-8 rounded-lg border border-border text-sm font-semibold hover:bg-primary hover:text-white transition-colors">
+                    {classe}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <button class="btn btn-primary w-full">
+              Appliquer les filtres
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Contenu principal -->
+      <main class="flex-1">
+        <!-- Header résultats -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl font-semibold mb-2">
+              {properties.length} biens disponibles
+            </h2>
+            <p class="text-muted">
+              Découvrez notre sélection de biens immobiliers en Savoie
+            </p>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <span class="text-sm text-muted">Trier par :</span>
+            <select class="form-input w-auto text-sm">
+              <option value="recent">Plus récents</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="surface-desc">Surface décroissante</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grille des biens -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+          {properties.map(property => (
+            <PropertyCard property={property} />
+          ))}
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center">
+          <div class="flex items-center gap-2">
+            <button class="btn btn-secondary px-4 py-2 text-sm" disabled>
+              Précédent
+            </button>
+            <button class="btn btn-primary px-4 py-2 text-sm">1</button>
+            <button class="btn btn-secondary px-4 py-2 text-sm">2</button>
+            <button class="btn btn-secondary px-4 py-2 text-sm">3</button>
+            <button class="btn btn-secondary px-4 py-2 text-sm">
+              Suivant
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </Section>
+
+  <!-- Message nouvelle agence -->
+  <Section>
+    <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12 text-center">
+      <div class="max-w-3xl mx-auto">
+        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Home className="w-8 h-8 text-primary" />
+        </div>
+        
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Bientôt des biens d'exception
+        </h2>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          Notre équipe locale sélectionne actuellement les plus beaux biens immobiliers de Savoie. 
+          Maisons avec vue sur les montagnes, appartements au cœur de Chambéry, propriétés de charme à Voglans...
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary mb-2">2025</div>
+            <div class="text-gray-600">Année de création</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary mb-2">100%</div>
+            <div class="text-gray-600">Locale & Humaine</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary mb-2">24h</div>
+            <div class="text-gray-600">Délai de réponse</div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/estimation" class="btn-primary">
+            <Calculator className="w-5 h-5 mr-2" />
+            Estimer mon bien
+          </a>
+          <a href="/contact" class="btn-secondary">
+            <Phone className="w-5 h-5 mr-2" />
+            Être alerté en priorité
+          </a>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <Section background="muted">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold mb-6">
+        Vous ne trouvez pas votre bien idéal ?
+      </h2>
+      <p class="text-xl text-muted max-w-2xl mx-auto mb-8">
+        Confiez-nous votre recherche ! Nos experts locaux vous accompagnent 
+        pour trouver le bien qui correspond parfaitement à vos critères.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn btn-primary btn-lg">
+          Confier ma recherche
+        </a>
+        <a href="/estimation" class="btn btn-secondary btn-lg">
+          Estimer mon bien
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>
+
+<script>
+  // Gestion des filtres interactifs
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.querySelector('.bg-white.rounded-2xl');
+    const filterInputs = searchForm?.querySelectorAll('select, input');
+    
+    filterInputs?.forEach(input => {
+      input.addEventListener('change', () => {
+        // Cast vers HTMLInputElement ou HTMLSelectElement pour accéder aux propriétés
+        const element = input as HTMLInputElement | HTMLSelectElement;
+        console.log('Filtre changé:', element.name, element.value);
+      });
+    });
+    
+    // Gestion du bouton de recherche
+    const searchButton = document.querySelector('button[class*="btn-primary"]');
+    searchButton?.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Logique de recherche
+      console.log('Recherche lancée');
+    });
+  });
+</script>

@@ -1,0 +1,177 @@
+---
+import Base from "../../layouts/Base.astro";
+import HeroUltra from "../../components/ui/HeroUltra.astro";
+import BadgeUltra from "../../components/ui/BadgeUltra.astro";
+import ButtonUltra from "../../components/ui/ButtonUltra.astro";
+import CardUltra from "../../components/ui/CardUltra.astro";
+import {
+  BookOpen,
+  Calendar,
+  Clock,
+  ArrowRight,
+  TrendingUp,
+  Home,
+  Users,
+  Award
+} from 'lucide-react';
+
+const posts = [
+  {
+    title: "Investir à Voglans : les clés du marché 2025",
+    description: "Analyse des prix, des rendements locatifs et des quartiers porteurs autour du lac du Bourget.",
+    href: "/blog/investir-voglans-savoie",
+    date: "18 septembre 2025",
+    readingTime: "7 min",
+    category: "Investissement"
+  },
+  {
+    title: "Comment préparer la vente de votre maison en Savoie",
+    description: "Checklist des démarches, diagnostics et améliorations pour maximiser votre prix de vente.",
+    href: "/vente",
+    date: "5 septembre 2025",
+    readingTime: "5 min",
+    category: "Vente"
+  }
+];
+---
+
+<Base title="Blog Immobilier | L'Agence de Voglans" description="Conseils, analyses et tendances du marché immobilier de Voglans et de la Savoie.">
+  <!-- Hero Section Ultra-Moderne -->
+  <HeroUltra>
+    <div slot="badge">
+      <BadgeUltra text="Expertise & Conseils" />
+    </div>
+
+    <div slot="title">
+      Le Journal<br>
+      <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">de Voglans</span>
+    </div>
+
+    <div slot="subtitle">
+      Tendances du marché, conseils pratiques et retours d'expérience<br>
+      pour vendre, acheter ou investir en Savoie.
+    </div>
+
+    <div slot="cta">
+      <ButtonUltra href="/contact" text="Nous contacter" />
+    </div>
+  </HeroUltra>
+
+  <!-- Blog Posts Section Ultra-Moderne -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <!-- Fond décoratif subtil -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+    <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full -translate-x-32 -translate-y-32"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-32 translate-y-32"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header avec glassmorphism -->
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl shadow-primary/10 mb-8">
+            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            Articles Récents
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Actualités <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Immobilières</span>
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Analyses du marché, conseils d'experts et tendances de l'immobilier en Savoie
+          </p>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+          {posts.map((post) => (
+            <CardUltra class="group h-full">
+              <article class="h-full flex flex-col justify-between">
+                <header class="mb-6">
+                  <!-- Category Badge -->
+                  <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                    {post.category === 'Investissement' ? (
+                      <TrendingUp className="w-3 h-3" />
+                    ) : (
+                      <Home className="w-3 h-3" />
+                    )}
+                    {post.category}
+                  </div>
+
+                  <div class="text-xs uppercase tracking-wide text-muted font-semibold mb-3 flex items-center gap-2">
+                    <Calendar className="w-3 h-3" />
+                    {post.date}
+                  </div>
+
+                  <h2 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                    {post.title}
+                  </h2>
+
+                  <p class="text-muted leading-relaxed">{post.description}</p>
+                </header>
+
+                <footer class="mt-6 flex items-center justify-between text-sm">
+                  <div class="flex items-center gap-2 text-muted">
+                    <Clock className="w-4 h-4" />
+                    <span>{post.readingTime} de lecture</span>
+                  </div>
+                  <a href={post.href} class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 rounded-xl font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
+                    <span>Lire l'article</span>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </footer>
+              </article>
+            </CardUltra>
+          ))}
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-20">
+          <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-12 border border-primary/10">
+            <h3 class="text-3xl font-bold text-foreground mb-4">Besoin de conseils personnalisés ?</h3>
+            <p class="text-muted mb-8 max-w-2xl mx-auto">
+              Notre équipe d'experts vous accompagne dans tous vos projets immobiliers en Savoie.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <ButtonUltra href="/estimation" text="Estimation gratuite" />
+              <ButtonUltra href="/contact" text="Nous contacter" variant="secondary" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section Ultra-Moderne -->
+  <section class="py-24 bg-gradient-to-br from-primary to-primary/90 text-white relative overflow-hidden">
+    <!-- Motifs géométriques -->
+    <div class="absolute inset-0 opacity-8">
+      <div class="absolute top-10 right-10 w-32 h-32 bg-white/20 rounded-full blur-xl"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 border-2 border-white/30 rotate-45"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+          Restez informé des dernières<br>
+          <span class="bg-gradient-to-r from-white/90 to-white/70 bg-clip-text text-transparent font-semibold">tendances immobilières</span>
+        </h2>
+
+        <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+          Recevez nos analyses du marché et conseils d'experts directement dans votre boîte mail.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Votre email"
+            class="flex-1 px-6 py-4 bg-white/90 backdrop-blur-sm border border-white/30 text-primary rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/50 placeholder:text-primary/60"
+          >
+          <ButtonUltra text="S'abonner" class="bg-white text-primary hover:bg-white/90" />
+        </div>
+
+        <p class="text-white/80 text-sm mt-6">
+          Aucun spam • Désabonnement en un clic
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

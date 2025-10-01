@@ -1,0 +1,91 @@
+---
+import { Eye, TrendingUp, Target, Rocket } from 'lucide-react';
+
+interface Props {
+  name: string;
+  zone: string;
+}
+
+const { name, zone } = Astro.props;
+---
+
+<section class="py-16 bg-gradient-to-br from-primary/5 to-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+          Notre méthodologie d'estimation à {name}
+        </h2>
+        <p class="text-xl text-muted max-w-2xl mx-auto">
+          4 étapes pour une estimation précise et personnalisée
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Étape 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Eye className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-primary mb-2">ÉTAPE 1</div>
+              <h3 class="text-xl font-semibold mb-3 text-foreground">Découverte</h3>
+              <p class="text-muted leading-relaxed">
+                Visite de votre bien à {name} (ou visio si vous préférez). Nous analysons chaque détail : état, agencement, exposition, environnement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-primary mb-2">ÉTAPE 2</div>
+              <h3 class="text-xl font-semibold mb-3 text-foreground">Comparables & tendances</h3>
+              <p class="text-muted leading-relaxed">
+                Analyse des ventes récentes à {name} et {zone}. Nous croisons les données du marché local avec les spécificités de votre bien.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Target className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-primary mb-2">ÉTAPE 3</div>
+              <h3 class="text-xl font-semibold mb-3 text-foreground">Valeur recommandée</h3>
+              <p class="text-muted leading-relaxed">
+                Nous vous présentons une fourchette de prix réaliste et une stratégie de mise en vente adaptée au marché de {name}.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 4 -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Rocket className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-primary mb-2">ÉTAPE 4</div>
+              <h3 class="text-xl font-semibold mb-3 text-foreground">Mise en marché</h3>
+              <p class="text-muted leading-relaxed">
+                Plan d'action complet : shooting professionnel, diffusion multi-canaux, organisation des visites. Tout est prévu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

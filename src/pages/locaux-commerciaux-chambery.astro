@@ -1,0 +1,291 @@
+---
+import Base from '../layouts/Base.astro';
+import { Phone, Calculator, MapPin, TrendingUp, Store, Building2, ShoppingBag, Briefcase } from 'lucide-react';
+
+const meta = {
+  title: "Local Commercial à Vendre ou Louer à Chambéry | Agence de Voglans",
+  description: "Trouvez votre local commercial à Chambéry. Prix de vente et loyers actualisés. Boutique, bureau, entrepôt. Expertise locale professionnelle.",
+  keywords: ["local commercial Chambéry", "boutique à vendre Chambéry", "bureau Chambéry", "commerce Chambéry"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <section class="relative bg-gradient-to-br from-primary/10 via-white to-primary/5 py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-lg mb-8">
+          <MapPin className="w-5 h-5" />
+          <span>Expert Immobilier Professionnel à Chambéry</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight text-foreground leading-[1.1]">
+          Local Commercial à<br/>
+          <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Chambéry</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed font-light mb-12">
+          Notre <span class="text-primary font-medium">expertise professionnelle</span> du marché de Chambéry vous accompagne dans votre projet commercial.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#formulaire" class="group relative bg-gradient-to-r from-primary to-primary/90 text-white px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            <Calculator className="w-6 h-6 relative z-10" />
+            <span class="relative z-10">Estimation Gratuite</span>
+          </a>
+          <a href="tel:+33757830262" class="group bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <Phone className="w-6 h-6" />
+            <span>07 57 83 02 62</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">4500 €/m²</div>
+            <div class="text-sm text-muted font-medium">Prix moyen vente</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">180 €/m²/an</div>
+            <div class="text-sm text-muted font-medium">Loyer moyen annuel</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">90 jours</div>
+            <div class="text-sm text-muted font-medium">Délai moyen transaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Types de <span class="font-semibold text-primary">Locaux Commerciaux</span>
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">Données actualisées 2024 pour Chambéry</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Store className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Boutique Centre-Ville</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">5000 €/m²</div>
+              <div class="text-sm text-muted">Vente : 30-80 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 220 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <TrendingUp className="w-4 h-4" />
+                <span>Emplacement premium</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Bureau</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">4300 €/m²</div>
+              <div class="text-sm text-muted">Vente : 50-200 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 170 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Briefcase className="w-4 h-4" />
+                <span>Professionnel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <ShoppingBag className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Commerce de Proximité</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">4200 €/m²</div>
+              <div class="text-sm text-muted">Vente : 40-100 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 160 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <ShoppingBag className="w-4 h-4" />
+                <span>Quartier résidentiel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Local d'Activité</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">3700 €/m²</div>
+              <div class="text-sm text-muted">Vente : 100-500 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 130 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Building2 className="w-4 h-4" />
+                <span>Zone artisanale</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Store className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Entrepôt</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">3300 €/m²</div>
+              <div class="text-sm text-muted">Vente : 200-1000 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 100 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Building2 className="w-4 h-4" />
+                <span>Logistique</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Plateau de Bureaux</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">4100 €/m²</div>
+              <div class="text-sm text-muted">Vente : 200-1000 m²</div>
+              <div class="text-sm text-primary font-medium">Loyer : 150 €/m²/an</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <TrendingUp className="w-4 h-4" />
+                <span>Grande surface</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulaire" class="py-20 bg-gradient-to-br from-primary/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Estimation <span class="font-semibold text-primary">Gratuite</span>
+          </h2>
+          <p class="text-xl text-muted">Recevez une estimation précise de votre local commercial sous 48h</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Surface du local</label>
+                <input type="number" placeholder="120 m²" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Type de local</label>
+                <select class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                  <option>Boutique</option>
+                  <option>Bureau</option>
+                  <option>Local d'activité</option>
+                  <option>Entrepôt</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Projet</label>
+                <select class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                  <option>Vendre</option>
+                  <option>Louer</option>
+                  <option>Acheter</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Emplacement</label>
+                <select class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                  <option>Centre-ville</option>
+                  <option>Zone commerciale</option>
+                  <option>Zone artisanale</option>
+                  <option>Quartier résidentiel</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2">Votre nom / Société</label>
+              <input type="text" placeholder="Nom complet ou raison sociale" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Téléphone</label>
+                <input type="tel" placeholder="06 12 34 56 78" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Email</label>
+                <input type="email" placeholder="votre@email.com" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-5 rounded-full text-lg font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3">
+              <Calculator className="w-6 h-6" />
+              <span>Recevoir Mon Estimation Gratuite</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-primary to-primary/90">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-light mb-6">
+          Expert Immobilier Professionnel à <span class="font-semibold">Chambéry</span>
+        </h2>
+        <p class="text-xl text-white/90 mb-8">Notre connaissance du marché professionnel local garantit votre réussite</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+33757830262" class="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-full text-lg font-semibold hover:scale-105 transition-all duration-300">
+            <Phone className="w-6 h-6" />
+            <span>07 57 83 02 62</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+  }
+  .animate-float { animation: float 20s ease-in-out infinite; }
+</style>

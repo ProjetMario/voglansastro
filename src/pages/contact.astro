@@ -1,0 +1,340 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from '@/components/ui/Section.astro';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Star,
+  Sparkles,
+  ArrowRight,
+  CheckCircle,
+  Building,
+  Home,
+  Users,
+  HandHeart,
+  Eye,
+  DollarSign,
+  Briefcase,
+  Target,
+  Award,
+  TrendingUp,
+  ChevronDown,
+  Play,
+  Calculator,
+  Send,
+  MessageCircle
+} from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+---
+
+<Base
+  title="Contact | L'Agence de Voglans - Réponse sous 24h"
+  description="Contactez L'Agence de Voglans pour votre projet immobilier. Réponse garantie sous 24h, estimation gratuite et accompagnement personnalisé."
+>
+  <!-- Hero Section Révolutionnaire -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/80">
+    <!-- Fond animé avec particules -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full animate-spin opacity-20" style="animation-duration: 20s;"></div>
+    </div>
+
+    <!-- Grille de fond géométrique -->
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" class="absolute inset-0">
+        <defs>
+          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="max-w-5xl mx-auto">
+        <!-- Badge flottant -->
+        <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-xl border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl mb-12 animate-float">
+          <Sparkles className="w-4 h-4" />
+          <span>Réponse sous 24h garantie</span>
+        </div>
+
+        <!-- Titre principal -->
+        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none">
+          <span class="block bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent animate-gradient">
+            CONTACTEZ-NOUS
+          </span>
+        </h1>
+
+        <!-- Baseline -->
+        <p class="text-2xl md:text-3xl text-white/90 font-light mb-12 max-w-4xl mx-auto leading-relaxed">
+          Votre projet immobilier mérite une réponse rapide et experte
+        </p>
+
+        <!-- CTA rapide -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="group relative bg-white text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span>{siteConfig.contact.phone}</span>
+          </a>
+          <a href="/estimation" class="group relative bg-white/20 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Calculator className="w-5 h-5 group-hover:animate-bounce" />
+            <span>ESTIMATION GRATUITE</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicateur de scroll -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informations de Contact -->
+  <section class="py-32 bg-white relative overflow-hidden">
+    <!-- Éléments décoratifs -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-yellow-200/30 to-transparent rounded-full blur-2xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-yellow-200/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+            <MessageCircle className="w-4 h-4" />
+            <span>Nos Coordonnées</span>
+          </div>
+          <h2 class="text-5xl md:text-7xl font-black mb-8">
+            Comment nous <span class="bg-gradient-to-r from-primary via-green-400 to-yellow-400 bg-clip-text text-transparent">contacter ?</span>
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Plusieurs moyens pour nous joindre selon vos préférences
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Téléphone -->
+          <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-green-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-primary/10">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary to-green-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Phone className="w-10 h-10 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">Téléphone</h3>
+              <p class="text-muted leading-relaxed text-center mb-6">
+                Réponse immédiate pendant les heures d'ouverture
+              </p>
+              <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="text-primary hover:text-primary/80 font-bold text-xl transition-colors duration-300 text-center block">
+                {siteConfig.contact.phone}
+              </a>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-yellow-400/10">
+              <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Mail className="w-10 h-10 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-yellow-400 transition-colors duration-300">Email</h3>
+              <p class="text-muted leading-relaxed text-center mb-6">
+                Réponse garantie sous 24h ouvrées
+              </p>
+              <a href={`mailto:${siteConfig.contact.email}`} class="text-yellow-400 hover:text-yellow-600 font-bold text-xl transition-colors duration-300 text-center block">
+                {siteConfig.contact.email}
+              </a>
+            </div>
+          </div>
+
+          <!-- Adresse -->
+          <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-green-400/10">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-green-400 transition-colors duration-300">Adresse</h3>
+              <p class="text-muted leading-relaxed text-center mb-6">
+                Visite sur rendez-vous uniquement
+              </p>
+              <p class="text-green-400 font-bold text-lg text-center">
+                93 chemin de la Combe<br>
+                73420 Voglans
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire de Contact -->
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-3xl shadow-2xl border border-primary/10 p-8 lg:p-12">
+            <h3 class="text-3xl font-bold mb-8 text-center">Envoyez-nous votre demande</h3>
+
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="nom" class="block text-sm font-semibold text-foreground mb-2">Nom *</label>
+                  <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                </div>
+                <div>
+                  <label for="prenom" class="block text-sm font-semibold text-foreground mb-2">Prénom *</label>
+                  <input type="text" id="prenom" name="prenom" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-semibold text-foreground mb-2">Email *</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                </div>
+                <div>
+                  <label for="telephone" class="block text-sm font-semibold text-foreground mb-2">Téléphone *</label>
+                  <input type="tel" id="telephone" name="telephone" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                </div>
+              </div>
+
+              <div>
+                <label for="sujet" class="block text-sm font-semibold text-foreground mb-2">Sujet</label>
+                <select id="sujet" name="sujet" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                  <option value="">Sélectionnez un sujet</option>
+                  <option value="estimation">Estimation immobilière</option>
+                  <option value="vente">Vente de bien</option>
+                  <option value="achat">Achat de bien</option>
+                  <option value="conseil">Conseil immobilier</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-semibold text-foreground mb-2">Message *</label>
+                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 resize-none"></textarea>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <input type="checkbox" id="rgpd" name="rgpd" required class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                <label for="rgpd" class="text-sm text-muted">
+                  J'accepte que mes données soient traitées conformément à la politique de confidentialité *
+                </label>
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-primary to-green-400 text-white py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
+                <Send className="w-5 h-5" />
+                <span>Envoyer ma demande</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horaires d'ouverture -->
+  <section class="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <!-- Formes organiques -->
+    <div class="absolute inset-0 opacity-30">
+      <svg viewBox="0 0 1200 800" className="absolute inset-0 w-full h-full">
+        <path d="M0,400 C300,200 600,600 900,300 C1050,150 1200,450 1200,400 L1200,800 L0,800 Z" fill="url(#gradient1)" />
+        <path d="M300,100 C500,300 700,50 1000,250 C1100,350 1200,200 1200,400 L1200,0 L300,0 Z" fill="url(#gradient2)" />
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10B981" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.1" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#10B981" stop-opacity="0.1" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-yellow-200/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+          <Clock className="w-4 h-4" />
+          <span>Horaires d'ouverture</span>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-black mb-12">
+          <span class="bg-gradient-to-r from-primary via-green-400 to-yellow-400 bg-clip-text text-transparent">Disponibilité</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 shadow-xl border border-primary/10">
+            <h3 class="text-2xl font-bold mb-6 text-primary">Lundi - Vendredi</h3>
+            <div class="space-y-3 text-muted">
+              <div class="flex justify-between">
+                <span>Matin</span>
+                <span class="font-semibold">9h00 - 12h00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Après-midi</span>
+                <span class="font-semibold">14h00 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-xl border border-primary/10">
+            <h3 class="text-2xl font-bold mb-6 text-primary">Samedi</h3>
+            <div class="space-y-3 text-muted">
+              <div class="flex justify-between">
+                <span>Matin</span>
+                <span class="font-semibold">9h00 - 12h00</span>
+              </div>
+              <div class="flex justify-between text-muted">
+                <span>Après-midi</span>
+                <span class="font-semibold">Fermé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-muted mt-8 text-lg">
+          En dehors de ces horaires, laissez-nous un message ou appelez-nous directement
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-32 bg-gradient-to-br from-primary via-green-400 to-yellow-400 relative overflow-hidden">
+    <!-- Animations de fond -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-black/20"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 leading-none text-white">
+          Prêt à démarrer<br>
+          <span class="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
+            votre projet ?
+          </span>
+        </h2>
+
+        <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Que ce soit pour vendre, acheter ou estimer votre bien, nous sommes là pour vous accompagner
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a href="/estimation" class="group relative bg-white text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Calculator className="w-5 h-5 group-hover:animate-bounce" />
+            <span>ESTIMATION GRATUITE</span>
+          </a>
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="group relative bg-white/20 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span>NOUS APPELER</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

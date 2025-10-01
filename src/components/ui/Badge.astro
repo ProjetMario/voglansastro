@@ -1,0 +1,19 @@
+---
+import { cn, getBadgeVariant, getBadgeLabel } from '@/lib/utils';
+
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'error';
+  badge?: string;
+  className?: string;
+}
+
+const { variant = 'secondary', badge, className } = Astro.props;
+
+// Si un badge spécifique est fourni, utiliser sa variante
+const finalVariant = badge ? getBadgeVariant(badge) : `badge-${variant}`;
+const label = badge ? getBadgeLabel(badge) : '';
+---
+
+<span class={cn('badge', finalVariant, className)}>
+  {badge ? label : <slot />}
+</span>

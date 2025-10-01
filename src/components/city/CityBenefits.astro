@@ -1,0 +1,58 @@
+---
+import { MapPin, Users, Shield } from 'lucide-react';
+
+interface Props {
+  name: string;
+  zone: string;
+}
+
+const { name, zone } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+          Pourquoi nous choisir pour votre estimation à {name} ?
+        </h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Local -->
+        <div class="card-luxury p-8 text-center group hover:shadow-2xl transition-all duration-300">
+          <div class="w-16 h-16 surface-luxury-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-luxury border border-white/20 group-hover:scale-110 transition-all duration-500">
+            <MapPin className="w-8 h-8 text-white" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-foreground">100% Local</h3>
+          <p class="text-muted leading-relaxed">
+            Nous connaissons {name} rue par rue : écoles, transports, dynamique de quartier. Notre expertise locale fait la différence.
+          </p>
+        </div>
+
+        <!-- Humain -->
+        <div class="card-luxury p-8 text-center group hover:shadow-2xl transition-all duration-300">
+          <div class="w-16 h-16 surface-luxury-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-luxury border border-white/20 group-hover:scale-110 transition-all duration-500">
+            <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-foreground">100% Humain</h3>
+          <p class="text-muted leading-relaxed">
+            Un seul interlocuteur qui suit votre dossier de A à Z. Pas de call-center, pas de robots.
+          </p>
+        </div>
+
+        <!-- Transparent -->
+        <div class="card-luxury p-8 text-center group hover:shadow-2xl transition-all duration-300">
+          <div class="w-16 h-16 surface-luxury-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-luxury border border-white/20 group-hover:scale-110 transition-all duration-500">
+            <Shield className="w-8 h-8 text-white" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-foreground">100% Transparent</h3>
+          <p class="text-muted leading-relaxed">
+            Méthode d'estimation claire, dossier remis par écrit. Vous comprenez chaque élément du prix.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
