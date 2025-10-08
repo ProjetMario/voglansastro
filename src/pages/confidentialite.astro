@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import { ArrowRight, Shield } from 'lucide-react';
 ---
 
 <Base
@@ -11,6 +12,27 @@ import Base from "../layouts/Base.astro";
       <div class="apple-card space-y-6">
         <div class="badge-outline">Données personnelles</div>
         <h1 class="text-3xl font-semibold">Politique de confidentialité</h1>
+        
+        <!-- Alerte vers la page RGPD complète -->
+        <div class="bg-primary/10 border border-primary/30 rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <Shield class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h2 class="text-lg font-semibold text-foreground mb-2">Version détaillée disponible</h2>
+              <p class="text-muted mb-4">
+                Pour consulter notre politique complète de protection des données (RGPD) avec tous les détails sur vos droits et nos engagements, visitez notre page dédiée.
+              </p>
+              <a 
+                href="/rgpd" 
+                class="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              >
+                <span>Consulter la politique RGPD complète</span>
+                <ArrowRight class="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="space-y-4 text-[hsl(var(--color-muted-foreground))]">
           <p>
             L'Agence de Voglans collecte des données personnelles uniquement dans le cadre de la relation commerciale ou de la demande d'information. Les données sont exploitées par nos équipes internes et ne sont jamais revendues.
@@ -34,7 +56,7 @@ import Base from "../layouts/Base.astro";
             <strong>Cookies :</strong> uniquement des traceurs analytiques anonymisés. Vous pouvez paramétrer vos préférences via votre navigateur.
           </p>
         </div>
-        <p class="text-sm text-[hsl(var(--color-muted-foreground))]">Dernière mise à jour : 1 septembre 2025</p>
+        <p class="text-sm text-[hsl(var(--color-muted-foreground))]">Dernière mise à jour : 8 octobre 2025</p>
       </div>
     </div>
   </section>

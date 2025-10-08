@@ -19,7 +19,15 @@ import Section from '@/components/ui/Section.astro';
           <li><strong>Marque commerciale :</strong> L'Agence de Voglans est une marque de la société FLEX IMMO</li>
           <li><strong>Type d'agence :</strong> Agence immobilière 100% en ligne</li>
         </ul>
-        
+
+        <div class="bg-primary/10 border border-primary/20 rounded-lg p-6 mt-6">
+          <p class="text-foreground font-semibold mb-2">🏠 Agence 100% en ligne</p>
+          <p class="text-muted">
+            L'Agence de Voglans opère exclusivement en ligne. Aucun local commercial n'est ouvert au public.
+            Tous nos services sont accessibles à distance : estimation, vente, achat et conseils immobiliers.
+          </p>
+        </div>
+
         <h3 class="text-xl font-semibold text-foreground mb-3 mt-6">Adresse du siège social :</h3>
         <div class="bg-secondary/10 p-6 rounded-lg">
           <p class="text-muted">93 CHEMIN DE LA COMBE</p>
@@ -89,11 +97,17 @@ import Section from '@/components/ui/Section.astro';
       <section class="mb-12">
         <h2 class="text-2xl font-semibold text-foreground mb-4">Conditions de rémunération</h2>
         <p class="text-muted leading-relaxed">
-          Le barème des tarifs est disponible sur demande et affiché dans nos locaux.
+          Le barème des tarifs est disponible sur demande par téléphone ou email.
         </p>
         <p class="text-muted leading-relaxed mt-4">
           Aucune rémunération ne peut être perçue avant la signature du compromis de vente ou du bail.
         </p>
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+          <p class="text-sm text-amber-800">
+            <strong>Note :</strong> En tant qu'agence 100% en ligne, nous n'affichons pas de tarifs dans des locaux commerciaux,
+            mais nous vous transmettons volontiers notre barème détaillé sur simple demande.
+          </p>
+        </div>
       </section>
 
       <section class="mb-12">
@@ -114,19 +128,27 @@ import Section from '@/components/ui/Section.astro';
           <li><strong>Destinataires :</strong> Personnel habilité de l'agence</li>
           <li><strong>Durée de conservation :</strong> 3 ans maximum après le dernier contact</li>
         </ul>
-        
+
         <p class="text-muted leading-relaxed mt-4">
-          <strong>Droits :</strong> Conformément au RGPD, vous disposez des droits d'accès, de rectification, de suppression, 
+          <strong>Droits :</strong> Conformément au RGPD, vous disposez des droits d'accès, de rectification, de suppression,
           d'opposition, de portabilité et de limitation du traitement de vos données personnelles.
         </p>
         <p class="text-muted leading-relaxed mt-4">
-          <strong>Contact :</strong> Pour exercer vos droits, contactez-nous via notre 
-          <a href="/contact" class="text-primary hover:underline">formulaire de contact</a>.
+          <strong>Contact :</strong> Pour exercer vos droits, contactez-nous via notre
+          <a href="/contact" class="text-primary hover:underline">formulaire de contact</a> ou directement à
+          <a href="mailto:contact@agencevoglans.fr" class="text-primary hover:underline">contact@agencevoglans.fr</a>.
         </p>
         <p class="text-muted leading-relaxed mt-4">
-          <strong>Autorité de contrôle :</strong> CNIL - 
+          <strong>Autorité de contrôle :</strong> CNIL -
           <a href="https://www.cnil.fr" target="_blank" rel="noopener" class="text-primary hover:underline">www.cnil.fr</a>
         </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+          <p class="text-sm text-blue-800">
+            <strong>Note RGPD :</strong> Pour consulter notre politique complète de protection des données personnelles,
+            rendez-vous sur notre <a href="/rgpd" class="text-primary hover:underline">page RGPD dédiée</a>.
+          </p>
+        </div>
       </section>
 
       <section class="mb-12">
