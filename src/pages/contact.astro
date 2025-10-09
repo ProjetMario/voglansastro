@@ -87,13 +87,6 @@ import { siteConfig } from '@/lib/utils';
         </div>
       </div>
     </div>
-
-    <!-- Indicateur de scroll -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-      </div>
-    </div>
   </section>
 
   <!-- Informations de Contact -->
@@ -332,7 +325,7 @@ import { siteConfig } from '@/lib/utils';
             <span>ESTIMATION GRATUITE</span>
           </a>
           <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="group relative bg-white/20 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
-            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             <span>NOUS APPELER</span>
           </a>
         </div>
@@ -629,6 +622,20 @@ import { siteConfig } from '@/lib/utils';
     // Indicateur de scroll
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if (scrollIndicator) {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const scrollText = document.querySelector('.scroll-text');
+
+      const updateScrollIndicator = () => {
+        const scrollPosition = window.scrollY;
+        const scrollHeight = document.body.offsetHeight - window.innerHeight;
+        const progress = (scrollPosition / scrollHeight) * 100;
+
+        if (scrollProgress && scrollText) {
+          scrollProgress.style.height = `${progress}%`;
+          scrollText.textContent = `${Math.round(progress)}%`;
+        }
+      };
+
       const showScrollIndicator = () => {
         if (window.scrollY > window.innerHeight * 0.3) {
           scrollIndicator.classList.add('visible');
@@ -637,7 +644,11 @@ import { siteConfig } from '@/lib/utils';
         }
       };
 
-      window.addEventListener('scroll', showScrollIndicator);
+      window.addEventListener('scroll', () => {
+        updateScrollIndicator();
+        showScrollIndicator();
+      });
+      updateScrollIndicator(); // Vérifier l'état initial
       showScrollIndicator(); // Vérifier l'état initial
     }
   });

@@ -630,14 +630,16 @@ const description = "Conseils, analyses et tendances du marché immobilier de Vo
     tocItems.forEach(item => {
       item.addEventListener('click', () => {
         const targetId = item.getAttribute('data-target');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView();
-          floatingToc.classList.remove('visible');
+        if (targetId !== null) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView();
+            floatingToc.classList.remove('visible');
 
-          // Mettre à jour l'état actif
-          tocItems.forEach(i => i.classList.remove('active'));
-          item.classList.add('active');
+            // Mettre à jour l'état actif
+            tocItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+          }
         }
       });
     });
