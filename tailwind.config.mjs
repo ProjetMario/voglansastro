@@ -4,34 +4,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Design system Apple-like épuré
-        background: '#FFFFFF', // Blanc pur Apple
-        foreground: '#1D1D1F', // Noir Apple contrasté
-        muted: {
-          DEFAULT: '#86868B', // Gris Apple
-          foreground: '#6E6E73', // Gris Apple foncé
-        },
-        accent: {
-          DEFAULT: 'hsl(158 65% 25%)',
+        // Palette vert luxe complète et cohérente
+        primary: {
+          50: 'hsl(158 65% 98%)',   // Vert très clair
+          100: 'hsl(158 65% 95%)',  // Vert clair
+          200: 'hsl(158 65% 90%)',  // Vert plus clair
+          300: 'hsl(158 65% 85%)',  // Vert moyen-clair
+          400: 'hsl(158 65% 65%)',  // Vert moyen
+          500: 'hsl(158 65% 55%)',  // Vert principal
+          600: 'hsl(158 65% 45%)',  // Vert foncé (couleur principale)
+          700: 'hsl(158 65% 35%)',  // Vert très foncé
+          800: 'hsl(158 65% 30%)',  // Vert ultra foncé
+          900: 'hsl(158 65% 25%)',  // Vert profond
+          950: 'hsl(158 65% 15%)',  // Vert noir
+          DEFAULT: 'hsl(158 65% 45%)', // Couleur par défaut
           foreground: '#FFFFFF',
         },
-        primary: {
-          DEFAULT: 'hsl(158 65% 25%)', // Vert foncé sophistiqué de la photo #1E5F4F
-          foreground: 'hsl(0 0% 100%)',
+        // Neutres avec teinte verte subtile
+        background: 'hsl(158 65% 99%)',
+        foreground: 'hsl(158 65% 10%)',
+        muted: {
+          DEFAULT: 'hsl(158 30% 70%)',
+          foreground: 'hsl(158 30% 60%)',
         },
         secondary: {
-          DEFAULT: '#F5F5F7', // Gris clair Apple
-          foreground: '#1D1D1F',
+          DEFAULT: 'hsl(158 65% 96%)',
+          foreground: 'hsl(158 65% 10%)',
         },
-        border: '#D2D2D7', // Bordure Apple
-        input: '#FFFFFF',
-        ring: 'hsl(158 65% 25%)',
+        accent: {
+          DEFAULT: 'hsl(158 65% 45%)',
+          foreground: '#FFFFFF',
+        },
+        border: 'hsl(158 65% 90%)',
+        input: 'hsl(158 65% 98%)',
+        ring: 'hsl(158 65% 45%)',
+        card: {
+          DEFAULT: 'hsl(158 65% 99%)',
+          foreground: 'hsl(158 65% 10%)',
+        },
+        popover: {
+          DEFAULT: 'hsl(158 65% 99%)',
+          foreground: 'hsl(158 65% 10%)',
+        },
       },
       fontFamily: {
-        sans: ['Playfair Display', 'Georgia', 'serif'], // Playfair Display partout !
-        serif: ['Playfair Display', 'Georgia', 'serif'], // Titres h1-h6
-        display: ['Playfair Display', 'Georgia', 'serif'], // Alias pour les titres
-        body: ['Playfair Display', 'Georgia', 'serif'], // Corps de texte luxe
+        sans: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        body: ['Playfair Display', 'Georgia', 'serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -68,13 +88,13 @@ export default {
         '3xl': '1.5rem',
       },
       boxShadow: {
-        'xs': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-        'sm': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-        'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-        'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-        'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-        '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
-        'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+        'xs': '0 1px 2px 0 rgb(30 95 79 / 0.05)',
+        'sm': '0 1px 3px 0 rgb(30 95 79 / 0.1), 0 1px 2px -1px rgb(30 95 79 / 0.1)',
+        'md': '0 4px 6px -1px rgb(30 95 79 / 0.1), 0 2px 4px -2px rgb(30 95 79 / 0.1)',
+        'lg': '0 10px 15px -3px rgb(30 95 79 / 0.1), 0 4px 6px -4px rgb(30 95 79 / 0.1)',
+        'xl': '0 20px 25px -5px rgb(30 95 79 / 0.1), 0 8px 10px -6px rgb(30 95 79 / 0.1)',
+        '2xl': '0 25px 50px -12px rgb(30 95 79 / 0.25)',
+        'inner': 'inset 0 2px 4px 0 rgb(30 95 79 / 0.05)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

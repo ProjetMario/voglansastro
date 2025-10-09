@@ -3,7 +3,6 @@ import Base from '@/layouts/Base.astro';
 import HeroUltra from '@/components/ui/HeroUltra.astro';
 import BadgeUltra from '@/components/ui/BadgeUltra.astro';
 import ButtonUltra from '@/components/ui/ButtonUltra.astro';
-import CardUltra from '@/components/ui/CardUltra.astro';
 import {
   ArrowLeft,
   TrendingUp,
@@ -113,7 +112,7 @@ const articleSchema = {
         <!-- Article Content -->
         <div class="space-y-12">
           <!-- Introduction -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="text-center">
               <div class="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <TrendingUp className="w-12 h-12 text-primary" />
@@ -125,10 +124,10 @@ const articleSchema = {
                 les évolutions du marché et d'accompagner nos clients avec une expertise terrain unique.
               </p>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Position géographique -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="flex items-start gap-6">
               <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <MapPin className="w-8 h-8 text-primary" />
@@ -179,10 +178,10 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Tendances du marché -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="flex items-start gap-6">
               <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <Calculator className="w-8 h-8 text-primary" />
@@ -217,10 +216,10 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Profils d'acheteurs -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="flex items-start gap-6">
               <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <Users className="w-8 h-8 text-primary" />
@@ -261,10 +260,10 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Opportunités d'investissement -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="flex items-start gap-6">
               <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <Award className="w-8 h-8 text-primary" />
@@ -341,10 +340,10 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Conseils -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="flex items-start gap-6">
               <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
                 <Award className="w-8 h-8 text-primary" />
@@ -412,10 +411,10 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
 
           <!-- Engagement final -->
-          <CardUltra class="group">
+          <div class="group">
             <div class="text-center">
               <h2 class="text-3xl font-bold text-foreground mb-4">L'engagement de L'Agence de Voglans</h2>
               <p class="text-muted leading-relaxed text-lg mb-8">
@@ -460,12 +459,12 @@ const articleSchema = {
                 </div>
               </div>
             </div>
-          </CardUltra>
+          </div>
         </div>
 
         <!-- CTA Section -->
         <div class="mt-20 text-center">
-          <CardUltra class="group">
+          <div class="group">
             <div class="text-center">
               <h3 class="text-3xl font-bold text-foreground mb-4">Vous souhaitez en savoir plus ?</h3>
               <p class="text-muted mb-8 max-w-2xl mx-auto text-lg">
@@ -477,7 +476,7 @@ const articleSchema = {
                 <ButtonUltra href="/contact" text="Nous contacter" variant="secondary" />
               </div>
             </div>
-          </CardUltra>
+          </div>
         </div>
       </div>
     </div>

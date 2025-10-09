@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config'
 import netlify from '@astrojs/netlify/functions'
+import react from '@astrojs/react'
+import tailwind from '@astrojs/tailwind'
+import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-})
-site: 'https://agencevoglans.fr',
+  site: 'https://agencevoglans.fr',
   integrations: [
     react(),
     tailwind({
@@ -45,7 +47,7 @@ site: 'https://agencevoglans.fr',
     '/estimationbourdeau': '/estimation/bourdeau',
     '/estimationlachapelledumontduchat': '/estimation/la-chapelle-du-mont-du-chat',
     '/estimationleviviers': '/estimation/le-viviers',
-    
+
     // Redirections avec tirets alternatifs (format compact)
     '/estimation-chambery': '/estimation/chambery',
     '/estimation-aix-les-bains': '/estimation/aix-les-bains',
@@ -74,6 +76,10 @@ site: 'https://agencevoglans.fr',
     '/estimation-la-chapelle-du-mont-du-chat': '/estimation/la-chapelle-du-mont-du-chat',
     '/estimation-le-viviers': '/estimation/le-viviers',
   },
+  compressHTML: true,
+  build: {
+    inlineStylesheets: 'auto',
+  },
   vite: {
     resolve: {
       alias: {
@@ -81,10 +87,4 @@ site: 'https://agencevoglans.fr',
       },
     },
   },
-  compressHTML: true,
-  build: {
-    inlineStylesheets: 'auto',
-  },
-});
-
-
+})

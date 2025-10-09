@@ -55,13 +55,13 @@ import { siteConfig } from '@/lib/utils';
   <section class="py-16 bg-gradient-to-br from-primary/5 to-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-green-400/10 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/10 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
           <Zap className="w-4 h-4" />
           <span>Estimation IA Instantanée</span>
         </div>
 
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-          Obtenez votre estimation en <span class="bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">quelques secondes</span>
+          Obtenez votre estimation en <span class="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">quelques secondes</span>
         </h2>
 
         <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">
@@ -93,16 +93,16 @@ import { siteConfig } from '@/lib/utils';
           </div>
 
           <button id="estimate-now-btn" type="button"
-                  class="group relative bg-gradient-to-r from-primary to-green-400 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+                  class="group relative bg-gradient-to-r from-primary to-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
             <Calculator className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             <span>Estimer maintenant</span>
           </button>
 
           <!-- Zone d'affichage des résultats IA -->
           <div id="estimation-results" class="hidden mt-8 max-w-2xl mx-auto">
-            <div class="bg-gradient-to-br from-primary/5 to-green-400/5 rounded-2xl p-8 border border-primary/10">
+            <div class="bg-gradient-to-br from-primary/5 to-primary/5 rounded-2xl p-8 border border-primary/10">
               <div class="text-center mb-6">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary to-green-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Calculator className="w-8 h-8 text-white" />
                 </div>
                 <h4 class="text-2xl font-bold mb-2 text-foreground">Estimation IA</h4>
@@ -115,11 +115,11 @@ import { siteConfig } from '@/lib/utils';
                   <div class="text-sm text-muted">Estimation centrale</div>
                 </div>
                 <div class="text-center">
-                  <div class="text-xl font-semibold text-green-600 mb-1" id="confidence-range">€</div>
+                  <div class="text-xl font-semibold text-primary mb-1" id="confidence-range">€</div>
                   <div class="text-sm text-muted">Fourchette de confiance</div>
                 </div>
                 <div class="text-center">
-                  <div class="text-xl font-semibold text-blue-600 mb-1" id="price-per-m2">€/m²</div>
+                  <div class="text-xl font-semibold text-primary mb-1" id="price-per-m2">€/m²</div>
                   <div class="text-sm text-muted">Prix au m²</div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ import { siteConfig } from '@/lib/utils';
               <div class="bg-white/50 rounded-xl p-4 mb-6">
                 <div class="flex items-center justify-center gap-4 text-sm">
                   <span class="flex items-center gap-2">
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-primary rounded-full"></div>
                     <span id="market-trend">Marché stable</span>
                   </span>
                   <span class="flex items-center gap-2">
@@ -234,10 +234,10 @@ import { siteConfig } from '@/lib/utils';
 
             <div class="text-center">
               <button type="submit"
-                      class="group relative bg-gradient-to-r from-primary to-green-400 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-4 hover:scale-105">
+                      class="group relative bg-gradient-to-r from-primary to-primary text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-4 hover:scale-105">
                 <Calculator className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
                 <span>OBTENIR MON ESTIMATION GRATUITE</span>
-                <div class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full animate-pulse">
+                <div class="absolute -top-2 -right-2 bg-primary text-black text-xs font-black px-3 py-1 rounded-full animate-pulse">
                   48H
                 </div>
               </button>
@@ -253,224 +253,301 @@ import { siteConfig } from '@/lib/utils';
   </section>
 </Base>
 
-<script>
-  // Gestion de l'estimation IA immédiate
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM chargé, initialisation de l\'estimation IA...');
+<style>
+  /* Thème sombre/clair toggle */
+  .theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 40;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
 
-    const estimateBtn = document.getElementById('estimate-now-btn') as HTMLButtonElement;
-    const resultsDiv = document.getElementById('estimation-results') as HTMLElement;
-    const estimatedValue = document.getElementById('estimated-value') as HTMLElement;
-    const confidenceRange = document.getElementById('confidence-range') as HTMLElement;
-    const pricePerM2 = document.getElementById('price-per-m2') as HTMLElement;
-    const marketTrend = document.getElementById('market-trend') as HTMLElement;
-    const transactionsCount = document.getElementById('transactions-count') as HTMLElement;
-    const requestFullBtn = document.getElementById('request-full-estimation') as HTMLButtonElement;
+  .theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
 
-    // Éléments du formulaire rapide
-    const quickCity = document.getElementById('quick-city') as HTMLInputElement;
-    const quickType = document.getElementById('quick-type') as HTMLSelectElement;
-    const quickSurface = document.getElementById('quick-surface') as HTMLInputElement;
+  /* Mode sombre */
+  .dark {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
 
-    console.log('Éléments trouvés:', {
-      estimateBtn: !!estimateBtn,
-      resultsDiv: !!resultsDiv,
-      estimatedValue: !!estimatedValue,
-      quickCity: !!quickCity,
-      quickType: !!quickType,
-      quickSurface: !!quickSurface
-    });
+  .dark .bg-white {
+    background-color: #1e293b;
+  }
 
-    if (!estimateBtn || !quickCity || !quickType || !quickSurface) {
-      console.error('Éléments DOM manquants !');
-      return;
+  .dark .text-muted {
+    color: #94a3b8;
+  }
+
+  .dark .border-primary\\/20 {
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+
+  .dark .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
+  }
+
+  /* Animations de scroll sophistiquées */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Indicateur de scroll avec storytelling */
+  .scroll-indicator {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-indicator.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .scroll-progress {
+    width: 2px;
+    height: 40px;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #10b981, #059669);
+    transition: height 0.3s ease;
+  }
+
+  .scroll-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #10b981;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Responsive Design Mobile-First amélioré */
+  @media (max-width: 768px) {
+    .text-4xl { font-size: 2rem; line-height: 1.1; }
+    .text-5xl { font-size: 2.5rem; line-height: 1.1; }
+
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+
+    .gap-8 { gap: 1.5rem; }
+    .gap-12 { gap: 2rem; }
+
+    .grid-cols-3 { grid-template-columns: 1fr; }
+
+    .form-input {
+      font-size: 16px;
+      padding: 1rem;
     }
 
-    estimateBtn.addEventListener('click', async () => {
-      console.log('Bouton d\'estimation cliqué');
+    .form-textarea {
+      font-size: 16px;
+      padding: 1rem;
+      min-height: 120px;
+    }
 
-      const city = quickCity.value.trim();
-      const propertyType = quickType.value;
-      const surface = quickSurface.value;
+    .estimation-card {
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-      console.log('Valeurs saisies:', { city, propertyType, surface });
+    .estimation-card:active {
+      transform: scale(0.98);
+    }
 
-      if (!city || !propertyType || !surface) {
-        console.log('Champs manquants détectés');
-        alert('Veuillez remplir tous les champs obligatoires');
-        return;
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Animations avancées pour les cartes d'estimation */
+  .estimation-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .estimation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .estimation-card:hover::before {
+    left: 100%;
+  }
+
+  .estimation-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 40px rgba(16, 185, 129, 0.15),
+      0 10px 25px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(16, 185, 129, 0.1);
+  }
+
+  /* Effets de glassmorphism avancés */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Gradients sophistiqués */
+  .gradient-mesh {
+    background:
+      radial-gradient(at 40% 20%, hsla(158, 65%, 40%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(158, 65%, 50%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(158, 65%, 30%, 0.25) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsla(158, 65%, 45%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(158, 65%, 35%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(158, 65%, 40%, 0.1) 0px, transparent 50%);
+  }
+
+  /* Animations de texte sophistiquées */
+  .text-gradient-animate {
+    background: linear-gradient(-45deg, #10b981, #059669, #047857, #065f46);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
+<script>
+  // Toggle thème sombre/clair
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.querySelector('.sun-icon');
+  const moonIcon = document.querySelector('.moon-icon');
+
+  if (themeToggle) {
+    // Vérifier le thème sauvegardé
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+
+    if (savedTheme === 'dark') {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+      if (isDark) {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+      } else {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
       }
+    });
+  }
 
-      // Afficher un indicateur de chargement
-      estimateBtn.innerHTML = `
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        <span>Calcul en cours...</span>
-      `;
-      estimateBtn.disabled = true;
+  // Animations de scroll sophistiquées
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-      try {
-        // Test de l'API d'estimation DVF
-        console.log('Test de l\'API d\'estimation DVF...');
-        const testResponse = await fetch('/api/estimation?city=test&propertyType=maison&surface=100');
-        console.log('Test API status:', testResponse.status);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
 
-        if (!testResponse.ok) {
-          throw new Error(`API d'estimation non accessible: ${testResponse.status}`);
-        }
+  // Observer tous les éléments avec la classe animate-on-scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 
-        // Appel réel à l'API DVF pour l'estimation IA
-        console.log('Appel API d\'estimation en cours...');
-        const estimationResponse = await fetch(`/api/estimation?city=${encodeURIComponent(city)}&propertyType=${propertyType}&surface=${surface}`);
-        console.log('Réponse d\'estimation reçue:', estimationResponse.status);
-
-        if (!estimationResponse.ok) {
-          throw new Error(`Erreur HTTP estimation: ${estimationResponse.status}`);
-        }
-
-        const estimationData = await estimationResponse.json();
-        console.log('Données d\'estimation reçues:', estimationData);
-
-        if (estimationData.success) {
-          // Afficher les résultats d'estimation IA
-          const { estimatedValue: estimate, confidenceRange: range, pricePerM2: ppm2, marketTrend: trend, data: dvfData } = estimationData;
-
-          console.log('Données d\'estimation:', { estimate, range, ppm2, trend, dvfData });
-
-          if (!estimatedValue || !confidenceRange || !pricePerM2 || !marketTrend || !transactionsCount) {
-            throw new Error('Éléments d\'affichage manquants');
-          }
-
-          estimatedValue.textContent = new Intl.NumberFormat('fr-FR', {
-            style: 'currency',
-            currency: 'EUR',
-            maximumFractionDigits: 0
-          }).format(estimate.estimatedValue);
-
-          confidenceRange.textContent = `${new Intl.NumberFormat('fr-FR', {
-            style: 'currency',
-            currency: 'EUR',
-            maximumFractionDigits: 0
-          }).format(range.min)} - ${new Intl.NumberFormat('fr-FR', {
-            style: 'currency',
-            currency: 'EUR',
-            maximumFractionDigits: 0
-          }).format(range.max)}`;
-
-          pricePerM2.textContent = `${new Intl.NumberFormat('fr-FR', {
-            style: 'currency',
-            currency: 'EUR',
-            maximumFractionDigits: 0
-          }).format(ppm2)}/m²`;
-
-          // Afficher la tendance du marché
-          const trendColors = {
-            'increasing': 'text-green-600',
-            'decreasing': 'text-red-600',
-            'stable': 'text-blue-600'
-          };
-
-          const trendIcons = {
-            'increasing': '📈',
-            'decreasing': '📉',
-            'stable': '➡️'
-          };
-
-          marketTrend.textContent = `${trendIcons[trend as keyof typeof trendIcons]} Marché ${trend === 'increasing' ? 'en hausse' : trend === 'decreasing' ? 'en baisse' : 'stable'}`;
-          marketTrend.className = trendColors[trend as keyof typeof trendColors];
-
-          transactionsCount.textContent = `${dvfData.totalTransactions} transactions analysées`;
-
-          // Afficher les résultats
-          resultsDiv.classList.remove('hidden');
-
-          // Animation d'apparition
-          resultsDiv.style.opacity = '0';
-          resultsDiv.style.transform = 'translateY(20px)';
-
-          setTimeout(() => {
-            resultsDiv.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            resultsDiv.style.opacity = '1';
-            resultsDiv.style.transform = 'translateY(0)';
-          }, 100);
-
-          console.log('Résultats d\'estimation affichés avec succès');
-
-          // Envoyer la notification à l'agence
-          try {
-            console.log('Envoi de la notification...');
-            const notificationResponse = await fetch('/api/estimation-requests', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                type: 'ia',
-                clientInfo: {
-                  nom: 'Utilisateur anonyme', // Vous pouvez ajouter un formulaire de contact
-                  email: 'contact@agencevoglans.fr', // Email de notification
-                  telephone: 'Non renseigné',
-                  ville: city,
-                  propertyType: propertyType,
-                  surface: parseInt(surface)
-                },
-                estimationData: {
-                  estimatedValue: estimate.estimatedValue,
-                  confidenceRange: range,
-                  marketTrend: trend
-                },
-                source: 'estimation_ia'
-              })
-            });
-
-            if (notificationResponse.ok) {
-              console.log('Notification envoyée avec succès');
-            } else {
-              console.warn('Erreur lors de l\'envoi de la notification');
-            }
-          } catch (notificationError) {
-            console.warn('Impossible d\'envoyer la notification:', notificationError);
-          }
-
+    // Indicateur de scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      const showScrollIndicator = () => {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          scrollIndicator.classList.add('visible');
         } else {
-          throw new Error(estimationData.error || 'Erreur lors du calcul');
+          scrollIndicator.classList.remove('visible');
         }
+      };
 
-      } catch (error) {
-        console.error('Erreur complète:', error);
-        alert(`Erreur lors du calcul de l'estimation: ${error.message}. Vérifiez la console pour plus de détails.`);
-      } finally {
-        // Réinitialiser le bouton
-        estimateBtn.innerHTML = `
-          <Calculator class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-          <span>Estimer maintenant</span>
-        `;
-        estimateBtn.disabled = false;
-        console.log('Bouton réinitialisé');
-      }
-    });
-
-    // Gestion du bouton "Demander une estimation complète"
-    requestFullBtn?.addEventListener('click', () => {
-      console.log('Bouton estimation complète cliqué');
-      // Scroll vers le formulaire traditionnel
-      const form = document.querySelector('form');
-      if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Pré-remplir les champs avec les données du formulaire rapide
-        const cityInput = document.getElementById('ville') as HTMLInputElement;
-        const typeInput = document.getElementById('property-type') as HTMLSelectElement;
-        const surfaceInput = document.getElementById('surface') as HTMLInputElement;
-
-        if (cityInput) cityInput.value = quickCity?.value || '';
-        if (typeInput) typeInput.value = quickType?.value || '';
-        if (surfaceInput) surfaceInput.value = quickSurface?.value || '';
-
-        console.log('Formulaire pré-rempli');
-      }
-    });
+      window.addEventListener('scroll', showScrollIndicator);
+      showScrollIndicator(); // Vérifier l'état initial
+    }
   });
 </script>

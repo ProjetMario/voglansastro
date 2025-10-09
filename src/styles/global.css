@@ -1,3 +1,5 @@
+/* ===== CHARTE GRAPHIQUE VERT LUXE - COHÉRENTE ET PROFESSIONNELLE ===== */
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
@@ -8,7 +10,7 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Playfair Display', Georgia, serif;
@@ -17,230 +19,178 @@
     letter-spacing: -0.005em;
     font-weight: 400;
     line-height: 1.6;
-    padding-top: 4rem; /* Compensation pour navigation fixe */
+    padding-top: 4rem;
+    background: linear-gradient(135deg, hsl(158 65% 99%) 0%, hsl(158 65% 97%) 100%);
   }
 
-  /* Titres avec Playfair Display - Look ultra-luxe */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-semibold;
+    @apply font-serif font-semibold text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
     letter-spacing: -0.025em;
     font-optical-sizing: auto;
   }
 
-  /* Éléments premium avec Playfair Display */
-  .luxury-text {
-    @apply font-serif font-medium;
-    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
-    letter-spacing: -0.015em;
-    font-optical-sizing: auto;
-  }
-
-  /* Navigation avec Playfair pour le logo */
-  .brand-text {
-    @apply font-serif font-bold;
-    letter-spacing: -0.015em;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    font-optical-sizing: auto;
-  }
-
-  /* Boutons premium avec Playfair */
-  .btn-luxury {
-    @apply font-serif font-medium;
-    letter-spacing: -0.01em;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  /* Textes importants avec Playfair */
-  .premium-text {
-    @apply font-serif font-medium;
-    letter-spacing: -0.005em;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  /* Navigation links avec Playfair */
-  .nav-link {
-    @apply text-white/90 hover:text-white transition-colors font-medium;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    letter-spacing: -0.005em;
-  }
-
-  /* Tous les paragraphes avec Playfair optimisé */
-  p {
+  .luxury-text, .premium-text, .brand-text, .nav-link, p, a, label, input, textarea, select {
     font-family: 'Playfair Display', Georgia, serif;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
     letter-spacing: -0.005em;
-    font-weight: 400;
   }
 
-  /* Boutons style Apple épuré */
-  .btn {
+  .btn-luxury, .btn, .btn-primary {
     font-family: 'Playfair Display', Georgia, serif !important;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
     letter-spacing: -0.005em;
     font-weight: 500;
-    border-radius: 12px;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(30, 95, 79, 0.15);
-  }
-
-  /* Labels et inputs avec Playfair */
-  label, input, textarea, select {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    letter-spacing: -0.003em;
-  }
-
-  /* Liens avec Playfair */
-  a {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    letter-spacing: -0.003em;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-secondary;
+    background-color: hsl(158 65% 96%);
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted rounded-full;
+    background-color: hsl(158 65% 55%);
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground;
+    background-color: hsl(158 65% 45%);
   }
 }
 
 @layer components {
-  /* Container */
   .container {
     @apply mx-auto max-w-container px-4 sm:px-6 lg:px-8;
   }
 
-  /* Section spacing */
   .section {
-    @apply py-10 sm:py-12 lg:py-16; /* plus compact */
+    @apply py-10 sm:py-12 lg:py-16;
   }
 
   .section-sm {
-    @apply py-6 sm:py-8; /* encore plus compact */
+    @apply py-6 sm:py-8;
   }
 
-  /* Contrastes de sections vert clair / foncé */
+  /* Surfaces avec vert luxe uniquement */
   .surface-contrast-light {
-    background: linear-gradient(180deg, hsl(var(--color-primary-light)) 0%, hsl(var(--color-background)) 100%);
+    background: linear-gradient(180deg, hsl(158 65% 96%) 0%, hsl(158 65% 98%) 100%);
   }
 
   .surface-contrast-dark {
-    background: linear-gradient(180deg, hsl(var(--color-primary)) 0%, hsl(var(--color-primary-dark)) 100%);
+    background: linear-gradient(180deg, hsl(158 65% 25%) 0%, hsl(158 65% 35%) 100%);
     color: white;
   }
 
-  /* Surfaces luxe pour éléments décoratifs */
   .surface-luxury {
-    background: linear-gradient(135deg, hsl(var(--color-primary-light)) 0%, hsl(var(--color-background)) 100%);
+    background: linear-gradient(135deg, hsl(158 65% 96%) 0%, hsl(158 65% 98%) 100%);
     backdrop-filter: blur(10px);
   }
 
   .surface-luxury-dark {
-    background: linear-gradient(135deg, hsl(var(--color-primary)) 0%, hsl(var(--color-primary-dark)) 100%);
+    background: linear-gradient(135deg, hsl(158 65% 30%) 0%, hsl(158 65% 25%) 100%);
     color: white;
   }
 
-  /* Texte avec gradient doré luxe */
+  /* Texte vert luxe */
   .text-luxury {
-    color: white;
+    color: hsl(158 65% 20%);
   }
 
-  /* Couleur dorée pour accents */
   .text-primary {
-    color: hsl(var(--color-primary));
+    color: hsl(158 65% 40%);
+  }
+
+  .text-primary-accent {
+    color: hsl(158 65% 80%);
   }
 
   .bg-primary {
-    background-color: hsl(var(--color-primary));
+    background-color: hsl(158 65% 40%);
+  }
+
+  .bg-primary-light {
+    background-color: hsl(158 65% 50%);
+  }
+
+  .bg-primary-dark {
+    background-color: hsl(158 65% 30%);
   }
 
   .border-primary {
-    border-color: hsl(var(--color-primary));
+    border-color: hsl(158 65% 40%);
   }
 
-  /* Séparateur luxe avec accent doré */
+  /* Séparateur vert luxe */
   .divider-luxury {
     height: 2px;
-    background: linear-gradient(90deg, transparent 0%, white 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, hsl(158 65% 40%) 50%, transparent 100%);
   }
 
-  /* Cartes luxe avec bordure subtile */
+  /* Cartes vert luxe */
   .card-luxury {
-    background: hsl(var(--color-background));
-    border: 1px solid hsl(var(--color-border));
+    background: hsl(158 65% 99%);
+    border: 1px solid hsl(158 65% 90%);
     border-radius: 1rem;
     transition: all 0.3s ease;
   }
 
   .card-luxury:hover {
-    border-color: hsl(var(--color-primary) / 0.3);
-    box-shadow: 0 10px 40px -10px hsl(var(--color-primary) / 0.15);
+    border-color: hsl(158 65% 40% / 0.4);
+    box-shadow: 0 10px 40px -10px hsl(158 65% 40% / 0.2);
   }
 
-  /* Boutons luxe */
+  /* Boutons vert luxe */
   .btn-luxury {
-    background: linear-gradient(135deg, hsl(var(--color-primary)) 0%, hsl(var(--color-primary-dark)) 100%);
+    background: linear-gradient(135deg, hsl(158 65% 40%) 0%, hsl(158 65% 30%) 100%);
     color: white;
     padding: 0.75rem 2rem;
     border-radius: 9999px;
     font-weight: 500;
     transition: all 0.3s ease;
     border: none;
-    box-shadow: 0 4px 14px 0 hsl(var(--color-primary) / 0.4);
+    box-shadow: 0 4px 14px 0 hsl(158 65% 40% / 0.4);
   }
 
   .btn-luxury:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px 0 hsl(var(--color-primary) / 0.5);
+    box-shadow: 0 6px 20px 0 hsl(158 65% 40% / 0.5);
   }
 
   .btn-luxury-outline {
     background: transparent;
-    color: white;
+    color: hsl(158 65% 40%);
     padding: 0.75rem 2rem;
     border-radius: 9999px;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 2px solid white;
+    border: 2px solid hsl(158 65% 40%);
   }
 
   .btn-luxury-outline:hover {
-    background: white;
-    color: hsl(var(--color-primary));
+    background: hsl(158 65% 40%);
+    color: white;
     transform: translateY(-2px);
   }
 
-  /* Motif luxe géométrique */
+  /* Motif vert luxe subtil */
   .luxury-pattern {
-    background-image: 
-      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(var(--color-primary) / 0.05) 10px, hsl(var(--color-primary) / 0.05) 20px),
-      repeating-linear-gradient(-45deg, transparent, transparent 10px, hsl(var(--color-primary) / 0.03) 10px, hsl(var(--color-primary) / 0.03) 20px);
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(158 65% 40% / 0.03) 10px, hsl(158 65% 40% / 0.03) 20px),
+      repeating-linear-gradient(-45deg, transparent, transparent 10px, hsl(158 65% 40% / 0.02) 10px, hsl(158 65% 40% / 0.02) 20px);
   }
 
-  /* Navigation */
+  /* Navigation vert luxe */
   .nav {
-    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
-    @apply bg-primary backdrop-blur-xl border-b border-primary-foreground/10;
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl;
+    background-color: hsl(158 65% 30% / 0.95);
+    border-bottom: 1px solid hsl(158 65% 40% / 0.2);
   }
 
   .nav-content {
@@ -252,17 +202,24 @@
   }
 
   .nav-link {
-    @apply text-white/90 hover:text-white transition-colors font-medium;
+    @apply transition-colors font-medium text-white;
+    text-shadow: 0 0 10px hsl(158 65% 30% / 0.5);
   }
 
-  /* Buttons */
+  .nav-link:hover {
+    color: white;
+    text-shadow: 0 0 10px hsl(158 65% 40% / 0.5);
+  }
+
+  /* Buttons vert luxe uniforme */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl;
-    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-medium transition-all duration-200;
+    @apply shadow-lg;
+    background-color: hsl(158 65% 40%);
+    color: white;
     font-family: 'Playfair Display', Georgia, serif !important;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
     letter-spacing: -0.005em;
@@ -272,63 +229,101 @@
   }
 
   .btn-primary:hover {
+    background-color: hsl(158 65% 30%);
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(30, 95, 79, 0.15);
+    box-shadow: 0 8px 25px hsl(158 65% 40% / 0.3), 0 20px 40px hsl(158 65% 40% / 0.15);
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border;
+    @apply border;
+    background-color: hsl(158 65% 96%);
+    color: hsl(158 65% 30%);
+    border-color: hsl(158 65% 85%);
+  }
+
+  .btn-secondary:hover {
+    background-color: hsl(158 65% 92%);
   }
 
   .btn-ghost {
-    @apply hover:bg-secondary/50 text-foreground;
+    color: hsl(158 65% 30%);
+  }
+
+  .btn-ghost:hover {
+    background-color: hsl(158 65% 96%);
   }
 
   .btn-lg {
     @apply px-8 py-4 text-base;
   }
 
-  /* Cards */
+  /* Cards vert luxe */
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-border p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white rounded-2xl shadow-sm p-6 transition-all duration-300;
+    border: 1px solid hsl(158 65% 90%);
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 30px hsl(158 65% 40% / 0.15);
   }
 
   .card-hover {
-    @apply hover:shadow-xl hover:-translate-y-1;
+    @apply hover:-translate-y-1;
   }
 
-  /* Badges */
+  .card-hover:hover {
+    box-shadow: 0 20px 40px hsl(158 65% 40% / 0.2);
+  }
+
+  /* Badges vert luxe */
   .badge {
     @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
   }
 
   .badge-primary {
-    @apply bg-primary/10 text-primary;
+    background-color: hsl(158 65% 95%);
+    color: hsl(158 65% 30%);
   }
 
   .badge-secondary {
-    @apply bg-secondary text-secondary-foreground;
+    background-color: hsl(158 65% 92%);
+    color: hsl(158 65% 25%);
   }
 
   .badge-success {
-    @apply bg-green-100 text-green-700;
+    background-color: hsl(158 65% 40%);
+    color: white;
   }
 
-  .badge-warning {
-    @apply bg-yellow-100 text-yellow-700;
-  }
-
-  .badge-error {
-    @apply bg-red-100 text-red-700;
-  }
-
-  /* Forms */
+  /* Forms vert luxe */
   .form-input {
-    @apply flex h-12 w-full rounded-2xl border border-border bg-input px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex h-12 w-full rounded-2xl px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    border: 1px solid hsl(158 65% 85%);
+    background-color: hsl(158 65% 98%);
+  }
+
+  .form-input::placeholder {
+    color: hsl(158 65% 60%);
+  }
+
+  .form-input:focus-visible {
+    ring-color: hsl(158 65% 40%);
+    border-color: hsl(158 65% 40%);
   }
 
   .form-textarea {
-    @apply flex min-h-[120px] w-full rounded-2xl border border-border bg-input px-4 py-3 text-sm ring-offset-background placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex min-h-[120px] w-full rounded-2xl px-4 py-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    border: 1px solid hsl(158 65% 85%);
+    background-color: hsl(158 65% 98%);
+  }
+
+  .form-textarea::placeholder {
+    color: hsl(158 65% 60%);
+  }
+
+  .form-textarea:focus-visible {
+    ring-color: hsl(158 65% 40%);
+    border-color: hsl(158 65% 40%);
   }
 
   .form-label {
@@ -355,6 +350,15 @@
     opacity: 0;
   }
 
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
   /* Grid utilities */
   .grid-auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -374,22 +378,24 @@
     text-wrap: pretty;
   }
 
-  /* Focus styles */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    ring-color: hsl(158 65% 40%);
   }
 
-  /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(158 65% 30%), hsl(158 65% 50%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* Glass effect */
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+    background-color: hsl(158 65% 98% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(158 65% 90% / 0.3);
   }
 
-  /* Aspect ratios */
   .aspect-video {
     aspect-ratio: 16 / 9;
   }
@@ -403,438 +409,8 @@
   }
 }
 
-/* ===== DESIGN SYSTEM APPLE-INSPIRED ===== */
+/* ===== ANIMATIONS ===== */
 
-:root {
-  /* Couleurs principales - Vert foncé sophistiqué de la photo */
-  --color-primary: 158 65% 25%;          /* Vert foncé sophistiqué #1E5F4F */
-  --color-primary-dark: 158 70% 20%;     /* Vert très foncé */
-  --color-primary-light: 158 30% 96%;    /* Vert très clair pour fonds */
-  --color-primary-accent: 158 60% 30%;   /* Vert accent pour highlights */
-  
-  /* Couleurs neutres - Ultra épuré minimaliste */
-  --color-background: 0 0% 100%;         /* Blanc pur ultra épuré */
-  --color-surface: 0 0% 99%;             /* Surface ultra claire */
-  --color-foreground: 0 0% 8%;           /* Noir profond minimaliste */
-  --color-muted: 0 0% 45%;               /* Gris neutre épuré */
-  --color-muted-foreground: 0 0% 25%;    /* Gris foncé épuré */
-  --color-muted-light: 0 0% 90%;         /* Gris très clair */
-  --color-border: 0 0% 92%;              /* Bordures ultra subtiles */
-  
-  /* Système d'ombres - Ultra épuré minimaliste */
-  --shadow-xs: 0 1px 2px rgba(30, 95, 79, 0.04);
-  --shadow-sm: 0 2px 6px rgba(30, 95, 79, 0.06);
-  --shadow-md: 0 4px 16px rgba(30, 95, 79, 0.08);
-  --shadow-lg: 0 8px 24px rgba(30, 95, 79, 0.10);
-  --shadow-xl: 0 16px 40px rgba(30, 95, 79, 0.12);
-  --shadow-2xl: 0 24px 56px rgba(30, 95, 79, 0.15);
-  
-  /* Rayons de bordure - Ultra épuré */
-  --radius-xs: 6px;
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --radius-2xl: 36px;
-  --radius-full: 9999px;
-  
-  /* Espacement - Ultra épuré généreux */
-  --space-xs: 0.5rem;     /* 8px */
-  --space-sm: 1rem;       /* 16px */
-  --space-md: 1.5rem;     /* 24px */
-  --space-lg: 2.5rem;     /* 40px */
-  --space-xl: 4rem;       /* 64px */
-  --space-2xl: 6rem;      /* 96px */
-  --space-3xl: 8rem;      /* 128px */
-  --space-4xl: 12rem;     /* 192px */
-  
-  /* Typographie - Playfair Display System */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Playfair Display', Georgia, serif;
-  
-  /* Tailles de police - Échelle modulaire */
-  --text-xs: 0.75rem;     /* 12px */
-  --text-sm: 0.875rem;    /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg: 1.125rem;    /* 18px */
-  --text-xl: 1.25rem;     /* 20px */
-  --text-2xl: 1.5rem;     /* 24px */
-  --text-3xl: 1.875rem;   /* 30px */
-  --text-4xl: 2.25rem;    /* 36px */
-  --text-5xl: 3rem;       /* 48px */
-  --text-6xl: 3.75rem;    /* 60px */
-  --text-7xl: 4.5rem;     /* 72px */
-  
-  /* Transitions - Courbes Apple */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  /* Durées d'animation */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 350ms;
-  --duration-slower: 500ms;
-}
-
-/* ===== BASE STYLES ===== */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: hsl(var(--color-foreground));
-  background: linear-gradient(
-    135deg,
-    hsl(var(--color-background)) 0%,
-    hsl(var(--color-surface)) 100%
-  );
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Fond avec texture subtile */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  background: 
-    radial-gradient(circle at 20% 20%, hsla(var(--color-primary), 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, hsla(var(--color-primary), 0.02) 0%, transparent 50%),
-    linear-gradient(135deg, transparent 0%, hsla(var(--color-primary), 0.01) 100%);
-  background-attachment: fixed;
-}
-
-/* ===== TYPOGRAPHY SYSTEM ===== */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: hsl(var(--color-foreground));
-  margin-bottom: var(--space-md);
-}
-
-h1 { font-size: var(--text-6xl); font-weight: 700; }
-h2 { font-size: var(--text-4xl); font-weight: 600; }
-h3 { font-size: var(--text-2xl); font-weight: 600; }
-h4 { font-size: var(--text-xl); font-weight: 500; }
-
-p {
-  margin-bottom: var(--space-md);
-  color: hsl(var(--color-muted));
-  line-height: 1.7;
-}
-
-.text-hero {
-  font-size: clamp(var(--text-5xl), 8vw, var(--text-7xl));
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-}
-
-.text-display {
-  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-}
-
-.text-subtitle {
-  font-size: var(--text-lg);
-  color: hsl(var(--color-muted));
-  line-height: 1.6;
-  max-width: 65ch;
-}
-
-/* ===== LAYOUT SYSTEM ===== */
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-.container-wide {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-.section {
-  /* Harmonisation avec Tailwind: espacement plus compact et cohérent */
-  padding: clamp(1.75rem, 5vh, 3.5rem) 0;
-  position: relative;
-}
-
-.section-hero {
-  padding: clamp(var(--space-4xl), 12vh, 8rem) 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-/* ===== COMPONENT SYSTEM ===== */
-
-/* Boutons - Système Apple */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-full);
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 500;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-out);
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl;
-  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-medium transition-all duration-200;
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
-  letter-spacing: -0.005em;
-  font-weight: 500;
-  border-radius: 12px;
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(30, 95, 79, 0.15);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: hsl(var(--color-primary));
-  border: 2px solid hsl(var(--color-primary));
-  box-shadow: var(--shadow-xs);
-}
-
-.btn-secondary:hover {
-  background: hsl(var(--color-primary-light));
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-ghost {
-  background: hsl(var(--color-surface));
-  color: hsl(var(--color-foreground));
-  border: 1px solid hsl(var(--color-border));
-}
-
-.btn-ghost:hover {
-  background: white;
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
-}
-
-/* Effet de brillance sur les boutons */
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transition: left var(--duration-slower) var(--ease-out);
-}
-
-.btn:hover::after {
-  left: 100%;
-}
-
-/* Cartes - Design Apple */
-.card {
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid hsl(var(--color-border));
-  transition: all var(--duration-normal) var(--ease-out);
-  position: relative;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%, 
-    transparent 50%
-  );
-  opacity: 0;
-  transition: opacity var(--duration-normal) var(--ease-out);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* Navigation - Style Apple */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid hsl(var(--color-border));
-  transition: all var(--duration-normal) var(--ease-out);
-}
-
-.nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-md) var(--space-lg);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: hsl(var(--color-foreground));
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-}
-
-.nav-link {
-  color: hsl(var(--color-muted));
-  text-decoration: none;
-  font-weight: 500;
-  padding: var(--space-sm) 0;
-  position: relative;
-  transition: color var(--duration-normal) var(--ease-out);
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: hsl(var(--color-foreground));
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: hsl(var(--color-primary));
-  transition: width var(--duration-normal) var(--ease-out);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* Icônes - Système cohérent */
-.icon {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.icon-lg {
-  width: 32px;
-  height: 32px;
-}
-
-.icon-xl {
-  width: 48px;
-  height: 48px;
-}
-
-.icon-circle {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(
-    135deg,
-    hsl(var(--color-primary)) 0%, 
-    hsl(var(--color-primary-dark)) 100%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: var(--shadow-md);
-  transition: all var(--duration-normal) var(--ease-out);
-}
-
-.icon-circle:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Grilles - Layout responsive */
-.grid {
-  display: grid;
-  gap: var(--space-xl);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Animations - Système Apple */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -866,70 +442,26 @@ p {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp var(--duration-slower) var(--ease-out) forwards;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.animate-fade-in-scale {
-  animation: fadeInScale var(--duration-slower) var(--ease-out) forwards;
-}
+/* ===== RESPONSIVE ET ACCESSIBILITÉ ===== */
 
-.animate-float {
-  animation: float 6s var(--ease-in-out) infinite;
-}
-
-/* Classes utilitaires */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all var(--duration-slower) var(--ease-out);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, 
-    hsl(var(--color-primary)) 0%, 
-    hsl(var(--color-primary-accent)) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  :root {
-    --space-4xl: 3rem;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
+  body {
+    padding-top: 3rem;
   }
 }
 
-/* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -941,15 +473,15 @@ p {
   }
 }
 
-/* Focus states */
+/* Focus states vert luxe */
 :focus-visible {
-  outline: 2px solid hsl(var(--color-primary));
+  outline: 2px solid hsl(158 65% 40%);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
 }
 
-/* Sélection de texte */
+/* Sélection de texte vert luxe */
 ::selection {
-  background: hsla(var(--color-primary), 0.2);
-  color: hsl(var(--color-foreground));
+  background: hsl(158 65% 40% / 0.2);
+  color: hsl(158 65% 10%);
 }

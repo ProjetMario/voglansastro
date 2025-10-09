@@ -1,93 +1,102 @@
 ---
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, Mail } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import Logo from './Logo.astro';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 surface-luxury-dark backdrop-blur-md border-b border-primary-gold/20">
+<nav class="nav">
   <!-- Motif géométrique subtil -->
   <div class="absolute inset-0 luxury-pattern opacity-5"></div>
   
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="flex items-center justify-between h-16">
-      <!-- Logo / Brand Luxe -->
+      <!-- Logo / Brand -->
       <a href="/" class="flex items-center gap-3 hover:opacity-90 transition-all duration-300 group">
         <div class="relative">
-          <Logo size="sm" className="text-primary-gold" />
-          <!-- Effet de brillance au hover -->
-          <div class="absolute inset-0 bg-primary-gold/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+          <Logo size="sm" className="text-white" />
+          <div class="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
         </div>
         <div class="flex flex-col">
           <span class="brand-text text-white text-sm font-medium tracking-wide leading-tight">L'AGENCE DE VOGLANS</span>
-          <span class="text-primary-accent text-xs leading-tight font-light">Votre Agence 100% Locale</span>
+          <span class="text-white/80 text-xs leading-tight font-light">Votre Agence 100% Locale</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu Luxe -->
+      <!-- Desktop Navigation Menu -->
       <div class="hidden md:flex items-center space-x-6">
-        <a href="/services" class="text-primary-accent hover:text-primary-gold text-sm font-light transition-colors duration-200 relative group">
+        <a href="/services" class="text-white hover:text-white/90 text-sm font-medium transition-colors duration-200 relative group">
           Services
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/a-propos" class="text-primary-accent hover:text-primary-gold text-sm font-light transition-colors duration-200 relative group">
+        <a href="/a-propos" class="text-white hover:text-white/90 text-sm font-medium transition-colors duration-200 relative group">
           À propos
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/estimation" class="text-primary-accent hover:text-primary-gold text-sm font-light transition-colors duration-200 relative group">
+        <a href="/estimation" class="text-white hover:text-white/90 text-sm font-medium transition-colors duration-200 relative group">
           Estimation
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/blog" class="text-primary-accent hover:text-primary-gold text-sm font-light transition-colors duration-200 relative group">
+        <a href="/blog" class="text-white hover:text-white/90 text-sm font-medium transition-colors duration-200 relative group">
           Blog
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <!-- CONTACTS INCITATIFS À L'ACTION -->
-        <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-bold hover:scale-105 transition-all duration-300 shadow-lg animate-pulse">
-          📞 {siteConfig.contact.phone}
+        
+        <!-- CTA Buttons -->
+        <a 
+          href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} 
+          class="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          <Phone className="w-4 h-4" />
+          <span>{siteConfig.contact.phone}</span>
         </a>
-        <a href={`mailto:${siteConfig.contact.email}`} class="bg-primary hover:bg-primary-light text-white px-4 py-2 rounded-full text-sm font-bold hover:scale-105 transition-all duration-300 shadow-lg">
-          ✉️ Email
+        <a 
+          href={`mailto:${siteConfig.contact.email}`} 
+          class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/20 hover:scale-105 transition-all duration-300"
+        >
+          <Mail className="w-4 h-4" />
+          <span>Email</span>
         </a>
       </div>
 
-      <!-- Contact et Mobile Menu -->
-      <div class="flex items-center gap-4">
-        <!-- Mobile menu button -->
-        <button class="md:hidden text-primary-gold p-2 surface-luxury rounded-lg border border-primary-gold/30" id="mobile-menu-button">
-          <Menu className="w-5 h-5" id="menu-icon" />
-          <X className="w-5 h-5 hidden" id="close-icon" />
-        </button>
-      </div>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" id="mobile-menu-button">
+        <Menu className="w-5 h-5" id="menu-icon" />
+        <X className="w-5 h-5 hidden" id="close-icon" />
+      </button>
     </div>
   </div>
 
-  <!-- Mobile Navigation Menu Luxe -->
-  <div class="md:hidden surface-luxury-dark border-t border-primary-gold/20 hidden" id="mobile-menu">
+  <!-- Mobile Navigation Menu -->
+  <div class="md:hidden border-t border-white/20 hidden" id="mobile-menu">
     <div class="px-6 py-4 space-y-3">
-      <a href="/services" class="block text-primary-accent hover:text-primary-gold py-2 text-sm font-light transition-colors">
+      <a href="/services" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
         Services
       </a>
-      <a href="/a-propos" class="block text-primary-accent hover:text-primary-gold py-2 text-sm font-light transition-colors">
+      <a href="/a-propos" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
         À propos
       </a>
-      <a href="/estimation" class="block text-primary-accent hover:text-primary-gold py-2 text-sm font-light transition-colors">
+      <a href="/estimation" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
         Estimation
       </a>
-      <a href="/blog" class="block text-primary-accent hover:text-primary-gold py-2 text-sm font-light transition-colors">
+      <a href="/blog" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
         Blog
       </a>
       
-      <!-- CONTACTS MOBILE INCITATIFS -->
-      <div class="pt-3 border-t border-primary-gold/20 space-y-2">
-        <a href="tel:0757830262" class="flex items-center gap-2 bg-red-600 text-white px-4 py-3 rounded-full text-sm font-bold hover:bg-red-700 transition-colors">
+      <!-- Mobile CTA Buttons -->
+      <div class="pt-3 border-t border-white/20 space-y-2">
+        <a 
+          href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} 
+          class="flex items-center justify-center gap-2 bg-white text-primary px-4 py-3 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+        >
           <Phone className="w-4 h-4" />
-          📞 07 57 83 02 62
+          <span>{siteConfig.contact.phone}</span>
         </a>
-        <a href="mailto:contact@agencevoglans.fr" class="flex items-center gap-2 bg-primary text-white px-4 py-3 rounded-full text-sm font-bold hover:bg-primary-light transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          ✉️ Email Rapide
+        <a 
+          href={`mailto:${siteConfig.contact.email}`} 
+          class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-all duration-300"
+        >
+          <Mail className="w-4 h-4" />
+          <span>Email</span>
         </a>
       </div>
     </div>

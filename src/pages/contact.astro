@@ -64,7 +64,7 @@ import { siteConfig } from '@/lib/utils';
 
         <!-- Titre principal -->
         <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none">
-          <span class="block bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent animate-gradient">
+          <span class="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent animate-gradient">
             CONTACTEZ-NOUS
           </span>
         </h1>
@@ -100,17 +100,17 @@ import { siteConfig } from '@/lib/utils';
   <section class="py-32 bg-white relative overflow-hidden">
     <!-- Éléments décoratifs -->
     <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-yellow-200/30 to-transparent rounded-full blur-2xl"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl"></div>
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-20">
-          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-yellow-200/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
             <MessageCircle className="w-4 h-4" />
             <span>Nos Coordonnées</span>
           </div>
           <h2 class="text-5xl md:text-7xl font-black mb-8">
-            Comment nous <span class="bg-gradient-to-r from-primary via-green-400 to-yellow-400 bg-clip-text text-transparent">contacter ?</span>
+            Comment nous <span class="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">contacter ?</span>
           </h2>
           <p class="text-xl text-muted max-w-3xl mx-auto">
             Plusieurs moyens pour nous joindre selon vos préférences
@@ -120,9 +120,9 @@ import { siteConfig } from '@/lib/utils';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <!-- Téléphone -->
           <div class="group relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-green-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary/80 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
             <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-primary/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary to-green-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                 <Phone className="w-10 h-10 text-white" />
               </div>
               <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">Téléphone</h3>
@@ -137,16 +137,16 @@ import { siteConfig } from '@/lib/utils';
 
           <!-- Email -->
           <div class="group relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-yellow-400/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/80 to-primary/60 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-primary/10">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary/80 to-primary/60 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                 <Mail className="w-10 h-10 text-white" />
               </div>
-              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-yellow-400 transition-colors duration-300">Email</h3>
+              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">Email</h3>
               <p class="text-muted leading-relaxed text-center mb-6">
                 Réponse garantie sous 24h ouvrées
               </p>
-              <a href={`mailto:${siteConfig.contact.email}`} class="text-yellow-400 hover:text-yellow-600 font-bold text-xl transition-colors duration-300 text-center block">
+              <a href={`mailto:${siteConfig.contact.email}`} class="text-primary hover:text-primary/80 font-bold text-xl transition-colors duration-300 text-center block">
                 {siteConfig.contact.email}
               </a>
             </div>
@@ -154,16 +154,16 @@ import { siteConfig } from '@/lib/utils';
 
           <!-- Adresse -->
           <div class="group relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-green-400/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/80 to-primary/60 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-primary/10">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary/80 to-primary/60 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                 <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-green-400 transition-colors duration-300">Adresse</h3>
+              <h3 class="text-2xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">Adresse</h3>
               <p class="text-muted leading-relaxed text-center mb-6">
                 Visite sur rendez-vous uniquement
               </p>
-              <p class="text-green-400 font-bold text-lg text-center">
+              <p class="text-primary font-bold text-lg text-center">
                 93 chemin de la Combe<br>
                 73420 Voglans
               </p>
@@ -223,7 +223,7 @@ import { siteConfig } from '@/lib/utils';
                 </label>
               </div>
 
-              <button type="submit" class="w-full bg-gradient-to-r from-primary to-green-400 text-white py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
+              <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary/80 text-white py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
                 <Send className="w-5 h-5" />
                 <span>Envoyer ma demande</span>
               </button>
@@ -256,13 +256,15 @@ import { siteConfig } from '@/lib/utils';
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-yellow-200/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
+        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
           <Clock className="w-4 h-4" />
           <span>Horaires d'ouverture</span>
         </div>
 
         <h2 class="text-4xl md:text-6xl font-black mb-12">
-          <span class="bg-gradient-to-r from-primary via-green-400 to-yellow-400 bg-clip-text text-transparent">Disponibilité</span>
+          <span class="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+            Disponibilité
+          </span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -303,7 +305,7 @@ import { siteConfig } from '@/lib/utils';
   </section>
 
   <!-- CTA Final -->
-  <section class="py-32 bg-gradient-to-br from-primary via-green-400 to-yellow-400 relative overflow-hidden">
+  <section class="py-32 bg-gradient-to-r from-primary via-primary/80 to-primary/60 relative overflow-hidden">
     <!-- Animations de fond -->
     <div class="absolute inset-0">
       <div class="absolute top-0 left-0 w-full h-full bg-black/20"></div>
@@ -315,7 +317,7 @@ import { siteConfig } from '@/lib/utils';
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-5xl md:text-7xl font-black mb-8 leading-none text-white">
           Prêt à démarrer<br>
-          <span class="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
             votre projet ?
           </span>
         </h2>
@@ -338,3 +340,305 @@ import { siteConfig } from '@/lib/utils';
     </div>
   </section>
 </Base>
+
+<style>
+  /* Thème sombre/clair toggle */
+  .theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 40;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Mode sombre */
+  .dark {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+
+  .dark .bg-white {
+    background-color: #1e293b;
+  }
+
+  .dark .text-muted {
+    color: #94a3b8;
+  }
+
+  .dark .border-primary\\/20 {
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+
+  .dark .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
+  }
+
+  /* Animations de scroll sophistiquées */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Indicateur de scroll avec storytelling */
+  .scroll-indicator {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-indicator.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .scroll-progress {
+    width: 2px;
+    height: 40px;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #10b981, #059669);
+    transition: height 0.3s ease;
+  }
+
+  .scroll-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #10b981;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Responsive Design Mobile-First amélioré */
+  @media (max-width: 768px) {
+    .text-5xl { font-size: 2.5rem; line-height: 1.1; }
+    .text-6xl { font-size: 3rem; line-height: 1.1; }
+    .text-7xl { font-size: 3.5rem; line-height: 1.1; }
+    .text-8xl { font-size: 4rem; line-height: 1.1; }
+
+    .py-32 { padding-top: 6rem; padding-bottom: 6rem; }
+    .py-24 { padding-top: 4rem; padding-bottom: 4rem; }
+
+    .gap-8 { gap: 1.5rem; }
+    .gap-12 { gap: 2rem; }
+
+    .grid-cols-3 { grid-template-columns: 1fr; }
+
+    .form-input {
+      font-size: 16px;
+      padding: 1rem;
+    }
+
+    .form-textarea {
+      font-size: 16px;
+      padding: 1rem;
+      min-height: 120px;
+    }
+
+    .contact-card {
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-card:active {
+      transform: scale(0.98);
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Animations avancées pour les cartes de contact */
+  .contact-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .contact-card:hover::before {
+    left: 100%;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 40px rgba(16, 185, 129, 0.15),
+      0 10px 25px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(16, 185, 129, 0.1);
+  }
+
+  /* Effets de glassmorphism avancés */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Gradients sophistiqués */
+  .gradient-mesh {
+    background:
+      radial-gradient(at 40% 20%, hsla(158, 65%, 40%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(158, 65%, 50%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(158, 65%, 30%, 0.25) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsla(158, 65%, 45%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(158, 65%, 35%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(158, 65%, 40%, 0.1) 0px, transparent 50%);
+  }
+
+  /* Animations de texte sophistiquées */
+  .text-gradient-animate {
+    background: linear-gradient(-45deg, #10b981, #059669, #047857, #065f46);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
+<script>
+  // Toggle thème sombre/clair
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.querySelector('.sun-icon');
+  const moonIcon = document.querySelector('.moon-icon');
+
+  if (themeToggle) {
+    // Vérifier le thème sauvegardé
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+
+    if (savedTheme === 'dark') {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+      if (isDark) {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+      } else {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+      }
+    });
+  }
+
+  // Animations de scroll sophistiquées
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Observer tous les éléments avec la classe animate-on-scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Indicateur de scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      const showScrollIndicator = () => {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          scrollIndicator.classList.add('visible');
+        } else {
+          scrollIndicator.classList.remove('visible');
+        }
+      };
+
+      window.addEventListener('scroll', showScrollIndicator);
+      showScrollIndicator(); // Vérifier l'état initial
+    }
+  });
+</script>
