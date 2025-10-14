@@ -100,10 +100,29 @@ const organizationSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   </Fragment>
 
-  <!-- Hero Section - Large asymétrique -->
+  <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-700">
+    <!-- Fond animé avec particules -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full animate-spin opacity-20" style="animation-duration: 20s;"></div>
+    </div>
+
+    <!-- Grille de fond géométrique -->
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" class="absolute inset-0">
+        <defs>
+          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+
     <div class="container mx-auto px-4 relative z-10 text-center">
-      <div class="max-w-6xl mx-auto ml-auto mr-8">
+      <div class="max-w-5xl mx-auto">
         <!-- Badge flottant -->
         <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-xl border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl mb-12 animate-float">
           <Sparkles className="w-4 h-4" />
@@ -123,7 +142,7 @@ const organizationSchema = {
         </p>
 
         <!-- CTA -->
-        <div class="flex flex-col sm:flex-row gap-6 justify-start items-start">
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a href="/estimation" class="group relative bg-white text-emerald-400 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
             <Calculator className="w-5 h-5 group-hover:animate-bounce" />
             <span>Estimation Gratuite</span>
@@ -163,10 +182,8 @@ const organizationSchema = {
       </div>
     </div>
 
-  <!-- Stats Section - Medium asymétrique -->
-  <section class="relative py-32 overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-5xl mx-auto ml-12 mr-auto">
+      <div class="max-w-7xl mx-auto">
         <!-- Titre de section avec effet moderne -->
         <div class="text-center mb-20">
           <h2 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-white via-emerald-200 to-white bg-clip-text text-transparent">
@@ -300,10 +317,10 @@ const organizationSchema = {
     </div>
   </section>
 
-  <!-- Services Section - Small asymétrique -->
+  <!-- Services Section -->
   <section class="py-32 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-700 relative overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-4xl mx-auto ml-auto mr-16">
+      <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20">
           <div class="inline-flex items-center gap-3 bg-emerald-400/10 backdrop-blur-sm border border-emerald-400/20 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
             <Award className="w-4 h-4" />
@@ -314,95 +331,95 @@ const organizationSchema = {
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-stretch">
           <!-- Vendre -->
-          <div class="group relative">
+          <div class="group relative h-full">
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10 h-full flex flex-col">
+              <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
                 <Home className="w-10 h-10 text-white" />
               </div>
               <h3 class="text-3xl font-bold mb-6 text-center group-hover:text-emerald-400 transition-colors duration-300">Vendre</h3>
-              <p class="text-muted leading-relaxed text-center mb-8">
+              <p class="text-muted leading-relaxed text-center mb-8 flex-grow">
                 Accompagnement d'exception avec estimation gratuite et marketing premium pour votre bien immobilier.
               </p>
-              <div class="space-y-3 mb-8">
+              <div class="space-y-3 mb-8 flex-grow">
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Estimation précise sous 24h</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Visite virtuelle 360°</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Marketing digital avancé</span>
                 </div>
               </div>
-              <a href="/vendre" class="w-full bg-gradient-to-r from-emerald-400 to-emerald-600 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block">
+              <a href="/vendre" class="w-full bg-gradient-to-r from-emerald-400 to-emerald-600 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block mt-auto">
                 Découvrir nos méthodes →
               </a>
             </div>
           </div>
 
           <!-- Acheter -->
-          <div class="group relative">
+          <div class="group relative h-full">
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10 h-full flex flex-col">
+              <div class="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
                 <Building className="w-10 h-10 text-white" />
               </div>
               <h3 class="text-3xl font-bold mb-6 text-center group-hover:text-emerald-400 transition-colors duration-300">Acheter</h3>
-              <p class="text-muted leading-relaxed text-center mb-8">
+              <p class="text-muted leading-relaxed text-center mb-8 flex-grow">
                 Recherche sur-mesure et accompagnement expert pour trouver le bien idéal en Savoie.
               </p>
-              <div class="space-y-3 mb-8">
+              <div class="space-y-3 mb-8 flex-grow">
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Recherche personnalisée</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Visites virtuelles</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Accompagnement juridique</span>
                 </div>
               </div>
-              <a href="/acheter" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block">
+              <a href="/acheter" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block mt-auto">
                 Trouver mon bien →
               </a>
             </div>
           </div>
 
           <!-- Estimer -->
-          <div class="group relative">
+          <div class="group relative h-full">
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10">
-              <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-emerald-400/10 h-full flex flex-col">
+              <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
                 <Calculator className="w-10 h-10 text-white" />
               </div>
               <h3 class="text-3xl font-bold mb-6 text-center group-hover:text-emerald-400 transition-colors duration-300">Estimer</h3>
-              <p class="text-muted leading-relaxed text-center mb-8">
+              <p class="text-muted leading-relaxed text-center mb-8 flex-grow">
                 Estimation gratuite et précise de votre bien immobilier en moins de 24 heures.
               </p>
-              <div class="space-y-3 mb-8">
+              <div class="space-y-3 mb-8 flex-grow">
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Analyse de marché locale</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Rapport détaillé gratuit</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span class="text-sm">Expertise personnalisée</span>
                 </div>
               </div>
-              <a href="/estimation" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block">
+              <a href="/estimation" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-2xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 text-center block mt-auto">
                 Estimer gratuitement →
               </a>
             </div>
