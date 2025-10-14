@@ -100,29 +100,10 @@ const organizationSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   </Fragment>
 
-  <!-- Hero Section -->
+  <!-- Hero Section - Large asymétrique -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-700">
-    <!-- Fond animé avec particules -->
-    <div class="absolute inset-0">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full animate-spin opacity-20" style="animation-duration: 20s;"></div>
-    </div>
-
-    <!-- Grille de fond géométrique -->
-    <div class="absolute inset-0 opacity-10">
-      <svg width="100%" height="100%" class="absolute inset-0">
-        <defs>
-          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    </div>
-
     <div class="container mx-auto px-4 relative z-10 text-center">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto ml-auto mr-8">
         <!-- Badge flottant -->
         <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-xl border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl mb-12 animate-float">
           <Sparkles className="w-4 h-4" />
@@ -142,7 +123,7 @@ const organizationSchema = {
         </p>
 
         <!-- CTA -->
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div class="flex flex-col sm:flex-row gap-6 justify-start items-start">
           <a href="/estimation" class="group relative bg-white text-emerald-400 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
             <Calculator className="w-5 h-5 group-hover:animate-bounce" />
             <span>Estimation Gratuite</span>
@@ -182,8 +163,10 @@ const organizationSchema = {
       </div>
     </div>
 
+  <!-- Stats Section - Medium asymétrique -->
+  <section class="relative py-32 overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-7xl mx-auto">
+      <div class="max-w-5xl mx-auto ml-12 mr-auto">
         <!-- Titre de section avec effet moderne -->
         <div class="text-center mb-20">
           <h2 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-white via-emerald-200 to-white bg-clip-text text-transparent">
@@ -317,10 +300,10 @@ const organizationSchema = {
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services Section - Small asymétrique -->
   <section class="py-32 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-700 relative overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-7xl mx-auto">
+      <div class="max-w-4xl mx-auto ml-auto mr-16">
         <div class="text-center mb-20">
           <div class="inline-flex items-center gap-3 bg-emerald-400/10 backdrop-blur-sm border border-emerald-400/20 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8">
             <Award className="w-4 h-4" />
