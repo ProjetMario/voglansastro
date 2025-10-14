@@ -75,672 +75,368 @@ import {
     </div>
   </section>
 
-  <!-- Stats Section - Design Ultra-Moderne -->
-  <section class="py-20 bg-white relative overflow-hidden">
-    <!-- Fond décoratif subtil -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full -translate-x-32 -translate-y-32"></div>
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-32 translate-y-32"></div>
+
+  <!-- Services Principaux - Design Épuré -->
+  <section class="py-20 bg-white relative">
+    <!-- Fond subtil et harmonieux -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-white"></div>
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <!-- Stat 1 -->
-          <div class="text-center group relative">
-            <div class="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <TrendingUp className="w-10 h-10 text-primary relative z-10" />
+        <!-- Header épuré et élégant -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            Services Essentiels
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light mb-4 text-slate-900">
+            Nos <span class="font-semibold text-primary">Services</span>
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Expertise complète pour tous vos projets immobiliers
+          </p>
+        </div>
+
+        <!-- Grille harmonieuse de services -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Service Vente -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-slate-900">Vente Immobilière</h3>
+                <p class="text-sm text-slate-600">Stratégie optimisée pour tous types de biens</p>
+              </div>
             </div>
-            <div class="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">Vendu au juste prix</div>
-            <div class="text-sm text-muted font-medium">Prix d'estimation respecté</div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Estimation sous 48h</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Shooting professionnel</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Accompagnement complet</span>
+              </div>
+            </div>
+            <a href="/vendre" class="text-primary font-medium text-sm hover:underline">
+              Découvrir nos ventes →
+            </a>
           </div>
 
-          <!-- Stat 2 -->
-          <div class="text-center group relative">
-            <div class="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Clock className="w-10 h-10 text-primary relative z-10" />
+          <!-- Service Achat -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-slate-900">Recherche d'Achat</h3>
+                <p class="text-sm text-slate-600">Accompagnement personnalisé</p>
+              </div>
             </div>
-            <div class="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">60j</div>
-            <div class="text-sm text-muted font-medium">Délai de vente moyen</div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Ciblage sur mesure</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Visites organisées</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Négociation experte</span>
+              </div>
+            </div>
+            <a href="/acheter" class="text-primary font-medium text-sm hover:underline">
+              Découvrir nos achats →
+            </a>
           </div>
 
-          <!-- Stat 3 -->
-          <div class="text-center group relative">
-            <div class="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Users className="w-10 h-10 text-primary relative z-10" />
+          <!-- Service Estimation -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Calculator className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-slate-900">Estimation</h3>
+                <p class="text-sm text-slate-600">Évaluation professionnelle précise</p>
+              </div>
             </div>
-            <div class="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">98%</div>
-            <div class="text-sm text-muted font-medium">Clients satisfaits</div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Visite approfondie</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Analyse marché local</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Rapport détaillé</span>
+              </div>
+            </div>
+            <a href="/estimation" class="text-primary font-medium text-sm hover:underline">
+              Obtenir une estimation →
+            </a>
           </div>
 
-          <!-- Stat 4 -->
-          <div class="text-center group relative">
-            <div class="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Shield className="w-10 h-10 text-primary relative z-10" />
+          <!-- Service Location -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Building className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-slate-900">Mise en Location</h3>
+                <p class="text-sm text-slate-600">Service complet de gestion locative</p>
+              </div>
             </div>
-            <div class="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">27</div>
-            <div class="text-sm text-muted font-medium">Communes d'intervention</div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Locataires qualifiés</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">Rédaction contrats</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span class="text-sm">États des lieux</span>
+              </div>
+            </div>
+            <a href="/contact" class="text-primary font-medium text-sm hover:underline">
+              Nous contacter →
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Principaux - Design Ultra-Moderne -->
-  <section class="py-24 bg-gradient-to-br from-primary/5 to-white relative overflow-hidden">
-    <!-- Fond décoratif -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-48 -translate-y-48"></div>
+  <!-- Pourquoi Nous Choisir - Design Révolutionnaire -->
+  <section class="relative py-32 bg-gradient-to-br from-slate-50 via-white to-primary/5 overflow-hidden">
+    <!-- Fond révolutionnaire avec particules animées -->
+    <div class="absolute inset-0">
+      <!-- Gradient de fond sophistiqué -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
+
+      <!-- Cercles flottants animés -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-primary/20 to-transparent rounded-full animate-pulse opacity-30"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-primary/15 to-transparent rounded-full animate-pulse opacity-40" style="animation-delay: 2s;"></div>
+
+      <!-- Lignes géométriques subtiles -->
+      <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent opacity-30"></div>
+      <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-30"></div>
+    </div>
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-7xl mx-auto">
-        <!-- Header avec glassmorphism -->
-        <div class="text-center mb-20">
-          <div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl shadow-primary/10 mb-8">
-            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-            Services Premium
-          </div>
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
-            Nos <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Services Premium</span>
-          </h2>
-          <p class="text-xl text-muted max-w-3xl mx-auto">
-            Une gamme complète de services immobiliers pour répondre à tous vos projets en Savoie
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Vente Immobilière -->
-          <div class="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-16 -translate-y-16"></div>
-
-            <div class="relative z-10 flex items-start gap-6 mb-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
-                <Home className="w-8 h-8 text-primary" />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Vente Immobilière</h3>
-                <p class="text-muted leading-relaxed mb-4">
-                  Stratégie de vente optimisée pour tous types de biens : maisons, appartements,
-                  terrains, garages, propriétés de prestige.
-                </p>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Estimation précise sous 48h</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Shooting professionnel HD</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Diffusion multi-canal</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Accompagnement juridique complet</span>
-                  </div>
-                </div>
-                <a href="/vendre" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-3 rounded-xl font-semibold mt-6 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
-                  <span>Découvrir nos ventes</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
+        <!-- Header révolutionnaire -->
+        <div class="text-center mb-24">
+          <!-- Badge magnétique -->
+          <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-xl border border-primary/20 text-primary px-8 py-4 rounded-full text-sm font-semibold shadow-2xl shadow-primary/10 mb-12 hover:scale-105 transition-all duration-500 group">
+            <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover:rotate-180 transition-transform duration-700">
+              <Award className="w-4 h-4 text-primary" />
             </div>
+            <span class="tracking-wide">Excellence Immobilière</span>
           </div>
 
-          <!-- Achat Immobilière -->
-          <div class="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-16 -translate-y-16"></div>
-
-            <div class="relative z-10 flex items-start gap-6 mb-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
-                <Target className="w-8 h-8 text-primary" />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Recherche d'Achat</h3>
-                <p class="text-muted leading-relaxed mb-4">
-                  Accompagnement personnalisé pour trouver le bien idéal dans toute la Savoie.
-                  Recherche proactive et visites organisées.
-                </p>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Ciblage précis selon vos critères</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Visites organisées et commentées</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Négociation experte</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Accompagnement jusqu'à la signature</span>
-                  </div>
-                </div>
-                <a href="/acheter" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-3 rounded-xl font-semibold mt-6 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
-                  <span>Découvrir nos achats</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Estimation -->
-          <div class="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-16 -translate-y-16"></div>
-
-            <div class="relative z-10 flex items-start gap-6 mb-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
-                <Calculator className="w-8 h-8 text-primary" />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Estimation Professionnelle</h3>
-                <p class="text-muted leading-relaxed mb-4">
-                  Évaluation précise et détaillée de votre bien immobilier.
-                  Rapport complet avec analyse comparative de marché.
-                </p>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Visite technique approfondie</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Analyse du marché local</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Rapport détaillé sous 48h</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Conseils de valorisation</span>
-                  </div>
-                </div>
-                <a href="/estimation" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-3 rounded-xl font-semibold mt-6 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
-                  <span>Obtenir une estimation</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mise en Location -->
-          <div class="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-16 -translate-y-16"></div>
-
-            <div class="relative z-10 flex items-start gap-6 mb-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
-                <Building className="w-8 h-8 text-primary" />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Mise en Location</h3>
-                <p class="text-muted leading-relaxed mb-4">
-                  Service complet de mise en location de vos biens immobiliers :
-                  recherche de locataires, rédaction des contrats, états des lieux.
-                </p>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Recherche de locataires qualifiés</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Rédaction des baux et contrats</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">États des lieux d'entrée/sortie</span>
-                  </div>
-                  <div class="flex items-center gap-3 group/item">
-                    <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    <span class="text-sm font-medium">Conseils juridiques et fiscaux</span>
-                  </div>
-                </div>
-                <a href="/contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-3 rounded-xl font-semibold mt-6 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
-                  <span>Nous contacter</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Spécialisés - Design Ultra-Moderne -->
-  <section class="py-24 bg-white relative overflow-hidden">
-    <!-- Fond décoratif subtil -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
-    <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full -translate-x-32 -translate-y-32"></div>
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-32 translate-y-32"></div>
-
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-7xl mx-auto">
-        <!-- Header avec glassmorphism -->
-        <div class="text-center mb-20">
-          <div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl shadow-primary/10 mb-8">
-            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-            Services d'Exception
-          </div>
-          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
-            Services <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Spécialisés</span>
-          </h2>
-          <p class="text-xl text-muted max-w-3xl mx-auto">
-            Expertise pointue pour les projets immobiliers complexes et les biens d'exception
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Propriétés de Prestige -->
-          <div class="group relative bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-3xl hover:shadow-primary/20 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-primary/20 to-transparent rounded-full translate-x-12 -translate-y-12"></div>
-
-            <div class="relative z-10 text-center mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                <Crown className="w-10 h-10 text-primary" />
-              </div>
-              <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Propriétés de Prestige</h3>
-              <p class="text-muted leading-relaxed mb-6">
-                Accompagnement VIP pour les biens d'exception : châteaux, villas de luxe,
-                propriétés avec vue panoramique.
-              </p>
-              <div class="space-y-4 mb-8">
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Réseau international</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Marketing haut de gamme</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Confidentialité garantie</span>
-                </div>
-              </div>
-              <a href="/proprietes-prestige" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group/btn relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                <span class="relative z-10">Découvrir</span>
-                <ArrowRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 transition-transform duration-300" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Fonds de Commerce -->
-          <div class="group relative bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-3xl hover:shadow-primary/20 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-primary/20 to-transparent rounded-full translate-x-12 -translate-y-12"></div>
-
-            <div class="relative z-10 text-center mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                <Briefcase className="w-10 h-10 text-primary" />
-              </div>
-              <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Fonds de Commerce</h3>
-              <p class="text-muted leading-relaxed mb-6">
-                Cession et acquisition de fonds de commerce : boutiques, restaurants,
-                bureaux, locaux commerciaux.
-              </p>
-              <div class="space-y-4 mb-8">
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Évaluation financière</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Analyse des bilans</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Accompagnement juridique</span>
-                </div>
-              </div>
-              <a href="/fonds-commerce" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group/btn relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                <span class="relative z-10">Découvrir</span>
-                <ArrowRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 transition-transform duration-300" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Immeubles de Rapport -->
-          <div class="group relative bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-3xl hover:shadow-primary/20 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-            <!-- Fond décoratif -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-primary/20 to-transparent rounded-full translate-x-12 -translate-y-12"></div>
-
-            <div class="relative z-10 text-center mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                <Building className="w-10 h-10 text-primary" />
-              </div>
-              <h3 class="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Immeubles de Rapport</h3>
-              <p class="text-muted leading-relaxed mb-6">
-                Investissement locatif optimisé : analyse de rentabilité,
-                gestion des locataires, optimisation fiscale.
-              </p>
-              <div class="space-y-4 mb-8">
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Étude de rentabilité</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Gestion locative complète</span>
-                </div>
-                <div class="flex items-center gap-3 group/item justify-center">
-                  <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center group-hover/item:bg-primary group-hover/item:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span class="text-sm font-medium">Optimisation fiscale</span>
-                </div>
-              </div>
-              <a href="/immeubles-rapport" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group/btn relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                <span class="relative z-10">Découvrir</span>
-                <ArrowRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 transition-transform duration-300" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pourquoi Nous Choisir -->
-  <section class="py-24 bg-gradient-to-br from-primary/5 to-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-          <h2 class="text-4xl md:text-5xl font-light mb-8 text-foreground">
-            Pourquoi <span class="font-semibold text-primary">L'Agence de Voglans</span> ?
-          </h2>
-          <p class="text-xl text-muted leading-relaxed mb-8">
-            Depuis 2025, nous accompagnons nos clients dans tous leurs projets immobiliers
-            avec une expertise locale inégalée et un service personnalisé d'exception.
-          </p>
-
-          <!-- Tableau Particuliers & Pro - Design Ultra-Moderne -->
-          <div class="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
-            <!-- Fond décoratif subtil -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
-            <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/10 to-transparent rounded-full -translate-y-48 translate-x-48"></div>
-
-            <!-- Header avec glassmorphism -->
-            <div class="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-white p-12 text-center">
-              <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-              <div class="relative">
-                <h3 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Particuliers & Professionnels</h3>
-                <p class="text-xl opacity-90 font-light">Expertise sur mesure pour tous vos projets</p>
-              </div>
-            </div>
-
-            <div class="relative grid grid-cols-1 lg:grid-cols-2">
-              <!-- Colonne Particuliers -->
-              <div class="group p-10 hover:bg-gradient-to-br hover:from-primary/5 hover:to-transparent transition-all duration-700">
-                <div class="relative">
-                  <!-- Icône avec effet glass -->
-                  <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-primary/10 group-hover:scale-110 transition-transform duration-500">
-                    <Users className="w-8 h-8 text-primary" />
-                  </div>
-
-                  <h4 class="text-3xl font-bold text-foreground mb-8 tracking-tight">Particuliers</h4>
-
-                  <!-- Types de biens avec glassmorphism -->
-                  <div class="mb-10 p-6 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-                    <p class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
-                      <span class="w-2 h-2 bg-primary rounded-full"></span>
-                      TYPES DE BIENS
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Maisons</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Appartements</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Villas</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Terrains</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Résidences secondaires</span>
-                    </div>
-                  </div>
-
-                  <div class="space-y-6">
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Vente de votre résidence principale</p>
-                        <p class="text-sm text-muted leading-relaxed">Accompagnement complet pour vendre votre maison ou appartement</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Achat de votre futur logement</p>
-                        <p class="text-sm text-muted leading-relaxed">Recherche personnalisée et négociation experte</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Estimation précise et gratuite</p>
-                        <p class="text-sm text-muted leading-relaxed">Évaluation professionnelle sous 48h</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Conseil en investissement locatif</p>
-                        <p class="text-sm text-muted leading-relaxed">Optimisation fiscale et rendement</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Colonne Professionnels -->
-              <div class="group p-10 hover:bg-gradient-to-br hover:from-primary/5 hover:to-transparent transition-all duration-700 border-l border-primary/10">
-                <div class="relative">
-                  <!-- Icône avec effet glass -->
-                  <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-primary/10 group-hover:scale-110 transition-transform duration-500">
-                    <Building className="w-8 h-8 text-primary" />
-                  </div>
-
-                  <h4 class="text-3xl font-bold text-foreground mb-8 tracking-tight">Professionnels</h4>
-
-                  <!-- Types de biens avec glassmorphism -->
-                  <div class="mb-10 p-6 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-                    <p class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
-                      <span class="w-2 h-2 bg-primary rounded-full"></span>
-                      TYPES DE BIENS
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Locaux commerciaux</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Bureaux</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Entrepôts</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Fonds de commerce</span>
-                      <span class="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300">Immeubles de rapport</span>
-                    </div>
-                  </div>
-
-                  <div class="space-y-6">
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Cession de fonds de commerce</p>
-                        <p class="text-sm text-muted leading-relaxed">Évaluation et transmission d'entreprise</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Investissement immobilier professionnel</p>
-                        <p class="text-sm text-muted leading-relaxed">Immeubles de rapport et locaux commerciaux</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Propriétés de prestige</p>
-                        <p class="text-sm text-muted leading-relaxed">Châteaux, villas d'exception, domaine</p>
-                      </div>
-                    </div>
-
-                    <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300">
-                      <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p class="font-bold text-foreground mb-1">Mise en location professionnelle</p>
-                        <p class="text-sm text-muted leading-relaxed">Gestion locative et baux commerciaux</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Footer avec glassmorphism -->
-            <div class="relative bg-gradient-to-br from-primary/10 to-primary/5 p-10 text-center border-t border-primary/10">
-              <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
-              <div class="relative">
-                <p class="text-muted mb-6 text-lg font-medium">Expertise complète pour tous vos projets immobiliers</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="/contact" class="group/btn bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-2xl font-bold hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center justify-center gap-3 hover:scale-105">
-                    <Phone className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
-                    Nous contacter
-                  </a>
-                  <a href="/estimation" class="group/btn border-2 border-primary text-primary px-8 py-4 rounded-2xl font-bold hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-3 hover:scale-105">
-                    <Calculator className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
-                    Estimation gratuite
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-24 bg-gradient-to-br from-primary to-primary/90 text-white">
-    <div class="container mx-auto px-4 text-center">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-light mb-6">
-          Prêt à concrétiser votre projet immobilier ?
-        </h2>
-        <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-          Que vous souhaitiez vendre, acheter ou investir, notre équipe d'experts
-          vous accompagne avec professionnalisme et passion.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="/estimation" class="bg-white text-primary px-10 py-5 rounded-xl text-lg font-semibold hover:bg-white/90 transition-all duration-300 inline-flex items-center justify-center gap-3">
-            <Calculator className="w-6 h-6" />
-            Estimation gratuite
-          </a>
-          <a href="/contact" class="border-2 border-white text-white px-10 py-5 rounded-xl text-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center gap-3">
-            <Phone className="w-6 h-6" />
-            Nous contacter
-          </a>
-        </div>
-
-        <div class="mt-12 pt-8 border-t border-white/20">
-          <p class="text-white/80 mb-4">Disponible 7j/7 pour répondre à vos questions</p>
-          <div class="flex items-center justify-center gap-8 text-sm text-white/90">
-            <span class="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              07 57 83 02 62
+          <h2 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-slate-900 leading-tight">
+            Pourquoi choisir
+            <span class="block font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+              L'Agence de Voglans
             </span>
-            <span class="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              Depuis Voglans
-            </span>
+          </h2>
+
+          <p class="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light mb-16">
+            Une expérience immobilière d'exception où expertise, innovation et passion se rencontrent pour réaliser vos projets les plus ambitieux
+          </p>
+        </div>
+
+        <!-- Grille révolutionnaire de cartes magnétiques -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <!-- Carte Particuliers - Design magnétique -->
+          <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 transition-all duration-700 hover:-translate-y-2">
+
+              <!-- Header de carte avec effet glass -->
+              <div class="flex items-center gap-6 mb-8">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                  <Users className="w-10 h-10 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-3xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-300">Particuliers</h3>
+                  <p class="text-slate-600 font-medium">Votre projet, notre priorité</p>
+                </div>
+              </div>
+
+              <!-- Types de biens - Design moderne -->
+              <div class="mb-8 p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200/50 shadow-sm">
+                <p class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  DOMAINES D'EXPERTISE
+                </p>
+                <div class="grid grid-cols-2 gap-3">
+                  {['Maisons', 'Appartements', 'Villas', 'Terrains', 'Résidences secondaires', 'Investissement'].map((item) => (
+                    <span class="px-3 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300 cursor-default">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Services avec interactions sophistiquées -->
+              <div class="space-y-4">
+                {[
+                  { title: 'Vente de votre résidence principale', desc: 'Accompagnement complet pour vendre votre maison ou appartement' },
+                  { title: 'Achat de votre futur logement', desc: 'Recherche personnalisée et négociation experte' },
+                  { title: 'Estimation précise et gratuite', desc: 'Évaluation professionnelle sous 48h' },
+                  { title: 'Conseil en investissement locatif', desc: 'Optimisation fiscale et rendement' }
+                ].map((service, index) => (
+                  <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <div class="flex-1">
+                      <p class="font-bold text-slate-900 mb-1 group-hover/item:text-primary transition-colors duration-300">{service.title}</p>
+                      <p class="text-sm text-slate-600 leading-relaxed">{service.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Professionnels - Design magnétique -->
+          <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 transition-all duration-700 hover:-translate-y-2">
+
+              <!-- Header de carte avec effet glass -->
+              <div class="flex items-center gap-6 mb-8">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                  <Building className="w-10 h-10 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-3xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-300">Professionnels</h3>
+                  <p class="text-slate-600 font-medium">Expertise B2B sur mesure</p>
+                </div>
+              </div>
+
+              <!-- Types de biens - Design moderne -->
+              <div class="mb-8 p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200/50 shadow-sm">
+                <p class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  SPÉCIALISATIONS PROFESSIONNELLES
+                </p>
+                <div class="grid grid-cols-2 gap-3">
+                  {['Locaux commerciaux', 'Bureaux', 'Entrepôts', 'Fonds de commerce', 'Immeubles de rapport', 'Propriétés de prestige'].map((item) => (
+                    <span class="px-3 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold border border-primary/20 text-primary shadow-sm hover:bg-primary hover:text-white transition-all duration-300 cursor-default">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Services avec interactions sophistiquées -->
+              <div class="space-y-4">
+                {[
+                  { title: 'Cession de fonds de commerce', desc: 'Évaluation et transmission d\'entreprise' },
+                  { title: 'Investissement immobilier professionnel', desc: 'Immeubles de rapport et locaux commerciaux' },
+                  { title: 'Propriétés de prestige', desc: 'Châteaux, villas d\'exception, domaine' },
+                  { title: 'Mise en location professionnelle', desc: 'Gestion locative et baux commerciaux' }
+                ].map((service, index) => (
+                  <div class="group/item flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <div class="flex-1">
+                      <p class="font-bold text-slate-900 mb-1 group-hover/item:text-primary transition-colors duration-300">{service.title}</p>
+                      <p class="text-sm text-slate-600 leading-relaxed">{service.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section centrale d'expertise -->
+        <div class="relative mb-16">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-3xl"></div>
+          <div class="relative bg-white/80 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-white/20">
+            <div class="text-center">
+              <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Notre Engagement
+              </h3>
+              <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                Depuis 2025, nous révolutionnons l'immobilier en Savoie en combinant expertise locale,
+                technologies innovantes et un service client d'exception pour transformer chaque projet en succès.
+              </p>
+
+              <!-- Indicateurs clés avec design moderne -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { number: '98%', label: 'Clients satisfaits', icon: '😊' },
+                  { number: '60j', label: 'Délai vente moyen', icon: '⚡' },
+                  { number: '27', label: 'Communes couvertes', icon: '🗺️' },
+                  { number: '100%', label: 'Engagement qualité', icon: '🏆' }
+                ].map((stat) => (
+                  <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-primary/20 group-hover:scale-110 transition-transform duration-300">
+                      <span class="text-2xl">{stat.icon}</span>
+                    </div>
+                    <div class="text-3xl font-bold text-primary mb-1 group-hover:scale-105 transition-transform duration-300">{stat.number}</div>
+                    <div class="text-sm text-slate-600 font-medium">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA révolutionnaire -->
+        <div class="text-center">
+          <div class="inline-flex flex-col sm:flex-row gap-6">
+            <a href="/contact" class="group/btn relative bg-gradient-to-r from-primary to-primary/90 text-white px-12 py-6 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/25 transition-all duration-300 inline-flex items-center justify-center gap-3 hover:scale-105 hover:shadow-3xl hover:shadow-primary/30 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+              <Phone className="w-6 h-6 group-hover/btn:rotate-12 transition-transform duration-300" />
+              <span class="relative z-10">Nous contacter</span>
+            </a>
+            <a href="/estimation" class="group/btn relative border-2 border-primary text-primary px-12 py-6 rounded-2xl text-lg font-bold transition-all duration-300 inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+              <Calculator className="w-6 h-6 group-hover/btn:scale-110 transition-transform duration-300" />
+              <span>Estimation gratuite</span>
+            </a>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-slate-200">
+            <div class="flex items-center justify-center gap-8 text-sm text-slate-500">
+              <span class="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                07 57 83 02 62
+              </span>
+              <span class="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-primary" />
+                Depuis Voglans
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 </Base>
 
 <style>
