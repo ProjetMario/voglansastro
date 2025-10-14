@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucid
 import { siteConfig } from '@/lib/utils';
 ---
 
-<footer class="section bg-gradient-to-br from-primary-50 to-white border-t-4 border-primary">
+<footer class="section bg-gradient-to-br from-black/5 to-white border-t-4 border-black">
   <div class="container">
     <!-- Main Footer Content -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -11,9 +11,9 @@ import { siteConfig } from '@/lib/utils';
       <!-- Brand & Description -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xl font-bold text-primary">L'Agence de Voglans</span>
+          <span class="text-xl font-bold text-black">L'Agence de Voglans</span>
         </div>
-        <p class="text-muted leading-relaxed max-w-md mb-6 text-sm">
+        <p class="text-black leading-relaxed max-w-md mb-6 text-sm">
           Votre Agence immobilière sur Voglans et la Savoie. Une agence 100% locale & humaine 
           qui transforme chaque projet en expérience d'exception.
         </p>
@@ -21,66 +21,66 @@ import { siteConfig } from '@/lib/utils';
         <!-- Contact Info -->
         <div class="space-y-3">
           <div class="flex items-center gap-3 text-sm">
-            <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-            <span class="text-muted">93 chemin de la combe, 73420 Voglans</span>
+            <MapPin className="w-4 h-4 text-black flex-shrink-0" />
+            <span class="text-black">93 chemin de la combe, 73420 Voglans</span>
           </div>
           <div class="flex items-center gap-3 text-sm">
-            <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+            <Phone className="w-4 h-4 text-black flex-shrink-0" />
             <a 
               href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-              class="text-muted hover:text-primary transition-colors"
+              class="text-black hover:text-black transition-colors"
             >
               {siteConfig.contact.phone}
             </a>
           </div>
           <div class="flex items-center gap-3 text-sm">
-            <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+            <Mail className="w-4 h-4 text-black flex-shrink-0" />
             <a 
               href={`mailto:${siteConfig.contact.email}`}
-              class="text-muted hover:text-primary transition-colors"
+              class="text-black hover:text-black transition-colors"
             >
               {siteConfig.contact.email}
             </a>
           </div>
           <div class="flex items-center gap-3 text-sm">
-            <Clock className="w-4 h-4 text-primary flex-shrink-0" />
-            <span class="text-muted">{siteConfig.contact.hours}</span>
+            <Clock className="w-4 h-4 text-black flex-shrink-0" />
+            <span class="text-black">{siteConfig.contact.hours}</span>
           </div>
         </div>
       </div>
 
       <!-- Services -->
       <div>
-        <h3 class="text-base font-semibold mb-4 text-primary">Services</h3>
+        <h3 class="text-base font-semibold mb-4 text-black">Services</h3>
         <ul class="space-y-2">
-          <li><a href="/vendre" class="text-muted hover:text-primary transition-colors text-sm">Vendre</a></li>
-          <li><a href="/acheter" class="text-muted hover:text-primary transition-colors text-sm">Acheter</a></li>
-          <li><a href="/estimation" class="text-muted hover:text-primary transition-colors text-sm">Estimation</a></li>
-          <li><a href="/locaux-commerciaux" class="text-muted hover:text-primary transition-colors text-sm">Locaux Commerciaux</a></li>
-          <li><a href="/fonds-commerce" class="text-muted hover:text-primary transition-colors text-sm">Fonds de Commerce</a></li>
-          <li><a href="/immeubles-rapport" class="text-muted hover:text-primary transition-colors text-sm">Immeubles de Rapport</a></li>
-          <li><a href="/proprietes-prestige" class="text-muted hover:text-primary transition-colors text-sm">Propriétés de Prestige</a></li>
+          <li><a href="/vendre" class="text-black hover:text-black transition-colors text-sm">Vendre</a></li>
+          <li><a href="/acheter" class="text-black hover:text-black transition-colors text-sm">Acheter</a></li>
+          <li><a href="/estimation" class="text-black hover:text-black transition-colors text-sm">Estimation</a></li>
+          <li><a href="/locaux-commerciaux" class="text-black hover:text-black transition-colors text-sm">Locaux Commerciaux</a></li>
+          <li><a href="/fonds-commerce" class="text-black hover:text-black transition-colors text-sm">Fonds de Commerce</a></li>
+          <li><a href="/immeubles-rapport" class="text-black hover:text-black transition-colors text-sm">Immeubles de Rapport</a></li>
+          <li><a href="/proprietes-prestige" class="text-black hover:text-black transition-colors text-sm">Propriétés de Prestige</a></li>
         </ul>
       </div>
 
       <!-- Informations -->
       <div>
-        <h3 class="text-base font-semibold mb-4 text-primary">Informations</h3>
+        <h3 class="text-base font-semibold mb-4 text-black">Informations</h3>
         <ul class="space-y-2">
-          <li><a href="/zone-intervention" class="text-muted hover:text-primary transition-colors text-sm">Zone d'intervention</a></li>
-          <li><a href="/blog" class="text-muted hover:text-primary transition-colors text-sm">Blog</a></li>
-          <li><a href="/honoraires" class="text-muted hover:text-primary transition-colors text-sm">Honoraires</a></li>
-          <li><a href="/mentions-legales" class="text-muted hover:text-primary transition-colors text-sm">Mentions légales</a></li>
-          <li><a href="/rgpd" class="text-muted hover:text-primary transition-colors text-sm">Politique RGPD</a></li>
-          <li><a href="/confidentialite" class="text-muted hover:text-primary transition-colors text-sm">Confidentialité</a></li>
+          <li><a href="/zone-intervention" class="text-black hover:text-black transition-colors text-sm">Zone d'intervention</a></li>
+          <li><a href="/blog" class="text-black hover:text-black transition-colors text-sm">Blog</a></li>
+          <li><a href="/honoraires" class="text-black hover:text-black transition-colors text-sm">Honoraires</a></li>
+          <li><a href="/mentions-legales" class="text-black hover:text-black transition-colors text-sm">Mentions légales</a></li>
+          <li><a href="/rgpd" class="text-black hover:text-black transition-colors text-sm">Politique RGPD</a></li>
+          <li><a href="/confidentialite" class="text-black hover:text-black transition-colors text-sm">Confidentialité</a></li>
         </ul>
       </div>
     </div>
 
     <!-- Carte du Siège Social -->
-    <div class="mb-6 pt-8 border-t border-primary/20">
-      <h3 class="text-base font-semibold mb-3 text-primary text-center">📍 Notre Siège Social • Agence 100% en ligne</h3>
-      <div class="rounded-xl overflow-hidden shadow-md border border-primary/20 max-w-2xl mx-auto">
+    <div class="mb-6 pt-8 border-t border-black/20">
+      <h3 class="text-base font-semibold mb-3 text-black text-center">📍 Notre Siège Social • Agence 100% en ligne</h3>
+      <div class="rounded-xl overflow-hidden shadow-md border border-black/20 max-w-2xl mx-auto">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2773.8!2d5.8933!3d45.5933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba6c5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2s93%20Chemin%20de%20la%20Combe%2C%2073420%20Voglans!5e0!3m2!1sfr!2sfr!4v1234567890"
           width="100%"
@@ -92,21 +92,21 @@ import { siteConfig } from '@/lib/utils';
           title="Localisation L'Agence de Voglans"
         ></iframe>
       </div>
-      <p class="text-center text-xs text-muted mt-2">
+      <p class="text-center text-xs text-black mt-2">
         93 chemin de la combe, 73420 Voglans • Pas d'agence physique
       </p>
     </div>
 
     <!-- Contact & Social -->
-    <div class="pt-6 border-t border-primary/20">
+    <div class="pt-6 border-t border-black/20">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <!-- Contact rapide -->
         <div class="flex flex-wrap items-center gap-4 text-sm">
-          <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 text-muted hover:text-primary transition-colors">
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 text-black hover:text-black transition-colors">
             <Phone className="w-4 h-4" />
             <span>{siteConfig.contact.phone}</span>
           </a>
-          <a href={`mailto:${siteConfig.contact.email}`} class="flex items-center gap-2 text-muted hover:text-primary transition-colors">
+          <a href={`mailto:${siteConfig.contact.email}`} class="flex items-center gap-2 text-black hover:text-black transition-colors">
             <Mail className="w-4 h-4" />
             <span>{siteConfig.contact.email}</span>
           </a>
@@ -114,18 +114,18 @@ import { siteConfig } from '@/lib/utils';
         
         <!-- Social Links -->
         <div class="flex items-center gap-4">
-          <a href="https://facebook.com/agencevoglans" class="text-muted hover:text-primary transition-colors" aria-label="Facebook">
+          <a href="https://facebook.com/agencevoglans" class="text-black hover:text-black transition-colors" aria-label="Facebook">
             <Facebook className="w-5 h-5" />
           </a>
-          <a href="https://instagram.com/agencevoglans" class="text-muted hover:text-primary transition-colors" aria-label="Instagram">
+          <a href="https://instagram.com/agencevoglans" class="text-black hover:text-black transition-colors" aria-label="Instagram">
             <Instagram className="w-5 h-5" />
           </a>
-          <a href="https://linkedin.com/company/agence-voglans" class="text-muted hover:text-primary transition-colors" aria-label="LinkedIn">
+          <a href="https://linkedin.com/company/agence-voglans" class="text-black hover:text-black transition-colors" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
         </div>
       </div>
-      <p class="text-xs text-muted text-center mt-4">
+      <p class="text-xs text-black text-center mt-4">
         &copy; {new Date().getFullYear()} L'Agence de Voglans. Tous droits réservés.
       </p>
     </div>
