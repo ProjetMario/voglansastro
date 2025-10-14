@@ -24,6 +24,12 @@ import { siteConfig } from '@/lib/utils';
             <span class="text-black">Siège social (pas d'agence physique) • 93 chemin de la combe, 73420 Voglans</span>
           </div>
           <div class="flex items-center gap-2 text-sm">
+            <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="text-black hover:text-emerald-400 transition-colors">
+              {siteConfig.contact.phone}
+            </a>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
             <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
             <span class="text-black">Lundi au samedi 9h - 19h</span>
           </div>
