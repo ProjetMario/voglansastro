@@ -1,0 +1,42 @@
+import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, b as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DFz4Motd.mjs';
+import { $ as $$Section } from '../chunks/Section_Du-jGcxi.mjs';
+import { $ as $$Badge } from '../chunks/Badge_CCIblhad.mjs';
+import { Euro, TrendingUp, Calculator } from 'lucide-react';
+/* empty css                                                           */
+export { renderers } from '../renderers.mjs';
+
+const $$ImmeubleRapportViviersDuLac = createComponent(($$result, $$props, $$slots) => {
+  const meta = {
+    title: "Immeuble de Rapport Viviers-du-Lac | Investissement Locatif Savoie",
+    description: "Investissez dans un immeuble de rapport \xE0 Viviers-du-Lac. Rendement attractif et gestion locative simplifi\xE9e.",
+    keywords: ["immeuble rapport viviers-du-lac", "investissement locatif viviers-du-lac"]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": meta.title, "description": meta.description, "data-astro-cid-665pai36": true }, { "default": ($$result2) => renderTemplate`  ${renderComponent($$result2, "Section", $$Section, { "size": "lg", "className": "bg-gradient-to-b from-primary/5 to-background", "data-astro-cid-665pai36": true }, { "default": ($$result3) => renderTemplate` ${maybeRenderHead()}<div class="text-center mb-16" data-astro-cid-665pai36> ${renderComponent($$result3, "Badge", $$Badge, { "variant": "success", "className": "mb-6", "data-astro-cid-665pai36": true }, { "default": ($$result4) => renderTemplate`
+Vue Lac
+` })} <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" data-astro-cid-665pai36>
+Immeuble de Rapport <span class="gradient-text" data-astro-cid-665pai36>Viviers-du-Lac</span> </h1> <p class="text-xl text-muted max-w-3xl mx-auto mb-12" data-astro-cid-665pai36>
+Investissez dans l'immobilier locatif à Viviers-du-Lac avec des rendements attractifs.
+</p> <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-astro-cid-665pai36> <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg" data-astro-cid-665pai36> <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto" data-astro-cid-665pai36> ${renderComponent($$result3, "Euro", Euro, { "className": "w-6 h-6 text-primary", "data-astro-cid-665pai36": true })} </div> <div class="text-3xl font-bold text-primary mb-2" data-astro-cid-665pai36>3 300 €/m²</div> <div class="text-sm text-muted font-medium" data-astro-cid-665pai36>Prix au m²</div> </div> <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg" data-astro-cid-665pai36> <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto" data-astro-cid-665pai36> ${renderComponent($$result3, "TrendingUp", TrendingUp, { "className": "w-6 h-6 text-primary", "data-astro-cid-665pai36": true })} </div> <div class="text-3xl font-bold text-primary mb-2" data-astro-cid-665pai36>7.0%</div> <div class="text-sm text-muted font-medium" data-astro-cid-665pai36>Rendement</div> </div> <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg" data-astro-cid-665pai36> <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto" data-astro-cid-665pai36> ${renderComponent($$result3, "Calculator", Calculator, { "className": "w-6 h-6 text-primary", "data-astro-cid-665pai36": true })} </div> <div class="text-3xl font-bold text-primary mb-2" data-astro-cid-665pai36>890k€</div> <div class="text-sm text-muted font-medium" data-astro-cid-665pai36>Prix moyen</div> </div> </div> </div> ` })} ${renderComponent($$result2, "Section", $$Section, { "className": "bg-gradient-to-br from-primary to-primary/90", "data-astro-cid-665pai36": true }, { "default": ($$result3) => renderTemplate` <div class="text-center text-white" data-astro-cid-665pai36> <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" data-astro-cid-665pai36>
+Étude d'investissement à Viviers-du-Lac
+</h2> <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-astro-cid-665pai36>
+Analyse personnalisée de rentabilité et accompagnement complet.
+</p> <a href="/estimation" class="btn bg-white text-primary hover:bg-white/90" data-astro-cid-665pai36> ${renderComponent($$result3, "Calculator", Calculator, { "className": "w-5 h-5", "data-astro-cid-665pai36": true })}
+Étude gratuite
+</a> </div> ` })} `, "head": ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "head" }, { "default": ($$result3) => renderTemplate` <meta name="keywords"${addAttribute(meta.keywords.join(", "), "content")}> ` })}` })} `;
+}, "/Users/zazouino/Downloads/voglansastro-main/src/pages/immeuble-rapport-viviers-du-lac.astro", void 0);
+
+const $$file = "/Users/zazouino/Downloads/voglansastro-main/src/pages/immeuble-rapport-viviers-du-lac.astro";
+const $$url = "/immeuble-rapport-viviers-du-lac";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$ImmeubleRapportViviersDuLac,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

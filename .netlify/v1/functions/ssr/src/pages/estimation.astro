@@ -623,28 +623,6 @@ import { siteConfig } from '@/lib/utils';
           // Scroll vers les résultats
           estimationResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-          // Configurer le bouton d'estimation complète après affichage des résultats
-          setTimeout(() => {
-            const fullEstimationBtn = document.getElementById('request-full-estimation') as HTMLButtonElement | null;
-            if (fullEstimationBtn) {
-              fullEstimationBtn.addEventListener('click', () => {
-                // Essayer plusieurs sélecteurs pour trouver le formulaire traditionnel
-                const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null ||
-                                       document.querySelector('section.py-16.bg-white') as HTMLElement | null ||
-                                       document.querySelector('form') as HTMLElement | null;
-
-                if (traditionalForm) {
-                  traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                  console.log('Formulaire traditionnel non trouvé, scroll vers le bas de la page');
-                  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-                }
-              });
-            } else {
-              console.log('Bouton estimation complète non trouvé');
-            }
-          }, 100);
-
         } catch (error) {
           console.error('Erreur lors de l\'estimation:', error);
           alert('Une erreur est survenue lors de l\'estimation. Veuillez réessayer.');
@@ -652,6 +630,18 @@ import { siteConfig } from '@/lib/utils';
           // Réinitialiser le bouton
           estimateNowBtn.innerHTML = originalContent;
           estimateNowBtn.disabled = false;
+        }
+      });
+    }
+
+    // Bouton demande d'estimation complète
+    const requestFullEstimation = document.getElementById('request-full-estimation') as HTMLButtonElement | null;
+    if (requestFullEstimation) {
+      requestFullEstimation.addEventListener('click', () => {
+        // Scroll vers le formulaire traditionnel
+        const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null;
+        if (traditionalForm) {
+          traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       });
     }
