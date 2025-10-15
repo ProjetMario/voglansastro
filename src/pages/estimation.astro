@@ -548,6 +548,95 @@ import { siteConfig } from '@/lib/utils';
 
       window.addEventListener('scroll', showScrollIndicator);
       showScrollIndicator(); // Vérifier l'état initial
-    }
-  });
+    });
+  }
+
+  // Estimation IA immédiate
+  const estimateNowBtn = document.getElementById('estimate-now-btn');
+  const estimationResults = document.getElementById('estimation-results');
+  const estimatedValue = document.getElementById('estimated-value');
+  const confidenceRange = document.getElementById('confidence-range');
+  const pricePerM2 = document.getElementById('price-per-m2');
+  const marketTrend = document.getElementById('market-trend');
+  const transactionsCount = document.getElementById('transactions-count');
+
+  if (estimateNowBtn && estimationResults) {
+    estimateNowBtn.addEventListener('click', async () => {
+      // Récupérer les valeurs du formulaire
+      const city = (document.getElementById('quick-city') as HTMLInputElement)?.value;
+      const type = (document.getElementById('quick-type') as HTMLSelectElement)?.value;
+      const surface = (document.getElementById('quick-surface') as HTMLInputElement)?.value;
+
+      // Validation basique
+      if (!city || !type || !surface) {
+        alert('Veuillez remplir tous les champs obligatoires');
+        return;
+      }
+
+      // Afficher le loader
+      estimateNowBtn.innerHTML = `
+        <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+        <span>Estimation en cours...</span>
+      `;
+      estimateNowBtn.disabled = true;
+
+      try {
+        // Simulation d'une estimation basée sur des données fictives
+        // En production, vous feriez un appel API vers votre service d'estimation
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulation 2s
+
+        // Calcul d'estimation fictive basée sur le type et la ville
+        const basePrice = type === 'maison' ? 3500 : type === 'appartement' ? 2800 : 150;
+        const estimated = Math.floor(basePrice * parseInt(surface) * (0.8 + Math.random() * 0.4));
+
+        // Prix au m²
+        const priceM2 = Math.floor(estimated / parseInt(surface));
+
+        // Fourchette de confiance (±15%)
+        const minEstimate = Math.floor(estimated * 0.85);
+        const maxEstimate = Math.floor(estimated * 1.15);
+
+        // Mettre à jour les résultats
+        estimatedValue.textContent = estimated.toLocaleString('fr-FR') + ' €';
+        confidenceRange.textContent = minEstimate.toLocaleString('fr-FR') + ' - ' + maxEstimate.toLocaleString('fr-FR') + ' €';
+        pricePerM2.textContent = priceM2.toLocaleString('fr-FR') + ' €/m²';
+
+        // Informations marché fictives
+        const trends = ['Marché stable', 'Marché haussier', 'Marché dynamique'];
+        marketTrend.textContent = trends[Math.floor(Math.random() * trends.length)];
+
+        const transactionCounts = [12, 15, 18, 22, 25];
+        transactionsCount.textContent = transactionCounts[Math.floor(Math.random() * transactionCounts.length)] + ' transactions analysées';
+
+        // Afficher les résultats
+        estimationResults.classList.remove('hidden');
+
+        // Scroll vers les résultats
+        estimationResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      } catch (error) {
+        console.error('Erreur lors de l\'estimation:', error);
+        alert('Une erreur est survenue lors de l\'estimation. Veuillez réessayer.');
+      } finally {
+        // Réinitialiser le bouton
+        estimateNowBtn.innerHTML = `
+          <Calculator className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+          <span>Estimer maintenant</span>
+        `;
+        estimateNowBtn.disabled = false;
+      }
+    });
+  }
+
+  // Bouton demande d'estimation complète
+  const requestFullEstimation = document.getElementById('request-full-estimation');
+  if (requestFullEstimation) {
+    requestFullEstimation.addEventListener('click', () => {
+      // Scroll vers le formulaire traditionnel
+      const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl');
+      if (traditionalForm) {
+        traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
 </script>
