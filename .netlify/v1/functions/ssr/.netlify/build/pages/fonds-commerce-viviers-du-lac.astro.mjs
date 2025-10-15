@@ -1,8 +1,8 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, b as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_C2k5Ezr7.mjs';
-import { $ as $$Section } from '../chunks/Section_TF3TClLn.mjs';
-import { $ as $$Badge } from '../chunks/Badge_CkmrrhPn.mjs';
+import { $ as $$Base } from '../chunks/Base_BeYdmCn8.mjs';
+import { $ as $$Section } from '../chunks/Section_DI_ORplF.mjs';
+import { $ as $$Badge } from '../chunks/Badge_gacXoYlY.mjs';
 import { Euro, TrendingUp, Calculator } from 'lucide-react';
 /* empty css                                                         */
 export { renderers } from '../renderers.mjs';

@@ -1,7 +1,7 @@
 import { c as createAstro, a as createComponent, m as maybeRenderHead, b as addAttribute, e as renderSlot, r as renderTemplate } from './astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { d as getBadgeLabel, c as cn, e as getBadgeVariant } from './Base_C2k5Ezr7.mjs';
+import { d as getBadgeLabel, c as cn, e as getBadgeVariant } from './Base_BeYdmCn8.mjs';
 
 const $$Astro = createAstro("https://agencevoglans.fr");
 const $$Badge = createComponent(($$result, $$props, $$slots) => {

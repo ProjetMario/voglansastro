@@ -1,8 +1,8 @@
 import { c as createAstro, a as createComponent, m as maybeRenderHead, b as addAttribute, d as renderComponent, r as renderTemplate } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { f as formatPrice, a as formatSurface, g as getEnergyColor, $ as $$Base } from '../chunks/Base_C2k5Ezr7.mjs';
-import { $ as $$Section } from '../chunks/Section_TF3TClLn.mjs';
-import { $ as $$Badge } from '../chunks/Badge_CkmrrhPn.mjs';
+import { f as formatPrice, a as formatSurface, g as getEnergyColor, $ as $$Base } from '../chunks/Base_BeYdmCn8.mjs';
+import { $ as $$Section } from '../chunks/Section_DI_ORplF.mjs';
+import { $ as $$Badge } from '../chunks/Badge_gacXoYlY.mjs';
 import { ArrowRight, MapPin, Maximize, BedDouble, Home, Euro, Search, SlidersHorizontal, MessageCircle, Calculator, Phone } from 'lucide-react';
 /* empty css                                   */
 export { renderers } from '../renderers.mjs';

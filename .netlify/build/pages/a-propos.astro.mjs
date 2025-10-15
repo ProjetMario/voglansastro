@@ -1,6 +1,6 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base, s as siteConfig } from '../chunks/Base_C2k5Ezr7.mjs';
+import { $ as $$Base, s as siteConfig } from '../chunks/Base_BeYdmCn8.mjs';
 import { $ as $$CardUltra } from '../chunks/CardUltra_DVYpFYKa.mjs';
 import { Sparkles, Crown, ChevronDown, Zap, Globe, HandHeart, Target, CheckCircle, Eye, MapPin, Phone, Users, Calculator } from 'lucide-react';
 export { renderers } from '../renderers.mjs';

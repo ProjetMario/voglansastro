@@ -1,7 +1,7 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_C2k5Ezr7.mjs';
-import { $ as $$Section } from '../chunks/Section_TF3TClLn.mjs';
+import { $ as $$Base } from '../chunks/Base_BeYdmCn8.mjs';
+import { $ as $$Section } from '../chunks/Section_DI_ORplF.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$PolitiqueDeConfidentialite = createComponent(($$result, $$props, $$slots) => {

@@ -1,6 +1,6 @@
 import { c as createAstro, a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_C2k5Ezr7.mjs';
+import { $ as $$Base } from '../chunks/Base_BeYdmCn8.mjs';
 import { $ as $$HeroUltra, a as $$ButtonUltra, b as $$BadgeUltra } from '../chunks/ButtonUltra_CVw7_Hqz.mjs';
 import { $ as $$CardUltra } from '../chunks/CardUltra_DVYpFYKa.mjs';
 import { MapPin, Award, TrendingUp, Home, Calendar, Clock, ArrowRight, Search } from 'lucide-react';
