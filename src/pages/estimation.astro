@@ -438,7 +438,7 @@ import { siteConfig } from '@/lib/utils';
       0 20px 40px rgba(16, 185, 129, 0.15),
       0 10px 25px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(16, 185, 129, 0.1);
-  }
+" "  }
 
   /* Effets de glassmorphism avancés */
   .glass-card {
@@ -629,7 +629,8 @@ import { siteConfig } from '@/lib/utils';
             if (fullEstimationBtn) {
               fullEstimationBtn.addEventListener('click', () => {
                 // Essayer plusieurs sélecteurs pour trouver le formulaire traditionnel
-                const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null ||
+                const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-primary\\/10.p-8') as HTMLElement | null ||
+                                       document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null ||
                                        document.querySelector('section.py-16.bg-white') as HTMLElement | null ||
                                        document.querySelector('form') as HTMLElement | null;
 
