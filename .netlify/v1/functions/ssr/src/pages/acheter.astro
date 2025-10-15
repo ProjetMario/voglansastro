@@ -748,16 +748,20 @@ const properties = [
             value: formData.get('telephone') as string
           },
           {
-            name: 'secteur_recherche',
+            name: 'ville',
             value: formData.get('secteur') as string
           },
           {
-            name: 'criteres_recherche',
-            value: formData.get('criteres') as string
+            name: 'type_de_projet',
+            value: 'Demande d\'alerte biens'
           },
           {
-            name: 'type_de_demande',
-            value: 'alerte_biens'
+            name: 'notes',  // Utilise la propriété standard HubSpot
+            value: `Secteur: ${formData.get('secteur') as string}\nCritères: ${formData.get('criteres') as string}`
+          },
+          {
+            name: 'description_du_projet',  // Propriété personnalisée de secours
+            value: `Secteur: ${formData.get('secteur') as string}\nCritères: ${formData.get('criteres') as string}`
           }
         ],
         context: {
