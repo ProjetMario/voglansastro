@@ -1,0 +1,51 @@
+import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DJ8vM7Sp.mjs';
+import { $ as $$Section } from '../chunks/Section_DIw9hPug.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$PolitiqueDeConfidentialite = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Politique de Confidentialit\xE9 - L'Agence de Voglans", "description": "Politique de confidentialit\xE9 et protection des donn\xE9es personnelles de L'Agence de Voglans (FLEX IMMO)" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Section", $$Section, { "size": "default", "className": "py-20" }, { "default": ($$result3) => renderTemplate` ${maybeRenderHead()}<div class="max-w-4xl mx-auto prose prose-lg"> <h1 class="text-4xl font-bold text-primary mb-8">Politique de Confidentialité</h1> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Introduction</h2> <p class="text-muted leading-relaxed">
+FLEX IMMO, société par actions simplifiée immatriculée au RCS de Chambéry sous le numéro 989123633, 
+          ayant son siège social au 93 CHEMIN DE LA COMBE, 73420 VOGLANS, exploitant la marque commerciale 
+          "L'Agence de Voglans", s'engage à protéger la confidentialité et la sécurité des données personnelles 
+          de ses utilisateurs et clients.
+</p> <p class="text-muted leading-relaxed mt-4">
+La présente politique de confidentialité décrit comment nous collectons, utilisons, stockons et 
+          protégeons vos données personnelles dans le cadre de l'utilisation de notre site web et de nos services.
+</p> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Responsable du traitement</h2> <ul class="list-none space-y-2 text-muted"> <li><strong>Raison sociale :</strong> FLEX IMMO</li> <li><strong>Adresse :</strong> 93 CHEMIN DE LA COMBE, 73420 VOGLANS</li> <li><strong>Téléphone :</strong> 07 57 83 02 62</li> <li><strong>Email :</strong> contact@agencevoglans.fr</li> <li><strong>Représentant légal :</strong> Mario ZELENIKA</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Données personnelles collectées</h2> <p class="text-muted leading-relaxed mb-4">Nous collectons les types de données suivants :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li><strong>Données d'identification :</strong> nom, prénom, adresse email, numéro de téléphone</li> <li><strong>Données de contact :</strong> adresse postale, ville, code postal</li> <li><strong>Données relatives au bien :</strong> type de bien, adresse, caractéristiques, prix souhaité</li> <li><strong>Données de navigation :</strong> adresse IP, cookies, données de connexion</li> <li><strong>Données contractuelles :</strong> informations relatives aux mandats et transactions</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Finalités du traitement</h2> <p class="text-muted leading-relaxed mb-4">Vos données personnelles sont traitées pour les finalités suivantes :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li>Répondre à vos demandes d'information et de contact</li> <li>Réaliser des estimations de biens immobiliers</li> <li>Gérer les mandats de vente et les transactions immobilières</li> <li>Assurer le suivi commercial et la relation client</li> <li>Vous envoyer notre newsletter (avec votre consentement)</li> <li>Améliorer nos services et notre site web</li> <li>Respecter nos obligations légales et réglementaires</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Base légale du traitement</h2> <p class="text-muted leading-relaxed mb-4">Le traitement de vos données repose sur :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li><strong>Votre consentement :</strong> pour l'envoi de newsletters et communications marketing</li> <li><strong>L'exécution d'un contrat :</strong> pour la gestion des mandats et transactions</li> <li><strong>Notre intérêt légitime :</strong> pour la prospection commerciale et l'amélioration de nos services</li> <li><strong>Le respect d'obligations légales :</strong> conservation des documents légaux</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Destinataires des données</h2> <p class="text-muted leading-relaxed mb-4">Vos données peuvent être transmises aux destinataires suivants :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li>Personnel habilité de FLEX IMMO</li> <li>Prestataires techniques (hébergement, maintenance)</li> <li>Partenaires commerciaux (avec votre consentement)</li> <li>Autorités judiciaires ou administratives (sur demande légale)</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Durée de conservation</h2> <p class="text-muted leading-relaxed mb-4">Vos données sont conservées pendant les durées suivantes :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li><strong>Prospects :</strong> 3 ans après le dernier contact</li> <li><strong>Clients :</strong> 5 ans après la fin de la relation commerciale</li> <li><strong>Documents contractuels :</strong> 10 ans (obligation légale)</li> <li><strong>Données de navigation :</strong> 13 mois maximum</li> </ul> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Vos droits</h2> <p class="text-muted leading-relaxed mb-4">Conformément au RGPD, vous disposez des droits suivants :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles</li> <li><strong>Droit de rectification :</strong> corriger des données inexactes</li> <li><strong>Droit d'effacement :</strong> demander la suppression de vos données</li> <li><strong>Droit à la portabilité :</strong> récupérer vos données dans un format lisible</li> <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li> <li><strong>Droit à la limitation :</strong> demander la limitation du traitement</li> </ul> <p class="text-muted leading-relaxed mt-4">
+Pour exercer ces droits, contactez-nous à l'adresse : <a href="mailto:contact@agencevoglans.fr" class="text-primary hover:underline">contact@agencevoglans.fr</a> ou par courrier postal.
+</p> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Cookies</h2> <p class="text-muted leading-relaxed mb-4">Notre site utilise des cookies pour :</p> <ul class="list-disc list-inside space-y-2 text-muted"> <li>Assurer le bon fonctionnement du site</li> <li>Analyser l'audience et améliorer nos services</li> <li>Personnaliser votre expérience utilisateur</li> </ul> <p class="text-muted leading-relaxed mt-4">
+Vous pouvez configurer votre navigateur pour refuser les cookies ou être informé de leur dépôt. 
+          Cependant, certaines fonctionnalités du site pourraient être limitées.
+</p> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Sécurité des données</h2> <p class="text-muted leading-relaxed">
+Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos 
+          données personnelles contre tout accès non autorisé, modification, divulgation ou destruction.
+</p> <p class="text-muted leading-relaxed mt-4">
+Nos données sont hébergées sur des serveurs sécurisés et l'accès aux données est strictement 
+          contrôlé et limité aux personnes habilitées.
+</p> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Réclamation</h2> <p class="text-muted leading-relaxed mb-4">
+Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, 
+          vous pouvez introduire une réclamation auprès de la CNIL :
+</p> <div class="bg-secondary/10 p-6 rounded-lg"> <p class="text-muted"><strong>CNIL</strong></p> <p class="text-muted">3 Place de Fontenoy - TSA 80715</p> <p class="text-muted">75334 PARIS CEDEX 07</p> <p class="text-muted">Téléphone : 01 53 73 22 22</p> <p class="text-muted">Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener" class="text-primary hover:underline">www.cnil.fr</a></p> </div> </section> <section class="mb-12"> <h2 class="text-2xl font-semibold text-foreground mb-4">Modifications</h2> <p class="text-muted leading-relaxed">
+Cette politique de confidentialité peut être modifiée à tout moment. Les modifications prennent 
+          effet dès leur publication sur le site. Nous vous encourageons à consulter régulièrement cette page.
+</p> <p class="text-muted leading-relaxed mt-4"> <strong>Dernière mise à jour :</strong> 29/09/2025
+</p> </section> <div class="mt-12 pt-8 border-t border-border text-center"> <a href="/contact" class="btn-primary px-8 py-3 rounded-full">
+Nous contacter
+</a> </div> </div> ` })} ` })}`;
+}, "/Users/zazouino/Downloads/voglansastro-main/src/pages/politique-de-confidentialite.astro", void 0);
+
+const $$file = "/Users/zazouino/Downloads/voglansastro-main/src/pages/politique-de-confidentialite.astro";
+const $$url = "/politique-de-confidentialite";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$PolitiqueDeConfidentialite,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
