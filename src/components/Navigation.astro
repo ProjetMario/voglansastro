@@ -110,18 +110,43 @@ import Logo from './Logo.astro';
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
+  // Fonction pour fermer le menu mobile
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    menuIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+  }
+
+  // Fonction pour ouvrir le menu mobile
+  function openMobileMenu() {
+    mobileMenu.classList.remove('hidden');
+    menuIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+  }
+
   if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
     mobileMenuButton.addEventListener('click', () => {
       const isOpen = !mobileMenu.classList.contains('hidden');
-      
+
       if (isOpen) {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        closeMobileMenu();
       } else {
-        mobileMenu.classList.remove('hidden');
-        menuIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
+        openMobileMenu();
+      }
+    });
+
+    // Fermer automatiquement le menu quand on clique sur un lien
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Fermer le menu en cliquant en dehors
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        if (!mobileMenu.classList.contains('hidden')) {
+          closeMobileMenu();
+        }
       }
     });
   }
