@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation.astro';
 import Footer from '@/components/Footer.astro';
 import SEO from '@/components/SEO.astro';
+import ContactSection from '@/components/ui/ContactSection.astro';
 import { siteConfig } from '@/lib/utils';
 import '@/styles/global.css';
 
@@ -60,6 +61,8 @@ const {
     <main>
       <slot />
     </main>
+    
+    <ContactSection />
     
     <Footer />
     

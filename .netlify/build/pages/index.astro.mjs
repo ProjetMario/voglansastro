@@ -1,7 +1,7 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, u as unescapeHTML, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
 import { $ as $$Base, s as siteConfig, h as $$Logo } from '../chunks/Base_DJ8vM7Sp.mjs';
-import { Sparkles, Calculator, Phone, Home, CheckCircle, Building, MapPin, TrendingUp } from 'lucide-react';
+import { Sparkles, Calculator, Phone, Home, CheckCircle, Building, MapPin, TrendingUp, MessageCircle } from 'lucide-react';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
