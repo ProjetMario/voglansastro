@@ -1,8 +1,8 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, b as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_DJ8vM7Sp.mjs';
-import { $ as $$Section } from '../chunks/Section_DIw9hPug.mjs';
-import { $ as $$Badge } from '../chunks/Badge_C6LULbfi.mjs';
+import { $ as $$Base } from '../chunks/Base_DhF6jZub.mjs';
+import { $ as $$Section } from '../chunks/Section_Cxf__pUi.mjs';
+import { $ as $$Badge } from '../chunks/Badge_B-PSpII_.mjs';
 import { Euro, Crown, Calculator } from 'lucide-react';
 /* empty css                                                      */
 export { renderers } from '../renderers.mjs';

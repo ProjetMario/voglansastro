@@ -1,6 +1,6 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, u as unescapeHTML, m as maybeRenderHead } from '../../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base, b as formatDate } from '../../chunks/Base_DJ8vM7Sp.mjs';
+import { $ as $$Base, b as formatDate } from '../../chunks/Base_DhF6jZub.mjs';
 import { $ as $$HeroUltra, a as $$ButtonUltra, b as $$BadgeUltra } from '../../chunks/ButtonUltra_CVw7_Hqz.mjs';
 import { ArrowLeft, Calendar, TrendingUp, MapPin, CheckCircle, Calculator, Users, Award } from 'lucide-react';
 export { renderers } from '../../renderers.mjs';

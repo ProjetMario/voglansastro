@@ -134,7 +134,11 @@ const { class: className = '' } = Astro.props;
             value: formData.get('type') as string
           },
           {
-            name: 'message',
+            name: 'notes',  // Propriété standard HubSpot pour les notes
+            value: formData.get('message') as string
+          },
+          {
+            name: 'description_du_projet',  // Propriété personnalisée de secours
             value: formData.get('message') as string
           }
         ],

@@ -1,7 +1,7 @@
 import { c as createAstro, a as createComponent, m as maybeRenderHead, b as addAttribute, e as renderSlot, r as renderTemplate } from './astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { c as cn } from './Base_DJ8vM7Sp.mjs';
+import { c as cn } from './Base_DhF6jZub.mjs';
 
 const $$Astro = createAstro("https://agencevoglans.fr");
 const $$Section = createComponent(($$result, $$props, $$slots) => {

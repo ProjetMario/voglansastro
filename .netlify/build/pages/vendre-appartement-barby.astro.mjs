@@ -1,6 +1,6 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, F as Fragment, b as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_DJ8vM7Sp.mjs';
+import { $ as $$Base } from '../chunks/Base_DhF6jZub.mjs';
 import { MapPin, Calculator, Phone, Building2, TrendingUp, Star, Home } from 'lucide-react';
 /* empty css                                                    */
 export { renderers } from '../renderers.mjs';

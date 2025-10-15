@@ -1,6 +1,6 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base } from '../chunks/Base_DJ8vM7Sp.mjs';
+import { $ as $$Base } from '../chunks/Base_DhF6jZub.mjs';
 import { Award, Calculator, Phone, Home, CheckCircle, Target, Building, Users, MapPin } from 'lucide-react';
 /* empty css                                    */
 export { renderers } from '../renderers.mjs';

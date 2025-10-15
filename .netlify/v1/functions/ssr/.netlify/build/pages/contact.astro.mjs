@@ -1,6 +1,6 @@
 import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { $ as $$Base, s as siteConfig } from '../chunks/Base_DJ8vM7Sp.mjs';
+import { $ as $$Base, s as siteConfig } from '../chunks/Base_DhF6jZub.mjs';
 import { Sparkles, Phone, Calculator, MessageCircle, Mail, MapPin, Send, Clock } from 'lucide-react';
 /* empty css                                   */
 export { renderers } from '../renderers.mjs';

@@ -1,6 +1,6 @@
 import { c as createAstro, a as createComponent, m as maybeRenderHead, b as addAttribute, r as renderTemplate, d as renderComponent, e as renderSlot, g as renderHead } from './astro/server_9NFxWlB3.mjs';
 import 'kleur/colors';
-import { Phone, Mail, Menu, X, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, Menu, X, MapPin, Clock, Facebook, Instagram, Linkedin, Sparkles, MessageCircle } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 /* empty css                            */
@@ -63,9 +63,9 @@ const siteConfig = {
     phone: "07 57 83 02 62",
     email: "contact@agencevoglans.fr"}};
 
-const $$Astro$2 = createAstro("https://agencevoglans.fr");
+const $$Astro$3 = createAstro("https://agencevoglans.fr");
 const $$Logo = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Logo;
   const { size = "md", className = "" } = Astro2.props;
   const sizeClasses = {
@@ -109,9 +109,9 @@ var __freeze$1 = Object.freeze;
 var __defProp$1 = Object.defineProperty;
 var __template$1 = (cooked, raw) => __freeze$1(__defProp$1(cooked, "raw", { value: __freeze$1(cooked.slice()) }));
 var _a$1;
-const $$Astro$1 = createAstro("https://agencevoglans.fr");
+const $$Astro$2 = createAstro("https://agencevoglans.fr");
 const $$SEO = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$SEO;
   const {
     title,
@@ -163,6 +163,19 @@ const $$SEO = createComponent(($$result, $$props, $$slots) => {
 <\/script>`])), fullTitle, addAttribute(fullTitle, "content"), addAttribute(description, "content"), addAttribute(noindex ? "noindex, nofollow" : "index, follow", "content"), addAttribute(canonicalUrl, "href"), addAttribute(type, "content"), addAttribute(canonicalUrl, "content"), addAttribute(fullTitle, "content"), addAttribute(description, "content"), addAttribute(imageUrl, "content"), addAttribute(canonicalUrl, "content"), addAttribute(fullTitle, "content"), addAttribute(description, "content"), addAttribute(imageUrl, "content"));
 }, "/Users/zazouino/Downloads/voglansastro-main/src/components/SEO.astro", void 0);
 
+const $$Astro$1 = createAstro("https://agencevoglans.fr");
+const $$ContactSection = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$ContactSection;
+  const { class: className = "" } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<section${addAttribute(`py-24 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden ${className}`, "class")}> <!-- Fond décoratif subtil --> <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div> <div class="container mx-auto px-4 relative z-10"> <div class="max-w-4xl mx-auto"> <div class="text-center mb-16"> <div class="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/20 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl mb-8"> ${renderComponent($$result, "Sparkles", Sparkles, { "className": "w-4 h-4" })} <span>Estimation gratuite</span> </div> <h2 class="text-4xl md:text-6xl font-black mb-6 text-gray-900">
+Une question, un projet ? <span class="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">Écrivez-nous</span> </h2> <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+Notre équipe vous répond sous 24h pour tous vos projets immobiliers
+</p> </div> <!-- Formulaire de contact personnalisé --> <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/20"> <form id="contact-form" class="space-y-6"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <div> <label for="contact-nom" class="block text-sm font-semibold mb-2 text-gray-700">Nom et prénom *</label> <input id="contact-nom" name="nom" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white" placeholder="Votre nom complet"> </div> <div> <label for="contact-email" class="block text-sm font-semibold mb-2 text-gray-700">Email *</label> <input id="contact-email" name="email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white" placeholder="votre.email@exemple.fr"> </div> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <div> <label for="contact-telephone" class="block text-sm font-semibold mb-2 text-gray-700">Téléphone *</label> <input id="contact-telephone" name="telephone" type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white" placeholder="06 12 34 56 78"> </div> <div> <label for="contact-ville" class="block text-sm font-semibold mb-2 text-gray-700">Ville</label> <input id="contact-ville" name="ville" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white" placeholder="Votre ville (optionnel)"> </div> </div> <div> <label for="contact-type" class="block text-sm font-semibold mb-2 text-gray-700">Type de projet</label> <select id="contact-type" name="type" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white"> <option value="">Sélectionnez votre projet</option> <option value="estimation">Estimation immobilière</option> <option value="vente">Vente de bien</option> <option value="achat">Achat de bien</option> <option value="conseil">Conseil immobilier</option> <option value="autre">Autre</option> </select> </div> <div> <label for="contact-message" class="block text-sm font-semibold mb-2 text-gray-700">Votre message</label> <textarea id="contact-message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 bg-white resize-none" placeholder="Décrivez votre projet, vos besoins..."></textarea> </div> <div class="text-center"> <button type="submit" class="group relative bg-gradient-to-r from-primary to-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"> ${renderComponent($$result, "MessageCircle", MessageCircle, { "className": "w-5 h-5 group-hover:rotate-12 transition-transform duration-300" })} <span>ENVOYER MA DEMANDE</span> <div class="absolute -top-2 -right-2 bg-primary text-black text-xs font-black px-3 py-1 rounded-full animate-pulse">
+24H
+</div> </button> </div> <div class="text-center text-sm text-gray-600"> <p>* Champs obligatoires • Réponse garantie sous 24h ouvrées • Service 100% gratuit</p> </div> </form> </div> </div> </div> </section> `;
+}, "/Users/zazouino/Downloads/voglansastro-main/src/components/ui/ContactSection.astro", void 0);
+
 var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
@@ -178,7 +191,7 @@ const $$Base = createComponent(($$result, $$props, $$slots) => {
     type = "website",
     noIndex = false
   } = Astro2.props;
-  return renderTemplate(_a || (_a = __template(['<html lang="fr" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- SEO Component -->', '<!-- Preconnect pour Google Fonts (Core Web Vitals) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- DNS Prefetch pour am\xE9liorer les performances --><link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- HubSpot Script --><script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/146996576.js"><\/script>', '</head> <body class="min-h-screen bg-background text-foreground antialiased"> ', " <main> ", " </main> ", ' <!-- Scroll to top button --> <button id="scroll-to-top" class="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:shadow-xl hover:scale-110 z-40" aria-label="Retour en haut"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>  </body> </html>'])), renderComponent($$result, "SEO", $$SEO, { "title": title, "description": description, "image": image, "type": type, "noindex": noIndex }), renderHead(), renderComponent($$result, "Navigation", $$Navigation, {}), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", $$Footer, {}));
+  return renderTemplate(_a || (_a = __template(['<html lang="fr" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- SEO Component -->', '<!-- Preconnect pour Google Fonts (Core Web Vitals) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- DNS Prefetch pour am\xE9liorer les performances --><link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- HubSpot Script --><script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/146996576.js"><\/script>', '</head> <body class="min-h-screen bg-background text-foreground antialiased"> ', " <main> ", " </main> ", " ", ' <!-- Scroll to top button --> <button id="scroll-to-top" class="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:shadow-xl hover:scale-110 z-40" aria-label="Retour en haut"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>  </body> </html>'])), renderComponent($$result, "SEO", $$SEO, { "title": title, "description": description, "image": image, "type": type, "noindex": noIndex }), renderHead(), renderComponent($$result, "Navigation", $$Navigation, {}), renderSlot($$result, $$slots["default"]), renderComponent($$result, "ContactSection", $$ContactSection, {}), renderComponent($$result, "Footer", $$Footer, {}));
 }, "/Users/zazouino/Downloads/voglansastro-main/src/layouts/Base.astro", void 0);
 
 export { $$Base as $, formatSurface as a, formatDate as b, cn as c, getBadgeLabel as d, getBadgeVariant as e, formatPrice as f, getEnergyColor as g, $$Logo as h, siteConfig as s };
