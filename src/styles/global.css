@@ -484,3 +484,94 @@
   background: hsl(158 65% 40% / 0.2);
   color: hsl(158 65% 10%);
 }
+
+  /* Corrections spécifiques pour la navigation mobile */
+  .nav {
+    /* Support optimisé pour les événements tactiles */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    /* Éviter les interférences avec les événements tactiles */
+    will-change: transform;
+  }
+
+  /* Support des événements tactiles pour les éléments interactifs */
+  .nav a,
+  .nav button,
+  .nav [role="button"] {
+    /* Amélioration des événements tactiles */
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    touch-action: manipulation;
+    /* Éviter les sélections accidentelles */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Amélioration pour les éléments avec backdrop-filter */
+  @supports (backdrop-filter: blur(10px)) {
+    .nav,
+    [class*="backdrop"] {
+      /* Optimisation pour les performances mobiles */
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+  }
+
+/* Amélioration de la compatibilité mobile pour les événements tactiles */
+.nav {
+  /* Ajout de règles pour améliorer la compatibilité mobile */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Correction pour les éléments avec backdrop-filter qui peuvent causer des problèmes sur mobile */
+.nav,
+[style*="backdrop-filter"],
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-lg,
+.backdrop-blur-xl {
+  /* Amélioration des événements tactiles */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Correction spécifique pour les boutons sur mobile */
+.btn,
+button,
+a[role="button"],
+[onclick],
+input[type="submit"],
+input[type="button"] {
+  /* Amélioration des événements tactiles */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* Éviter les effets de zoom sur les inputs mobiles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  font-size: 16px !important; /* Évite le zoom automatique sur iOS */
+}
+
+/* Optimisation pour les éléments avec backdrop-filter sur mobile */
+@supports (backdrop-filter: blur(10px)) {
+  .nav,
+  [class*="backdrop"] {
+    /* Optimisation pour les performances mobiles */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Amélioration de la compatibilité tactile */
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -41,17 +41,19 @@ import Logo from './Logo.astro';
           <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
         </a>
         
-        <!-- CTA Buttons -->
+        <!-- Desktop CTA Buttons -->
         <a 
           href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} 
-          class="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          class="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl touch-manipulation"
+          style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);"
         >
           <Phone className="w-4 h-4" />
           <span>{siteConfig.contact.phone}</span>
         </a>
         <a 
           href={`mailto:${siteConfig.contact.email}`} 
-          class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/20 hover:scale-105 transition-all duration-300"
+          class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/20 hover:scale-105 transition-all duration-300 touch-manipulation"
+          style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);"
         >
           <Mail className="w-4 h-4" />
           <span>Email</span>
@@ -84,16 +86,18 @@ import Logo from './Logo.astro';
       
       <!-- Mobile CTA Buttons -->
       <div class="pt-3 border-t border-white/20 space-y-2">
-        <a 
-          href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} 
-          class="flex items-center justify-center gap-2 bg-white text-primary px-4 py-3 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+        <a
+          href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
+          class="flex items-center justify-center gap-2 bg-white text-primary px-4 py-3 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-lg touch-manipulation"
+          style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);"
         >
           <Phone className="w-4 h-4" />
           <span>{siteConfig.contact.phone}</span>
         </a>
-        <a 
-          href={`mailto:${siteConfig.contact.email}`} 
-          class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-all duration-300"
+        <a
+          href={`mailto:${siteConfig.contact.email}`}
+          class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-all duration-300 touch-manipulation"
+          style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);"
         >
           <Mail className="w-4 h-4" />
           <span>Email</span>

@@ -1,0 +1,80 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import Badge from '@/components/ui/Badge.astro';
+import { Calculator, Euro, TrendingUp } from 'lucide-react';
+
+const meta = {
+  title: "Fonds de Commerce Puygros | Cession Entreprise Savoie",
+  description: "Cédez votre fonds de commerce à Puygros au meilleur prix. Expertise locale et réseau d'acquéreurs qualifiés.",
+  keywords: ["fonds commerce puygros", "cession entreprise puygros"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <Section size="lg" className="bg-gradient-to-b from-primary/5 to-background">
+    <div class="text-center mb-16">
+      <Badge variant="success" className="mb-6">
+        Secteur Calme
+      </Badge>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+        Fonds de Commerce <span class="gradient-text">Puygros</span>
+      </h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto mb-12">
+        Cédez votre fonds de commerce à Puygros avec notre expertise du marché local.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <Euro className="w-6 h-6 text-primary" />
+          </div>
+          <div class="text-3xl font-bold text-primary mb-2">120k€</div>
+          <div class="text-sm text-muted font-medium">CA moyen</div>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <TrendingUp className="w-6 h-6 text-primary" />
+          </div>
+          <div class="text-3xl font-bold text-primary mb-2">13%</div>
+          <div class="text-sm text-muted font-medium">Rentabilité</div>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <Calculator className="w-6 h-6 text-primary" />
+          </div>
+          <div class="text-3xl font-bold text-primary mb-2">55j</div>
+          <div class="text-sm text-muted font-medium">Délai cession</div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section className="bg-gradient-to-br from-primary to-primary/90">
+    <div class="text-center text-white">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        Évaluer votre fonds de commerce à Puygros
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Estimation précise basée sur votre chiffre d'affaires et le marché de Puygros.
+      </p>
+      <a href="/estimation" class="btn bg-white text-primary hover:bg-white/90">
+        <Calculator className="w-5 h-5" />
+        Estimation gratuite
+      </a>
+    </div>
+  </Section>
+</Base>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
