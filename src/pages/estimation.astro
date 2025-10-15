@@ -548,103 +548,102 @@ import { siteConfig } from '@/lib/utils';
 
       window.addEventListener('scroll', showScrollIndicator);
       showScrollIndicator(); // Vérifier l'état initial
-    });
-  }
+    }
 
-  // Estimation IA immédiate
-  const estimateNowBtn = document.getElementById('estimate-now-btn') as HTMLButtonElement | null;
-  const estimationResults = document.getElementById('estimation-results') as HTMLElement | null;
-  const estimatedValue = document.getElementById('estimated-value') as HTMLElement | null;
-  const confidenceRange = document.getElementById('confidence-range') as HTMLElement | null;
-  const pricePerM2 = document.getElementById('price-per-m2') as HTMLElement | null;
-  const marketTrend = document.getElementById('market-trend') as HTMLElement | null;
-  const transactionsCount = document.getElementById('transactions-count') as HTMLElement | null;
+    // Estimation IA immédiate
+    const estimateNowBtn = document.getElementById('estimate-now-btn') as HTMLButtonElement | null;
+    const estimationResults = document.getElementById('estimation-results') as HTMLElement | null;
+    const estimatedValue = document.getElementById('estimated-value') as HTMLElement | null;
+    const confidenceRange = document.getElementById('confidence-range') as HTMLElement | null;
+    const pricePerM2 = document.getElementById('price-per-m2') as HTMLElement | null;
+    const marketTrend = document.getElementById('market-trend') as HTMLElement | null;
+    const transactionsCount = document.getElementById('transactions-count') as HTMLElement | null;
 
-  if (estimateNowBtn && estimationResults && estimatedValue && confidenceRange && pricePerM2 && marketTrend && transactionsCount) {
-    estimateNowBtn.addEventListener('click', async () => {
-      // Récupérer les valeurs du formulaire avec vérification de types
-      const cityInput = document.getElementById('quick-city') as HTMLInputElement | null;
-      const typeSelect = document.getElementById('quick-type') as HTMLSelectElement | null;
-      const surfaceInput = document.getElementById('quick-surface') as HTMLInputElement | null;
+    if (estimateNowBtn && estimationResults && estimatedValue && confidenceRange && pricePerM2 && marketTrend && transactionsCount) {
+      estimateNowBtn.addEventListener('click', async () => {
+        // Récupérer les valeurs du formulaire avec vérification de types
+        const cityInput = document.getElementById('quick-city') as HTMLInputElement | null;
+        const typeSelect = document.getElementById('quick-type') as HTMLSelectElement | null;
+        const surfaceInput = document.getElementById('quick-surface') as HTMLInputElement | null;
 
-      if (!cityInput || !typeSelect || !surfaceInput) {
-        alert('Erreur: Formulaire non trouvé');
-        return;
-      }
+        if (!cityInput || !typeSelect || !surfaceInput) {
+          alert('Erreur: Formulaire non trouvé');
+          return;
+        }
 
-      const city = cityInput.value;
-      const type = typeSelect.value;
-      const surface = surfaceInput.value;
+        const city = cityInput.value;
+        const type = typeSelect.value;
+        const surface = surfaceInput.value;
 
-      // Validation basique
-      if (!city || !type || !surface) {
-        alert('Veuillez remplir tous les champs obligatoires');
-        return;
-      }
+        // Validation basique
+        if (!city || !type || !surface) {
+          alert('Veuillez remplir tous les champs obligatoires');
+          return;
+        }
 
-      // Afficher le loader
-      const originalContent = estimateNowBtn.innerHTML;
-      estimateNowBtn.innerHTML = `
-        <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-        <span>Estimation en cours...</span>
-      `;
-      estimateNowBtn.disabled = true;
+        // Afficher le loader
+        const originalContent = estimateNowBtn.innerHTML;
+        estimateNowBtn.innerHTML = `
+          <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+          <span>Estimation en cours...</span>
+        `;
+        estimateNowBtn.disabled = true;
 
-      try {
-        // Simulation d'une estimation basée sur des données fictives
-        // En production, vous feriez un appel API vers votre service d'estimation
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulation 2s
+        try {
+          // Simulation d'une estimation basée sur des données fictives
+          await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Calcul d'estimation fictive basée sur le type et la ville
-        const basePrice = type === 'maison' ? 3500 : type === 'appartement' ? 2800 : 150;
-        const surfaceNum = parseInt(surface);
-        const estimated = Math.floor(basePrice * surfaceNum * (0.8 + Math.random() * 0.4));
+          // Calcul d'estimation fictive basée sur le type et la ville
+          const basePrice = type === 'maison' ? 3500 : type === 'appartement' ? 2800 : 150;
+          const surfaceNum = parseInt(surface);
+          const estimated = Math.floor(basePrice * surfaceNum * (0.8 + Math.random() * 0.4));
 
-        // Prix au m²
-        const priceM2Value = Math.floor(estimated / surfaceNum);
+          // Prix au m²
+          const priceM2Value = Math.floor(estimated / surfaceNum);
 
-        // Fourchette de confiance (±15%)
-        const minEstimate = Math.floor(estimated * 0.85);
-        const maxEstimate = Math.floor(estimated * 1.15);
+          // Fourchette de confiance (±15%)
+          const minEstimate = Math.floor(estimated * 0.85);
+          const maxEstimate = Math.floor(estimated * 1.15);
 
-        // Mettre à jour les résultats
-        estimatedValue.textContent = estimated.toLocaleString('fr-FR') + ' €';
-        confidenceRange.textContent = minEstimate.toLocaleString('fr-FR') + ' - ' + maxEstimate.toLocaleString('fr-FR') + ' €';
-        pricePerM2.textContent = priceM2Value.toLocaleString('fr-FR') + ' €/m²';
+          // Mettre à jour les résultats
+          estimatedValue.textContent = estimated.toLocaleString('fr-FR') + ' €';
+          confidenceRange.textContent = minEstimate.toLocaleString('fr-FR') + ' - ' + maxEstimate.toLocaleString('fr-FR') + ' €';
+          pricePerM2.textContent = priceM2Value.toLocaleString('fr-FR') + ' €/m²';
 
-        // Informations marché fictives
-        const trends = ['Marché stable', 'Marché haussier', 'Marché dynamique'];
-        marketTrend.textContent = trends[Math.floor(Math.random() * trends.length)];
+          // Informations marché fictives
+          const trends = ['Marché stable', 'Marché haussier', 'Marché dynamique'];
+          marketTrend.textContent = trends[Math.floor(Math.random() * trends.length)];
 
-        const transactionCounts = [12, 15, 18, 22, 25];
-        transactionsCount.textContent = transactionCounts[Math.floor(Math.random() * transactionCounts.length)] + ' transactions analysées';
+          const transactionCounts = [12, 15, 18, 22, 25];
+          transactionsCount.textContent = transactionCounts[Math.floor(Math.random() * transactionCounts.length)] + ' transactions analysées';
 
-        // Afficher les résultats
-        estimationResults.classList.remove('hidden');
+          // Afficher les résultats
+          estimationResults.classList.remove('hidden');
 
-        // Scroll vers les résultats
-        estimationResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Scroll vers les résultats
+          estimationResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      } catch (error) {
-        console.error('Erreur lors de l\'estimation:', error);
-        alert('Une erreur est survenue lors de l\'estimation. Veuillez réessayer.');
-      } finally {
-        // Réinitialiser le bouton
-        estimateNowBtn.innerHTML = originalContent;
-        estimateNowBtn.disabled = false;
-      }
-    });
-  }
+        } catch (error) {
+          console.error('Erreur lors de l\'estimation:', error);
+          alert('Une erreur est survenue lors de l\'estimation. Veuillez réessayer.');
+        } finally {
+          // Réinitialiser le bouton
+          estimateNowBtn.innerHTML = originalContent;
+          estimateNowBtn.disabled = false;
+        }
+      });
+    }
 
-  // Bouton demande d'estimation complète
-  const requestFullEstimation = document.getElementById('request-full-estimation') as HTMLButtonElement | null;
-  if (requestFullEstimation) {
-    requestFullEstimation.addEventListener('click', () => {
-      // Scroll vers le formulaire traditionnel
-      const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null;
-      if (traditionalForm) {
-        traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  }
+    // Bouton demande d'estimation complète
+    const requestFullEstimation = document.getElementById('request-full-estimation') as HTMLButtonElement | null;
+    if (requestFullEstimation) {
+      requestFullEstimation.addEventListener('click', () => {
+        // Scroll vers le formulaire traditionnel
+        const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null;
+        if (traditionalForm) {
+          traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    }
+  });
 </script>
