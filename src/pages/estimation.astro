@@ -628,11 +628,26 @@ import { siteConfig } from '@/lib/utils';
             const fullEstimationBtn = document.getElementById('request-full-estimation') as HTMLButtonElement | null;
             if (fullEstimationBtn) {
               fullEstimationBtn.addEventListener('click', () => {
-                // Essayer plusieurs sélecteurs pour trouver le formulaire traditionnel
-                const traditionalForm = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-primary\\/10.p-8') as HTMLElement | null ||
-                                       document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null ||
-                                       document.querySelector('section.py-16.bg-white') as HTMLElement | null ||
-                                       document.querySelector('form') as HTMLElement | null;
+                // Fonction pour trouver le formulaire traditionnel avec plusieurs sélecteurs
+                const findTraditionalForm = () => {
+                  // Sélecteur principal (complet)
+                  const form1 = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-primary\\/10.p-8') as HTMLElement | null;
+                  if (form1) return form1;
+
+                  // Sélecteur sans border et padding
+                  const form2 = document.querySelector('.bg-white.rounded-3xl.shadow-2xl') as HTMLElement | null;
+                  if (form2) return form2;
+
+                  // Sélecteur de section
+                  const form3 = document.querySelector('section.py-16.bg-white') as HTMLElement | null;
+                  if (form3) return form3;
+
+                  // Dernière option: premier formulaire trouvé
+                  const form4 = document.querySelector('form') as HTMLElement | null;
+                  return form4;
+                };
+
+                const traditionalForm = findTraditionalForm();
 
                 if (traditionalForm) {
                   traditionalForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
