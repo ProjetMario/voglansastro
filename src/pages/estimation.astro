@@ -160,7 +160,7 @@ import { siteConfig } from '@/lib/utils';
         </div>
 
         <div class="bg-white rounded-3xl shadow-2xl border border-primary/10 p-8">
-          <form class="space-y-8">
+          <form id="traditional-estimation-form" class="space-y-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label for="property-type" class="block text-lg font-semibold mb-3 text-foreground">Type de bien *</label>
@@ -668,6 +668,104 @@ import { siteConfig } from '@/lib/utils';
           // Réinitialiser le bouton
           estimateNowBtn.innerHTML = originalContent;
           estimateNowBtn.disabled = false;
+        }
+      });
+    }
+
+    // Gestion du formulaire d'estimation traditionnel - Envoi à HubSpot
+    const traditionalForm = document.getElementById('traditional-estimation-form') as HTMLFormElement | null;
+    if (traditionalForm) {
+      traditionalForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Récupérer les données du formulaire
+        const formData = new FormData(traditionalForm);
+        const data = {
+          fields: [
+            {
+              name: 'firstname',
+              value: (formData.get('nom') as string)?.split(' ')[0] || ''
+            },
+            {
+              name: 'lastname',
+              value: (formData.get('nom') as string)?.split(' ').slice(1).join(' ') || ''
+            },
+            {
+              name: 'email',
+              value: formData.get('email') as string
+            },
+            {
+              name: 'phone',
+              value: formData.get('telephone') as string
+            },
+            {
+              name: 'type_de_bien',
+              value: formData.get('property-type') as string
+            },
+            {
+              name: 'ville',
+              value: formData.get('ville') as string
+            },
+            {
+              name: 'surface_habitable',
+              value: formData.get('surface') as string
+            },
+            {
+              name: 'nombre_de_pieces',
+              value: formData.get('pieces') as string
+            },
+            {
+              name: 'annee_de_construction',
+              value: formData.get('annee-construction') as string
+            },
+            {
+              name: 'message',
+              value: formData.get('message') as string
+            }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: 'Estimation Gratuite'
+          }
+        };
+
+        // Afficher un loader sur le bouton
+        const submitBtn = traditionalForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const originalBtnContent = submitBtn?.innerHTML;
+        if (submitBtn) {
+          submitBtn.innerHTML = `
+            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+            <span>Envoi en cours...</span>
+          `;
+          submitBtn.disabled = true;
+        }
+
+        try {
+          // Envoyer à HubSpot via l'API Forms
+          const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/146996576/38e959ad-3e66-4d5d-b88c-89950c681230`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          });
+
+          if (response.ok) {
+            // Succès
+            alert('✅ Votre demande d\'estimation a été envoyée avec succès ! Nous vous recontacterons sous 48h.');
+            traditionalForm.reset();
+          } else {
+            throw new Error('Erreur lors de l\'envoi');
+          }
+        } catch (error) {
+          console.error('Erreur:', error);
+          alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement.');
+        } finally {
+          // Réinitialiser le bouton
+          if (submitBtn && originalBtnContent) {
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
+          }
         }
       });
     }
