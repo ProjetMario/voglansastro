@@ -1,0 +1,34 @@
+/* TEAM */
+Agence: L'Agence de Voglans
+Site: https://agencevoglans.fr
+Localisation: Voglans, Savoie, France
+Contact: contact@agencevoglans.fr
+Téléphone: 07 57 83 02 62
+
+/* THANKS */
+Framework: Astro
+Hébergement: Netlify
+Icônes: Lucide React
+Fonts: Google Fonts
+
+/* SITE */
+Dernière mise à jour: 2025/10/16
+Langage: Français
+Doctype: HTML5
+IDE: Windsurf, VS Code
+Standards: HTML5, CSS3, ES2024
+Composants: React, Tailwind CSS
+Accessibilité: WCAG 2.1 AA
+
+/* VALEURS */
+100% Local
+100% Humain
+100% Transparent
+Expertise Savoie depuis 2024
+
+/* SEO */
+Optimisé pour: Google, Bing, DuckDuckGo
+Schema.org: RealEstateAgent, LocalBusiness, FAQPage
+Open Graph: Oui
+Twitter Cards: Oui
+Sitemap: https://agencevoglans.fr/sitemap-index.xml

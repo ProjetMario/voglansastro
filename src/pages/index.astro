@@ -2,6 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import Section from '@/components/ui/Section.astro';
 import Logo from '@/components/Logo.astro';
+import ReviewSchema from '@/components/ReviewSchema.astro';
 import {
   ArrowDown,
   Calculator,
@@ -297,11 +298,12 @@ const organizationSchema = {
                 playsinline
                 class="w-full h-80 lg:h-96 object-cover"
                 poster="/images/zone-intervention-poster.jpg"
+                aria-label="Carte de la zone d'intervention de l'Agence de Voglans en Savoie - Voglans, Chambéry, Le Bourget-du-Lac"
               >
                 <source src="/videos/zone.mp4" type="video/mp4">
                 <div class="w-full h-80 lg:h-96 bg-gradient-to-br from-black to-black/60 flex items-center justify-center">
                   <div class="text-center text-black">
-                    <MapPin className="w-16 h-16 mx-auto mb-4" />
+                    <MapPin className="w-16 h-16 mx-auto mb-4" aria-hidden="true" />
                     <p class="text-sm opacity-80">Voglans • Chambéry • Le Bourget-du-Lac</p>
                   </div>
                 </div>
@@ -384,6 +386,9 @@ const organizationSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Section Avis Clients avec Rich Snippets -->
+  <ReviewSchema />
 </Base>
 
 <style>

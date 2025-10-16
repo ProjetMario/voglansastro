@@ -1,0 +1,9 @@
+Contact: mailto:contact@agencevoglans.fr
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: fr, en
+Canonical: https://agencevoglans.fr/.well-known/security.txt
+Policy: https://agencevoglans.fr/confidentialite
+Acknowledgments: https://agencevoglans.fr/a-propos
+
+# Si vous découvrez une vulnérabilité de sécurité, merci de nous contacter
+# à l'adresse email ci-dessus. Nous nous engageons à répondre dans les 48h.

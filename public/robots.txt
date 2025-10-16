@@ -16,6 +16,11 @@ Allow: /estimation
 Allow: /contact
 Allow: /a-propos
 Allow: /blog/
+Allow: /sitemap
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Humans
+# We are humans, not robots. Learn more about us:
+# https://agencevoglans.fr/humans.txt

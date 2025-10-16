@@ -14,9 +14,48 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
+      filter: (page) => !page.includes('/admin/'),
+      customPages: [
+        'https://agencevoglans.fr/',
+        'https://agencevoglans.fr/estimation',
+        'https://agencevoglans.fr/vendre',
+        'https://agencevoglans.fr/acheter',
+        'https://agencevoglans.fr/contact',
+      ],
+      serialize(item) {
+        // Pages principales - haute priorité
+        if (item.url === 'https://agencevoglans.fr/' || 
+            item.url.endsWith('/estimation') ||
+            item.url.endsWith('/vendre') ||
+            item.url.endsWith('/acheter')) {
+          item.changefreq = 'daily';
+          item.priority = 1.0;
+        }
+        // Pages villes - priorité moyenne-haute
+        else if (item.url.includes('/estimation/')) {
+          item.changefreq = 'weekly';
+          item.priority = 0.8;
+        }
+        // Pages blog - priorité moyenne
+        else if (item.url.includes('/blog/')) {
+          item.changefreq = 'weekly';
+          item.priority = 0.7;
+        }
+        // Pages spécialisées (fonds-commerce, immeuble-rapport, etc.)
+        else if (item.url.includes('fonds-commerce') || 
+                 item.url.includes('immeuble-rapport') ||
+                 item.url.includes('propriete-prestige')) {
+          item.changefreq = 'weekly';
+          item.priority = 0.6;
+        }
+        // Autres pages
+        else {
+          item.changefreq = 'monthly';
+          item.priority = 0.5;
+        }
+        item.lastmod = new Date();
+        return item;
+      },
     }),
   ],
   redirects: {
