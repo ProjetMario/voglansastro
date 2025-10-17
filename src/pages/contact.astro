@@ -231,7 +231,7 @@ import { siteConfig } from '@/lib/utils';
   <section class="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
     <!-- Formes organiques -->
     <div class="absolute inset-0 opacity-30">
-      <svg viewBox="0 0 1200 800" className="absolute inset-0 w-full h-full">
+      <svg viewBox="0 0 1200 800" class="absolute inset-0 w-full h-full">
         <path d="M0,400 C300,200 600,600 900,300 C1050,150 1200,450 1200,400 L1200,800 L0,800 Z" fill="url(#gradient1)" />
         <path d="M300,100 C500,300 700,50 1000,250 C1100,350 1200,200 1200,400 L1200,0 L300,0 Z" fill="url(#gradient2)" />
         <defs>
@@ -325,7 +325,7 @@ import { siteConfig } from '@/lib/utils';
             <span>ESTIMATION GRATUITE</span>
           </a>
           <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} class="group relative bg-white/20 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
-            <Phone class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             <span>NOUS APPELER</span>
           </a>
         </div>
@@ -631,7 +631,7 @@ import { siteConfig } from '@/lib/utils';
         const progress = (scrollPosition / scrollHeight) * 100;
 
         if (scrollProgress && scrollText) {
-          scrollProgress.style.height = `${progress}%`;
+          (scrollProgress as HTMLElement).style.height = `${progress}%`;
           scrollText.textContent = `${Math.round(progress)}%`;
         }
       };

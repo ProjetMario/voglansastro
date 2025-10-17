@@ -33,7 +33,7 @@ import {
 } from 'lucide-react';
 
 // Simulation de données - à remplacer par les vraies données des Content Collections
-const properties = [
+const properties: any[] = [
   // Temporairement vide - aucun mandat pour le moment
 ];
 ---
@@ -698,8 +698,8 @@ const properties = [
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
         const progress = (scrollPosition / scrollHeight) * 100;
 
-        if (scrollProgress && scrollText) {
-          scrollProgress.style.height = `${progress}%`;
+        if (scrollProgress !== null && scrollText !== null) {
+          (scrollProgress as HTMLElement).style.height = `${progress}%`;
           scrollText.textContent = `${Math.round(progress)}%`;
         }
       };

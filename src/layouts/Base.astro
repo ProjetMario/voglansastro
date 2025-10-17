@@ -75,6 +75,192 @@ const {
     <!-- Slot pour meta tags additionnels -->
     <slot name="head" />
     
+    <!-- Schema.org Structured Data (SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "RealEstateAgent",
+            "@id": "https://agencevoglans.fr/#organization",
+            "name": "L'Agence de Voglans",
+            "alternateName": "Agence de Voglans",
+            "url": "https://agencevoglans.fr",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://agencevoglans.fr/images/logo-agence-voglans.png",
+              "width": 250,
+              "height": 60
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://agencevoglans.fr/images/agence-facade.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "description": "Agence immobilière 100% locale et humaine en Savoie. Estimation gratuite, vente et achat de biens immobiliers dans 27 communes : Chambéry, Aix-les-Bains, Voglans.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "93 Chemin de la Combe",
+              "addressLocality": "Voglans",
+              "postalCode": "73420",
+              "addressRegion": "Savoie",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 45.6167,
+              "longitude": 5.9000
+            },
+            "telephone": "+33479XXXXXX",
+            "email": "contact@agencevoglans.fr",
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "12:00"
+              }
+            ],
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Chambéry",
+                "containedIn": {
+                  "@type": "AdministrativeArea",
+                  "name": "Savoie"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Aix-les-Bains",
+                "containedIn": {
+                  "@type": "AdministrativeArea",
+                  "name": "Savoie"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Voglans",
+                "containedIn": {
+                  "@type": "AdministrativeArea",
+                  "name": "Savoie"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "La Ravoire",
+                "containedIn": {
+                  "@type": "AdministrativeArea",
+                  "name": "Savoie"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Bassens",
+                "containedIn": {
+                  "@type": "AdministrativeArea",
+                  "name": "Savoie"
+                }
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services Immobiliers",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Estimation Immobilière Gratuite",
+                    "description": "Estimation gratuite de votre bien immobilier sous 48h par nos experts locaux"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Vente de Biens Immobiliers",
+                    "description": "Accompagnement complet pour la vente de maisons, appartements, terrains en Savoie"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Achat de Biens Immobiliers",
+                    "description": "Recherche et accompagnement pour l'achat de votre bien immobilier en Savoie"
+                  }
+                }
+              ]
+            },
+            "sameAs": [
+              "https://www.facebook.com/agencevoglans",
+              "https://www.linkedin.com/company/agence-voglans",
+              "https://www.instagram.com/agencevoglans"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://agencevoglans.fr/#website",
+            "url": "https://agencevoglans.fr",
+            "name": "L'Agence de Voglans",
+            "description": "Agence immobilière 100% locale en Savoie - Estimation gratuite, vente et achat",
+            "publisher": {
+              "@id": "https://agencevoglans.fr/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://agencevoglans.fr/estimation?ville={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            },
+            "inLanguage": "fr-FR"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://agencevoglans.fr/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://agencevoglans.fr"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    
+    <!-- Google Analytics 4 (À CONFIGURER) -->
+    <!-- Décommenter et remplacer G-XXXXXXXXXX par votre ID Google Analytics -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'send_page_view': true,
+        'anonymize_ip': true
+      });
+    </script>
+    -->
+    
+    <!-- Google Search Console Verification (À CONFIGURER) -->
+    <!-- Décommenter et remplacer par votre code de vérification -->
+    <!-- <meta name="google-site-verification" content="VOTRE_CODE_VERIFICATION_ICI" /> -->
+    
     <!-- HubSpot Script -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/146996576.js"></script>
   </head>

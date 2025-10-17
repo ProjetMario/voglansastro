@@ -22,6 +22,7 @@ export default function EstimationForm({ cityName }: EstimationFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [startTime] = useState(Date.now());
+  const [result, setResult] = useState({ hubspot: null });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,16 +36,23 @@ export default function EstimationForm({ cityName }: EstimationFormProps) {
     
     try {
       // Simuler l'envoi (à remplacer par votre API)
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // await new Promise(resolve => setTimeout(resolve, 1500));
       
       // En production, envoyer à votre backend
-      // const response = await fetch('/api/estimation', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ ...formData, city: cityName })
-      // });
+      const response = await fetch('/api/estimation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, city: cityName })
+      });
       
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Erreur lors de l\'envoi');
+      }
+
       setSubmitStatus('success');
+      setResult({ hubspot: result.hubspot });
       
       // Reset form après succès
       setTimeout(() => {
@@ -326,7 +334,14 @@ export default function EstimationForm({ cityName }: EstimationFormProps) {
                 </svg>
                 <div>
                   <p className="font-semibold text-green-900">Demande envoyée avec succès !</p>
-                  <p className="text-sm text-green-700">Nous vous recontactons sous 48h pour planifier la visite.</p>
+                  <p className="text-sm text-green-700">
+                    Nous vous recontactons sous 48h pour planifier la visite d'estimation.
+                    {result?.hubspot === 'success' && (
+                      <span className="block mt-1 font-medium">
+                        ✓ Vos informations ont été transmises à notre système de gestion client.
+                      </span>
+                    )}
+                  </p>
                 </div>
               </div>
             )}

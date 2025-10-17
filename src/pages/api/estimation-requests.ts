@@ -40,6 +40,65 @@ try {
   // Le fichier existe déjà ou erreur non critique
 }
 
+// Fonction pour envoyer les données à HubSpot
+async function sendToHubSpot(estimationRequest: EstimationRequest) {
+  const HUBSPOT_API_KEY = import.meta.env.HUBSPOT_API_KEY;
+  const HUBSPOT_PORTAL_ID = import.meta.env.HUBSPOT_PORTAL_ID;
+
+  if (!HUBSPOT_API_KEY || !HUBSPOT_PORTAL_ID) {
+    console.warn('Clés HubSpot manquantes - sauvegarde locale uniquement');
+    return false;
+  }
+
+  try {
+    // Préparation des données pour HubSpot
+    const hubspotData = {
+      properties: {
+        firstname: estimationRequest.clientInfo.nom.split(' ')[0] || '',
+        lastname: estimationRequest.clientInfo.nom.split(' ').slice(1).join(' ') || '',
+        email: estimationRequest.clientInfo.email,
+        phone: estimationRequest.clientInfo.telephone,
+        ville_interet: estimationRequest.clientInfo.ville || '',
+        type_de_bien: estimationRequest.clientInfo.propertyType || '',
+        surface: estimationRequest.clientInfo.surface?.toString() || '',
+        valeur_estimee: estimationRequest.estimationData?.estimatedValue?.toString() || '',
+        fourchette_basse: estimationRequest.estimationData?.confidenceRange?.min?.toString() || '',
+        fourchette_haute: estimationRequest.estimationData?.confidenceRange?.max?.toString() || '',
+        tendance_marche: estimationRequest.estimationData?.marketTrend || '',
+        type_estimation: estimationRequest.type,
+        date_demande: estimationRequest.timestamp,
+        statut: 'Nouveau',
+        source_lead: 'Formulaire estimation site web',
+        notes: estimationRequest.clientInfo.message || ''
+      }
+    };
+
+    // Envoi à HubSpot
+    const response = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+      },
+      body: JSON.stringify(hubspotData)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      throw new Error(`Erreur HubSpot: ${response.status} - ${errorData}`);
+    }
+
+    const result = await response.json();
+    console.log('Contact créé dans HubSpot:', result.id);
+
+    return true;
+
+  } catch (error) {
+    console.error('Erreur lors de l\'envoi à HubSpot:', error);
+    return false;
+  }
+}
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
@@ -91,18 +150,24 @@ async function handleEstimationRequest(body: any) {
     status: 'pending'
   };
 
-  // Stocker la demande
+  // Envoyer à HubSpot en priorité
+  const hubspotSuccess = await sendToHubSpot(estimationRequest);
+
+  // Sauvegarder localement en backup (même si HubSpot fonctionne)
   await storeEstimationRequest(estimationRequest);
 
   // Envoyer la notification par email (simulé pour l'instant)
   await sendNotificationEmail(estimationRequest);
 
-  console.log('Demande d\'estimation sauvegardée avec succès:', id);
+  console.log('Demande d\'estimation traitée:', { id, hubspotSuccess });
 
   return new Response(JSON.stringify({
     success: true,
     id,
-    message: 'Demande d\'estimation reçue avec succès'
+    hubspot: hubspotSuccess ? 'success' : 'fallback',
+    message: hubspotSuccess
+      ? 'Demande d\'estimation envoyée à HubSpot avec succès'
+      : 'Demande sauvegardée localement (HubSpot non configuré)'
   }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' }

@@ -1,25 +1,54 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://agencevoglans.fr/sitemap-index.xml
+# Sitemap XML (PRIORITÉ GOOGLE)
+Sitemap: https://agencevoglans.fr/sitemap.xml
 
-# Disallow admin areas (if any)
+# Disallow admin areas and API
 Disallow: /admin/
+Disallow: /api/
 Disallow: /.well-known/
+Disallow: /_astro/
 
-# Allow important pages
+# Allow important pages (SEO prioritaire)
 Allow: /
-Allow: /acheter
-Allow: /vendre
 Allow: /estimation
+Allow: /estimation/*
+Allow: /vendre
+Allow: /vendre-*
+Allow: /acheter
 Allow: /contact
 Allow: /a-propos
-Allow: /blog/
+Allow: /services
+Allow: /blog
+Allow: /blog/*
+Allow: /zone-intervention
 Allow: /sitemap
+
+# Disallow duplicate content
+Disallow: /about
+Disallow: /achat
+Disallow: /vente
+Disallow: /*.bak$
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
 
 # Humans
 # We are humans, not robots. Learn more about us:

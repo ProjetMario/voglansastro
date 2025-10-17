@@ -732,8 +732,10 @@ import {
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
         const progress = (scrollPosition / scrollHeight) * 100;
 
-        scrollProgress.style.height = `${progress}%`;
-        scrollText.textContent = `${Math.round(progress)}%`;
+        if (scrollProgress && scrollText) {
+          (scrollProgress as HTMLElement).style.height = `${progress}%`;
+          scrollText.textContent = `${Math.round(progress)}%`;
+        }
       };
 
       const showScrollIndicator = () => {
