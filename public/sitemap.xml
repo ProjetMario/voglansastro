@@ -84,31 +84,53 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Articles Blog -->
+  <!-- Articles Blog Featured (Priorité Maximale) -->
   <url>
-    <loc>https://agencevoglans.fr/blog/prix-immobilier-savoie-2025</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://agencevoglans.fr/blog/investir-landiers-chambery</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://agencevoglans.fr/blog/marche-immobilier-voglans-2025</loc>
+    <loc>https://agencevoglans.fr/blog/vendre-maison-chambery-2025</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://agencevoglans.fr/blog/acheter-lac-bourget-2025</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://agencevoglans.fr/blog/investir-voglans-2025</loc>
     <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Articles Blog Standards -->
+  <url>
+    <loc>https://agencevoglans.fr/blog/marche-immobilier-voglans-2025</loc>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://agencevoglans.fr/blog/investir-voglans-savoie</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://agencevoglans.fr/blog/quartiers-voglans-guide-complet</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
