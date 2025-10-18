@@ -1,0 +1,57 @@
+import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_9NFxWlB3.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_C-rQJHwz.mjs';
+import { C as COMMUNES } from '../chunks/communes_B_gSpX8a.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$Sitemap = createComponent(($$result, $$props, $$slots) => {
+  const mainPages = [
+    { title: "Accueil", href: "/", description: "Page d'accueil de L'Agence de Voglans" },
+    { title: "Estimation Gratuite", href: "/estimation", description: "Obtenez une estimation gratuite de votre bien" },
+    { title: "Vendre", href: "/vendre", description: "Vendez votre bien immobilier avec nous" },
+    { title: "Acheter", href: "/acheter", description: "Trouvez votre bien id\xE9al en Savoie" },
+    { title: "Contact", href: "/contact", description: "Contactez notre \xE9quipe" },
+    { title: "\xC0 Propos", href: "/a-propos", description: "D\xE9couvrez notre agence" }
+  ];
+  const legalPages = [
+    { title: "Mentions L\xE9gales", href: "/mentions-legales", description: "Informations l\xE9gales" },
+    { title: "Confidentialit\xE9", href: "/confidentialite", description: "Politique de confidentialit\xE9" },
+    { title: "CGV", href: "/cgv", description: "Conditions g\xE9n\xE9rales de vente" },
+    { title: "RGPD", href: "/rgpd", description: "Protection des donn\xE9es personnelles" }
+  ];
+  const blogPages = [
+    { title: "Blog", href: "/blog", description: "Actualit\xE9s immobili\xE8res" },
+    { title: "Investir \xE0 Voglans", href: "/blog/investir-voglans-savoie", description: "Guide d'investissement" },
+    { title: "March\xE9 Immobilier 2025", href: "/blog/marche-immobilier-voglans-2025", description: "Tendances du march\xE9" },
+    { title: "Quartiers de Voglans", href: "/blog/quartiers-voglans-guide-complet", description: "Guide des quartiers" }
+  ];
+  const sortedCommunes = [...COMMUNES].sort((a, b) => a.name.localeCompare(b.name));
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Plan du Site | L'Agence de Voglans", "description": "Plan du site de L'Agence de Voglans - Retrouvez toutes nos pages : estimation, vente, achat, et nos pages par ville en Savoie." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="py-16 bg-gradient-to-br from-slate-50 to-white min-h-screen"> <div class="container mx-auto px-4"> <div class="max-w-6xl mx-auto"> <!-- Header --> <div class="text-center mb-16"> <h1 class="text-5xl md:text-6xl font-black mb-6 text-gray-900">
+Plan du <span class="text-primary">Site</span> </h1> <p class="text-xl text-muted max-w-2xl mx-auto">
+Retrouvez toutes les pages de notre site pour naviguer facilement
+</p> </div> <!-- Pages Principales --> <section class="mb-12"> <h2 class="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"> <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path> </svg>
+Pages Principales
+</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> ${mainPages.map((page) => renderTemplate`<a${addAttribute(page.href, "href")} class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary"> <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors"> ${page.title} </h3> <p class="text-sm text-muted">${page.description}</p> </a>`)} </div> </section> <!-- Villes --> <section class="mb-12"> <h2 class="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"> <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path> </svg>
+Estimation par Ville (${sortedCommunes.length} communes)
+</h2> <div class="bg-white rounded-xl p-6 shadow-md border border-gray-100"> <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"> ${sortedCommunes.map((commune) => renderTemplate`<a${addAttribute(`/estimation/${commune.slug}`, "href")} class="text-sm text-gray-700 hover:text-primary hover:underline transition-colors py-1"> ${commune.name} </a>`)} </div> </div> </section> <!-- Blog --> <section class="mb-12"> <h2 class="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"> <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path> </svg>
+Blog & Actualités
+</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> ${blogPages.map((page) => renderTemplate`<a${addAttribute(page.href, "href")} class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary"> <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors"> ${page.title} </h3> <p class="text-sm text-muted">${page.description}</p> </a>`)} </div> </section> <!-- Pages Légales --> <section class="mb-12"> <h2 class="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"> <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path> </svg>
+Informations Légales
+</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> ${legalPages.map((page) => renderTemplate`<a${addAttribute(page.href, "href")} class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary"> <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors"> ${page.title} </h3> <p class="text-sm text-muted">${page.description}</p> </a>`)} </div> </section> <!-- CTA --> <div class="text-center mt-16 bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-12 text-white"> <h2 class="text-3xl font-bold mb-4">Besoin d'aide pour naviguer ?</h2> <p class="text-lg mb-6 opacity-90">Notre équipe est à votre disposition</p> <a href="/contact" class="inline-block bg-white text-primary px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
+Nous Contacter
+</a> </div> </div> </div> </div> ` })}`;
+}, "/Users/zazouino/Downloads/voglansastro-main/src/pages/sitemap.astro", void 0);
+
+const $$file = "/Users/zazouino/Downloads/voglansastro-main/src/pages/sitemap.astro";
+const $$url = "/sitemap";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Sitemap,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

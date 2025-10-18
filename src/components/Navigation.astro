@@ -69,21 +69,37 @@ import Logo from './Logo.astro';
   </div>
 
   <!-- Mobile Navigation Menu -->
-  <div class="md:hidden border-t border-white/20 hidden" id="mobile-menu">
+  <div class="md:hidden border-t border-white/20 hidden" id="mobile-menu" style="touch-action: manipulation;">
     <div class="px-6 py-4 space-y-3">
-      <a href="/services" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
+      <a
+        href="/services"
+        class="block text-white hover:text-white/90 py-3 px-2 text-base font-medium transition-colors touch-manipulation active:bg-white/10 rounded-lg"
+        style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1); min-height: 44px; display: flex; align-items: center;"
+      >
         Services
       </a>
-      <a href="/a-propos" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
+      <a
+        href="/a-propos"
+        class="block text-white hover:text-white/90 py-3 px-2 text-base font-medium transition-colors touch-manipulation active:bg-white/10 rounded-lg"
+        style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1); min-height: 44px; display: flex; align-items: center;"
+      >
         À propos
       </a>
-      <a href="/estimation" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
+      <a
+        href="/estimation"
+        class="block text-white hover:text-white/90 py-3 px-2 text-base font-medium transition-colors touch-manipulation active:bg-white/10 rounded-lg"
+        style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1); min-height: 44px; display: flex; align-items: center;"
+      >
         Estimation
       </a>
-      <a href="/blog" class="block text-white hover:text-white/90 py-2 text-sm font-medium transition-colors">
+      <a
+        href="/blog"
+        class="block text-white hover:text-white/90 py-3 px-2 text-base font-medium transition-colors touch-manipulation active:bg-white/10 rounded-lg"
+        style="cursor: pointer; -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1); min-height: 44px; display: flex; align-items: center;"
+      >
         Blog
       </a>
-      
+
       <!-- Mobile CTA Buttons -->
       <div class="pt-3 border-t border-white/20 space-y-2">
         <a
@@ -108,7 +124,7 @@ import Logo from './Logo.astro';
 </nav>
 
 <script>
-  // Mobile menu toggle
+  // Mobile menu toggle avec support tactile amélioré
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
@@ -116,20 +132,39 @@ import Logo from './Logo.astro';
 
   // Fonction pour fermer le menu mobile
   function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-    menuIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
+    if (mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
   }
 
   // Fonction pour ouvrir le menu mobile
   function openMobileMenu() {
-    mobileMenu.classList.remove('hidden');
-    menuIcon.classList.add('hidden');
-    closeIcon.classList.remove('hidden');
+    if (mobileMenu) {
+      mobileMenu.classList.remove('hidden');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
   }
 
   if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
-    mobileMenuButton.addEventListener('click', () => {
+    // Toggle menu avec support tactile
+    mobileMenuButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = !mobileMenu.classList.contains('hidden');
+
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Support tactile pour le bouton
+    mobileMenuButton.addEventListener('touchend', (e) => {
+      e.preventDefault();
       const isOpen = !mobileMenu.classList.contains('hidden');
 
       if (isOpen) {
@@ -142,16 +177,61 @@ import Logo from './Logo.astro';
     // Fermer automatiquement le menu quand on clique sur un lien
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+      // Click event
+      link.addEventListener('click', (e) => {
+        // Laisser le lien fonctionner normalement
+        setTimeout(() => {
+          closeMobileMenu();
+        }, 100);
+      });
+
+      // Touch event pour mobile
+      link.addEventListener('touchend', (e) => {
+        // Laisser le lien fonctionner normalement
+        setTimeout(() => {
+          closeMobileMenu();
+        }, 100);
+      });
     });
 
     // Fermer le menu en cliquant en dehors
     document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+      if (!mobileMenu.contains(e.target as Node) && !mobileMenuButton.contains(e.target as Node)) {
+        if (!mobileMenu.classList.contains('hidden')) {
+          closeMobileMenu();
+        }
+      }
+    });
+
+    // Fermer le menu en touchant en dehors (mobile)
+    document.addEventListener('touchstart', (e) => {
+      if (!mobileMenu.contains(e.target as Node) && !mobileMenuButton.contains(e.target as Node)) {
         if (!mobileMenu.classList.contains('hidden')) {
           closeMobileMenu();
         }
       }
     });
   }
-</script>
+<style>
+  /* Optimisations pour mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Amélioration des zones de clic */
+  a[href*="/services"], a[href*="/a-propos"], a[href*="/estimation"], a[href*="/blog"] {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+  }
+
+  /* Feedback tactile */
+  @media (hover: none) and (pointer: coarse) {
+    a[href*="/services"]:active, a[href*="/a-propos"]:active,
+    a[href*="/estimation"]:active, a[href*="/blog"]:active {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(0.98);
+    }
+  }
+</style>

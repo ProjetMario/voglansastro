@@ -1,0 +1,930 @@
+---
+import Base from '@/layouts/Base.astro';
+import HeroUltra from '@/components/ui/HeroUltra.astro';
+import BadgeUltra from '@/components/ui/BadgeUltra.astro';
+import ButtonUltra from '@/components/ui/ButtonUltra.astro';
+import {
+  ArrowLeft,
+  TrendingUp,
+  MapPin,
+  Calculator,
+  Euro,
+  Award,
+  CheckCircle,
+  Building,
+  Users,
+  Calendar,
+  BarChart3,
+  List,
+  AlertCircle,
+  Target,
+  Briefcase,
+  Home,
+  Train,
+  ShoppingBag,
+  GraduationCap
+} from 'lucide-react';
+
+const publishDate = new Date('2025-01-22');
+
+// Article Schema pour SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Investir aux Landiers à Chambéry : Analyse Complète pour Investisseurs Professionnels",
+  "description": "Guide complet pour investisseurs professionnels : rendement locatif, prix au m², opportunités et stratégies d'investissement dans le quartier des Landiers à Chambéry.",
+  "image": "https://agencevoglans.fr/images/blog/landiers-chambery-investissement.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
+    }
+  },
+  "datePublished": "2025-01-22T10:00:00+02:00",
+  "dateModified": "2025-01-22T10:00:00+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agencevoglans.fr/blog/investir-landiers-chambery"
+  },
+  "articleSection": "Investissement immobilier",
+  "keywords": ["investir Landiers Chambéry", "rendement locatif Chambéry", "investissement immobilier Savoie", "Landiers quartier", "LMNP Chambéry"]
+};
+---
+
+<Base
+  title="Investir aux Landiers à Chambéry : Guide Investisseurs Pro | Agence Voglans"
+  description="Guide complet pour investisseurs professionnels : rendement locatif, prix au m², opportunités et stratégies d'investissement dans le quartier des Landiers à Chambéry."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <HeroUltra>
+    <div slot="badge">
+      <BadgeUltra text="Investissement Pro" />
+    </div>
+
+    <div slot="title">
+      Investir aux Landiers<br>
+      <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">à Chambéry</span>
+    </div>
+
+    <div slot="subtitle">
+      Analyse complète pour investisseurs professionnels : rendement locatif,<br>
+      prix au m², opportunités et stratégies d'investissement dans ce quartier stratégique.
+    </div>
+
+    <div slot="cta">
+      <ButtonUltra href="/estimation/chambery" text="Estimer un bien aux Landiers" />
+    </div>
+  </HeroUltra>
+
+  <!-- Article Content -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <!-- Fond décoratif -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Navigation retour -->
+        <div class="mb-12">
+          <a href="/blog" class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-xl shadow-primary/10 hover:scale-105 transition-all duration-300 group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+            <span>Retour au blog</span>
+          </a>
+        </div>
+
+        <!-- Article Header -->
+        <header class="mb-16 text-center">
+          <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Calendar className="w-4 h-4" />
+            <span>Publié le 22 janvier 2025</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl font-black mb-6 text-foreground">
+            Investir aux Landiers à Chambéry :<br>Guide Investisseurs Professionnels
+          </h1>
+
+          <p class="text-xl text-muted leading-relaxed">
+            Le quartier des Landiers à Chambéry représente une opportunité d'investissement stratégique pour les investisseurs professionnels. Proximité gare TGV, demande locative soutenue, prix attractifs : découvrez notre analyse complète du marché et nos recommandations d'investissement.
+          </p>
+        </header>
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none mb-12">
+          <p class="text-lg leading-relaxed text-muted">
+            Le <strong>quartier des Landiers</strong> à Chambéry s'impose comme un secteur privilégié pour l'<strong>investissement immobilier locatif</strong> en Savoie. Situé à proximité immédiate de la gare TGV Chambéry-Challes-les-Eaux, ce quartier résidentiel bénéficie d'une demande locative structurelle portée par les actifs, étudiants et professionnels en mobilité. Avec des <strong>prix au m² 15-20% inférieurs au centre-ville</strong> et un <strong>rendement locatif brut de 5-6%</strong>, les Landiers offrent un excellent rapport rendement/risque pour les investisseurs avisés.
+          </p>
+          <p class="text-lg leading-relaxed text-muted">
+            Notre agence 100% locale analyse pour vous les <strong>opportunités d'investissement aux Landiers</strong> : prix du marché, typologies recherchées, rendements locatifs, fiscalité optimisée (LMNP, Pinel), et stratégies d'acquisition. Données DVF 2024, études de marché et retours d'expérience : tout ce qu'il faut savoir pour <a href="/estimation/chambery" class="text-primary hover:underline font-semibold">investir aux Landiers avec succès</a>.
+          </p>
+        </div>
+
+        <!-- Table des matières -->
+        <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <List className="w-6 h-6 text-primary" />
+            <span>Au sommaire</span>
+          </h2>
+          <ul class="space-y-3">
+            <li><a href="#presentation-quartier" class="text-primary hover:underline">→ Présentation du quartier des Landiers</a></li>
+            <li><a href="#marche-immobilier" class="text-primary hover:underline">→ Marché immobilier : prix et tendances</a></li>
+            <li><a href="#rendement-locatif" class="text-primary hover:underline">→ Rendement locatif et rentabilité</a></li>
+            <li><a href="#demande-locative" class="text-primary hover:underline">→ Demande locative et profils locataires</a></li>
+            <li><a href="#strategies-investissement" class="text-primary hover:underline">→ Stratégies d'investissement et fiscalité</a></li>
+            <li><a href="#opportunites-2025" class="text-primary hover:underline">→ Opportunités 2025 et recommandations</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 1 : Présentation -->
+        <article id="presentation-quartier" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <span>Présentation du Quartier des Landiers</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-6">
+              Le <strong>quartier des Landiers</strong> est un secteur résidentiel stratégique de Chambéry, situé au sud-ouest de la ville, entre le centre-ville et la gare TGV Chambéry-Challes-les-Eaux. Ce positionnement géographique exceptionnel en fait un quartier prisé des actifs et des investisseurs.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Situation Géographique et Accessibilité
+            </h3>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <span class="text-muted"><strong>Gare TGV Chambéry-Challes-les-Eaux</strong> : 5-10 minutes en voiture, 15 minutes en bus (ligne 3). Paris en 3h, Lyon en 1h, Grenoble en 45 min. Atout majeur pour actifs en mobilité et investissement locatif meublé courte durée.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <span class="text-muted"><strong>Centre-ville Chambéry</strong> : 2 km (5 min voiture, 10 min vélo, 20 min à pied). Accès rapide commerces, services, restaurants, vie culturelle.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <span class="text-muted"><strong>Autoroute A43</strong> : Accès en 5 minutes. Lyon (1h), Grenoble (45 min), Italie (1h30). Mobilité professionnelle optimale.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <span class="text-muted"><strong>Transports en commun</strong> : Lignes de bus 3, 5, 10. Réseau Stac bien développé. Projet futur BHNS (Bus à Haut Niveau de Service) prévu.</span>
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Commodités et Services de Proximité
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-lg text-foreground">Commerces</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Supermarché Carrefour City (5 min)</li>
+                  <li>• Boulangeries, pharmacies</li>
+                  <li>• Commerces de proximité</li>
+                  <li>• Centre commercial Chamnord (10 min)</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <GraduationCap className="w-6 h-6 text-green-600" />
+                  <h4 class="font-bold text-lg text-foreground">Éducation</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• École primaire Les Landiers</li>
+                  <li>• Collège Côte Rousse (5 min)</li>
+                  <li>• Lycées centre-ville (10 min)</li>
+                  <li>• Université Savoie Mont Blanc (15 min)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Award className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">💡 Atout Investisseur</h4>
+                  <p class="text-muted">
+                    La <strong>proximité gare TGV</strong> est l'atout majeur des Landiers pour l'investissement locatif. 40% des locataires sont des actifs en mobilité professionnelle (Paris, Lyon, Grenoble) recherchant un logement meublé proche gare. Demande structurelle et loyers premium (+10-15% vs centre-ville).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 2 : Marché Immobilier -->
+        <article id="marche-immobilier" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <BarChart3 className="w-6 h-6 text-primary" />
+            </div>
+            <span>Marché Immobilier : Prix et Tendances</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-8">
+              Le <strong>marché immobilier aux Landiers</strong> affiche des prix attractifs par rapport au centre-ville de Chambéry, tout en bénéficiant d'une demande locative soutenue. Analyse détaillée des prix au m² et des tendances 2025.
+            </p>
+
+            <!-- Tableau des prix -->
+            <div class="overflow-x-auto mb-12">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Typologie</th>
+                    <th class="px-6 py-4 text-left font-semibold">Prix au m²</th>
+                    <th class="px-6 py-4 text-left font-semibold">Prix Moyen Bien</th>
+                    <th class="px-6 py-4 text-left font-semibold">Évolution 2024-2025</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">Studio (25-30 m²)</td>
+                    <td class="px-6 py-4 text-muted">2 400 - 2 800 €/m²</td>
+                    <td class="px-6 py-4 text-muted">60 000 - 84 000 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+2%</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T2 (40-50 m²)</td>
+                    <td class="px-6 py-4 text-muted">2 500 - 2 900 €/m²</td>
+                    <td class="px-6 py-4 text-muted">100 000 - 145 000 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+2,5%</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T3 (60-70 m²)</td>
+                    <td class="px-6 py-4 text-muted">2 600 - 3 000 €/m²</td>
+                    <td class="px-6 py-4 text-muted">156 000 - 210 000 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+3%</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T4 (80-90 m²)</td>
+                    <td class="px-6 py-4 text-muted">2 700 - 3 100 €/m²</td>
+                    <td class="px-6 py-4 text-muted">216 000 - 279 000 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+3%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="text-sm text-muted mt-4 italic">
+                Source : Données DVF 2024 + Estimations locales L'Agence de Voglans - Janvier 2025
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Comparaison avec Autres Quartiers Chambéry
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+              <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 text-center">
+                <div class="text-3xl font-black text-red-600 mb-2">3 200 €/m²</div>
+                <div class="text-sm text-muted mb-2">Centre-Ville</div>
+                <div class="text-xs text-red-600 font-semibold">+20% vs Landiers</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center border-2 border-green-500">
+                <div class="text-3xl font-black text-green-600 mb-2">2 700 €/m²</div>
+                <div class="text-sm text-muted mb-2">Landiers</div>
+                <div class="text-xs text-green-600 font-semibold">✓ Meilleur rapport</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
+                <div class="text-3xl font-black text-blue-600 mb-2">2 500 €/m²</div>
+                <div class="text-sm text-muted mb-2">Périphérie</div>
+                <div class="text-xs text-blue-600 font-semibold">-7% vs Landiers</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 3 : Rendement Locatif -->
+        <article id="rendement-locatif" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Calculator className="w-6 h-6 text-primary" />
+            </div>
+            <span>Rendement Locatif et Rentabilité</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-8">
+              Le <strong>rendement locatif aux Landiers</strong> se situe entre 5% et 6% brut, soit 1 à 2 points au-dessus de la moyenne nationale (3-4%). Analyse détaillée par typologie et stratégie locative.
+            </p>
+
+            <!-- Tableau rendements -->
+            <div class="overflow-x-auto mb-12">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Typologie</th>
+                    <th class="px-6 py-4 text-left font-semibold">Prix Achat</th>
+                    <th class="px-6 py-4 text-left font-semibold">Loyer Mensuel</th>
+                    <th class="px-6 py-4 text-left font-semibold">Rendement Brut</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">Studio 28 m²</td>
+                    <td class="px-6 py-4 text-muted">70 000 €</td>
+                    <td class="px-6 py-4 text-muted">450 € (nu) / 550 € (meublé)</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">7,7% (nu) / 9,4% (meublé)</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T2 45 m²</td>
+                    <td class="px-6 py-4 text-muted">120 000 €</td>
+                    <td class="px-6 py-4 text-muted">600 € (nu) / 750 € (meublé)</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">6% (nu) / 7,5% (meublé)</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T3 65 m²</td>
+                    <td class="px-6 py-4 text-muted">180 000 €</td>
+                    <td class="px-6 py-4 text-muted">800 € (nu) / 950 € (meublé)</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">5,3% (nu) / 6,3% (meublé)</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">T4 85 m²</td>
+                    <td class="px-6 py-4 text-muted">250 000 €</td>
+                    <td class="px-6 py-4 text-muted">1 050 € (nu) / 1 200 € (meublé)</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">5% (nu) / 5,8% (meublé)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="text-sm text-muted mt-4 italic">
+                Rendements bruts hors charges, taxes et travaux. Rendement net : environ 3-4% (nu) et 4-5% (meublé).
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Stratégie Optimale : Location Meublée LMNP
+            </h3>
+
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Target className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">🎯 Recommandation Expert</h4>
+                  <p class="text-muted mb-4">
+                    Pour maximiser le rendement aux Landiers, privilégiez la <strong>location meublée en LMNP (Loueur en Meublé Non Professionnel)</strong> :
+                  </p>
+                  <ul class="space-y-2 text-muted">
+                    <li>• <strong>Rendement brut +20-25%</strong> vs location nue (loyers meublés supérieurs)</li>
+                    <li>• <strong>Fiscalité avantageuse</strong> : amortissement du bien + mobilier, récupération TVA si neuf</li>
+                    <li>• <strong>Demande forte</strong> : actifs en mobilité, professionnels TGV, étudiants</li>
+                    <li>• <strong>Rotation maîtrisée</strong> : baux 1 an renouvelables, flexibilité</li>
+                    <li>• <strong>Valorisation</strong> : bien meublé = +5-10% à la revente</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Simulation Investissement T2 45 m² en LMNP
+            </h3>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-8 my-8">
+              <h4 class="font-bold text-xl mb-6 text-center text-foreground">Exemple Concret : T2 45 m² aux Landiers</h4>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h5 class="font-semibold text-lg mb-4 text-primary">💰 Investissement Initial</h5>
+                  <ul class="space-y-2 text-muted">
+                    <li class="flex justify-between"><span>Prix d'achat</span><strong class="text-foreground">120 000 €</strong></li>
+                    <li class="flex justify-between"><span>Frais notaire</span><strong class="text-foreground">9 600 €</strong></li>
+                    <li class="flex justify-between"><span>Travaux/mobilier</span><strong class="text-foreground">15 000 €</strong></li>
+                    <li class="flex justify-between"><span><strong>Total investissement</strong></span><strong class="text-foreground text-primary">144 600 €</strong></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 class="font-semibold text-lg mb-4 text-primary">📈 Revenus Locatifs</h5>
+                  <ul class="space-y-2 text-muted">
+                    <li class="flex justify-between"><span>Loyer mensuel</span><strong class="text-foreground">750 €</strong></li>
+                    <li class="flex justify-between"><span>Loyers annuels</span><strong class="text-foreground">9 000 €</strong></li>
+                    <li class="flex justify-between"><span>Charges annuelles</span><strong class="text-foreground">-1 800 €</strong></li>
+                    <li class="flex justify-between"><span><strong>Revenus nets annuels</strong></span><strong class="text-foreground text-green-600">7 200 €</strong></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-gray-200">
+                <div class="flex justify-between items-center">
+                  <span class="text-lg font-semibold text-muted">Rendement net annuel :</span>
+                  <span class="text-2xl font-bold text-green-600">5%*</span>
+                </div>
+                <p class="text-sm text-muted mt-2">*Après charges, hors fiscalité et crédit immobilier</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 4 : Demande Locative -->
+        <article id="demande-locative" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <span>Demande Locative et Profils Locataires</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-8">
+              La <strong>demande locative aux Landiers</strong> est particulièrement dynamique grâce à la proximité de la gare TGV et de l'université. Analyse des profils locataires et du marché locatif local.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Profils Locataires Dominants
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Briefcase className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-lg text-foreground">Actifs en Mobilité (40%)</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Cadres Paris/Lyon/Grenoble (TGV)</li>
+                  <li>• Contrats CDD/missions longues</li>
+                  <li>• Recherchent meublé proche gare</li>
+                  <li>• Budget : 700-1 200 €/mois</li>
+                  <li>• Durée : 6-24 mois</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <GraduationCap className="w-6 h-6 text-green-600" />
+                  <h4 class="font-bold text-lg text-foreground">Étudiants/Jeunes Actifs (30%)</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Université Savoie Mont Blanc</li>
+                  <li>• Stages, alternance, premier emploi</li>
+                  <li>• Recherchent T1/T2 meublé</li>
+                  <li>• Budget : 450-700 €/mois</li>
+                  <li>• Durée : 9-12 mois</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Home className="w-6 h-6 text-purple-600" />
+                  <h4 class="font-bold text-lg text-foreground">Familles/Couples (20%)</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Actifs locaux stables</li>
+                  <li>• Recherchent T3/T4 nu</li>
+                  <li>• Budget : 800-1 100 €/mois</li>
+                  <li>• Durée : 3-5 ans</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Building className="w-6 h-6 text-orange-600" />
+                  <h4 class="font-bold text-lg text-foreground">Professionnels Santé/Éducation (10%)</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Hôpitaux Chambéry, enseignants</li>
+                  <li>• Recherchent T2/T3</li>
+                  <li>• Budget : 650-900 €/mois</li>
+                  <li>• Durée : 1-3 ans</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Dynamique du Marché Locatif
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center border-2 border-green-500">
+                <div class="text-3xl font-black text-green-600 mb-2">2-3%</div>
+                <div class="text-sm text-muted mb-2">Taux Vacance Locative</div>
+                <div class="text-xs text-green-600 font-semibold">Très faible</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
+                <div class="text-3xl font-black text-blue-600 mb-2">15-30 jours</div>
+                <div class="text-sm text-muted mb-2">Délai Relocation</div>
+                <div class="text-xs text-blue-600 font-semibold">Rapide</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 text-center">
+                <div class="text-3xl font-black text-purple-600 mb-2">+15-20%</div>
+                <div class="text-sm text-muted mb-2">Loyers Meublé vs Nu</div>
+                <div class="text-xs text-purple-600 font-semibold">Premium</div>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <AlertCircle className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">💡 Analyse Investisseur</h4>
+                  <p class="text-muted">
+                    Le <strong>marché locatif des Landiers</strong> est particulièrement porteur pour l'investissement meublé. La demande des actifs en mobilité (40% des locataires) génère une rotation saine et des loyers premium, tout en maintenant un faible taux de vacance. La proximité de l'université assure un flux constant d'étudiants, créant une demande pérenne pour les petites surfaces.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 5 : Stratégies d'Investissement -->
+        <article id="strategies-investissement" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6 text-primary" />
+            </div>
+            <span>Stratégies d'Investissement et Fiscalité</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-8">
+              Pour optimiser votre investissement aux Landiers, plusieurs stratégies fiscales s'offrent à vous. Analyse détaillée des options LMNP, Pinel et colocation, avec simulations chiffrées.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Stratégie 1 : LMNP Meublé (Recommandée)
+            </h3>
+
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Target className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">🎯 Stratégie Optimale</h4>
+                  <p class="text-muted mb-4">
+                    Le <strong>LMNP (Loueur en Meublé Non Professionnel)</strong> est la stratégie la plus rentable aux Landiers :
+                  </p>
+                  <ul class="space-y-2 text-muted">
+                    <li>• <strong>Rendement brut : 6-9%</strong> (loyers meublés supérieurs)</li>
+                    <li>• <strong>Fiscalité avantageuse</strong> : amortissement bien + mobilier</li>
+                    <li>• <strong>Demande locative forte</strong> : actifs TGV + étudiants</li>
+                    <li>• <strong>Flexibilité</strong> : baux 1 an renouvelables</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="text-xl font-semibold mb-4 text-foreground">Simulation LMNP T2 45 m²</h4>
+
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Année</th>
+                    <th class="px-6 py-4 text-left font-semibold">Loyers</th>
+                    <th class="px-6 py-4 text-left font-semibold">Charges</th>
+                    <th class="px-6 py-4 text-left font-semibold">Amortissement</th>
+                    <th class="px-6 py-4 text-left font-semibold">Revenus Imposables</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">Année 1-5</td>
+                    <td class="px-6 py-4 text-muted">9 000 €</td>
+                    <td class="px-6 py-4 text-muted">-2 700 €</td>
+                    <td class="px-6 py-4 text-muted">-6 000 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">300 €</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-foreground">Année 6-25</td>
+                    <td class="px-6 py-4 text-muted">9 000 €</td>
+                    <td class="px-6 py-4 text-muted">-2 700 €</td>
+                    <td class="px-6 py-4 text-muted">-4 800 €</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">1 500 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Stratégie 2 : Location Nue Longue Durée
+            </h3>
+
+            <div class="bg-gray-50 border-l-4 border-gray-400 rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Building className="w-8 h-8 text-gray-600 flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">📋 Gestion Simplifiée</h4>
+                  <p class="text-muted mb-4">
+                    La <strong>location nue</strong> convient aux investisseurs recherchant la simplicité :
+                  </p>
+                  <ul class="space-y-2 text-muted">
+                    <li>• <strong>Locataires stables</strong> : familles, couples installés</li>
+                    <li>• <strong>Gestion passive</strong> : baux 3 ans renouvelables</li>
+                    <li>• <strong>Fiscalité Pinel</strong> possible si bien neuf</li>
+                    <li>• <strong>Valorisation patrimoniale</strong> à long terme</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Stratégie 3 : Colocation Étudiants/Actifs
+            </h3>
+
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 border-l-4 border-orange-500 rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Users className="w-8 h-8 text-orange-600 flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">🚀 Rendement Maximal</h4>
+                  <p class="text-muted mb-4">
+                    La <strong>colocation</strong> optimise le rendement pour les grandes surfaces :
+                  </p>
+                  <ul class="space-y-2 text-muted">
+                    <li>• <strong>T3/T4 en colocation</strong> : 3 chambres louées séparément</li>
+                    <li>• <strong>Loyers cumulés</strong> : 1 200-1 500 €/mois pour T3</li>
+                    <li>• <strong>Demande étudiante</strong> : proximité université</li>
+                    <li>• <strong>Risque modéré</strong> : gestion active nécessaire</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 6 : Opportunités 2025 -->
+        <article id="opportunites-2025" class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Euro className="w-6 h-6 text-primary" />
+            </div>
+            <span>Opportunités 2025 et Recommandations</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-muted mb-8">
+              Le marché immobilier des Landiers présente plusieurs opportunités d'investissement pour 2025. Analyse des projets d'aménagement et recommandations stratégiques pour maximiser votre rendement.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Projets d'Aménagement 2025-2027
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Train className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-lg text-foreground">BHNS (Bus à Haut Niveau de Service)</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Ligne directe Landiers ↔ Gare ↔ Centre-ville</li>
+                  <li>• Mise en service : 2026-2027</li>
+                  <li>• Impact : +5-10% valorisation biens</li>
+                  <li>• Meilleure accessibilité quartier</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Building className="w-6 h-6 text-green-600" />
+                  <h4 class="font-bold text-lg text-foreground">Rénovation Urbaine</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Requalification espaces publics</li>
+                  <li>• Nouveaux commerces et services</li>
+                  <li>• Amélioration cadre de vie</li>
+                  <li>• Attractivité quartier renforcée</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Typologies à Privilégier en 2025
+            </h3>
+
+            <div class="space-y-6 my-8">
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border-l-4 border-green-500">
+                <div class="flex items-start gap-4">
+                  <Award className="w-8 h-8 text-green-600 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-bold text-xl mb-2 text-foreground">⭐ T2 40-50 m² Meublé (Top Recommandation)</h4>
+                    <p class="text-muted mb-4">
+                      <strong>Le choix idéal pour débuter aux Landiers</strong>
+                    </p>
+                    <ul class="space-y-2 text-muted">
+                      <li>• <strong>Budget</strong> : 100-145 K€</li>
+                      <li>• <strong>Rendement brut</strong> : 7-7,5%</li>
+                      <li>• <strong>Demande maximale</strong> : actifs + étudiants</li>
+                      <li>• <strong>Risque très faible</strong> : vacance 2-3%</li>
+                      <li>• <strong>Liquidité excellente</strong> : revente rapide</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-l-4 border-blue-500">
+                <div class="flex items-start gap-4">
+                  <Award className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-bold text-xl mb-2 text-foreground">⭐⭐ Studio 25-30 m² Meublé</h4>
+                    <p class="text-muted mb-4">
+                      <strong>Excellent ticket d'entrée pour investisseurs</strong>
+                    </p>
+                    <ul class="space-y-2 text-muted">
+                      <li>• <strong>Budget</strong> : 60-84 K€</li>
+                      <li>• <strong>Rendement brut</strong> : 8-9%</li>
+                      <li>• <strong>Demande étudiante</strong> : proximité université</li>
+                      <li>• <strong>Rotation saine</strong> : baux 9-12 mois</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-l-4 border-purple-500">
+                <div class="flex items-start gap-4">
+                  <Award className="w-8 h-8 text-purple-600 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-bold text-xl mb-2 text-foreground">⭐⭐⭐ T3 60-70 m² Colocation</h4>
+                    <p class="text-muted mb-4">
+                      <strong>Pour investisseurs expérimentés</strong>
+                    </p>
+                    <ul class="space-y-2 text-muted">
+                      <li>• <strong>Budget</strong> : 156-210 K€</li>
+                      <li>• <strong>Rendement optimisé</strong> : 7-8% brut</li>
+                      <li>• <strong>3 chambres louées</strong> : 1 200-1 500 €/mois</li>
+                      <li>• <strong>Gestion active</strong> : coordination colocataires</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Critères de Sélection du Bien
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div class="bg-white border border-primary/20 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-primary">✅ Emplacement Optimal</h4>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Proximité gare TGV (<15 min à pied)</li>
+                  <li>• Proximité arrêts bus (lignes 3, 5, 10)</li>
+                  <li>• Commerces de proximité (<5 min)</li>
+                  <li>• Parking ou stationnement facile</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-primary/20 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-primary">✅ Caractéristiques Recherchées</h4>
+                <ul class="space-y-2 text-sm text-muted">
+                  <li>• Bon état général (travaux <10 K€)</li>
+                  <li>• DPE C minimum (A/B idéal)</li>
+                  <li>• Balcon/terrasse (atout locatif)</li>
+                  <li>• Exposition lumineuse (sud/ouest)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground">⚠️ Pièges à Éviter</h4>
+                  <ul class="space-y-2 text-muted">
+                    <li>• <strong>Surestimer les loyers</strong> : vérifier marché réel LeBonCoin/SeLoger</li>
+                    <li>• <strong>Sous-estimer les charges</strong> : copro, taxe foncière, entretien</li>
+                    <li>• <strong>Négliger la gestion</strong> : location meublée = gestion active</li>
+                    <li>• <strong>Mauvais financement</strong> : taux actuels 3,5-4,5%</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-foreground">
+              Recommandations Finales
+            </h3>
+
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 my-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary mb-2">Débutant</div>
+                  <p class="text-sm text-muted">T2 meublé LMNP<br>Budget : 120-140 K€<br>Gestion déléguée</p>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary mb-2">Confirmé</div>
+                  <p class="text-sm text-muted">T3 colocation<br>Optimisation fiscale<br>Gestion directe</p>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary mb-2">Expert</div>
+                  <p class="text-sm text-muted">Portefeuille 3-5 biens<br>Mix typologies<br>Objectif : 50-100 K€/an</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FAQ -->
+        <article class="mb-20">
+          <h2 class="text-3xl font-bold mb-8 text-center text-foreground">
+            Questions Fréquentes sur l'Investissement aux Landiers
+          </h2>
+
+          <div class="space-y-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 class="font-bold text-lg mb-3 text-primary">Q1 : Quel rendement locatif espérer aux Landiers ?</h3>
+              <p class="text-muted">
+                Le rendement brut se situe entre 5% et 9% selon la typologie et la stratégie locative. En location meublée LMNP, comptez 6-7,5% pour un T2, et jusqu'à 9% pour un studio. Le rendement net (après charges, taxes, travaux) est d'environ 4-5% en meublé, 3-4% en nu. Les Landiers offrent 1 à 2 points de rendement supérieurs à la moyenne nationale (3-4%).
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 class="font-bold text-lg mb-3 text-primary">Q2 : Vaut-il mieux investir en location nue ou meublée ?</h3>
+              <p class="text-muted">
+                La location meublée en LMNP est recommandée aux Landiers pour plusieurs raisons : (1) Rendement brut supérieur de 20-25% grâce à des loyers plus élevés, (2) Fiscalité avantageuse avec amortissement du bien et du mobilier, (3) Demande locative forte des actifs en mobilité et étudiants, (4) Flexibilité avec baux d'1 an renouvelables. La location nue convient mieux si vous recherchez la simplicité de gestion et des locataires stables (familles).
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 class="font-bold text-lg mb-3 text-primary">Q3 : Quel budget prévoir pour investir aux Landiers ?</h3>
+              <p class="text-muted">
+                Budget d'acquisition : 60-84 K€ pour un studio, 100-145 K€ pour un T2, 156-210 K€ pour un T3. Ajoutez 7-8% de frais de notaire (ancien), 10-15 K€ de travaux/mobilier si meublé, et une réserve de trésorerie de 10-15 K€ pour les imprévus. Avec un apport de 20%, vous pouvez investir dans un T2 avec un budget total de 140-160 K€.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 class="font-bold text-lg mb-3 text-primary">Q4 : Combien de temps pour louer un bien aux Landiers ?</h3>
+              <p class="text-muted">
+                Le délai de relocation aux Landiers est très court : 15-30 jours en moyenne, grâce à la forte demande locative. Le taux de vacance locative est de seulement 2-3% (vs 4-5% en moyenne à Chambéry). Pour optimiser, publiez l'annonce 1 mois avant la libération, soignez les photos, et fixez un loyer cohérent avec le marché. Un bien bien positionné (proche gare, bon état, DPE correct) se loue en 1-2 semaines.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 class="font-bold text-lg mb-3 text-primary">Q5 : Les Landiers sont-ils un bon investissement à long terme ?</h3>
+              <p class="text-muted">
+                Oui, pour plusieurs raisons structurelles : (1) Proximité gare TGV = demande locative pérenne (actifs en mobilité), (2) Prix attractifs vs centre-ville = marge de valorisation, (3) Projets d'aménagement (BHNS 2026-2027) = +5-10% valorisation, (4) Démographie dynamique (université, Technopôle) = demande croissante, (5) Rendement locatif solide = cash-flow positif. Horizon recommandé : 10-15 ans minimum pour optimiser fiscalité et plus-value.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTA Final -->
+        <div class="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 text-center mb-16">
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Prêt à Investir aux Landiers ?
+          </h3>
+          <p class="text-white/90 mb-6 text-lg">
+            Notre expertise locale vous accompagne dans votre projet d'investissement
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <ButtonUltra href="/estimation/chambery" text="Estimer un bien aux Landiers" variant="white" />
+            <ButtonUltra href="/contact" text="Contacter un expert" variant="outline-white" />
+          </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg leading-relaxed text-muted">
+            Le <strong>quartier des Landiers à Chambéry</strong> représente une opportunité d'investissement immobilier exceptionnelle pour les investisseurs professionnels. Avec des prix au m² 15-20% inférieurs au centre-ville, des rendements locatifs de 5-9% et une demande locative structurelle portée par la gare TGV et l'université, ce secteur offre un excellent rapport rendement/risque.
+          </p>
+          <p class="text-lg leading-relaxed text-muted mb-8">
+            La stratégie optimale reste la <strong>location meublée en LMNP</strong>, qui permet de maximiser les revenus locatifs tout en bénéficiant d'une fiscalité avantageuse. Les T2 40-50 m² meublés représentent le meilleur compromis pour débuter, avec un rendement brut de 7-7,5% et un risque de vacance très faible.
+          </p>
+          <p class="text-lg leading-relaxed text-muted">
+            Avec les projets d'aménagement prévus (BHNS 2026-2027) et la dynamique démographique de l'agglomération chambérienne, les Landiers devraient connaître une valorisation significative dans les prochaines années, renforçant l'attractivité de ce quartier pour l'investissement locatif.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Optimisations pour mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Amélioration des zones de clic */
+  a[href*="/services"], a[href*="/a-propos"], a[href*="/estimation"], a[href*="/blog"] {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+  }
+
+  /* Feedback tactile */
+  @media (hover: none) and (pointer: coarse) {
+    a[href*="/services"]:active, a[href*="/a-propos"]:active,
+    a[href*="/estimation"]:active, a[href*="/blog"]:active {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(0.98);
+    }
+  }
+</style>
