@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import BlogHeader from '../../components/blog/BlogHeader.astro';
+import LacBourgetHeader from '../../components/blog/headers/LacBourgetHeader.astro';
 import ImageCard from '../../components/blog/ImageCard.astro';
 
 const meta = {
@@ -15,7 +15,8 @@ const meta = {
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
 
-  <!-- Image d'en-tête personnalisée pour cet article -->
+  <!-- Header personnalisé -->
+  <LacBourgetHeader />
   <div class="relative h-96 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 rounded-2xl overflow-hidden mb-8 mx-4">
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="absolute inset-0 flex items-center justify-center">

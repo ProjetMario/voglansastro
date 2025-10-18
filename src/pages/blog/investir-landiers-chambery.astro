@@ -1,7 +1,7 @@
 ---
-import Base from '@/layouts/Base.astro';
-import HeroUltra from '@/components/ui/HeroUltra.astro';
-import BadgeUltra from '@/components/ui/BadgeUltra.astro';
+import Base from '../../layouts/Base.astro';
+import LandiersHeader from '../../components/blog/headers/LandiersHeader.astro';
+import ImageCard from '../../components/blog/ImageCard.astro';
 import ButtonUltra from '@/components/ui/ButtonUltra.astro';
 import {
   ArrowLeft,
@@ -64,13 +64,13 @@ const articleSchema = {
 };
 ---
 
-<Base
-  title="Investir Zone Commerciale Landiers Chambéry | Investissement Professionnel"
-  description="Guide complet investissement immobilier professionnel dans la zone commerciale des Landiers à Chambéry : bureaux, locaux d'activité, rendements commerciaux."
->
+<Base title={meta.title} description={meta.description}>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
+
+  <!-- Header personnalisé -->
+  <LandiersHeader />
 
   <!-- Hero Section -->
   <HeroUltra>
