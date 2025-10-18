@@ -211,26 +211,4 @@ import Logo from './Logo.astro';
         }
       }
     });
-  }
-<style>
-  /* Optimisations pour mobile */
-  .touch-manipulation {
-    touch-action: manipulation;
-  }
-
-  /* Amélioration des zones de clic pour mobile */
-  .mobile-nav-link {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    padding: 12px 8px;
-  }
-
-  /* Feedback tactile pour mobile */
-  @media (hover: none) and (pointer: coarse) {
-    .mobile-nav-link:active {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: scale(0.98);
-    }
-  }
-</style>
+</script>
