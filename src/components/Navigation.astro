@@ -181,20 +181,10 @@ import Logo from './Logo.astro';
     // Fermer automatiquement le menu quand on clique sur un lien
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
-      // Click event
-      link.addEventListener('click', (e) => {
-        // Laisser le lien fonctionner normalement
-        setTimeout(() => {
-          closeMobileMenu();
-        }, 100);
-      });
-
-      // Touch event pour mobile
-      link.addEventListener('touchend', (e) => {
-        // Laisser le lien fonctionner normalement
-        setTimeout(() => {
-          closeMobileMenu();
-        }, 100);
+      // Click event - ne pas empêcher la navigation
+      link.addEventListener('click', () => {
+        // Le menu se fermera automatiquement lors du changement de page
+        // Pas besoin de fermer manuellement
       });
     });
 
