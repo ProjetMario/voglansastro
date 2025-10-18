@@ -1027,11 +1027,91 @@ import BadgeUltra from '@/components/ui/BadgeUltra.astro';
           <p class="text-lg leading-relaxed text-muted">
             Pour les investisseurs professionnels, les <strong>bureaux 100-200 m²</strong> constituent le segment le plus attractif, offrant un équilibre optimal entre rendement, liquidité et sécurité locative. Avec des loyers moyens de 1 200-1 800 €/mois et des baux 3-6-9 ans, ces actifs génèrent des <strong>revenus locatifs stables</strong> et prévisibles, supérieurs aux placements résidentiels traditionnels.
           </p>
+        <!-- Articles Connexes -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 mb-16">
+          <h3 class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
+            <BookOpen className="w-6 h-6 text-primary" />
+            <span>Articles Connexes</span>
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Lien vers article Vendre Maison Chambéry -->
+            <a href="/blog/vendre-maison-chambery-2025" class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-primary/30">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                  <Home className="w-6 h-6 text-green-600" />
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-muted mb-1">Article • 10 min de lecture</div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                    Vendre une Maison à Chambéry en 2025
+                  </h4>
+                  <p class="text-sm text-muted leading-relaxed">
+                    Guide complet pour vendre votre maison : prix au m² par quartier, meilleures périodes, home staging et stratégies de négociation.
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+              </div>
+            </a>
+
+            <!-- Lien vers article Acheter Lac du Bourget -->
+            <a href="/blog/acheter-lac-bourget-2025" class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-primary/30">
+              <div class="flex items-start gap-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition-colors">
+                  <MapPin className="w-6 h-6 text-blue-600" />
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-muted mb-1">Article • 12 min de lecture</div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                    Acheter au Bord du Lac du Bourget
+                  </h4>
+                  <p class="text-sm text-muted leading-relaxed">
+                    Guide complet pour acheter au bord du plus grand lac naturel de France : prix par commune et conseils d'investissement.
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+              </div>
+            </a>
+
+            <!-- Lien vers article Investir à Voglans -->
+            <a href="/blog/investir-voglans-2025" class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-primary/30">
+              <div class="flex items-start gap-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-purple-200 transition-colors">
+                  <TrendingUp className="w-6 h-6 text-purple-600" />
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-muted mb-1">Article • 8 min de lecture</div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                    Investir à Voglans : La Pépite de Savoie
+                  </h4>
+                  <p class="text-sm text-muted leading-relaxed">
+                    Découvrez pourquoi Voglans est l'investissement immobilier idéal en Savoie avec des prix attractifs et une rentabilité élevée.
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+              </div>
+            </a>
+
+            <!-- Lien vers page estimation -->
+            <a href="/estimation" class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-primary/30">
+              <div class="flex items-start gap-4">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-orange-200 transition-colors">
+                  <Calculator className="w-6 h-6 text-orange-600" />
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-muted mb-1">Outil • Gratuit</div>
+                  <h4 class="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                    Estimation Immobilière Gratuite
+                  </h4>
+                  <p class="text-sm text-muted leading-relaxed">
+                    Recevez une estimation précise de votre bien sous 48h avec analyse comparative et conseils personnalisés.
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-</Base>
 
 <style>
   /* Optimisations pour mobile */
