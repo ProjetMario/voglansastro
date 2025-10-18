@@ -1,5 +1,15 @@
-<div class="relative h-96 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 rounded-2xl overflow-hidden mb-8">
-  <div class="absolute inset-0 bg-black/30"></div>
+<div class="relative h-96 rounded-2xl overflow-hidden mb-8">
+  <!-- Image de fond Unsplash -->
+  <img 
+    src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&h=600&fit=crop&q=80" 
+    alt="Investissement immobilier à Voglans" 
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="lazy"
+  />
+  <!-- Overlay sombre -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/40"></div>
+  
+  <!-- Contenu -->
   <div class="absolute inset-0 flex items-center justify-center">
     <div class="text-center text-white max-w-4xl mx-auto px-6">
       <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -9,20 +19,24 @@
         </svg>
         Guide Investissement
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
         Investir à<br>
         <span class="text-yellow-300 font-extrabold">Voglans</span>
       </h1>
-      <p class="text-xl opacity-95 leading-relaxed">
+      <p class="text-xl opacity-95 leading-relaxed drop-shadow-md">
         Prix attractifs, position centrale,<br>
         rentabilité locative élevée
       </p>
     </div>
   </div>
-  <div class="absolute bottom-4 right-4 text-white/80 text-sm font-medium">
+  
+  <!-- Badge info -->
+  <div class="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-white/90 text-sm font-medium">
     Pépite Méconnue de Savoie
   </div>
-  <!-- Motifs décoratifs -->
-  <div class="absolute top-8 right-8 w-32 h-32 bg-emerald-300/10 rounded-full blur-xl"></div>
-  <div class="absolute bottom-8 left-8 w-24 h-24 bg-white/5 rounded-full blur-lg"></div>
+  
+  <!-- Crédit photo -->
+  <div class="absolute bottom-2 left-2 text-white/60 text-xs">
+    Photo: Unsplash
+  </div>
 </div>
