@@ -1,0 +1,50 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+  width?: number;
+  height?: number;
+  loading?: "lazy" | "eager";
+  sizes?: string;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  className = "",
+  width = 800,
+  height = 600,
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  quality = 80
+} = Astro.props;
+
+// Optimiser l'URL Unsplash avec paramètres SEO
+const optimizedSrc = src.includes('unsplash.com')
+  ? `${src}&w=${width}&h=${height}&fit=crop&q=${quality}&auto=format`
+  : src;
+---
+
+<img
+  src={optimizedSrc}
+  alt={alt}
+  class={`transition-opacity duration-300 ${className}`}
+  width={width}
+  height={height}
+  loading={loading}
+  sizes={sizes}
+  decoding="async"
+/>
+
+<style>
+  img {
+    aspect-ratio: var(--aspect-ratio, auto);
+  }
+
+  /* Optimisation pour les images Unsplash */
+  img[src*="unsplash.com"] {
+    font-family: 'object-fit: cover; object-position: center;';
+  }
+</style>
