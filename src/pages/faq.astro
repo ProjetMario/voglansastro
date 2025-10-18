@@ -1,0 +1,458 @@
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+
+const meta = {
+  title: "FAQ Immobilier Savoie 2025 - Toutes Vos Questions Réponses",
+  description: "Réponses complètes à toutes vos questions sur l'immobilier en Savoie : prix, investissement, vente, achat, fiscalité. Guide complet et actualisé 2025.",
+  keywords: ["FAQ immobilier Savoie", "prix immobilier Chambéry", "investissement Voglans", "vendre maison Aix-les-Bains", "acheter appartement lac Bourget"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <!-- Données structurées FAQ -->
+  <ArticleSchema
+    title={meta.title}
+    description={meta.description}
+    date="2025-01-20"
+    author="L'Agence de Voglans"
+    category="FAQ"
+    url="/faq"
+    readingTime="15 min"
+    featured={true}
+    tags={meta.keywords}
+    client:load
+  />
+
+  <!-- Header -->
+  <div class="relative h-96 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-2xl overflow-hidden mb-8 mx-4">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white max-w-4xl mx-auto px-6">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+          </svg>
+          FAQ Immobilière Complète
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          FAQ Immobilier<br>
+          <span class="text-yellow-300">Savoie 2025</span>
+        </h1>
+        <p class="text-xl opacity-95 leading-relaxed">
+          Toutes vos questions sur l'immobilier en Savoie<br>
+          Prix, investissement, vente, achat, fiscalité
+        </p>
+      </div>
+    </div>
+    <div class="absolute bottom-4 right-4 text-white/80 text-sm font-medium">
+      Questions/Réponses • Guide Complet
+    </div>
+  </div>
+
+  <!-- Contenu FAQ -->
+  <article class="max-w-4xl mx-auto px-4 py-16">
+    <!-- Breadcrumbs -->
+    <div class="mb-8">
+      <Breadcrumbs
+        items={[
+          { label: "Accueil", href: "/" },
+          { label: "FAQ" }
+        ]}
+      />
+    </div>
+    <header class="mb-16 text-center">
+      <div class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        FAQ • 15 min de lecture
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Questions Fréquentes Immobilier Savoie 2025
+      </h1>
+      <p class="text-xl text-muted leading-relaxed">
+        Réponses détaillées à toutes vos interrogations sur l'immobilier en Savoie : prix au m², opportunités d'investissement, stratégies de vente et d'achat, fiscalité et réglementation.
+      </p>
+    </header>
+
+    <!-- Table des matières -->
+    <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+        </svg>
+        Sommaire des Questions
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-semibold mb-2 text-primary">Prix et Tendances</h3>
+          <ul class="space-y-1 text-sm text-muted">
+            <li><a href="#prix-chambery" class="hover:text-primary">→ Prix immobilier Chambéry 2025</a></li>
+            <li><a href="#prix-voglans" class="hover:text-primary">→ Prix immobilier Voglans 2025</a></li>
+            <li><a href="#prix-lac" class="hover:text-primary">→ Prix bord du lac du Bourget</a></li>
+            <li><a href="#evolution-2025" class="hover:text-primary">→ Évolution des prix 2025</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2 text-primary">Investissement</h3>
+          <ul class="space-y-1 text-sm text-muted">
+            <li><a href="#investir-voglans" class="hover:text-primary">→ Investir à Voglans : rentabilité</a></li>
+            <li><a href="#investir-landiers" class="hover:text-primary">→ Investir aux Landiers : bureaux</a></li>
+            <li><a href="#lmnp-savoie" class="hover:text-primary">→ LMNP en Savoie : avantages</a></li>
+            <li><a href="#fiscalite-investissement" class="hover:text-primary">→ Fiscalité investissement immobilier</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2 text-primary">Vente et Achat</h3>
+          <ul class="space-y-1 text-sm text-muted">
+            <li><a href="#vendre-maison-chambery" class="hover:text-primary">→ Vendre maison à Chambéry</a></li>
+            <li><a href="#acheter-lac-bourget" class="hover:text-primary">→ Acheter au bord du lac</a></li>
+            <li><a href="#home-staging" class="hover:text-primary">→ Home staging efficace</a></li>
+            <li><a href="#negociation-immobiliere" class="hover:text-primary">→ Négocier un bien immobilier</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2 text-primary">Pratique</h3>
+          <ul class="space-y-1 text-sm text-muted">
+            <li><a href="#estimation-gratuite" class="hover:text-primary">→ Estimation immobilière gratuite</a></li>
+            <li><a href="#delai-vente" class="hover:text-primary">→ Délai de vente moyen</a></li>
+            <li><a href="#frais-agence" class="hover:text-primary">→ Honoraires d'agence</a></li>
+            <li><a href="#documents-vente" class="hover:text-primary">→ Documents pour vendre</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1 : Prix et Tendances -->
+    <section id="prix-chambery" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+          </svg>
+        </div>
+        Prix Immobilier Chambéry 2025
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quel est le prix moyen au m² à Chambéry en 2025 ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            Le prix moyen au m² à Chambéry en 2025 est de <strong>2 800 €/m²</strong> pour les appartements et <strong>3 200 €/m²</strong> pour les maisons. Cette moyenne cache cependant de fortes disparités selon les quartiers.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-green-800">Centre-ville</h4>
+              <p class="text-sm text-green-600">3 800 €/m² (appartements)</p>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-blue-800">Verney</h4>
+              <p class="text-sm text-blue-600">3 500 €/m² (appartements)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Comment évoluent les prix à Chambéry ?</h3>
+          <p class="text-muted leading-relaxed">
+            Les prix immobiliers à Chambéry ont augmenté de <strong>4,2% en 2024</strong> et devraient progresser de <strong>3-4% en 2025</strong>. Cette évolution modérée est soutenue par la demande des actifs parisiens et lyonnais attirés par la qualité de vie et les prix encore abordables comparés aux grandes métropoles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 : Prix Voglans -->
+    <section id="prix-voglans" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        Prix Immobilier Voglans 2025
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quel est le prix moyen au m² à Voglans ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            Voglans affiche des prix particulièrement attractifs : <strong>2 200 €/m²</strong> pour les appartements et <strong>2 800 €/m²</strong> pour les maisons, soit <strong>20-25% moins cher que Chambéry</strong> pour des biens équivalents.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+              <h4 class="font-semibold text-green-800">Appartements</h4>
+              <p class="text-2xl font-bold text-green-600">2 200 €/m²</p>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg text-center">
+              <h4 class="font-semibold text-blue-800">Maisons</h4>
+              <p class="text-2xl font-bold text-blue-600">2 800 €/m²</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg text-center">
+              <h4 class="font-semibold text-purple-800">Évolution 2025</h4>
+              <p class="text-2xl font-bold text-purple-600">+4-5%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Pourquoi Voglans est-il moins cher que Chambéry ?</h3>
+          <p class="text-muted leading-relaxed">
+            Voglans bénéficie d'une <strong>position stratégique</strong> exceptionnelle : proximité immédiate du Technolac (1ère technopole de Savoie), accès rapide à Chambéry (8 min), Aix-les-Bains (12 min) et au lac du Bourget (5 min). Cette situation idéale explique l'attractivité croissante de la commune et sa <strong>valorisation progressive</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 : Prix Lac du Bourget -->
+    <section id="prix-lac" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+        </div>
+        Prix Bord du Lac du Bourget
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quels sont les prix au bord du lac du Bourget ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            Les prix varient considérablement selon la proximité du lac et la vue. Voici les tarifs moyens pour 2025 :
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+              <thead class="bg-primary text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Commune</th>
+                  <th class="px-4 py-3 text-left">Prix Moyen</th>
+                  <th class="px-4 py-3 text-left">Vue Lac</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="px-4 py-3">Aix-les-Bains</td><td class="px-4 py-3">3 500 €/m²</td><td class="px-4 py-3">4 500-6 000 €/m²</td></tr>
+                <tr><td class="px-4 py-3">Le Bourget-du-Lac</td><td class="px-4 py-3">3 000 €/m²</td><td class="px-4 py-3">3 800-5 200 €/m²</td></tr>
+                <tr><td class="px-4 py-3">Tresserve</td><td class="px-4 py-3">3 200 €/m²</td><td class="px-4 py-3">4 000-5 500 €/m²</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">La vue lac vaut-elle le surcoût ?</h3>
+          <p class="text-muted leading-relaxed">
+            <strong>Oui, absolument</strong>. La vue lac ajoute <strong>25-50% au prix</strong> mais garantit une <strong>meilleure valorisation</strong> (+15-20% sur 5 ans) et une <strong>rentabilité locative supérieure</strong> (+30-40% sur les loyers saisonniers). C'est un investissement patrimonial de premier choix.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 : Investissement -->
+    <section id="investir-voglans" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+        Investissement Immobilier en Savoie
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quelle est la meilleure ville pour investir en Savoie ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            <strong>Voglans</strong> se distingue comme la meilleure opportunité d'investissement en Savoie pour 2025 :
+          </p>
+          <ul class="space-y-2 text-muted">
+            <li>• <strong>Prix attractifs</strong> : 20-25% moins cher que Chambéry</li>
+            <li>• <strong>Rentabilité</strong> : 4-5,5% brut (vs 2,5-3,5% à Chambéry)</li>
+            <li>• <strong>Demande locative</strong> : Forte proximité Technolac</li>
+            <li>• <strong>Valorisation</strong> : +4-5% attendue en 2025</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quel budget pour investir à Voglans ?</h3>
+          <p class="text-muted leading-relaxed">
+            Vous pouvez investir à Voglans avec un budget modéré :
+            <strong>140 000 €</strong> pour un T2, <strong>200 000 €</strong> pour un T3,
+            <strong>320 000 €</strong> pour une maison T4. Avec un apport de 20-30%,
+            vous pouvez démarrer avec <strong>30 000-50 000 €</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5 : LMNP -->
+    <section id="lmnp-savoie" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        LMNP en Savoie : Avantages Fiscaux
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Qu'est-ce que le LMNP et pourquoi en Savoie ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            Le <strong>Loueur Meublé Non Professionnel (LMNP)</strong> est un statut fiscal avantageux permettant d'investir dans l'immobilier locatif meublé avec des avantages fiscaux significatifs. La Savoie, et particulièrement Voglans, constitue un terrain idéal pour le LMNP grâce à :
+          </p>
+          <ul class="space-y-2 text-muted">
+            <li>• <strong>Demande étudiante</strong> : Proximité Technolac (8 000 étudiants)</li>
+            <li>• <strong>Tourisme d'affaires</strong> : Entreprises technologiques</li>
+            <li>• <strong>Location saisonnière</strong> : Lac du Bourget à proximité</li>
+            <li>• <strong>Avantages fiscaux</strong> : Amortissement du bien et des meubles</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quels sont les avantages fiscaux du LMNP ?</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-green-800 mb-2">📈 Amortissement</h4>
+              <ul class="text-sm text-green-700 space-y-1">
+                <li>• Bien : 2-3% par an</li>
+                <li>• Meubles : 10-20% par an</li>
+                <li>• Travaux : 100% déductibles</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-blue-800 mb-2">💰 Revenus Non Imposés</h4>
+              <ul class="text-sm text-blue-700 space-y-1">
+                <li>• BIC (Bénéfices Industriels et Commerciaux)</li>
+                <li>• Déduction charges et amortissements</li>
+                <li>• Report déficits 10 ans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6 : Vente -->
+    <section id="vendre-maison-chambery" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+          </svg>
+        </div>
+        Vendre sa Maison à Chambéry
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Combien de temps pour vendre à Chambéry ?</h3>
+          <p class="text-muted leading-relaxed">
+            Le délai moyen de vente à Chambéry est de <strong>45-60 jours</strong> pour un bien correctement estimé et préparé. Avec un prix juste et un home staging efficace, vous pouvez vendre en <strong>30-40 jours</strong>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quelle est la meilleure période pour vendre ?</h3>
+          <p class="text-muted leading-relaxed">
+            <strong>Mars à juin</strong> constitue la période idéale avec un pic d'activité en avril-mai (+40% de ventes). Évitez juillet-août (vacances) et décembre-janvier (fêtes) où l'activité chute de 25-30%.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7 : Achat -->
+    <section id="acheter-lac-bourget" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        Acheter au Bord du Lac du Bourget
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quel budget pour acheter au lac du Bourget ?</h3>
+          <p class="text-muted leading-relaxed">
+            Comptez minimum <strong>250 000 €</strong> pour un T2 sans vue lac, <strong>350 000 €</strong> pour un T3 avec vue partielle, et <strong>500 000 €+</strong> pour une maison avec vue. Aix-les-Bains reste la ville la plus accessible pour un premier achat.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quelle commune choisir pour acheter ?</h3>
+          <p class="text-muted leading-relaxed">
+            <strong>Aix-les-Bains</strong> offre la meilleure rentabilité locative (tourisme, TGV), <strong>Le Bourget-du-Lac</strong> le meilleur rapport qualité/prix, et <strong>Tresserve</strong> le cadre de vie le plus calme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8 : Pratique -->
+    <section id="estimation-gratuite" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        Services Pratiques
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Comment obtenir une estimation gratuite ?</h3>
+          <p class="text-muted leading-relaxed mb-4">
+            Notre estimation immobilière gratuite sous 48h comprend :
+          </p>
+          <ul class="space-y-2 text-muted">
+            <li>• <strong>Analyse comparative</strong> avec les 3 dernières ventes similaires</li>
+            <li>• <strong>Étude du marché local</strong> et tendances 2025</li>
+            <li>• <strong>Conseils personnalisés</strong> pour optimiser la vente</li>
+            <li>• <strong>Valorisation précise</strong> selon caractéristiques du bien</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-primary">
+          <h3 class="text-xl font-semibold mb-4">Quels sont les honoraires d'agence ?</h3>
+          <p class="text-muted leading-relaxed">
+            Nos honoraires sont transparents et compétitifs : <strong>4,5% TTC</strong> pour les ventes (incluant publicité, visites, négociation) et <strong>gratuité</strong> pour les estimations. Aucun frais caché, commission uniquement sur la vente réalisée.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <div class="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 text-center mb-16">
+      <h3 class="text-2xl font-bold text-white mb-4">
+        Une Question sur l'Immobilier en Savoie ?
+      </h3>
+      <p class="text-white/90 mb-6 text-lg">
+        Notre équipe d'experts vous répond sous 24h
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+          Poser Ma Question
+        </a>
+        <a href="/estimation" class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/30 transition-colors">
+          Estimation Gratuite
+        </a>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="prose prose-lg max-w-none">
+      <p class="text-lg leading-relaxed text-muted">
+        Cette FAQ immobilière Savoie 2025 a été conçue pour répondre à toutes vos interrogations sur l'investissement, la vente et l'achat immobilier en Savoie. Nos experts mettent à jour régulièrement ces informations pour vous garantir des conseils précis et actualisés.
+      </p>
+      <p class="text-lg leading-relaxed text-muted">
+        Pour toute question spécifique ou besoin d'accompagnement personnalisé, n'hésitez pas à nous contacter. Notre agence immobilière à Voglans vous accompagne dans tous vos projets immobiliers en Savoie.
+      </p>
+    </div>
+  </article>
+</Base>
