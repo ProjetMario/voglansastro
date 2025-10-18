@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BlogHeader from '../../components/blog/BlogHeader.astro';
+import ImageCard from '../../components/blog/ImageCard.astro';
 
 const meta = {
   title: "Investir à Voglans en 2025 : La Pépite Immobilière de Savoie",
@@ -12,6 +14,32 @@ const meta = {
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
+
+  <!-- Image d'en-tête personnalisée -->
+  <div class="relative h-96 bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-400 rounded-2xl overflow-hidden mb-8 mx-4">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+          </svg>
+          Guide Investissement
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Investir à<br>
+          <span class="text-green-200">Voglans</span>
+        </h1>
+        <p class="text-xl opacity-90">
+          Prix Attractifs • Position Centrale • Rentabilité Élevée
+        </p>
+      </div>
+    </div>
+    <div class="absolute bottom-4 right-4 text-white/80 text-sm">
+    Pépite Méconnue de Savoie
+    </div>
+  </div>
 
   <article class="max-w-4xl mx-auto px-4 py-16">
     <header class="mb-12">
@@ -37,21 +65,80 @@ const meta = {
         <li>Technopôle Savoie Technolac : 8 min (15 000 emplois)</li>
       </ul>
 
+      <!-- Image position stratégique -->
+      <ImageCard title="Position Stratégique de Voglans" subtitle="Triangle d'Or Savoyard">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Chambéry</h4>
+                <p class="text-sm text-gray-600">Préfecture - 10 min</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Technopôle</h4>
+                <p class="text-sm text-gray-600">15 000 emplois - 8 min</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Aix-les-Bains</h4>
+                <p class="text-sm text-gray-600">Thermes & Lac - 10 min</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Lac du Bourget</h4>
+                <p class="text-sm text-gray-600">Plus grand lac FR - 5 min</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ImageCard>
+
       <h3>Rapport Qualité/Prix Imbattable</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Commune</th>
-            <th>Prix/m²</th>
-            <th>Économie vs Voglans</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Chambéry</td><td>3 500 €</td><td>-20%</td></tr>
-          <tr><td>Aix-les-Bains</td><td>3 800 €</td><td>-26%</td></tr>
-          <tr><td><strong>Voglans</strong></td><td><strong>2 800 €</strong></td><td><strong>Référence</strong></td></tr>
-        </tbody>
-      </table>
+      <ImageCard title="Comparaison Prix avec Communes Voisines" subtitle="Économies réalisables à Voglans">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-emerald-50">
+                <th class="px-4 py-3 text-left">Commune</th>
+                <th class="px-4 py-3 text-left">Prix/m²</th>
+                <th class="px-4 py-3 text-left">Économie vs Voglans</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-4 py-3">Chambéry</td><td class="px-4 py-3">3 500 €</td><td class="px-4 py-3 text-red-600">-20%</td></tr>
+              <tr><td class="px-4 py-3">Aix-les-Bains</td><td class="px-4 py-3">3 800 €</td><td class="px-4 py-3 text-red-600">-26%</td></tr>
+              <tr><td class="px-4 py-3 font-bold text-emerald-700">Voglans</td><td class="px-4 py-3 font-bold">2 800 €</td><td class="px-4 py-3 font-bold text-emerald-600">Référence</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </ImageCard>
 
       <h2>Prix et Rentabilité 2025</h2>
 
@@ -63,20 +150,25 @@ const meta = {
       </ul>
 
       <h3>Comparaison Rentabilité</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Commune</th>
-            <th>Rentabilité Brute</th>
-            <th>Rentabilité Nette</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Voglans</strong></td><td><strong>4-5%</strong></td><td><strong>3-4%</strong></td></tr>
-          <tr><td>Chambéry</td><td>3-4%</td><td>2,5-3,5%</td></tr>
-          <tr><td>Aix-les-Bains</td><td>2,5-3,5%</td><td>2-3%</td></tr>
-        </tbody>
-      </table>
+      <ImageCard title="Rentabilité Locative Comparée" subtitle="Voglans vs communes voisines">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="text-center p-4 bg-emerald-50 rounded-lg">
+            <h4 class="font-bold text-emerald-800">Voglans</h4>
+            <p class="text-2xl font-bold text-emerald-600">4-5%</p>
+            <p class="text-sm text-emerald-600">Rentabilité brute</p>
+          </div>
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
+            <h4 class="font-bold text-blue-800">Chambéry</h4>
+            <p class="text-2xl font-bold text-blue-600">3-4%</p>
+            <p class="text-sm text-blue-600">Rentabilité brute</p>
+          </div>
+          <div class="text-center p-4 bg-purple-50 rounded-lg">
+            <h4 class="font-bold text-purple-800">Aix-les-Bains</h4>
+            <p class="text-2xl font-bold text-purple-600">2,5-3,5%</p>
+            <p class="text-sm text-purple-600">Rentabilité brute</p>
+          </div>
+        </div>
+      </ImageCard>
 
       <h2>Profils Locataires</h2>
 

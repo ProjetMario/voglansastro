@@ -1,5 +1,4 @@
 ---
-import Base from '../../layouts/Base.astro';
 import BlogHeader from '../../components/blog/BlogHeader.astro';
 import ImageCard from '../../components/blog/ImageCard.astro';
 
@@ -41,27 +40,23 @@ const meta = {
         <li><strong>Maison T6+</strong> : 650 000 - 1 200 000 €</li>
       </ul>
 
-      <!-- Image dans le contenu -->
-      <ImageCard title="Prix au m² par Quartier" subtitle="Évolution 2024 et tendances 2025">
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-primary/5">
-                <th class="px-4 py-3 text-left">Quartier</th>
-                <th class="px-4 py-3 text-left">Prix/m²</th>
-                <th class="px-4 py-3 text-left">Évolution 2024</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="px-4 py-3">Centre-ville</td><td class="px-4 py-3">3 800 €</td><td class="px-4 py-3">+4%</td></tr>
-              <tr><td class="px-4 py-3">Verney</td><td class="px-4 py-3">3 500 €</td><td class="px-4 py-3">+3%</td></tr>
-              <tr><td class="px-4 py-3">Mérande</td><td class="px-4 py-3">3 200 €</td><td class="px-4 py-3">+5%</td></tr>
-              <tr><td class="px-4 py-3">Biollay</td><td class="px-4 py-3">3 000 €</td><td class="px-4 py-3">+3%</td></tr>
-              <tr><td class="px-4 py-3">Hauts de Chambéry</td><td class="px-4 py-3">3 600 €</td><td class="px-4 py-3">+6%</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </ImageCard>
+      <h3>Prix au m² par Quartier</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Quartier</th>
+            <th>Prix/m²</th>
+            <th>Évolution 2024</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Centre-ville</td><td>3 800 €</td><td>+4%</td></tr>
+          <tr><td>Verney</td><td>3 500 €</td><td>+3%</td></tr>
+          <tr><td>Mérande</td><td>3 200 €</td><td>+5%</td></tr>
+          <tr><td>Biollay</td><td>3 000 €</td><td>+3%</td></tr>
+          <tr><td>Hauts de Chambéry</td><td>3 600 €</td><td>+6%</td></tr>
+        </tbody>
+      </table>
 
       <h2>Meilleurs Quartiers pour Vendre</h2>
 
@@ -73,30 +68,6 @@ const meta = {
 
       <h3>3. Centre-ville ⭐⭐⭐⭐☆</h3>
       <p>Commerces et patrimoine. Prix : 3 800 €/m². Délai de vente : 50 jours.</p>
-
-      <!-- Image conseil home staging -->
-      <ImageCard title="Home Staging : +10-15% sur le Prix" subtitle="Techniques pour valoriser votre bien">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-semibold mb-2">Extérieur</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Façade propre, peinture fraîche</li>
-              <li>• Jardin entretenu, pelouse tondue</li>
-              <li>• Allée dégagée, parking visible</li>
-              <li>• Éclairage extérieur fonctionnel</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">Intérieur</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Désencombrement (50% des objets)</li>
-              <li>• Neutralisation (couleurs claires)</li>
-              <li>• Réparations mineures</li>
-              <li>• Nettoyage professionnel</li>
-            </ul>
-          </div>
-        </div>
-      </ImageCard>
 
       <h2>Quand Vendre à Chambéry ?</h2>
 

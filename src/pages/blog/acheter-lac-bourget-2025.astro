@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BlogHeader from '../../components/blog/BlogHeader.astro';
+import ImageCard from '../../components/blog/ImageCard.astro';
 
 const meta = {
   title: "Acheter au Bord du Lac du Bourget en 2025 : Prix, Quartiers et Conseils",
@@ -12,6 +14,31 @@ const meta = {
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
+
+  <!-- Image d'en-tête personnalisée pour cet article -->
+  <div class="relative h-96 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 rounded-2xl overflow-hidden mb-8 mx-4">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+          </svg>
+          Guide Achat Lac
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Acheter au Bord du<br>
+          <span class="text-cyan-200">Lac du Bourget</span>
+        </h1>
+        <p class="text-xl opacity-90">
+          Prix • Quartiers • Rentabilité • Conseils d'Expert
+        </p>
+      </div>
+    </div>
+    <div class="absolute bottom-4 right-4 text-white/80 text-sm">
+      Plus Grand Lac Naturel de France
+    </div>
+  </div>
 
   <article class="max-w-4xl mx-auto px-4 py-16">
     <header class="mb-12">
@@ -37,38 +64,100 @@ const meta = {
         <li><strong>Investissement Sûr</strong> : Marché stable +3-4% par an</li>
       </ul>
 
+      <!-- Image atouts du lac -->
+      <ImageCard title="Atouts du Lac du Bourget" subtitle="Pourquoi investir dans cette région exceptionnelle">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Environnement Naturel</h4>
+                <p class="text-sm text-gray-600">Eau pure, montagnes, 4 saisons</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Accessibilité</h4>
+                <p class="text-sm text-gray-600">TGV, autoroutes, aéroports</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Activités & Loisirs</h4>
+                <p class="text-sm text-gray-600">Sports nautiques, thermes, culture</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Investissement Rentable</h4>
+                <p class="text-sm text-gray-600">Valorisation +3-4% annuelle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ImageCard>
+
       <h2>Prix Immobilier 2025 par Commune</h2>
 
       <h3>Rive Ouest (Plus Chère)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Commune</th>
-            <th>Prix Moyen/m²</th>
-            <th>Vue Lac Premium</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Aix-les-Bains</td><td>3 500 €</td><td>4 500-6 000 €</td></tr>
-          <tr><td>Tresserve</td><td>3 200 €</td><td>4 000-5 500 €</td></tr>
-          <tr><td>Viviers-du-Lac</td><td>2 900 €</td><td>3 800-5 000 €</td></tr>
-        </tbody>
-      </table>
+      <ImageCard title="Comparaison Prix Rive Ouest" subtitle="Aix-les-Bains, Tresserve, Viviers-du-Lac">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-blue-50">
+                <th class="px-4 py-3 text-left">Commune</th>
+                <th class="px-4 py-3 text-left">Prix Moyen/m²</th>
+                <th class="px-4 py-3 text-left">Vue Lac Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-4 py-3">Aix-les-Bains</td><td class="px-4 py-3">3 500 €</td><td class="px-4 py-3">4 500-6 000 €</td></tr>
+              <tr><td class="px-4 py-3">Tresserve</td><td class="px-4 py-3">3 200 €</td><td class="px-4 py-3">4 000-5 500 €</td></tr>
+              <tr><td class="px-4 py-3">Viviers-du-Lac</td><td class="px-4 py-3">2 900 €</td><td class="px-4 py-3">3 800-5 000 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </ImageCard>
 
       <h3>Rive Est (Plus Accessible)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Commune</th>
-            <th>Prix Moyen/m²</th>
-            <th>Vue Lac</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Le Bourget-du-Lac</td><td>3 000 €</td><td>3 800-5 200 €</td></tr>
-          <tr><td>Bourdeau</td><td>2 800 €</td><td>3 500-4 800 €</td></tr>
-        </tbody>
-      </table>
+      <ImageCard title="Comparaison Prix Rive Est" subtitle="Le Bourget-du-Lac, Bourdeau">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-green-50">
+                <th class="px-4 py-3 text-left">Commune</th>
+                <th class="px-4 py-3 text-left">Prix Moyen/m²</th>
+                <th class="px-4 py-3 text-left">Vue Lac</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-4 py-3">Le Bourget-du-Lac</td><td class="px-4 py-3">3 000 €</td><td class="px-4 py-3">3 800-5 200 €</td></tr>
+              <tr><td class="px-4 py-3">Bourdeau</td><td class="px-4 py-3">2 800 €</td><td class="px-4 py-3">3 500-4 800 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </ImageCard>
 
       <h2>Top 5 des Communes du Lac</h2>
 
@@ -86,6 +175,27 @@ const meta = {
       <p><strong>Profil</strong> : Commune résidentielle entre Aix et lac, calme et verdure.</p>
       <p><strong>Prix</strong> : Appartement 2 600-3 800 €/m², Maison 2 900-4 200 €/m²</p>
       <p><strong>Pour Qui ?</strong> Familles avec enfants, actifs Aix/Chambéry, budget intermédiaire.</p>
+
+      <!-- Image comparatif communes -->
+      <ImageCard title="Comparaison des 3 Meilleurs Choix" subtitle="Aix-les-Bains vs Le Bourget-du-Lac vs Tresserve">
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+          <div class="p-4 bg-blue-50 rounded-lg">
+            <h4 class="font-semibold text-blue-800">Aix-les-Bains</h4>
+            <p class="text-sm text-blue-600">Ville thermale complète</p>
+            <p class="text-lg font-bold text-blue-700">3 500 €/m²</p>
+          </div>
+          <div class="p-4 bg-green-50 rounded-lg">
+            <h4 class="font-semibold text-green-800">Le Bourget-du-Lac</h4>
+            <p class="text-sm text-green-600">Village authentique</p>
+            <p class="text-lg font-bold text-green-700">3 000 €/m²</p>
+          </div>
+          <div class="p-4 bg-purple-50 rounded-lg">
+            <h4 class="font-semibold text-purple-800">Tresserve</h4>
+            <p class="text-sm text-purple-600">Résidentiel calme</p>
+            <p class="text-lg font-bold text-purple-700">3 200 €/m²</p>
+          </div>
+        </div>
+      </ImageCard>
 
       <h2>Rentabilité et Investissement Locatif</h2>
 
