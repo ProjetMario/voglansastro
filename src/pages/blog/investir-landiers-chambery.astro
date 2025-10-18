@@ -31,7 +31,9 @@ import {
   TrendingDown,
   Zap,
   Shield,
-  DollarSign
+  DollarSign,
+  BookOpen,
+  ArrowRight
 } from 'lucide-react';
 
 const publishDate = new Date('2025-01-22');
@@ -43,33 +45,12 @@ const meta = {
 };
 
 ---
-import Base from '../../layouts/Base.astro';
-import LandiersHeader from '../../components/blog/headers/LandiersHeader.astro';
-import ImageCard from '../../components/blog/ImageCard.astro';
-import ArticleSchema from '../../components/seo/ArticleSchema.astro';
-import ButtonUltra from '@/components/ui/ButtonUltra.astro';
-import HeroUltra from '@/components/ui/HeroUltra.astro';
-import BadgeUltra from '@/components/ui/BadgeUltra.astro';
 
 <Base title={meta.title} description={meta.description}>
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
 
-  <!-- Données structurées Schema.org -->
-  <ArticleSchema
-    title={meta.title}
-    description={meta.description}
-    date="2025-01-22"
-    author="L'Agence de Voglans"
-    category="Investissement"
-    url="/blog/investir-landiers-chambery"
-    readingTime="12 min"
-    featured={true}
-    image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"
-    tags={meta.keywords}
-    client:load
-  />
 
   <!-- Header personnalisé -->
   <LandiersHeader />
