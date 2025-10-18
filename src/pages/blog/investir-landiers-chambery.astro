@@ -2,7 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import LandiersHeader from '../../components/blog/headers/LandiersHeader.astro';
 import ImageCard from '../../components/blog/ImageCard.astro';
+import ArticleSchema from '../../components/seo/ArticleSchema.astro';
 import ButtonUltra from '@/components/ui/ButtonUltra.astro';
+import HeroUltra from '@/components/ui/HeroUltra.astro';
+import BadgeUltra from '@/components/ui/BadgeUltra.astro';
 import {
   ArrowLeft,
   TrendingUp,
@@ -33,41 +36,40 @@ import {
 
 const publishDate = new Date('2025-01-22');
 
-// Article Schema pour SEO
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Investir dans la Zone Commerciale des Landiers à Chambéry : Guide Investisseurs Professionnels",
-  "description": "Analyse complète de la zone commerciale des Landiers : opportunités d'investissement professionnel, rendements locatifs commerciaux, bureaux et locaux d'activité à Chambéry.",
-  "image": "https://agencevoglans.fr/images/blog/landiers-chambery-investissement.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "L'Agence de Voglans",
-    "url": "https://agencevoglans.fr"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "L'Agence de Voglans",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
-    }
-  },
-  "datePublished": "2025-01-22T10:00:00+02:00",
-  "dateModified": "2025-01-22T10:00:00+02:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://agencevoglans.fr/blog/investir-landiers-chambery"
-  },
-  "articleSection": "Investissement immobilier professionnel",
-  "keywords": ["investissement commercial Chambéry", "zone Landiers", "immobilier professionnel Savoie", "bureaux Chambéry", "locaux commerciaux"]
+const meta = {
+  title: "Investir aux Landiers à Chambéry : Guide investisseurs professionnels",
+  description: "Analyse complète du quartier des Landiers à Chambéry : prix au m², rendements locatifs, stratégies d'investissement et opportunités pour investisseurs professionnels.",
+  keywords: ["investissement commercial Chambéry", "zone Landiers", "immobilier professionnel Savoie", "bureaux Chambéry", "locaux commerciaux"]
 };
+
 ---
+import Base from '../../layouts/Base.astro';
+import LandiersHeader from '../../components/blog/headers/LandiersHeader.astro';
+import ImageCard from '../../components/blog/ImageCard.astro';
+import ArticleSchema from '../../components/seo/ArticleSchema.astro';
+import ButtonUltra from '@/components/ui/ButtonUltra.astro';
+import HeroUltra from '@/components/ui/HeroUltra.astro';
+import BadgeUltra from '@/components/ui/BadgeUltra.astro';
 
 <Base title={meta.title} description={meta.description}>
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>
+
+  <!-- Données structurées Schema.org -->
+  <ArticleSchema
+    title={meta.title}
+    description={meta.description}
+    date="2025-01-22"
+    author="L'Agence de Voglans"
+    category="Investissement"
+    url="/blog/investir-landiers-chambery"
+    readingTime="12 min"
+    featured={true}
+    image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"
+    tags={meta.keywords}
+    client:load
+  />
 
   <!-- Header personnalisé -->
   <LandiersHeader />
