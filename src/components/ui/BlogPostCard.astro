@@ -52,20 +52,21 @@ const categoryColors: Record<string, string> = {
 
 ---
 
-<CardUltra class={`group h-full ${featured ? 'featured-post ring-2 ring-primary/20' : ''}`}>
-  <article class="h-full flex flex-col justify-between">
-    <!-- Image de présentation -->
-    {image && (
-      <div class="relative h-48 -mt-6 -mx-6 mb-6 overflow-hidden rounded-t-2xl">
-        <img 
-          src={image} 
-          alt={title}
-          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-      </div>
-    )}
+<article class={`group h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden ${featured ? 'featured-post ring-2 ring-primary/20' : ''}`}>
+  <!-- Image de présentation -->
+  {image && (
+    <div class="relative h-48 overflow-hidden">
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </div>
+  )}
+  
+  <div class="p-6 flex flex-col justify-between h-full">
     
     <header class="mb-6">
       <!-- Category Badge -->
@@ -116,8 +117,8 @@ const categoryColors: Record<string, string> = {
         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
       </a>
     </footer>
-  </article>
-</CardUltra>
+  </div>
+</article>
 
 <style>
   .featured-post {
