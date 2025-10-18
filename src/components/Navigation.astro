@@ -61,9 +61,13 @@ import Logo from './Logo.astro';
       </div>
 
       <!-- Mobile menu button -->
-      <button class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" id="mobile-menu-button">
-        <Menu className="w-5 h-5" id="menu-icon" />
-        <X className="w-5 h-5 hidden" id="close-icon" />
+      <button class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" id="mobile-menu-button" aria-label="Menu mobile">
+        <span id="menu-icon">
+          <Menu className="w-5 h-5" />
+        </span>
+        <span id="close-icon" class="hidden">
+          <X className="w-5 h-5" />
+        </span>
       </button>
     </div>
   </div>
