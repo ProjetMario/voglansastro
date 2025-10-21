@@ -253,20 +253,82 @@ const {
       }
     </script>
     
-    <!-- Google Analytics 4 (À CONFIGURER) -->
-    <!-- Décommenter et remplacer G-XXXXXXXXXX par votre ID Google Analytics -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', {
-        'send_page_view': true,
-        'anonymize_ip': true
-      });
+    <!-- Google Analytics 4 -->
+    <script is:inline define:vars={{ GA_ID: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
+      if (GA_ID && GA_ID !== 'G-XXXXXXXXXX' && import.meta.env.PROD) {
+        (function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', GA_ID, {
+            page_path: window.location.pathname,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+          });
+
+          // Track conversions
+          document.addEventListener('submit', function(e) {
+            if (e.target.matches('form')) {
+              gtag('event', 'form_submit', {
+                event_category: 'conversion',
+                event_label: e.target.id || 'contact_form',
+                value: 10
+              });
+            }
+          });
+
+          document.addEventListener('click', function(e) {
+            var tel = e.target.closest('a[href^="tel:"]');
+            if (tel) {
+              gtag('event', 'phone_click', {
+                event_category: 'conversion',
+                event_label: tel.href.replace('tel:', ''),
+                value: 15
+              });
+            }
+            
+            var email = e.target.closest('a[href^="mailto:"]');
+            if (email) {
+              gtag('event', 'email_click', {
+                event_category: 'engagement',
+                event_label: email.href.replace('mailto:', ''),
+                value: 5
+              });
+            }
+            
+            var estimation = e.target.closest('a[href*="/estimation"]');
+            if (estimation) {
+              gtag('event', 'estimation_click', {
+                event_category: 'conversion_intent',
+                event_label: 'estimation_button',
+                value: 8
+              });
+            }
+          });
+
+          // Track scroll depth
+          var scrolled = {};
+          window.addEventListener('scroll', function() {
+            var percent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+            [25, 50, 75, 100].forEach(function(depth) {
+              if (percent >= depth && !scrolled[depth]) {
+                scrolled[depth] = true;
+                gtag('event', 'scroll_depth', {
+                  event_category: 'engagement',
+                  event_label: depth + '%',
+                  value: depth
+                });
+              }
+            });
+          });
+        })();
+      }
     </script>
-    -->
     
     <!-- Google Search Console Verification (À CONFIGURER) -->
     <!-- Décommenter et remplacer par votre code de vérification -->
