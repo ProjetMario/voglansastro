@@ -99,5 +99,6 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/share/1CykVn7qM3/?mibextid=wwXIfr",
     instagram: "https://instagram.com/agencevoglans",
     linkedin: "https://linkedin.com/company/agence-voglans",
+    googleBusiness: "https://share.google/xhzFLeKxSwCCcWS4U",
   },
 };
