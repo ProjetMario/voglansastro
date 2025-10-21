@@ -1,0 +1,130 @@
+---
+import CardUltra from "./CardUltra.astro";
+import {
+  Home,
+  TrendingUp,
+  Award,
+  MapPin,
+  Calendar,
+  Clock,
+  ArrowRight,
+  Building
+} from 'lucide-react';
+
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  date: string;
+  readingTime: string;
+  category: string;
+  featured?: boolean;
+  author?: string;
+  image?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  href,
+  date,
+  readingTime,
+  category,
+  featured = false,
+  author = "L'Agence de Voglans",
+  image,
+  tags = []
+} = Astro.props;
+
+const categoryIcons: Record<string, any> = {
+  "Marché immobilier": Home,
+  "Investissement": TrendingUp,
+  "Conseils vente": Award,
+  "Guide local": MapPin,
+  "Services publics": Building
+};
+
+const categoryColors: Record<string, string> = {
+  "Marché immobilier": "bg-blue-100 text-blue-800",
+  "Investissement": "bg-green-100 text-green-800",
+  "Conseils vente": "bg-orange-100 text-orange-800",
+  "Guide local": "bg-purple-100 text-purple-800",
+  "Services publics": "bg-indigo-100 text-indigo-800"
+};
+
+---
+
+<a href={href} class={`group h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden block ${featured ? 'featured-post ring-2 ring-primary/20' : ''}`}>
+  <!-- Image de présentation -->
+  {image && (
+    <div class="relative h-48 overflow-hidden">
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </div>
+  )}
+  
+  <div class="p-6 flex flex-col justify-between h-full">
+    
+    <header class="mb-6">
+      <!-- Category Badge -->
+      <div class={`inline-flex items-center gap-2 ${categoryColors[category] || 'bg-primary/10 text-primary'} px-3 py-1 rounded-full text-xs font-semibold mb-4`}>
+        {categoryIcons[category] === Home && <Home className="w-3 h-3" />}
+        {categoryIcons[category] === TrendingUp && <TrendingUp className="w-3 h-3" />}
+        {categoryIcons[category] === Award && <Award className="w-3 h-3" />}
+        {categoryIcons[category] === MapPin && <MapPin className="w-3 h-3" />}
+        {category}
+      </div>
+
+      {featured && (
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/80 text-white px-3 py-1 rounded-full text-xs font-bold mb-4">
+          <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+          Article à la une
+        </div>
+      )}
+
+      <div class="text-xs uppercase tracking-wide text-muted font-semibold mb-3 flex items-center gap-2">
+        <Calendar className="w-3 h-3" />
+        {date} • {author}
+      </div>
+
+      <h2 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+        {title}
+      </h2>
+
+      <p class="text-muted leading-relaxed">{description}</p>
+
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-4">
+          {tags.map(tag => (
+            <span class="inline-flex items-center gap-1 bg-primary/5 text-primary/80 px-2 py-1 rounded-md text-xs">
+              <span>#{tag}</span>
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <footer class="mt-6 flex items-center justify-between text-sm">
+      <div class="flex items-center gap-2 text-muted">
+        <Clock className="w-4 h-4" />
+        <span>{readingTime} de lecture</span>
+      </div>
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 rounded-xl font-semibold group-hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
+        <span>Lire l'article</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+      </div>
+    </footer>
+  </div>
+</a>
+
+<style>
+  .featured-post {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+  }
+</style>

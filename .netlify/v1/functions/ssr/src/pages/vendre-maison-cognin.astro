@@ -1,0 +1,416 @@
+---
+import Base from '../layouts/Base.astro';
+import { Phone, Calculator, MapPin, TrendingUp, Home, Star } from 'lucide-react';
+
+const meta = {
+  title: "Vendre une Maison à Cognin | Estimation Gratuite | Agence de Voglans",
+  description: "Vendez votre maison à Cognin au meilleur prix. Prix par quartier, expertise locale, vente rapide. +15% de prix vs moyenne. Estimation gratuite sous 48h !",
+  keywords: ["vendre maison Cognin", "estimation maison Cognin", "prix maison Cognin", "agence immobilière Cognin", "vente maison Savoie"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <!-- Hero Cognin -->
+  <section class="relative bg-gradient-to-br from-primary/10 via-white to-primary/5 py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-lg mb-8">
+          <MapPin className="w-5 h-5" />
+          <span>Expert Immobilier à Cognin</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight text-foreground leading-[1.1]">
+          Vendez Votre Maison à<br/>
+          <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Cognin</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed font-light mb-12">
+          Notre <span class="text-primary font-medium">connaissance parfaite</span> du marché de Cognin et de son charme savoyard vous garantit le <span class="text-primary font-medium">meilleur prix</span>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a 
+            href="#formulaire" 
+            class="group relative bg-gradient-to-r from-primary to-primary/90 text-white px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            <Calculator className="w-6 h-6 relative z-10" />
+            <span class="relative z-10">Estimation Gratuite</span>
+          </a>
+          
+          <a 
+            href="tel:+33757830262" 
+            class="group bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <Phone className="w-6 h-6" />
+            <span>07 57 83 02 62</span>
+          </a>
+        </div>
+
+        <!-- Stats Cognin -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">2 700 €/m²</div>
+            <div class="text-sm text-muted font-medium">Prix moyen Cognin</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">52 jours</div>
+            <div class="text-sm text-muted font-medium">Délai de vente moyen</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">+14%</div>
+            <div class="text-sm text-muted font-medium">Hausse sur 1 an</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prix par Quartier Cognin -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Prix par <span class="font-semibold text-primary">Quartier</span>
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Données actualisées 2024 pour chaque secteur de Cognin
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Centre Village</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">2 900 €/m²</div>
+              <div class="text-sm text-muted">Authentique</div>
+              <div class="text-sm text-muted">Délai : 48 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Star className="w-4 h-4" />
+                <span>Charme</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Les Combes</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">2 700 €/m²</div>
+              <div class="text-sm text-muted">Résidentiel</div>
+              <div class="text-sm text-muted">Délai : 52 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Home className="w-4 h-4" />
+                <span>Familial</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Montagnole</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">2 600 €/m²</div>
+              <div class="text-sm text-muted">Nature</div>
+              <div class="text-sm text-muted">Délai : 55 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Star className="w-4 h-4" />
+                <span>Verdure</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Les Teppes</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">2 800 €/m²</div>
+              <div class="text-sm text-muted">Calme</div>
+              <div class="text-sm text-muted">Délai : 50 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Home className="w-4 h-4" />
+                <span>Tranquille</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Proche Chambéry</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">2 900 €/m²</div>
+              <div class="text-sm text-muted">Bien desservi</div>
+              <div class="text-sm text-muted">Délai : 48 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <TrendingUp className="w-4 h-4" />
+                <span>Pratique</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Colline</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">3 000 €/m²</div>
+              <div class="text-sm text-muted">Vue</div>
+              <div class="text-sm text-muted">Délai : 50 jours</div>
+              <div class="inline-flex items-center gap-1 text-xs text-primary mt-2">
+                <Star className="w-4 h-4" />
+                <span>Panorama</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-primary/5 rounded-3xl p-8 text-center">
+          <h3 class="text-2xl font-semibold text-foreground mb-4">Votre Quartier n'est pas Listé ?</h3>
+          <p class="text-muted mb-6">
+            Nous connaissons tous les secteurs de Cognin et ses environs
+          </p>
+          <a 
+            href="#formulaire" 
+            class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300"
+          >
+            <span>Obtenir une estimation personnalisée</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages Cognin -->
+  <section class="py-20 bg-gradient-to-br from-primary/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Ils Ont Vendu à <span class="font-semibold text-primary">Cognin</span>
+          </h2>
+          <p class="text-xl text-muted">
+            Témoignages de nos clients
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                <span class="text-primary font-semibold">ML</span>
+              </div>
+              <div>
+                <div class="font-semibold text-foreground">Michel L.</div>
+                <div class="text-sm text-muted">Centre Village • Maison T5</div>
+              </div>
+            </div>
+            <div class="flex gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <Star className="w-5 h-5 fill-primary text-primary" />
+              ))}
+            </div>
+            <p class="text-muted leading-relaxed">
+              "Charme du village mis en valeur. L'équipe a su valoriser l'authenticité de notre maison savoyarde."
+            </p>
+            <div class="mt-4 text-sm text-primary font-medium">
+              Vendue en 45 jours
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                <span class="text-primary font-semibold">ID</span>
+              </div>
+              <div>
+                <div class="font-semibold text-foreground">Isabelle D.</div>
+                <div class="text-sm text-muted">Colline • Maison T6</div>
+              </div>
+            </div>
+            <div class="flex gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <Star className="w-5 h-5 fill-primary text-primary" />
+              ))}
+            </div>
+            <p class="text-muted leading-relaxed">
+              "Vue magnifique, acheteurs conquis. Leur expertise du marché local nous a permis d'obtenir un excellent prix."
+            </p>
+            <div class="mt-4 text-sm text-primary font-medium">
+              Vendue 14% au-dessus du prix initial
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire -->
+  <section id="formulaire" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Estimation <span class="font-semibold text-primary">Gratuite</span>
+          </h2>
+          <p class="text-xl text-muted">
+            Recevez une estimation précise de votre maison à Cognin sous 48h
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 md:p-12 border border-primary/10 shadow-xl">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Quartier</label>
+                <select class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                  <option>Centre Village</option>
+                  <option>Les Combes</option>
+                  <option>Montagnole</option>
+                  <option>Les Teppes</option>
+                  <option>Proche Chambéry</option>
+                  <option>Colline</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Surface habitable</label>
+                <input type="number" placeholder="120 m²" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Surface terrain</label>
+                <input type="number" placeholder="500 m²" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Nombre de pièces</label>
+                <select class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                  <option>3 pièces</option>
+                  <option>4 pièces</option>
+                  <option>5 pièces</option>
+                  <option>6 pièces et +</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2">Adresse du bien</label>
+              <input type="text" placeholder="Adresse à Cognin" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Votre nom</label>
+                <input type="text" placeholder="Nom complet" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Téléphone</label>
+                <input type="tel" placeholder="06 12 34 56 78" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2">Email</label>
+              <input type="email" placeholder="votre@email.com" class="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            </div>
+
+            <button 
+              type="submit"
+              class="w-full bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-5 rounded-full text-lg font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              <Calculator className="w-6 h-6" />
+              <span>Recevoir Mon Estimation Gratuite</span>
+            </button>
+
+            <p class="text-sm text-muted text-center">
+              Réponse sous 48h • 100% gratuit • Sans engagement
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-br from-primary to-primary/90">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-light mb-6">
+          Expert Immobilier à <span class="font-semibold">Cognin</span>
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Notre connaissance du marché de Cognin garantit votre réussite
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:+33757830262" 
+            class="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-full text-lg font-semibold hover:scale-105 transition-all duration-300"
+          >
+            <Phone className="w-6 h-6" />
+            <span>07 57 83 02 62</span>
+          </a>
+          <a 
+            href="#formulaire" 
+            class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-full text-lg font-semibold hover:bg-white/20 hover:scale-105 transition-all duration-300"
+          >
+            <span>Formulaire en Ligne</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
+</style>

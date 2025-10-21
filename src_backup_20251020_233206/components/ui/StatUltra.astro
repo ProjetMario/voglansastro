@@ -1,0 +1,15 @@
+---
+// Élément Stat ultra-moderne avec animations sophistiquées
+const { value, label, icon } = Astro.props;
+---
+
+<div class="text-center group relative">
+  <div class="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 border border-primary/20 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-500">
+    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div class="w-10 h-10 text-primary relative z-10">
+      <Fragment set:html={icon} />
+    </div>
+  </div>
+  <div class="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">{value}</div>
+  <div class="text-sm text-muted font-medium">{label}</div>
+</div>

@@ -1,0 +1,41 @@
+---
+// Composant Hero ultra-moderne avec glassmorphism et animations sophistiquées
+---
+
+<section class="relative bg-gradient-to-br from-primary/10 via-white to-primary/5 py-32 overflow-hidden">
+  <!-- Fond décoratif sophistiqué -->
+  <div class="absolute inset-0 opacity-[0.03]">
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-radial from-primary/20 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto text-center">
+      <slot name="badge" />
+
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 tracking-tight text-foreground leading-[1.1]">
+        <slot name="title" />
+      </h1>
+
+      <p class="text-xl md:text-2xl text-muted max-w-4xl mx-auto leading-relaxed font-light mb-16">
+        <slot name="subtitle" />
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <slot name="cta" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

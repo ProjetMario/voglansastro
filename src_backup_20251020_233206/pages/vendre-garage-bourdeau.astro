@@ -1,0 +1,277 @@
+---
+import Base from '@/layouts/Base.astro';
+import { Phone, Calculator, MapPin, TrendingUp, Car, Star } from 'lucide-react';
+
+const meta = {
+  title: "Vendre un Garage à uourdeau | Estimation Gratuite | Agence de Voglans",
+  description: "Vendez votre garage à uourdeau au meilleur prix. Prix par secteur, expertise locale, vente rapide. Estimation gratuite sous 48h !",
+  keywords: ["vendre garage uourdeau", "estimation garage uourdeau", "prix garage uourdeau", "parking uourdeau"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <section class="relative bg-gradient-to-br from-primary/10 via-white to-primary/5 py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-lg mb-8">
+          <MapPin className="w-5 h-5" />
+          <span>Expert Immobilier à uourdeau</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight text-foreground leading-[1.1]">
+          Vendez Votre Garage à<br/>
+          <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">uourdeau</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed font-light mb-12">
+          Notre <span class="text-primary font-medium">expertise locale</span> vous garantit le <span class="text-primary font-medium">meilleur prix</span> et une <span class="text-primary font-medium">vente rapide</span> de votre garage.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#formulaire" class="group relative bg-gradient-to-r from-primary to-primary/90 text-white px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <Calculator className="w-6 h-6 relative z-10" />
+            <span class="relative z-10">Estimation Gratuite</span>
+          </a>
+          <a href="tel:+33757830262" class="group bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <Phone className="w-6 h-6" />
+            <span>07 57 83 02 62</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">28000 €</div>
+            <div class="text-sm text-muted font-medium">Prix moyen uourdeau</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">32 jours</div>
+            <div class="text-sm text-muted font-medium">Délai de vente moyen</div>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
+            <div class="text-3xl font-bold text-primary mb-2">+14</div>
+            <div class="text-sm text-muted font-medium">Hausse sur 1 an</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Prix par <span class="font-semibold text-primary">Secteur</span>
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Données actualisées 2024 pour chaque quartier de uourdeau
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Centre-ville</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">35000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Port</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">40000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Résidentiel</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">25000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Lac</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">22000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Haut</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">20000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/5 to-white rounded-3xl p-8 border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Car className="w-6 h-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold text-foreground">Bas</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl font-bold text-primary">30000 €</div>
+              <div class="text-sm text-muted">Prix moyen garage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulaire" class="py-20 bg-gradient-to-br from-primary/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Estimation <span class="font-semibold text-primary">Gratuite</span> de votre Garage
+          </h2>
+          <p class="text-xl text-muted max-w-2xl mx-auto">
+            Recevez une estimation précise de votre garage sous 48h
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/10">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Nom *</label>
+                <input type="text" required class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Téléphone *</label>
+                <input type="tel" required class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Adresse du garage *</label>
+                <input type="text" required class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-foreground mb-2">Superficie (m²) *</label>
+                <input type="number" required class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2">Type de garage</label>
+              <select class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                <option>Garage fermé</option>
+                <option>Box fermé</option>
+                <option>Parking couvert</option>
+                <option>Emplacement extérieur</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2">Informations complémentaires</label>
+              <textarea rows="4" class="w-full px-4 py-3 border border-primary/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white/50 backdrop-blur-sm" placeholder="Étage, accès, sécurité, etc."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300">
+              Recevoir mon estimation gratuite
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6 text-foreground">
+            Pourquoi vendre avec <span class="font-semibold text-primary">L'Agence de Voglans</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-all duration-300">
+              <Calculator className="w-8 h-8 text-primary" />
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-4">Estimation précise</h3>
+            <p class="text-muted">Évaluation basée sur les ventes récentes et spécificités locales</p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-all duration-300">
+              <TrendingUp className="w-8 h-8 text-primary" />
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-4">Vente rapide</h3>
+            <p class="text-muted">Réseau d'acheteurs qualifiés et stratégie marketing optimale</p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-all duration-300">
+              <Star className="w-8 h-8 text-primary" />
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-4">Accompagnement complet</h3>
+            <p class="text-muted">Suivi personnalisé de A à Z jusqu'à la signature</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-primary to-primary/90 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-light mb-6">
+          Prêt à vendre votre garage à uourdeau ?
+        </h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Contactez-nous dès aujourd'hui pour une estimation gratuite et confidentielle
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+33757830262" class="bg-white text-primary px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/90 transition-all duration-300 inline-flex items-center justify-center gap-3">
+            <Phone className="w-6 h-6" />
+            Appelez-nous
+          </a>
+          <a href="/estimation" class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+            Estimation en ligne
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

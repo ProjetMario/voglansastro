@@ -1,0 +1,14 @@
+---
+// Carte ultra-moderne avec glassmorphism et animations sophistiquées
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden ${className}`}>
+  <!-- Fond décoratif -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-16 -translate-y-16"></div>
+
+  <div class="relative z-10">
+    <slot />
+  </div>
+</div>

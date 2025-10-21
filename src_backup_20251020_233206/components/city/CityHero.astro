@@ -1,0 +1,197 @@
+---
+import { Phone, Calculator } from 'lucide-react';
+
+interface Props {
+  name: string;
+  zone: string;
+}
+
+const { name, zone } = Astro.props;
+---
+
+<!-- Hero Premium avec fond dégradé sophistiqué -->
+<section class="relative bg-gradient-to-br from-primary/10 via-white to-primary/5 py-24 md:py-32 overflow-hidden">
+  <!-- Motifs géométriques animés -->
+  <div class="absolute inset-0 opacity-[0.03]">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float-delayed"></div>
+  </div>
+
+  <!-- Grille subtile -->
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(30, 95, 79, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 95, 79, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <!-- Breadcrumb Premium -->
+      <nav class="mb-10 text-sm flex items-center justify-center gap-2 animate-fade-in">
+        <a href="/" class="text-muted hover:text-primary transition-colors font-medium">Accueil</a>
+        <svg class="w-4 h-4 text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <a href="/zone-intervention" class="text-muted hover:text-primary transition-colors font-medium">Zone d'intervention</a>
+        <svg class="w-4 h-4 text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span class="text-primary font-semibold">{name}</span>
+      </nav>
+
+      <!-- Badge Premium -->
+      <div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.1s">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+          </svg>
+          <span>Expertise Locale Certifiée • {zone}</span>
+        </div>
+      </div>
+
+      <!-- H1 Premium -->
+      <div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight text-foreground leading-[1.1]">
+          Estimation Immobilière<br/>
+          <span class="font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">à {name}</span>
+        </h1>
+
+        <!-- Séparateur élégant -->
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <div class="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary/50"></div>
+          <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <div class="w-16 h-[2px] bg-gradient-to-l from-transparent to-primary/50"></div>
+        </div>
+
+        <!-- Sous-titre Premium -->
+        <p class="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed font-light">
+          Vendre sereinement, c'est commencer par un <span class="text-primary font-medium">prix juste</span>. Notre agence <span class="text-primary font-medium">100% Local & Humain</span> estime votre bien à {name} avec précision et transparence.
+        </p>
+      </div>
+
+      <!-- CTAs Premium -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style="animation-delay: 0.3s">
+        <a 
+          href="#formulaire" 
+          class="group relative bg-gradient-to-r from-primary to-primary/90 text-white px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+          <Calculator className="w-6 h-6 relative z-10" />
+          <span class="relative z-10">Obtenir Mon Estimation Gratuite</span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+        
+        <a 
+          href="tel:+33757830262" 
+          class="group bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary px-10 py-5 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300"
+        >
+          <Phone className="w-6 h-6" />
+          <span>07 57 83 02 62</span>
+        </a>
+      </div>
+
+      <!-- Preuves sociales Premium -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-primary">48h</div>
+              <div class="text-sm text-muted font-medium">Réponse garantie</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-primary">100%</div>
+              <div class="text-sm text-muted font-medium">Gratuit & sans engagement</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-primary">Local</div>
+              <div class="text-sm text-muted font-medium">Expertise {zone}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(20px) scale(1.05);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 25s ease-in-out infinite;
+  }
+</style>

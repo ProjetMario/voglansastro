@@ -1,0 +1,17 @@
+---
+// Section Stats ultra-moderne avec glassmorphism et animations
+---
+
+<section class="py-20 bg-white relative overflow-hidden">
+  <!-- Fond décoratif subtil -->
+  <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full -translate-x-32 -translate-y-32"></div>
+  <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full translate-x-32 translate-y-32"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

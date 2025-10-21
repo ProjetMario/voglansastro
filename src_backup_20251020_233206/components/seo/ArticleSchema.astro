@@ -1,0 +1,159 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  date: string;
+  author: string;
+  category: string;
+  url: string;
+  readingTime: string;
+  featured?: boolean;
+  image?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  date,
+  author,
+  category,
+  url,
+  readingTime,
+  featured = false,
+  image,
+  tags = []
+} = Astro.props;
+
+// Formater la date pour JSON-LD
+const formattedDate = new Date(date).toISOString();
+
+// Déterminer le type d'article
+const articleType = category.toLowerCase().includes('investissement') ? 'InvestmentArticle' :
+                   category.toLowerCase().includes('vente') ? 'RealEstateArticle' :
+                   category.toLowerCase().includes('achat') ? 'BuyingArticle' :
+                   'Article';
+
+// Générer le JSON-LD pour Schema.org
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": "https://agencevoglans.fr",
+    "logo": "https://agencevoglans.fr/logo.svg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/logo.svg"
+    }
+  },
+  "datePublished": formattedDate,
+  "dateModified": formattedDate,
+  "articleSection": category,
+  "keywords": tags.join(", "),
+  "wordCount": parseInt(readingTime) * 150, // Estimation basée sur temps de lecture
+  "timeRequired": `PT${readingTime}`,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://agencevoglans.fr${url}`
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Blog Immobilier Agence Voglans",
+    "url": "https://agencevoglans.fr/blog"
+  }
+};
+
+// Ajouter l'image si disponible
+if (image) {
+  schemaData.image = {
+    "@type": "ImageObject",
+    "url": image,
+    "alt": title
+  };
+}
+
+// Ajouter les données spécifiques selon le type d'article
+if (category.toLowerCase().includes('investissement')) {
+  schemaData.about = {
+    "@type": "Thing",
+    "name": "Investissement Immobilier",
+    "description": "Guide et conseils pour l'investissement immobilier en Savoie"
+  };
+}
+
+if (category.toLowerCase().includes('vente')) {
+  schemaData.about = {
+    "@type": "Thing",
+    "name": "Vente Immobilière",
+    "description": "Conseils pour vendre un bien immobilier à Chambéry et en Savoie"
+  };
+}
+
+if (category.toLowerCase().includes('achat')) {
+  schemaData.about = {
+    "@type": "Thing",
+    "name": "Achat Immobilier",
+    "description": "Guide pour acheter un bien immobilier au bord du Lac du Bourget"
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://agencevoglans.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://agencevoglans.fr/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{title}",
+      "item": "https://agencevoglans.fr{url}"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Agence Immobilière Voglans",
+  "url": "https://agencevoglans.fr",
+  "description": "Agence immobilière experte en Savoie - Estimation, vente, achat de maisons, appartements et terrains à Chambéry, Aix-les-Bains et Voglans",
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/logo.svg"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://agencevoglans.fr/recherche?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

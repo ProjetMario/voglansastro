@@ -1,0 +1,43 @@
+---
+import { cn } from '@/lib/utils';
+
+export interface Props {
+  className?: string;
+  size?: 'sm' | 'default' | 'lg';
+  background?: 'default' | 'muted' | 'primary';
+  animate?: boolean;
+}
+
+const { 
+  className, 
+  size = 'default',
+  background = 'default',
+  animate = false
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'section-sm',
+  default: 'section',
+  // Espacement plus compact pour toutes les pages
+  lg: 'py-12 sm:py-16 lg:py-20'
+};
+
+const backgroundClasses = {
+  default: '',
+  muted: 'bg-secondary/30',
+  primary: 'bg-primary text-primary-foreground'
+};
+
+const animateClass = animate ? 'animate-on-scroll' : '';
+---
+
+<section class={cn(
+  sizeClasses[size],
+  backgroundClasses[background],
+  animateClass,
+  className
+)}>
+  <div class="container">
+    <slot />
+  </div>
+</section>

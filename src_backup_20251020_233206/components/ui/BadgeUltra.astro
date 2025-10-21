@@ -1,0 +1,11 @@
+---
+// Badge ultra-moderne avec glassmorphism et animations
+const { text, icon } = Astro.props;
+---
+
+<div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-primary/20 text-primary px-8 py-4 rounded-full text-sm font-semibold shadow-2xl shadow-primary/10 hover:scale-105 transition-all duration-500">
+  {icon && <div class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
+    <Fragment set:html={icon} />
+  </div>}
+  <span>{text}</span>
+</div>

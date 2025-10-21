@@ -1,0 +1,374 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+
+const meta = {
+  title: "Partenaires - Agence Immobilière Voglans Savoie",
+  description: "Découvrez nos partenaires immobiliers en Savoie et Chambéry. Collaborations professionnelles, presse et médias partenaires de l'Agence de Voglans.",
+  keywords: ["partenaires immobilier Savoie", "agences partenaires Chambéry", "réseau immobilier professionnel", "presse immobilière Savoie"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <!-- Données structurées Organisation -->
+  <ArticleSchema
+    title={meta.title}
+    description={meta.description}
+    date="2025-01-20"
+    author="L'Agence de Voglans"
+    category="Partenaires"
+    url="/partenaires"
+    readingTime="5 min"
+    tags={meta.keywords}
+    client:load
+  />
+
+  <!-- Header -->
+  <div class="relative h-64 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-2xl overflow-hidden mb-8 mx-4">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white max-w-4xl mx-auto px-6">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          🤝 Réseau Professionnel
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          Nos Partenaires
+        </h1>
+        <p class="text-xl opacity-95 leading-relaxed">
+          Un réseau d'excellence en Savoie et Rhône-Alpes
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenu -->
+  <article class="max-w-6xl mx-auto px-4 py-16">
+    <!-- Introduction -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Réseau de Partenaires d'Excellence</h1>
+      <p class="text-xl text-muted leading-relaxed max-w-3xl mx-auto">
+        L'Agence de Voglans entretient des relations privilégiées avec les meilleurs professionnels de l'immobilier en Savoie et Rhône-Alpes. Découvrez notre réseau de partenaires de confiance.
+      </p>
+    </div>
+
+    <!-- Partenaires Institutionnels -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Partenaires Institutionnels</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- CCI Savoie -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">CCI Savoie</h3>
+            <p class="text-muted mb-4">Chambre de Commerce et d'Industrie de Savoie</p>
+            <a href="https://www.savoie.cci.fr" class="text-primary hover:underline" target="_blank" rel="noopener">
+              www.savoie.cci.fr
+            </a>
+          </div>
+        </div>
+
+        <!-- Chambéry Métropole -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Chambéry Métropole</h3>
+            <p class="text-muted mb-4">Communauté d'agglomération du Grand Chambéry</p>
+            <a href="https://www.grandchambery.fr" class="text-primary hover:underline" target="_blank" rel="noopener">
+              www.grandchambery.fr
+            </a>
+          </div>
+        </div>
+
+        <!-- FNAIM Savoie -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">FNAIM Savoie</h3>
+            <p class="text-muted mb-4">Fédération Nationale de l'Immobilier</p>
+            <a href="https://www.fnaim.fr/savoie" class="text-primary hover:underline" target="_blank" rel="noopener">
+              www.fnaim.fr/savoie
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agences Partenaires -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Agences Partenaires</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Agence partenaire 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Cabinet Moreau Immobilier</h3>
+              <p class="text-muted mb-3">Spécialiste de l'immobilier haut de gamme à Aix-les-Bains</p>
+              <div class="flex items-center gap-4 text-sm text-muted">
+                <span>📍 Aix-les-Bains</span>
+                <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <a href="https://moreau-immobilier.fr" class="text-primary hover:underline mt-2 inline-block" target="_blank" rel="noopener">
+                Visiter le site →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agence partenaire 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Savoie Property Management</h3>
+              <p class="text-muted mb-3">Gestion locative et syndic de copropriété à Chambéry</p>
+              <div class="flex items-center gap-4 text-sm text-muted">
+                <span>📍 Chambéry</span>
+                <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <a href="https://savoiemanagement.fr" class="text-primary hover:underline mt-2 inline-block" target="_blank" rel="noopener">
+                Visiter le site →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Médias et Presse -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Médias et Presse Partenaires</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dauphiné Libéré -->
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 3a2 2 0 100 4 2 2 0 000-4zM3 8a1 1 0 011-1h4a1 1 0 110 2H4a1 1 0 01-1-1zM4 13a2 2 0 100 4 2 2 0 000-4zM3 17a1 1 0 011-1h4a1 1 0 110 2H4a1 1 0 01-1-1zM16 5a2 2 0 11-4 0 2 2 0 014 0zM15 11a1 1 0 100 2h-2a1 1 0 100 2h2a1 1 0 100-2V9a1 1 0 000-2h-2a1 1 0 100 2h2v2z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold mb-1">Dauphiné Libéré</h3>
+          <p class="text-sm text-muted">Journal régional Savoie</p>
+        </div>
+
+        <!-- France Bleu Pays de Savoie -->
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M18 3a1 1 0 00-1.196-.98L9 3.73v7.54l7.804-1.71A1 1 0 0018 8.73V3z"/>
+              <path d="M4 12a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold mb-1">France Bleu</h3>
+          <p class="text-sm text-muted">Radio locale Savoie</p>
+        </div>
+
+        <!-- Le Journal de l'Immobilier -->
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h6a1 1 0 100-2H9z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold mb-1">Journal Immobilier</h3>
+          <p class="text-sm text-muted">Magazine professionnel</p>
+        </div>
+
+        <!-- Savoie Actualités -->
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold mb-1">Savoie Actualités</h3>
+          <p class="text-sm text-muted">Portail d'information local</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Étude Exclusive -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4">Étude Exclusive : Marché Immobilier Savoie 2025</h2>
+          <p class="text-lg text-muted max-w-2xl mx-auto">
+            Téléchargez notre étude complète sur les tendances immobilières en Savoie, réalisée en partenariat avec la CCI Savoie et Chambéry Métropole.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 text-center">
+            <div class="text-3xl font-bold text-primary mb-2">247</div>
+            <div class="text-sm text-muted">Pages d'analyse</div>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <div class="text-3xl font-bold text-primary mb-2">15</div>
+            <div class="text-sm text-muted">Communes étudiées</div>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <div class="text-3xl font-bold text-primary mb-2">12</div>
+            <div class="text-sm text-muted">Mois de données</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/etude-marche-immobilier-savoie-2025.pdf" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+            Télécharger l'Étude Complète (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Devenir Partenaire -->
+    <section class="mb-16">
+      <div class="bg-gray-50 rounded-2xl p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Devenir Partenaire</h2>
+        <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">
+          Vous êtes un professionnel de l'immobilier, un média ou une institution en Savoie ?
+          Rejoignez notre réseau de partenaires d'excellence.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Agences Immobilières</h3>
+            <p class="text-sm text-muted">Partenariats de recommandation et échanges de mandats</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Médias et Presse</h3>
+            <p class="text-sm text-muted">Interviews d'experts et communiqués de presse</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Institutions Locales</h3>
+            <p class="text-sm text-muted">Collaboration sur projets territoriaux</p>
+          </div>
+        </div>
+
+        <a href="/contact?partenaire=true" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors">
+          Nous Contacter pour un Partenariat
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Presse -->
+    <section class="mb-16">
+      <div class="bg-white rounded-2xl p-8 border border-gray-200">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Contact Presse</h3>
+            <p class="text-muted mb-6">
+              Pour toute demande d'interview, communiqué de presse ou partenariat média, notre attachée de presse est à votre disposition.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold">Téléphone</div>
+                  <div class="text-muted">04 79 25 12 34</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold">Email Presse</div>
+                  <div class="text-muted">presse@agencevoglans.fr</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold mb-4">Derniers Communiqués</h4>
+            <div class="space-y-4">
+              <div class="border-l-4 border-primary pl-4">
+                <div class="text-sm text-muted mb-1">15 janvier 2025</div>
+                <h5 class="font-semibold">Marché Immobilier Savoie 2025 : Tendances et Prévisions</h5>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <div class="text-sm text-muted mb-1">8 décembre 2024</div>
+                <h5 class="font-semibold">Voglans : La Nouvelle Destination d'Investissement</h5>
+              </div>
+              <div class="border-l-4 border-blue-500 pl-4">
+                <div class="text-sm text-muted mb-1">22 novembre 2024</div>
+                <h5 class="font-semibold">Lancement de l'Agence de Voglans</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <h2 class="text-3xl font-bold mb-4">Rejoignez Notre Réseau d'Excellence</h2>
+      <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">
+        Ensemble, développons l'excellence immobilière en Savoie et créons des synergies bénéfiques pour tous nos clients.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors">
+          Devenir Partenaire
+        </a>
+        <a href="/contact?presse=true" class="inline-flex items-center gap-2 bg-white border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">
+          Contact Presse
+        </a>
+      </div>
+    </div>
+  </article>
+</Base>
