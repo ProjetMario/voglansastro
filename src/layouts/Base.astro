@@ -253,81 +253,69 @@ const {
       }
     </script>
     
-    <!-- Google Analytics 4 -->
-    <script is:inline define:vars={{ GA_ID: import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-7EYHNH1NJM' }}>
-      if (GA_ID && GA_ID !== 'G-XXXXXXXXXX') {
-        (function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-          document.head.appendChild(script);
-          
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', GA_ID, {
-            page_path: window.location.pathname,
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-          });
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EYHNH1NJM"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7EYHNH1NJM');
 
-          // Track conversions
-          document.addEventListener('submit', function(e) {
-            if (e.target.matches('form')) {
-              gtag('event', 'form_submit', {
-                event_category: 'conversion',
-                event_label: e.target.id || 'contact_form',
-                value: 10
-              });
-            }
+      // Track conversions
+      document.addEventListener('submit', function(e) {
+        if (e.target.matches('form')) {
+          gtag('event', 'form_submit', {
+            event_category: 'conversion',
+            event_label: e.target.id || 'contact_form',
+            value: 10
           });
+        }
+      });
 
-          document.addEventListener('click', function(e) {
-            var tel = e.target.closest('a[href^="tel:"]');
-            if (tel) {
-              gtag('event', 'phone_click', {
-                event_category: 'conversion',
-                event_label: tel.href.replace('tel:', ''),
-                value: 15
-              });
-            }
-            
-            var email = e.target.closest('a[href^="mailto:"]');
-            if (email) {
-              gtag('event', 'email_click', {
-                event_category: 'engagement',
-                event_label: email.href.replace('mailto:', ''),
-                value: 5
-              });
-            }
-            
-            var estimation = e.target.closest('a[href*="/estimation"]');
-            if (estimation) {
-              gtag('event', 'estimation_click', {
-                event_category: 'conversion_intent',
-                event_label: 'estimation_button',
-                value: 8
-              });
-            }
+      document.addEventListener('click', function(e) {
+        var tel = e.target.closest('a[href^="tel:"]');
+        if (tel) {
+          gtag('event', 'phone_click', {
+            event_category: 'conversion',
+            event_label: tel.href.replace('tel:', ''),
+            value: 15
           });
+        }
+        
+        var email = e.target.closest('a[href^="mailto:"]');
+        if (email) {
+          gtag('event', 'email_click', {
+            event_category: 'engagement',
+            event_label: email.href.replace('mailto:', ''),
+            value: 5
+          });
+        }
+        
+        var estimation = e.target.closest('a[href*="/estimation"]');
+        if (estimation) {
+          gtag('event', 'estimation_click', {
+            event_category: 'conversion_intent',
+            event_label: 'estimation_button',
+            value: 8
+          });
+        }
+      });
 
-          // Track scroll depth
-          var scrolled = {};
-          window.addEventListener('scroll', function() {
-            var percent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
-            [25, 50, 75, 100].forEach(function(depth) {
-              if (percent >= depth && !scrolled[depth]) {
-                scrolled[depth] = true;
-                gtag('event', 'scroll_depth', {
-                  event_category: 'engagement',
-                  event_label: depth + '%',
-                  value: depth
-                });
-              }
+      // Track scroll depth
+      var scrolled = {};
+      window.addEventListener('scroll', function() {
+        var percent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(depth) {
+          if (percent >= depth && !scrolled[depth]) {
+            scrolled[depth] = true;
+            gtag('event', 'scroll_depth', {
+              event_category: 'engagement',
+              event_label: depth + '%',
+              value: depth
             });
-          });
-        })();
-      }
+          }
+        });
+      });
     </script>
     
     <!-- Google Search Console Verification (À CONFIGURER) -->
