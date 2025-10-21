@@ -49,6 +49,140 @@ function findRelatedPosts(currentPost: typeof post, allPosts: typeof posts) {
 
 const relatedPosts = findRelatedPosts(post, posts);
 
+// FAQ selon la catégorie
+function getFAQForCategory(category: string, firstTag: string) {
+  const faqs: Record<string, Array<{ question: string; answer: string }>> = {
+    "Estimation": [
+      {
+        question: "Combien coûte une estimation immobilière ?",
+        answer: "Notre estimation immobilière est totalement gratuite et sans engagement. Un expert se déplace à votre domicile pour évaluer votre bien en tenant compte de toutes ses caractéristiques."
+      },
+      {
+        question: "Combien de temps prend une estimation ?",
+        answer: "L'estimation est réalisée sous 48h. La visite dure environ 30-45 minutes, puis vous recevez un rapport détaillé avec le prix de marché recommandé dans les 48 heures."
+      },
+      {
+        question: "Quels documents faut-il préparer pour l'estimation ?",
+        answer: "Préparez le titre de propriété, les diagnostics techniques si disponibles, les factures de travaux récents et les charges de copropriété. Ces documents aident à affiner l'estimation."
+      },
+      {
+        question: `Comment est calculée la valeur d'un bien à ${firstTag} ?`,
+        answer: `La valeur est calculée selon plusieurs critères : prix au m² dans le secteur de ${firstTag}, état général du bien, emplacement, prestations, et analyse comparative des ventes récentes similaires.`
+      }
+    ],
+    "Vente": [
+      {
+        question: "Combien de temps faut-il pour vendre une maison ?",
+        answer: "En moyenne, une maison bien estimée se vend en 60-90 jours en Savoie. Avec notre stratégie marketing optimisée et notre réseau d'acheteurs, nous réduisons souvent ce délai de 30-40%."
+      },
+      {
+        question: "Quels sont les frais de vente pour le vendeur ?",
+        answer: "Les principaux frais sont les honoraires d'agence (généralement 4-6% TTC du prix de vente), les diagnostics obligatoires (500-1500€) et éventuellement les frais de mainlevée d'hypothèque."
+      },
+      {
+        question: "Dois-je faire des travaux avant de vendre ?",
+        answer: "Pas nécessairement. De gros travaux ne sont souvent pas rentables. Privilégiez un rafraîchissement (peinture, nettoyage professionnel) et des réparations mineures qui ont un excellent retour sur investissement."
+      },
+      {
+        question: `Quel est le meilleur moment pour vendre à ${firstTag} ?`,
+        answer: `Le printemps (mars-juin) est idéal à ${firstTag} avec +40% d'activité. Évitez juillet-août et décembre-janvier. Le marché est dynamique de février à octobre.`
+      }
+    ],
+    "Marché immobilier": [
+      {
+        question: "Le marché immobilier en Savoie est-il dynamique ?",
+        answer: "Oui, très dynamique. La Savoie bénéficie d'une forte attractivité grâce au lac du Bourget, la proximité de Chambéry/Aix-les-Bains, et la qualité de vie. La demande dépasse régulièrement l'offre."
+      },
+      {
+        question: "Les prix de l'immobilier augmentent-ils ?",
+        answer: "Les prix en Savoie ont augmenté de 3-5% par an ces dernières années. Certains secteurs recherchés comme le bord du lac connaissent des hausses plus importantes (6-8% annuels)."
+      },
+      {
+        question: `Quelle est l'évolution des prix à ${firstTag} ?`,
+        answer: `À ${firstTag}, les prix suivent la tendance régionale avec une croissance stable. Les biens bien situés (centre, commodités, transports) se valorisent particulièrement bien.`
+      },
+      {
+        question: "Faut-il acheter ou attendre une baisse des prix ?",
+        answer: "Attendre une baisse en Savoie est risqué. Le marché est porté par une demande structurelle forte. L'adage 'le meilleur moment était hier, le second meilleur est aujourd'hui' s'applique ici."
+      }
+    ],
+    "Investissement": [
+      {
+        question: "Quel rendement locatif peut-on espérer en Savoie ?",
+        answer: "Le rendement locatif moyen en Savoie est de 4-5% brut pour du longue durée, et 6-8% pour de la location meublée/saisonnière dans les zones touristiques."
+      },
+      {
+        question: "Quels dispositifs de défiscalisation sont disponibles ?",
+        answer: "Plusieurs dispositifs existent : Pinel (réduction d'impôt), LMNP (amortissement du bien), Denormandie (ancien avec travaux), ou le régime micro-BIC pour les meublés."
+      },
+      {
+        question: "Faut-il un apport pour investir dans l'immobilier ?",
+        answer: "Un apport de 10-20% est recommandé mais pas toujours obligatoire. Avec un bon dossier et un projet solide, certaines banques financent jusqu'à 110% (frais de notaire inclus)."
+      },
+      {
+        question: `Pourquoi investir à ${firstTag} ?`,
+        answer: `${firstTag} offre un excellent rapport qualité/prix, une demande locative soutenue, et un potentiel de plus-value intéressant grâce à l'attractivité croissante de la Savoie.`
+      }
+    ],
+    "Expertise": [
+      {
+        question: "Pourquoi choisir une agence locale plutôt qu'une grande franchise ?",
+        answer: "Une agence locale connaît intimement son territoire : prix réels, acheteurs du secteur, spécificités administratives. Cette expertise se traduit par des ventes plus rapides et mieux valorisées."
+      },
+      {
+        question: "Comment une agence immobilière valorise-t-elle mon bien ?",
+        answer: "Nous créons des annonces attractives avec photos pro, vidéos, visites virtuelles. Notre réseau d'acheteurs, présence digitale optimisée et stratégie marketing garantissent une visibilité maximale."
+      },
+      {
+        question: "Quelle est la différence entre mandat simple et exclusif ?",
+        answer: "Le mandat exclusif vous garantit un investissement marketing maximal de notre part. En contrepartie, nous sommes votre unique interlocuteur, ce qui simplifie la gestion et accélère la vente."
+      },
+      {
+        question: "Puis-je vendre sans agence ?",
+        answer: "Techniquement oui, mais 85% des ventes passent par une agence. Le gain de temps, la sécurité juridique, l'accès aux acheteurs qualifiés et la négociation optimisée justifient largement les honoraires."
+      }
+    ]
+  };
+  
+  // Catégories par défaut
+  const defaultFAQ = [
+    {
+      question: "Comment se déroule une transaction immobilière en Savoie ?",
+      answer: "Une transaction suit plusieurs étapes : estimation, mise en vente, visites, offre d'achat, compromis de vente (sous 7-15 jours), délai de rétractation (10 jours), puis signature définitive chez le notaire (2-3 mois après le compromis)."
+    },
+    {
+      question: `Quels sont les avantages du secteur ${firstTag} ?`,
+      answer: `Le secteur de ${firstTag} bénéficie d'une excellente qualité de vie en Savoie, avec un cadre naturel préservé, des commodités accessibles et une bonne desserte. C'est un secteur recherché par les familles et les actifs.`
+    },
+    {
+      question: "Comment préparer la vente de mon bien immobilier ?",
+      answer: "Commencez par un désencombrement (50% des objets), un nettoyage professionnel, des petites réparations et une neutralisation de la décoration. Ces actions simples peuvent augmenter le prix de vente de 5-10%."
+    },
+    {
+      question: "Quels diagnostics immobiliers sont obligatoires ?",
+      answer: "Les diagnostics obligatoires incluent : DPE, amiante, plomb, termites (zones concernées), gaz et électricité (si +15 ans), assainissement, risques naturels (ERNMT) et loi Carrez/Boutin selon le type de bien."
+    }
+  ];
+  
+  return faqs[category] || defaultFAQ;
+}
+
+const articleFAQ = getFAQForCategory(post.category, post.tags[0] || 'Savoie');
+
+// FAQ Schema pour Featured Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": articleFAQ.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 // Fonction de parsing de date française vers ISO
 function parseFrenchDate(frenchDate: string): string {
   const months: Record<string, string> = {
@@ -159,6 +293,7 @@ const breadcrumbSchema = {
     <!-- JSON-LD Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
   <main class="min-h-screen bg-gray-50 py-12">
     <article class="max-w-4xl mx-auto px-4">
@@ -410,6 +545,51 @@ const breadcrumbSchema = {
             </p>
           </>
         )}
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="my-12 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <h2 class="text-2xl font-bold text-gray-900">Questions fréquentes</h2>
+        </div>
+        
+        <div class="space-y-4">
+          {articleFAQ.map((faq, index) => (
+            <details class="group bg-white rounded-xl border border-purple-100 overflow-hidden hover:border-purple-300 transition">
+              <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 flex-1 pr-4">
+                  {faq.question}
+                </h3>
+                <svg 
+                  class="w-5 h-5 text-purple-600 transform group-open:rotate-180 transition-transform duration-200 flex-shrink-0" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-2 text-gray-700 leading-relaxed border-t border-purple-50">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 backdrop-blur rounded-lg border border-purple-100">
+          <p class="text-sm text-gray-600 flex items-start gap-2">
+            <svg class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>
+              <strong>Vous avez d'autres questions ?</strong> Notre équipe d'experts est à votre disposition pour répondre à toutes vos interrogations. 
+              <a href="/contact" class="text-purple-600 font-semibold hover:text-purple-700 underline">Contactez-nous</a>
+            </span>
+          </p>
+        </div>
       </div>
 
       <!-- Articles connexes (Maillage interne) -->
