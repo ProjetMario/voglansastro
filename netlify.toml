@@ -5,10 +5,11 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Pas de redirection wildcard - Astro gère les routes
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
 [functions]
   directory = "netlify/functions"

@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import LandiersHeader from '../../components/blog/headers/LandiersHeader.astro';
 import ImageCard from '../../components/blog/ImageCard.astro';
 import ButtonUltra from '@/components/ui/ButtonUltra.astro';
+import HeroUltra from '@/components/ui/HeroUltra.astro';
+import BadgeUltra from '@/components/ui/BadgeUltra.astro';
 import {
   ArrowLeft,
   TrendingUp,
@@ -32,6 +34,12 @@ import {
 } from 'lucide-react';
 
 const publishDate = new Date('2025-01-22');
+
+const meta = {
+  title: "Investir dans la Zone Commerciale des Landiers à Chambéry : Guide Investisseurs Professionnels",
+  description: "Analyse complète de la zone commerciale des Landiers : opportunités d'investissement professionnel, rendements locatifs commerciaux, bureaux et locaux d'activité à Chambéry.",
+  keywords: ["investissement commercial Chambéry", "zone Landiers", "immobilier professionnel Savoie", "bureaux Chambéry", "locaux commerciaux"]
+};
 
 // Article Schema pour SEO
 const articleSchema = {

@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-  output: 'server',
+  output: 'hybrid',
   adapter: netlify(),
   site: 'https://agencevoglans.fr',
   integrations: [
