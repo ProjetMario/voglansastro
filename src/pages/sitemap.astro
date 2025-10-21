@@ -5,7 +5,7 @@ import { COMMUNES } from '@/data/communes';
 // Organiser les pages par catégorie
 const mainPages = [
   { title: 'Accueil', href: '/', description: 'Page d\'accueil de L\'Agence de Voglans' },
-  { title: 'Estimation Gratuite', href: '/estimation', description: 'Obtenez une estimation gratuite de votre bien' },
+  { title: 'Estimation gratuite', href: '/estimation', description: 'Obtenez une estimation gratuite de votre bien' },
   { title: 'Vendre', href: '/vendre', description: 'Vendez votre bien immobilier avec nous' },
   { title: 'Acheter', href: '/acheter', description: 'Trouvez votre bien idéal en Savoie' },
   { title: 'Contact', href: '/contact', description: 'Contactez notre équipe' },
@@ -135,7 +135,7 @@ const sortedCommunes = [...COMMUNES].sort((a, b) => a.name.localeCompare(b.name)
           <h2 class="text-3xl font-bold mb-4">Besoin d'aide pour naviguer ?</h2>
           <p class="text-lg mb-6 opacity-90">Notre équipe est à votre disposition</p>
           <a href="/contact" class="inline-block bg-white text-primary px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Nous Contacter
+            Nous contacter
           </a>
         </div>
       </div>
