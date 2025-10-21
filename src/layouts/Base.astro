@@ -112,9 +112,11 @@ const {
               "latitude": 45.6167,
               "longitude": 5.9000
             },
-            "telephone": "+33479XXXXXX",
+            "telephone": "+33757830262",
             "email": "contact@agencevoglans.fr",
             "priceRange": "€€",
+            "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+            "currenciesAccepted": "EUR",
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
@@ -130,46 +132,33 @@ const {
               }
             ],
             "areaServed": [
-              {
-                "@type": "City",
-                "name": "Chambéry",
-                "containedIn": {
-                  "@type": "AdministrativeArea",
-                  "name": "Savoie"
-                }
-              },
-              {
-                "@type": "City",
-                "name": "Aix-les-Bains",
-                "containedIn": {
-                  "@type": "AdministrativeArea",
-                  "name": "Savoie"
-                }
-              },
-              {
-                "@type": "City",
-                "name": "Voglans",
-                "containedIn": {
-                  "@type": "AdministrativeArea",
-                  "name": "Savoie"
-                }
-              },
-              {
-                "@type": "City",
-                "name": "La Ravoire",
-                "containedIn": {
-                  "@type": "AdministrativeArea",
-                  "name": "Savoie"
-                }
-              },
-              {
-                "@type": "City",
-                "name": "Bassens",
-                "containedIn": {
-                  "@type": "AdministrativeArea",
-                  "name": "Savoie"
-                }
-              }
+              {"@type": "City", "name": "Chambéry", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Aix-les-Bains", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Voglans", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "La Ravoire", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Bassens", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Cognin", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "La Motte-Servolex", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Jacob-Bellecombette", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Saint-Alban-Leysse", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Barberaz", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Le Bourget-du-Lac", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Viviers-du-Lac", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Tresserve", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Drumettaz-Clarafond", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Sonnaz", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Méry", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Challes-les-Eaux", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Montmélian", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Saint-Baldoph", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Grésy-sur-Aix", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Mouxy", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Brison-Saint-Innocent", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Vimines", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Montagnole", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Chignin", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "Trevignin", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}},
+              {"@type": "City", "name": "La Chapelle-du-Mont-du-Chat", "containedIn": {"@type": "AdministrativeArea", "name": "Savoie"}}
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -205,6 +194,28 @@ const {
               "https://www.facebook.com/agencevoglans",
               "https://www.linkedin.com/company/agence-voglans",
               "https://www.instagram.com/agencevoglans"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "slogan": "Votre agence immobilière 100% locale et humaine en Savoie",
+            "foundingDate": "2020",
+            "numberOfEmployees": {
+              "@type": "QuantitativeValue",
+              "value": "5"
+            },
+            "knowsAbout": [
+              "Immobilier résidentiel",
+              "Estimation immobilière",
+              "Vente de maisons",
+              "Vente d'appartements",
+              "Investissement locatif",
+              "Marché immobilier Savoie",
+              "Transaction immobilière"
             ]
           },
           {
