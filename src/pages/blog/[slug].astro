@@ -176,32 +176,206 @@ const breadcrumbSchema = {
         </p>
       </div>
 
-      <!-- Contenu principal -->
+      <!-- Contenu principal dynamique -->
       <div class="prose prose-lg max-w-none mb-12">
-        <h2>Pourquoi choisir notre expertise ?</h2>
-        <p>
-          En tant qu'agence immobilière locale spécialisée en Savoie, nous connaissons parfaitement 
-          le marché immobilier de {post.tags[0]} et ses spécificités.
-        </p>
+        {post.category === "Estimation" && (
+          <>
+            <h2>Estimation immobilière précise et gratuite</h2>
+            <p>
+              Vous souhaitez connaître la valeur de votre bien immobilier ? Notre expertise locale nous permet 
+              d'évaluer précisément votre propriété en tenant compte des spécificités du marché de {post.tags[0]}.
+            </p>
+            
+            <h2>Les critères d'estimation que nous analysons</h2>
+            <ul>
+              <li><strong>L'emplacement géographique</strong> : proximité des commodités, transports, écoles</li>
+              <li><strong>L'état général du bien</strong> : rénovations, équipements, performance énergétique</li>
+              <li><strong>Le marché local</strong> : prix au m², demande, temps de vente moyen</li>
+              <li><strong>Les caractéristiques uniques</strong> : vue, terrain, exposition, cachet</li>
+            </ul>
 
-        <h2>Notre accompagnement personnalisé</h2>
-        <ul>
-          <li><strong>Estimation gratuite</strong> de votre bien sous 48h</li>
-          <li><strong>Stratégie marketing</strong> adaptée à votre situation</li>
-          <li><strong>Accompagnement juridique</strong> complet</li>
-          <li><strong>Réseau d'acheteurs</strong> qualifiés</li>
-        </ul>
+            <h2>Notre méthodologie d'estimation</h2>
+            <p>
+              Nous utilisons une approche multicritère qui combine l'analyse des ventes récentes dans votre secteur, 
+              l'étude comparative du marché et notre connaissance approfondie du territoire savoyard. Cette méthode 
+              nous permet de vous proposer une estimation juste et réaliste, essentielle pour une vente réussie.
+            </p>
 
-        <h2>Les atouts de notre agence locale</h2>
-        <p>
-          Notre connaissance approfondie du territoire savoyard nous permet de :
-        </p>
-        <ul>
-          <li>Valoriser au mieux votre bien immobilier</li>
-          <li>Cibler les acheteurs potentiels efficacement</li>
-          <li>Négocier au meilleur prix</li>
-          <li>Vous accompagner à chaque étape</li>
-        </ul>
+            <h2>Pourquoi une estimation professionnelle est essentielle</h2>
+            <p>
+              Un bien sur-évalué reste longtemps sur le marché et finit par se dévaloriser. Un bien sous-évalué 
+              vous fait perdre de l'argent. Notre estimation gratuite vous donne le juste prix pour vendre 
+              rapidement et au meilleur tarif.
+            </p>
+          </>
+        )}
+
+        {post.category === "Vente" && (
+          <>
+            <h2>Stratégie de vente optimisée</h2>
+            <p>
+              Vendre un bien immobilier nécessite une stratégie adaptée au marché local. En Savoie, et particulièrement 
+              concernant {post.tags[0]}, nous maîtrisons les spécificités qui feront la différence entre une vente 
+              rapide au bon prix et un bien qui stagne sur le marché.
+            </p>
+
+            <h2>Les étapes clés d'une vente réussie</h2>
+            <ul>
+              <li><strong>Estimation précise</strong> : définir le juste prix selon le marché actuel</li>
+              <li><strong>Préparation du bien</strong> : mise en valeur, home staging si nécessaire</li>
+              <li><strong>Marketing ciblé</strong> : photos pro, annonces optimisées, diffusion large</li>
+              <li><strong>Visites qualifiées</strong> : sélection d'acheteurs sérieux et motivés</li>
+              <li><strong>Négociation</strong> : obtenir le meilleur prix dans les meilleurs délais</li>
+              <li><strong>Accompagnement juridique</strong> : sécurisation de la transaction</li>
+            </ul>
+
+            <h2>Comment nous valorisons votre bien</h2>
+            <p>
+              Notre approche combine expertise technique et marketing digital. Nous créons des annonces attractives 
+              avec photos professionnelles, vidéos et visites virtuelles. Notre réseau d'acheteurs qualifiés et 
+              notre présence digitale optimisée garantissent une visibilité maximale à votre bien.
+            </p>
+
+            <h2>Les erreurs à éviter lors de la vente</h2>
+            <ul>
+              <li>Fixer un prix trop élevé qui décourage les acheteurs</li>
+              <li>Négliger la présentation du bien lors des visites</li>
+              <li>Manquer de réactivité face aux demandes</li>
+              <li>Accepter des offres non sécurisées</li>
+            </ul>
+          </>
+        )}
+
+        {post.category === "Marché immobilier" && (
+          <>
+            <h2>Analyse du marché immobilier local</h2>
+            <p>
+              Le marché immobilier évolue constamment. Comprendre les tendances actuelles concernant {post.tags[0]} 
+              est essentiel pour prendre les bonnes décisions, que vous soyez vendeur, acheteur ou investisseur.
+            </p>
+
+            <h2>Les tendances du marché en Savoie</h2>
+            <ul>
+              <li><strong>Évolution des prix</strong> : analyse des variations sur les 12 derniers mois</li>
+              <li><strong>Délais de vente</strong> : temps moyen entre mise en vente et signature</li>
+              <li><strong>Profil des acheteurs</strong> : primo-accédants, investisseurs, résidences secondaires</li>
+              <li><strong>Types de biens recherchés</strong> : maisons, appartements, terrains</li>
+            </ul>
+
+            <h2>Facteurs influençant le marché local</h2>
+            <p>
+              Plusieurs éléments impactent le marché immobilier en Savoie : l'attractivité touristique du lac du Bourget, 
+              la proximité de Chambéry et d'Aix-les-Bains, le développement des infrastructures de transport, et la 
+              qualité de vie reconnue de la région. Ces atouts maintiennent une demande soutenue.
+            </p>
+
+            <h2>Prévisions et perspectives</h2>
+            <p>
+              Le marché savoyard reste dynamique grâce à son attractivité constante. La combinaison entre cadre naturel 
+              exceptionnel, proximité urbaine et offre culturelle continue d'attirer de nouveaux habitants et 
+              investisseurs. C'est le moment idéal pour concrétiser votre projet immobilier.
+            </p>
+          </>
+        )}
+
+        {post.category === "Investissement" && (
+          <>
+            <h2>Pourquoi investir dans l'immobilier en Savoie ?</h2>
+            <p>
+              La Savoie offre des opportunités d'investissement attractives. Que ce soit pour de la location longue durée, 
+              saisonnière ou de la résidence de tourisme, le marché de {post.tags[0]} présente des atouts indéniables 
+              pour les investisseurs avisés.
+            </p>
+
+            <h2>Les avantages d'un investissement locatif</h2>
+            <ul>
+              <li><strong>Rendement attractif</strong> : rentabilité locative intéressante sur le bassin chambérien</li>
+              <li><strong>Fiscalité avantageuse</strong> : dispositifs Pinel, LMNP, défiscalisation</li>
+              <li><strong>Plus-value à long terme</strong> : marché immobilier stable et valorisant</li>
+              <li><strong>Demande locative soutenue</strong> : étudiants, actifs, touristes</li>
+            </ul>
+
+            <h2>Comment sélectionner le bon bien d'investissement</h2>
+            <p>
+              Un investissement réussi repose sur trois piliers : l'emplacement (proximité transports, commerces, écoles), 
+              le prix d'acquisition (potentiel de négociation, travaux prévisibles) et la rentabilité (loyers pratiqués, 
+              charges, fiscalité). Notre expertise locale vous guide vers les meilleures opportunités.
+            </p>
+
+            <h2>Stratégies d'investissement selon votre profil</h2>
+            <ul>
+              <li><strong>Investisseur débutant</strong> : studio ou T2 avec rendement immédiat</li>
+              <li><strong>Constitution de patrimoine</strong> : maison à rénover avec potentiel</li>
+              <li><strong>Optimisation fiscale</strong> : dispositifs de défiscalisation adaptés</li>
+              <li><strong>Revenus complémentaires</strong> : location meublée touristique</li>
+            </ul>
+          </>
+        )}
+
+        {post.category === "Expertise" && (
+          <>
+            <h2>Notre expertise au service de votre projet</h2>
+            <p>
+              L'immobilier en Savoie a ses spécificités. Notre connaissance approfondie du marché local concernant 
+              {post.tags[0]} nous permet de vous accompagner efficacement, quelle que soit votre situation.
+            </p>
+
+            <h2>Une connaissance territoriale unique</h2>
+            <p>
+              Chaque commune, chaque quartier a ses particularités. Les Bauges ne se vendent pas comme le bord du lac, 
+              le centre de Chambéry diffère des villages périphériques. Cette expertise fine du territoire fait la 
+              différence entre une transaction réussie et une opportunité manquée.
+            </p>
+
+            <h2>Un accompagnement personnalisé</h2>
+            <ul>
+              <li><strong>Écoute de vos besoins</strong> : comprendre vos objectifs et contraintes</li>
+              <li><strong>Conseil stratégique</strong> : vous orienter vers les meilleures décisions</li>
+              <li><strong>Transparence totale</strong> : information claire sur chaque étape</li>
+              <li><strong>Disponibilité</strong> : réactivité et suivi régulier de votre dossier</li>
+            </ul>
+
+            <h2>Les garanties d'une agence locale</h2>
+            <p>
+              Contrairement aux plateformes en ligne ou aux grandes franchises, nous sommes implantés localement. 
+              Nous connaissons personnellement les quartiers, les prix réels du marché, les spécificités administratives 
+              locales et disposons d'un réseau d'acheteurs qualifiés déjà intéressés par votre secteur.
+            </p>
+          </>
+        )}
+
+        {(post.category === "Achat" || post.category === "Conseils" || post.category === "Guide local" || post.category === "Fiscalité" || post.category === "Témoignage") && (
+          <>
+            <h2>Comprendre le marché immobilier local</h2>
+            <p>
+              Chaque décision immobilière nécessite une bonne compréhension du contexte local. En Savoie, 
+              particulièrement concernant {post.tags[0]}, plusieurs facteurs influencent le marché et méritent 
+              votre attention.
+            </p>
+
+            <h2>Les spécificités du territoire savoyard</h2>
+            <ul>
+              <li><strong>Cadre de vie exceptionnel</strong> : entre lac et montagnes, qualité de vie reconnue</li>
+              <li><strong>Accessibilité</strong> : proximité Lyon, Genève, Annecy via autoroutes et TGV</li>
+              <li><strong>Dynamisme économique</strong> : bassins d'emploi de Chambéry et Aix-les-Bains</li>
+              <li><strong>Offre culturelle et sportive</strong> : activités toute l'année</li>
+            </ul>
+
+            <h2>Notre accompagnement sur mesure</h2>
+            <p>
+              Que vous achetiez votre résidence principale, investissiez dans la pierre ou vendiez votre bien, 
+              nous vous accompagnons avec une approche personnalisée. Notre expertise locale et notre connaissance 
+              du marché sont vos meilleurs atouts pour réussir votre projet immobilier.
+            </p>
+
+            <h2>Les avantages de travailler avec une agence locale</h2>
+            <p>
+              Une agence implantée localement connaît les particularités de chaque secteur, les prix réels pratiqués, 
+              les projets d'aménagement à venir et dispose d'un réseau établi. Cette proximité se traduit par un service 
+              plus efficace et des résultats concrets pour votre projet.
+            </p>
+          </>
+        )}
       </div>
 
       <!-- Call to action -->
