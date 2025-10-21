@@ -96,7 +96,7 @@ export const siteConfig = {
     hours: "Lun-Ven 9h-18h",
   },
   social: {
-    facebook: "https://facebook.com/agencevoglans",
+    facebook: "https://www.facebook.com/share/1CykVn7qM3/?mibextid=wwXIfr",
     instagram: "https://instagram.com/agencevoglans",
     linkedin: "https://linkedin.com/company/agence-voglans",
   },
