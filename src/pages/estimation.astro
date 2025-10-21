@@ -45,6 +45,91 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
+
+// SEO Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Estimation Immobilière Gratuite en Savoie",
+  "description": "Estimation précise et gratuite de votre bien immobilier en Savoie. Analyse de marché approfondie et rapport détaillé sous 48h avec expertise locale.",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "L'Agence de Voglans",
+    "telephone": "+33757830262",
+    "url": "https://agencevoglans.fr"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Savoie, France"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "description": "Estimation immobilière gratuite et sans engagement"
+  },
+  "serviceType": "Estimation immobilière",
+  "category": "Real Estate Services"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "L'estimation immobilière est-elle vraiment gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, notre estimation est 100% gratuite et sans engagement. Un expert se déplace à votre domicile pour évaluer votre bien en tenant compte de toutes ses caractéristiques spécifiques."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps prend une estimation immobilière ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'estimation est réalisée sous 48h. La visite de notre expert dure environ 30-45 minutes, puis vous recevez un rapport détaillé avec le prix de marché recommandé dans les 48 heures suivantes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre estimation en ligne et estimation par agent ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'estimation en ligne donne une fourchette rapide basée sur les données statistiques. L'estimation par agent est précise car elle prend en compte l'état réel du bien, ses spécificités uniques, les travaux récents, et la demande actuelle sur votre secteur précis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dans quelles villes proposez-vous l'estimation gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous intervenons dans 27 communes de Savoie : Chambéry, Aix-les-Bains, Voglans, La Ravoire, Bassens, Cognin, La Motte-Servolex, et toutes les communes du bassin chambérien et du lac du Bourget."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://agencevoglans.fr"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Estimation Gratuite",
+      "item": "https://agencevoglans.fr/estimation"
+    }
+  ]
+};
 ---
 
 <Base
@@ -52,6 +137,28 @@ import { siteConfig } from '@/lib/utils';
   description="Estimation précise et gratuite de votre bien immobilier en Savoie. Analyse de marché approfondie et rapport détaillé sous 48h avec expertise locale."
   image="/images/og-estimation.jpg"
 >
+  <Fragment slot="head">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://agencevoglans.fr/estimation" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agencevoglans.fr/estimation" />
+    <meta property="og:title" content="Estimation Gratuite | L'Agence de Voglans - Expertise Immobilière en Savoie" />
+    <meta property="og:description" content="Estimation précise et gratuite de votre bien immobilier en Savoie. Analyse de marché approfondie et rapport détaillé sous 48h avec expertise locale." />
+    <meta property="og:image" content="https://agencevoglans.fr/images/og-estimation.jpg" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Estimation Gratuite | L'Agence de Voglans" />
+    <meta name="twitter:description" content="Estimation précise et gratuite de votre bien immobilier en Savoie sous 48h" />
+    <meta name="twitter:image" content="https://agencevoglans.fr/images/og-estimation.jpg" />
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
   <!-- Section d'estimation IA immédiate -->
   <section class="py-16 bg-gradient-to-br from-primary/5 to-white">
     <div class="container mx-auto px-4">

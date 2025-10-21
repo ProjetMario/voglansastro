@@ -27,12 +27,64 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
+
+// SEO Schema
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "RealEstateAgent",
+    "name": "L'Agence de Voglans",
+    "telephone": "+33757830262",
+    "email": "contact@agencevoglans.fr",
+    "address": {"@type": "PostalAddress", "streetAddress": "93 Chemin de la Combe", "addressLocality": "Voglans", "postalCode": "73420", "addressCountry": "FR"},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00"}
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Sous quel délai répondez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous nous engageons à répondre à toutes les demandes sous 24h maximum, y compris le week-end."}},
+    {"@type": "Question", "name": "Puis-je prendre rendez-vous par téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, appelez-nous au 07 57 83 02 62 du lundi au vendredi 9h-18h, samedi 9h-12h."}},
+    {"@type": "Question", "name": "Proposez-vous des rendez-vous visio ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, nous proposons des rendez-vous visio pour les premières consultations."}},
+    {"@type": "Question", "name": "Où êtes-vous situés ?", "acceptedAnswer": {"@type": "Answer", "text": "93 Chemin de la Combe, 73420 Voglans, Savoie. Proche de Chambéry et Aix-les-Bains."}}
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://agencevoglans.fr"},
+    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://agencevoglans.fr/contact"}
+  ]
+};
 ---
 
 <Base
   title="Contact | L'Agence de Voglans - Réponse sous 24h"
   description="Contactez L'Agence de Voglans pour votre projet immobilier. Réponse garantie sous 24h, estimation gratuite et accompagnement personnalisé."
 >
+  <Fragment slot="head">
+    <link rel="canonical" href="https://agencevoglans.fr/contact" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agencevoglans.fr/contact" />
+    <meta property="og:title" content="Contact | L'Agence de Voglans - Réponse sous 24h" />
+    <meta property="og:description" content="Contactez L'Agence de Voglans pour votre projet immobilier. Réponse garantie sous 24h." />
+    <meta property="og:image" content="https://agencevoglans.fr/images/og-contact.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | L'Agence de Voglans" />
+    <meta name="twitter:description" content="Réponse garantie sous 24h" />
+    <meta name="twitter:image" content="https://agencevoglans.fr/images/og-contact.jpg" />
+    <script type="application/ld+json" set:html={JSON.stringify(contactSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
   <!-- Hero Section Révolutionnaire -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/80">
     <!-- Fond animé avec particules -->

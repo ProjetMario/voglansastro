@@ -35,12 +35,62 @@ import {
   Play
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
+
+// SEO Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Vente de Biens Immobiliers en Savoie",
+  "description": "Service complet de vente immobilière en Savoie avec accompagnement personnalisé, estimation gratuite et stratégie marketing optimisée.",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "L'Agence de Voglans",
+    "telephone": "+33757830262"
+  },
+  "serviceType": "Vente immobilière",
+  "areaServed": {"@type": "Place", "name": "Savoie, France"}
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Combien de temps pour vendre un bien ?", "acceptedAnswer": {"@type": "Answer", "text": "En moyenne 60-90 jours en Savoie. Avec notre stratégie, nous réduisons souvent ce délai de 30-40%."}},
+    {"@type": "Question", "name": "Quels sont les frais de vente ?", "acceptedAnswer": {"@type": "Answer", "text": "Honoraires d'agence 4-6% TTC, diagnostics obligatoires 500-1500€."}},
+    {"@type": "Question", "name": "Dois-je faire des travaux avant ?", "acceptedAnswer": {"@type": "Answer", "text": "Privilégiez rafraîchissement (peinture, nettoyage) plutôt que gros travaux peu rentables."}},
+    {"@type": "Question", "name": "Comment fixez-vous le prix ?", "acceptedAnswer": {"@type": "Answer", "text": "Analyse comparative du marché, prix au m² local, état du bien, demande actuelle."}}
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://agencevoglans.fr"},
+    {"@type": "ListItem", "position": 2, "name": "Vendre", "item": "https://agencevoglans.fr/vendre"}
+  ]
+};
 ---
 
 <Base
   title="Vendre | L'Agence de Voglans - Expertise Immobilière en Savoie"
   description="Vendez votre bien immobilier au meilleur prix avec L'Agence de Voglans. Méthodologie 6 étapes, estimation gratuite et expertise locale en Savoie."
 >
+  <Fragment slot="head">
+    <link rel="canonical" href="https://agencevoglans.fr/vendre" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agencevoglans.fr/vendre" />
+    <meta property="og:title" content="Vendre | L'Agence de Voglans - Expertise Immobilière en Savoie" />
+    <meta property="og:description" content="Vendez votre bien immobilier au meilleur prix avec L'Agence de Voglans. Méthodologie 6 étapes, estimation gratuite et expertise locale en Savoie." />
+    <meta property="og:image" content="https://agencevoglans.fr/images/og-vendre.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vendre | L'Agence de Voglans" />
+    <meta name="twitter:description" content="Vendez votre bien au meilleur prix en Savoie" />
+    <meta name="twitter:image" content="https://agencevoglans.fr/images/og-vendre.jpg" />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
   <!-- Hero Section Révolutionnaire -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/80">
     <!-- Fond animé avec particules -->
