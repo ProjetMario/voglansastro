@@ -53,18 +53,19 @@ const categoryColors: Record<string, string> = {
 ---
 
 <article class={`group h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden ${featured ? 'featured-post ring-2 ring-primary/20' : ''}`}>
-  <!-- Image de présentation -->
-  {image && (
-    <div class="relative h-48 overflow-hidden">
-      <img 
-        src={image} 
-        alt={title}
-        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        loading="lazy"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-    </div>
-  )}
+  <a href={href} class="block h-full">
+    <!-- Image de présentation -->
+    {image && (
+      <div class="relative h-48 overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+      </div>
+    )}
   
   <div class="p-6 flex flex-col justify-between h-full">
     
@@ -112,12 +113,13 @@ const categoryColors: Record<string, string> = {
         <Clock className="w-4 h-4" />
         <span>{readingTime} de lecture</span>
       </div>
-      <a href={href} class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 rounded-xl font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group/btn">
+      <span class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 rounded-xl font-semibold group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
         <span>Lire l'article</span>
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-      </a>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+      </span>
     </footer>
   </div>
+  </a>
 </article>
 
 <style>
