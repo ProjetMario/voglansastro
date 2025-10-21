@@ -21,39 +21,91 @@ export default defineConfig({
         'https://agencevoglans.fr/vendre',
         'https://agencevoglans.fr/acheter',
         'https://agencevoglans.fr/contact',
+        'https://agencevoglans.fr/blog',
       ],
       serialize(item) {
-        // Pages principales - haute priorité
-        if (item.url === 'https://agencevoglans.fr/' || 
-            item.url.endsWith('/estimation') ||
-            item.url.endsWith('/vendre') ||
-            item.url.endsWith('/acheter')) {
+        // Homepage - priorité maximale
+        if (item.url === 'https://agencevoglans.fr/') {
           item.changefreq = 'daily';
           item.priority = 1.0;
+          item.lastmod = new Date();
         }
-        // Pages villes - priorité moyenne-haute
+        // Pages principales services - très haute priorité
+        else if (item.url.endsWith('/estimation') ||
+            item.url.endsWith('/vendre') ||
+            item.url.endsWith('/acheter') ||
+            item.url.endsWith('/contact')) {
+          item.changefreq = 'weekly';
+          item.priority = 0.95;
+          item.lastmod = new Date();
+        }
+        // Page blog principale - haute priorité
+        else if (item.url === 'https://agencevoglans.fr/blog' || 
+                 item.url.endsWith('/blog/')) {
+          item.changefreq = 'daily';
+          item.priority = 0.9;
+          item.lastmod = new Date();
+        }
+        // Pages estimation par ville - haute priorité (pages de conversion)
         else if (item.url.includes('/estimation/')) {
           item.changefreq = 'weekly';
-          item.priority = 0.8;
+          item.priority = 0.85;
+          const weekAgo = new Date();
+          weekAgo.setDate(weekAgo.getDate() - 7);
+          item.lastmod = weekAgo;
         }
-        // Pages blog - priorité moyenne
-        else if (item.url.includes('/blog/')) {
+        // Articles blog catégorie Vente & Estimation - priorité haute (conversion)
+        else if (item.url.includes('/blog/') && 
+                (item.url.includes('vendre') || 
+                 item.url.includes('estimation') ||
+                 item.url.includes('prix'))) {
           item.changefreq = 'weekly';
+          item.priority = 0.8;
+          const twoWeeksAgo = new Date();
+          twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+          item.lastmod = twoWeeksAgo;
+        }
+        // Articles blog catégorie Marché & Investissement - priorité moyenne-haute
+        else if (item.url.includes('/blog/') && 
+                (item.url.includes('marche') || 
+                 item.url.includes('investir') ||
+                 item.url.includes('acheter'))) {
+          item.changefreq = 'monthly';
+          item.priority = 0.75;
+          const monthAgo = new Date();
+          monthAgo.setDate(monthAgo.getDate() - 30);
+          item.lastmod = monthAgo;
+        }
+        // Articles blog mairies - priorité moyenne
+        else if (item.url.includes('/blog/mairie')) {
+          item.changefreq = 'monthly';
+          item.priority = 0.6;
+          const twoMonthsAgo = new Date();
+          twoMonthsAgo.setDate(twoMonthsAgo.getDate() - 60);
+          item.lastmod = twoMonthsAgo;
+        }
+        // Autres articles blog - priorité moyenne
+        else if (item.url.includes('/blog/')) {
+          item.changefreq = 'monthly';
           item.priority = 0.7;
+          const monthAgo = new Date();
+          monthAgo.setDate(monthAgo.getDate() - 30);
+          item.lastmod = monthAgo;
         }
         // Pages spécialisées (fonds-commerce, immeuble-rapport, etc.)
         else if (item.url.includes('fonds-commerce') || 
                  item.url.includes('immeuble-rapport') ||
                  item.url.includes('propriete-prestige')) {
           item.changefreq = 'weekly';
-          item.priority = 0.6;
+          item.priority = 0.65;
+          item.lastmod = new Date();
         }
         // Autres pages
         else {
           item.changefreq = 'monthly';
           item.priority = 0.5;
+          item.lastmod = new Date();
         }
-        item.lastmod = new Date();
         return item;
       },
     }),
