@@ -229,7 +229,10 @@ const articleSchema = {
     "@type": "WebPage",
     "@id": canonicalUrl
   },
-  "keywords": post.tags.join(', ')
+  "keywords": post.tags.join(', '),
+  "wordCount": 800,
+  "timeRequired": post.readingTime,
+  "inLanguage": "fr-FR"
 };
 
 // Breadcrumb Schema
@@ -294,6 +297,10 @@ const breadcrumbSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    
+    <!-- Preconnect pour optimiser le chargement des images Unsplash -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
   </Fragment>
   <main class="min-h-screen bg-gray-50 py-12">
     <article class="max-w-4xl mx-auto px-4">
@@ -334,6 +341,10 @@ const breadcrumbSchema = {
         <img 
           src={post.image} 
           alt={post.title}
+          width="800"
+          height="400"
+          loading="eager"
+          fetchpriority="high"
           class="w-full h-96 object-cover"
         />
       </div>
