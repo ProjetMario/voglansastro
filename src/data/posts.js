@@ -1,15 +1,15 @@
 // Données des 300 articles du blog
 export const posts = [
   {
-    title: "Investir aux Landiers à Chambéry : Guide investisseurs professionnels",
-    description: "Analyse complète du quartier des Landiers à Chambéry : prix au m², rendements locatifs, stratégies d'investissement et opportunités pour investisseurs professionnels.",
-    href: "/blog/investir-landiers-chambery",
-    date: "22 janvier 2025",
-    readingTime: "12 min",
-    category: "Investissement",
+    title: "Guide Complet Zone Commerciale des Landiers à Chambéry : Magasins, Services et Bonnes Affaires",
+    description: "Découvrez tous les magasins et services de la zone commerciale des Landiers à Chambéry. Shopping, restauration, services : votre guide complet pour faire vos achats aux Landiers.",
+    href: "/blog/zone-commerciale-landiers-chambery",
+    date: "25 janvier 2025",
+    readingTime: "18 min",
+    category: "Guide Shopping",
     featured: true,
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
-    tags: ["investissement", "Landiers", "Chambéry", "rendement locatif", "LMNP"]
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop&q=80",
+    tags: ["zone commerciale Landiers", "magasins Chambéry", "shopping Landiers", "commerces Chambéry", "centre commercial Chambéry"]
   },
   {
     title: "Vendre une Maison à Chambéry en 2025 : Guide Complet",

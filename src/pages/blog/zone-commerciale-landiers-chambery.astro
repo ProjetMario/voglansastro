@@ -1,0 +1,1082 @@
+---
+import Base from '../../layouts/Base.astro';
+import ShoppingLandiersHeader from '../../components/blog/headers/ShoppingLandiersHeader.astro';
+import {
+  ArrowLeft,
+  MapPin,
+  ShoppingBag,
+  Car,
+  Clock,
+  Phone,
+  Star,
+  Navigation,
+  Store,
+  Coffee,
+  Utensils,
+  Shirt,
+  Home,
+  Wrench,
+  Dumbbell,
+  Palette,
+  Zap,
+  CheckCircle,
+  Users,
+  TrendingUp,
+  Award
+} from 'lucide-react';
+
+const publishDate = new Date('2025-01-25');
+
+const meta = {
+  title: "Guide Complet Zone Commerciale des Landiers à Chambéry : Magasins, Services et Bonnes Affaires",
+  description: "Découvrez tous les magasins et services de la zone commerciale des Landiers à Chambéry. Shopping, restauration, services : votre guide complet pour faire vos achats aux Landiers.",
+  keywords: ["zone commerciale Landiers", "magasins Chambéry", "shopping Landiers", "commerces Chambéry", "centre commercial Chambéry"]
+};
+
+// Article Schema pour SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Guide Complet Zone Commerciale des Landiers à Chambéry : Magasins, Services et Bonnes Affaires",
+  "description": "Découvrez tous les magasins et services de la zone commerciale des Landiers à Chambéry. Shopping, restauration, services : votre guide complet pour faire vos achats aux Landiers.",
+  "image": "https://agencevoglans.fr/images/blog/zone-commerciale-landiers-chambery.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
+    }
+  },
+  "datePublished": "2025-01-25T10:00:00+02:00",
+  "dateModified": "2025-01-25T10:00:00+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agencevoglans.fr/blog/zone-commerciale-landiers-chambery"
+  },
+  "articleSection": "Guide shopping et services locaux",
+  "keywords": ["zone commerciale Landiers", "magasins Chambéry", "shopping Landiers", "commerces Chambéry", "centre commercial Chambéry"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <!-- Header personnalisé -->
+  <ShoppingLandiersHeader />
+
+  <!-- Navigation retour -->
+  <section class="py-8 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <a href="/blog" class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-700 px-6 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+          <span>Retour au blog</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Article Header -->
+        <header class="mb-16 text-center">
+          <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Clock className="w-4 h-4" />
+            <span>Publié le 25 janvier 2025</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+            Guide Complet de la Zone Commerciale des Landiers
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            La <strong>zone commerciale des Landiers</strong> est le principal pôle shopping de l'agglomération chambérienne. Avec plus de <strong>150 magasins</strong>, restaurants et services, cette zone attire chaque année des millions de visiteurs. Découvrez tous les commerces, horaires et bons plans !
+          </p>
+        </header>
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none mb-16">
+          <p class="text-lg leading-relaxed text-gray-700">
+            Située à l'entrée de Chambéry, la <strong>zone commerciale des Landiers</strong> représente le <strong>plus grand centre commercial à ciel ouvert de Savoie</strong>. Avec une superficie de plus de <strong>50 hectares</strong> et un accès direct depuis l'autoroute A43, cette zone concentre tous les types de commerces : grandes enseignes, boutiques locales, restauration et services.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700">
+            Que vous cherchiez des vêtements, de l'électroménager, des meubles ou simplement un endroit pour déjeuner, les <strong>Landiers</strong> répondent à tous les besoins. Avec plus de <strong>3 millions de visiteurs annuels</strong>, cette zone commerciale est un pilier économique majeur de l'agglomération.
+          </p>
+        </div>
+
+        <!-- Table des matières -->
+        <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-2xl">📋</span>
+            <span>Au sommaire</span>
+          </h2>
+          <ul class="space-y-3">
+            <li><a href="#acces-transport" class="text-primary hover:underline">→ Accès et transports</a></li>
+            <li><a href="#grandes-enseignes" class="text-primary hover:underline">→ Grandes enseignes et magasins</a></li>
+            <li><a href="#restauration" class="text-primary hover:underline">→ Restaurants et restauration rapide</a></li>
+            <li><a href="#services-pratiques" class="text-primary hover:underline">→ Services et équipements</a></li>
+            <li><a href="#horaires-ouverture" class="text-primary hover:underline">→ Horaires d'ouverture</a></li>
+            <li><a href="#parking-stationnement" class="text-primary hover:underline">→ Parking et stationnement</a></li>
+            <li><a href="#bons-plans" class="text-primary hover:underline">→ Bons plans et promotions</a></li>
+            <li><a href="#faq" class="text-primary hover:underline">→ Questions fréquentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 1 : Accès et Transport -->
+        <article id="acces-transport" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <span>Accès et Transports</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>zone commerciale des Landiers</strong> bénéficie d'une <strong>situation géographique exceptionnelle</strong>, facilitant l'accès depuis toute l'agglomération et au-delà.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Car className="w-6 h-6 text-blue-600" />
+                  <h3 class="font-bold text-xl text-gray-900">En Voiture</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Autoroute A43</strong> : Sortie Chambéry Centre (3 min)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Rocade Est</strong> : Accès direct (2 min)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Parking gratuit</strong> : 5 000 places disponibles</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Navigation className="w-6 h-6 text-green-600" />
+                  <h3 class="font-bold text-xl text-gray-900">Transports en Commun</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Bus Synchro</strong> : Lignes 1, 2, 3 (arrêt Landiers)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Gare TGV</strong> : 5 minutes en voiture</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Covoiturage</strong> : Aire de covoiturage sur place</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 2 : Grandes Enseignes -->
+        <article id="grandes-enseignes" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Store className="w-6 h-6 text-primary" />
+            </div>
+            <span>Grandes Enseignes et Magasins</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>zone des Landiers</strong> regroupe les <strong>plus grandes enseignes françaises</strong> et internationales, offrant une diversité commerciale exceptionnelle.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏪 Hypermarchés et Grandes Surfaces</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Leclerc</h4>
+                    <p class="text-sm text-gray-600">Hypermarché</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Le plus grand hypermarché de l'agglomération avec drive, parapharmacie et station-service.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Sam : 8h30-20h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Carrefour</h4>
+                    <p class="text-sm text-gray-600">Hypermarché</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Hypermarché avec galerie marchande, restauration et services bancaires.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Rond-point des Landiers</p>
+                  <p>🕒 Lun-Sam : 8h30-21h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Auchan</h4>
+                    <p class="text-sm text-gray-600">Hypermarché</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Grande surface avec espace culturel, bricolage et jardinage.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone des Landiers</p>
+                  <p>🕒 Lun-Sam : 9h-20h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">👕 Mode et Prêt-à-Porter</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Shirt className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">H&M</h4>
+                    <p class="text-sm text-gray-600">Mode</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Mode femme, homme et enfant. Collections tendance à prix abordables.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Sam : 10h-19h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Shirt className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Zara</h4>
+                    <p class="text-sm text-gray-600">Mode</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Mode espagnole haut de gamme. Collections saisonnières.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Sam : 10h-20h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Shirt className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Primark</h4>
+                    <p class="text-sm text-gray-600">Mode discount</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Mode ultra-discount. Prix imbattables toute l'année.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone commerciale</p>
+                  <p>🕒 Lun-Sam : 9h30-20h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏠 Maison et Décoration</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Home className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Ikea</h4>
+                    <p class="text-sm text-gray-600">Ameublement</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Mobilier et décoration scandinave. Restaurant sur place.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Boulevard des Landiers</p>
+                  <p>🕒 Lun-Dim : 10h-20h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Home className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Conforama</h4>
+                    <p class="text-sm text-gray-600">Ameublement</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Meubles, literie, électroménager. Grandes marques.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Sam : 10h-19h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Home className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Maisons du Monde</h4>
+                    <p class="text-sm text-gray-600">Décoration</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Décoration intérieure et extérieure. Styles variés.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Sam : 10h-19h30</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🔧 Bricolage et Jardinage</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Wrench className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Leroy Merlin</h4>
+                    <p class="text-sm text-gray-600">Bricolage</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Bricolage, jardinage, décoration. Service drive.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone des Landiers</p>
+                  <p>🕒 Lun-Sam : 9h-20h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Wrench className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Castorama</h4>
+                    <p class="text-sm text-gray-600">Bricolage</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Bricolage, outils, peinture. Conseillers spécialisés.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Boulevard des Landiers</p>
+                  <p>🕒 Lun-Sam : 9h-19h30</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Wrench className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Brico Dépôt</h4>
+                    <p class="text-sm text-gray-600">Bricolage discount</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Bricolage discount. Prix bas toute l'année.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone industrielle</p>
+                  <p>🕒 Lun-Sam : 9h-18h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">⚡ Électroménager et Multimédia</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Darty</h4>
+                    <p class="text-sm text-gray-600">Électroménager</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Électroménager, TV, informatique. Service après-vente.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Sam : 10h-19h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Fnac</h4>
+                    <p class="text-sm text-gray-600">Multimédia</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Livres, musique, jeux vidéo, téléphonie.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Sam : 10h-19h30</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Boulanger</h4>
+                    <p class="text-sm text-gray-600">Électroménager</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Électroménager, TV, son. Service de proximité.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Rond-point des Landiers</p>
+                  <p>🕒 Lun-Sam : 9h30-19h30</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Award className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">💡 Astuce Shopping</h4>
+                  <p class="text-gray-700">
+                    La <strong>zone des Landiers</strong> concentre les <strong>meilleurs prix de la région</strong> grâce à la concurrence entre enseignes. Comparez les prix et profitez des promotions régulières. Le parking gratuit et l'accès facile en font un lieu de shopping idéal pour toute la famille.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 3 : Restauration -->
+        <article id="restauration" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Utensils className="w-6 h-6 text-primary" />
+            </div>
+            <span>Restaurants et Restauration Rapide</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>zone commerciale des Landiers</strong> offre une <strong>diversité culinaire exceptionnelle</strong> avec plus de 30 restaurants, fast-foods et brasseries.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🍽️ Restaurants et Brasseries</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Utensils className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Buffalo Grill</h4>
+                    <p class="text-sm text-gray-600">Restaurant</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Spécialités de viande grillée. Terrasse couverte.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Dim : 11h45-22h30</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Utensils className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Courtepaille</h4>
+                    <p class="text-sm text-gray-600">Restaurant</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Cuisine française traditionnelle. Grandes salles.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Boulevard des Landiers</p>
+                  <p>🕒 Lun-Dim : 12h-22h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🍔 Fast-Food et Restauration Rapide</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">M</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">McDonald's</h4>
+                    <p class="text-sm text-gray-600">Fast-food</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Drive 24h/24, aire de jeux enfants.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Rond-point des Landiers</p>
+                  <p>🕒 24h/24 - 7j/7</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">K</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">KFC</h4>
+                    <p class="text-sm text-gray-600">Fast-food</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Poulet frit, menu variés, drive.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone des Landiers</p>
+                  <p>🕒 Lun-Dim : 11h-23h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">B</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Burger King</h4>
+                    <p class="text-sm text-gray-600">Fast-food</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Burgers premium, frites, milkshakes.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Dim : 11h30-22h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">☕ Cafés et Salons de Thé</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Coffee className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Starbucks</h4>
+                    <p class="text-sm text-gray-600">Coffee Shop</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Café premium, pâtisseries, wifi gratuit.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Dim : 7h30-20h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Coffee className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Paul</h4>
+                    <p class="text-sm text-gray-600">Boulangerie</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Viennoiseries, sandwichs, boissons chaudes.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Sam : 7h-20h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 4 : Services Pratiques -->
+        <article id="services-pratiques" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <span>Services et Équipements</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              Au-delà du shopping, la <strong>zone des Landiers</strong> offre de <strong>nombreux services pratiques</strong> pour faciliter votre quotidien.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏦 Services Bancaires</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">CA</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Crédit Agricole</h4>
+                    <p class="text-sm text-gray-600">Banque</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Agence bancaire complète avec distributeurs.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Ven : 9h-12h30, 14h-17h30</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">BP</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Banque Populaire</h4>
+                    <p class="text-sm text-gray-600">Banque</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Services bancaires et assurance.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Ven : 9h-12h, 14h-17h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">SG</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Société Générale</h4>
+                    <p class="text-sm text-gray-600">Banque</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Agence et distributeurs automatiques.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Rond-point des Landiers</p>
+                  <p>🕒 Lun-Ven : 9h-12h30, 14h-18h</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💄 Beauté et Bien-être</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">S</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Sephora</h4>
+                    <p class="text-sm text-gray-600">Parfumerie</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Maquillage, parfums, soins. Conseillères beauté.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Centre commercial</p>
+                  <p>🕒 Lun-Sam : 10h-19h30</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Dumbbell className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Basic Fit</h4>
+                    <p class="text-sm text-gray-600">Salle de sport</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Fitness 24h/24. Cardio, musculation, cours collectifs.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Zone des Landiers</p>
+                  <p>🕒 24h/24 - 7j/7</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Palette className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Nocibé</h4>
+                    <p class="text-sm text-gray-600">Parfumerie</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Parfums, cosmétiques, soins visage et corps.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Avenue des Landiers</p>
+                  <p>🕒 Lun-Sam : 9h30-19h30</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 5 : Horaires d'Ouverture -->
+        <article id="horaires-ouverture" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Clock className="w-6 h-6 text-primary" />
+            </div>
+            <span>Horaires d'Ouverture</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>zone commerciale des Landiers</strong> s'adapte à tous les emplois du temps avec des <strong>horaires étendus</strong> et certains magasins ouverts le dimanche.
+            </p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Type de Commerce</th>
+                    <th class="px-6 py-4 text-left font-semibold">Lundi au Samedi</th>
+                    <th class="px-6 py-4 text-left font-semibold">Dimanche</th>
+                    <th class="px-6 py-4 text-left font-semibold">Spécial</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Hypermarchés</td>
+                    <td class="px-6 py-4 text-gray-700">8h30 - 20h/21h</td>
+                    <td class="px-6 py-4 text-gray-700">9h - 12h45</td>
+                    <td class="px-6 py-4 text-gray-700">Drive souvent ouvert</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Grandes enseignes</td>
+                    <td class="px-6 py-4 text-gray-700">10h - 19h/20h</td>
+                    <td class="px-6 py-4 text-gray-700">Fermé</td>
+                    <td class="px-6 py-4 text-gray-700">Promotions en semaine</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Magasins de sport</td>
+                    <td class="px-6 py-4 text-gray-700">10h - 19h30</td>
+                    <td class="px-6 py-4 text-gray-700">10h - 18h</td>
+                    <td class="px-6 py-4 text-gray-700">Ouvert tous les dimanches</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Restaurants</td>
+                    <td class="px-6 py-4 text-gray-700">11h45 - 22h30</td>
+                    <td class="px-6 py-4 text-gray-700">11h45 - 22h30</td>
+                    <td class="px-6 py-4 text-gray-700">Service continu</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Fast-food</td>
+                    <td class="px-6 py-4 text-gray-700">10h - 23h</td>
+                    <td class="px-6 py-4 text-gray-700">10h - 23h</td>
+                    <td class="px-6 py-4 text-gray-700">Drive 24h/24</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Bricolage</td>
+                    <td class="px-6 py-4 text-gray-700">9h - 19h30</td>
+                    <td class="px-6 py-4 text-gray-700">Fermé</td>
+                    <td class="px-6 py-4 text-gray-700">Service drive</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 border-l-4 border-yellow-500 rounded-r-xl p-6 my-8">
+              <div class="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-yellow-600 flex-shrink-0" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">📅 Informations Pratiques</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• <strong>Horaires d'affluence</strong> : 10h-12h et 14h-18h en semaine</li>
+                    <li>• <strong>Dimanche</strong> : Moins de monde, plus de tranquillité</li>
+                    <li>• <strong>Promotions</strong> : Mardi et vendredi principalement</li>
+                    <li>• <strong>Drive</strong> : Commande en ligne possible 24h/24</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 6 : Parking et Stationnement -->
+        <article id="parking-stationnement" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Car className="w-6 h-6 text-primary" />
+            </div>
+            <span>Parking et Stationnement</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              Le <strong>stationnement aux Landiers</strong> est <strong>totalement gratuit</strong> avec plus de 5 000 places disponibles. Un atout majeur pour cette zone commerciale.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center border-2 border-green-500">
+                <div class="text-4xl font-black text-green-600 mb-2">5 000</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Places gratuites</div>
+                <div class="text-sm text-gray-700">Parking en surface</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
+                <div class="text-4xl font-black text-blue-600 mb-2">24h/24</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Surveillance</div>
+                <div class="text-sm text-gray-700">Caméras et sécurité</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 text-center">
+                <div class="text-4xl font-black text-purple-600 mb-2">15 min</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Gare TGV</div>
+                <div class="text-sm text-gray-700">Navette gratuite</div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Zones de Parking Recommandées</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <h4 class="font-bold text-lg text-gray-900">Parking Centre Commercial</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>• 1 500 places couvertes</li>
+                  <li>• Accès direct aux boutiques</li>
+                  <li>• Proche restaurants</li>
+                  <li>• Places handicapés nombreuses</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <h4 class="font-bold text-lg text-gray-900">Parking Hypermarchés</h4>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>• 2 000 places en surface</li>
+                  <li>• Accès drive direct</li>
+                  <li>• Large allées de circulation</li>
+                  <li>• Chariots disponibles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 7 : Bons Plans et Promotions -->
+        <article id="bons-plans" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6 text-primary" />
+            </div>
+            <span>Bons Plans et Promotions</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>zone des Landiers</strong> est réputée pour ses <strong>prix compétitifs</strong> et ses nombreuses promotions. Découvrez les meilleurs bons plans pour faire des économies.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💰 Périodes de Promotions</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">%</span>
+                  </div>
+                  <h4 class="font-bold text-lg text-gray-900">Soldes d'Hiver</h4>
+                </div>
+                <p class="text-gray-700 mb-3">Janvier-Février : jusqu'à -70% dans toutes les enseignes</p>
+                <div class="text-sm text-gray-600">
+                  <p>• Début : 2ème mercredi de janvier</p>
+                  <p>• Durée : 6 semaines</p>
+                  <p>• Grandes affluences</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">%</span>
+                  </div>
+                  <h4 class="font-bold text-lg text-gray-900">Soldes d'Été</h4>
+                </div>
+                <p class="text-gray-700 mb-3">Juin-Juillet : promotions massives sur prêt-à-porter</p>
+                <div class="text-sm text-gray-600">
+                  <p>• Début : dernier mercredi de juin</p>
+                  <p>• Durée : 6 semaines</p>
+                  <p>• Meilleures affaires</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">%</span>
+                  </div>
+                  <h4 class="font-bold text-lg text-gray-900">Black Friday</h4>
+                </div>
+                <p class="text-gray-700 mb-3">Novembre : journée de promotions exceptionnelles</p>
+                <div class="text-sm text-gray-600">
+                  <p>• Date : 4ème vendredi de novembre</p>
+                  <p>• Réductions : -20% à -80%</p>
+                  <p>• Ouverture anticipée</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">%</span>
+                  </div>
+                  <h4 class="font-bold text-lg text-gray-900">Promos Régulières</h4>
+                </div>
+                <p class="text-gray-700 mb-3">Mardi et vendredi : promotions hebdomadaires</p>
+                <div class="text-sm text-gray-600">
+                  <p>• Mardi : alimentaire et hygiène</p>
+                  <p>• Vendredi : mode et maison</p>
+                  <p>• Newsletters pour être informé</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🛒 Astuces pour Économiser</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">📱 Applications Mobiles</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span>Téléchargez les apps des enseignes pour des coupons exclusifs</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span>Notifications push pour les promotions flash</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span>Programme de fidélité avec points cumulables</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">🕒 Meilleurs Moments</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span>Mercredi matin : réassortiment et promotions</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span>Dimanche : moins de monde, plus de temps</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span>Drive : commande en ligne = gain de temps</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FAQ Schema pour Featured Snippets -->
+        <article id="faq" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <span>Questions Fréquentes</span>
+          </h2>
+
+          <div class="space-y-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🕒 Quels sont les horaires d'ouverture des magasins aux Landiers ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                La plupart des magasins sont ouverts de <strong>10h à 19h30</strong> du lundi au samedi. Les hypermarchés ouvrent plus tôt (8h30) et certains restaurants restent ouverts jusqu'à 22h30. Le dimanche, quelques enseignes de sport et certains restaurants sont ouverts.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🚗 Y a-t-il du parking gratuit aux Landiers ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Oui ! Plus de <strong>5 000 places de parking gratuites</strong> sont disponibles sur toute la zone. Le stationnement est gratuit et surveillé 24h/24. Il y a également des aires de covoiturage pour faciliter l'accès en transport partagé.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🚌 Comment se rendre aux Landiers en transport en commun ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                La zone est desservie par les <strong>bus Synchro (lignes 1, 2, 3)</strong> avec l'arrêt "Landiers". La gare TGV de Chambéry est à seulement 5 minutes en voiture. Des navettes gratuites relient également la gare aux zones commerciales.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🍽️ Quels restaurants trouve-t-on aux Landiers ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                La zone compte plus de 30 restaurants : <strong>McDonald's, KFC, Burger King</strong> pour la restauration rapide, mais aussi <strong>Buffalo Grill, Courtepaille</strong> pour des repas plus traditionnels. De nombreux cafés et boulangeries complètent l'offre.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">💰 Quand y a-t-il des soldes aux Landiers ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Les soldes d'hiver débutent mi-janvier et les soldes d'été fin juin. Il y a aussi des promotions régulières le <strong>mardi et vendredi</strong>, le Black Friday en novembre, et des opérations spéciales tout au long de l'année dans chaque enseigne.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🏪 Quelles sont les plus grandes enseignes des Landiers ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                On trouve tous les géants : <strong>Ikea, Leroy Merlin, H&M, Zara, Fnac, Darty</strong>, mais aussi les hypermarchés <strong>Leclerc, Carrefour, Auchan</strong>. Plus de 150 boutiques au total pour répondre à tous les besoins.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTA Final -->
+        <div class="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 text-center text-white mb-16">
+          <h2 class="text-3xl font-bold mb-4">Prêt à faire vos achats aux Landiers ?</h2>
+          <p class="text-xl mb-6 opacity-90">La plus grande zone commerciale de Chambéry vous attend !</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+33757830262" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+              <Phone className="w-5 h-5" />
+              Nous appeler
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-white px-8 py-3 rounded-full font-bold hover:bg-white/30 transition">
+              Contactez-nous
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Animations personnalisées */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>
