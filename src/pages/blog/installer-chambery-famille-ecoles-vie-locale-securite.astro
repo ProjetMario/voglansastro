@@ -1,0 +1,1173 @@
+---
+import ChamberyFamilyHeader from '../../components/blog/headers/ChamberyFamilyHeader.astro';
+import {
+  ArrowLeft,
+  MapPin,
+  Users,
+  GraduationCap,
+  Shield,
+  Heart,
+  Car,
+  Train,
+  ShoppingBag,
+  Coffee,
+  Home,
+  Calendar,
+  CheckCircle,
+  Star,
+  TrendingUp,
+  Award,
+  Clock,
+  Phone,
+  Building,
+  TreePine,
+  Sun,
+  Moon,
+  Camera,
+  Utensils,
+  Dumbbell,
+  BookOpen,
+  Baby,
+  Briefcase,
+  Zap
+} from 'lucide-react';
+
+const publishDate = new Date('2025-01-26');
+
+const meta = {
+  title: "S'installer à Chambéry : Guide Complet Famille, Écoles, Vie Locale et Sécurité 2025",
+  description: "Guide complet pour s'installer à Chambéry avec votre famille : meilleures écoles, quartiers familiaux, sécurité, vie locale, transports et qualité de vie en Savoie.",
+  keywords: ["s'installer Chambéry", "famille Chambéry", "écoles Chambéry", "sécurité Chambéry", "vie locale Chambéry", "déménager Savoie"]
+};
+
+// Article Schema pour SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "S'installer à Chambéry : Guide Complet Famille, Écoles, Vie Locale et Sécurité 2025",
+  "description": "Guide complet pour s'installer à Chambéry avec votre famille : meilleures écoles, quartiers familiaux, sécurité, vie locale, transports et qualité de vie en Savoie.",
+  "image": "https://agencevoglans.fr/images/blog/s-installer-chambery-famille.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "url": "https://agencevoglans.fr"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Agence de Voglans",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
+    }
+  },
+  "datePublished": "2025-01-26T10:00:00+02:00",
+  "dateModified": "2025-01-26T10:00:00+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agencevoglans.fr/blog/installer-chambery-famille-ecoles-vie-locale-securite"
+  },
+  "articleSection": "Guide installation familiale",
+  "keywords": ["s'installer Chambéry", "famille Chambéry", "écoles Chambéry", "sécurité Chambéry", "vie locale Chambéry", "déménager Savoie"]
+};
+---
+
+<Base title={meta.title} description={meta.description}>
+  <Fragment slot="head">
+    <meta name="keywords" content={meta.keywords.join(', ')} />
+  </Fragment>
+
+  <ChamberyFamilyHeader />
+
+  <!-- Navigation retour -->
+  <section class="py-8 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <a href="/blog" class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-700 px-6 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+          <span>Retour au blog</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Article Header -->
+        <header class="mb-16 text-center">
+          <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Calendar className="w-4 h-4" />
+            <span>Publié le 26 janvier 2025</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+            S'installer à Chambéry avec votre Famille
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <strong>Chambéry</strong>, capitale historique de la Savoie, offre un cadre de vie idéal pour les familles. Entre montagnes et lacs, découvrez pourquoi <strong>60 000 habitants</strong> ont choisi cette ville pour s'installer durablement.
+          </p>
+        </header>
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none mb-16">
+          <p class="text-lg leading-relaxed text-gray-700">
+            S'installer à <strong>Chambéry</strong> avec votre famille est un choix judicieux pour de nombreuses raisons. Cette ville de <strong>60 000 habitants</strong> combine parfaitement <strong>qualité de vie</strong>, <strong>sécurité</strong> et <strong>excellence éducative</strong>. Située au cœur des Alpes, entre lacs et montagnes, Chambéry offre un environnement naturel exceptionnel tout en étant une ville dynamique et bien desservie.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700">
+            Que vous soyez une jeune famille avec enfants, des retraités ou des professionnels en quête d'un meilleur équilibre vie privée/vie professionnelle, <strong>Chambéry</strong> répond à tous les critères. Découvrez dans ce guide complet pourquoi cette ville séduit de plus en plus de familles et comment réussir votre installation.
+          </p>
+        </div>
+
+        <!-- Table des matières -->
+        <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-2xl">📋</span>
+            <span>Au sommaire</span>
+          </h2>
+          <ul class="space-y-3">
+            <li><a href="#qualite-vie" class="text-primary hover:underline">→ Qualité de vie à Chambéry</a></li>
+            <li><a href="#quartiers-familiaux" class="text-primary hover:underline">→ Quartiers familiaux recommandés</a></li>
+            <li><a href="#ecoles-education" class="text-primary hover:underline">→ Écoles et système éducatif</a></li>
+            <li><a href="#securite-ville" class="text-primary hover:underline">→ Sécurité et tranquillité</a></li>
+            <li><a href="#transports-mobilite" class="text-primary hover:underline">→ Transports et mobilité</a></li>
+            <li><a href="#vie-locale-activites" class="text-primary hover:underline">→ Vie locale et activités</a></li>
+            <li><a href="#cout-vie-logement" class="text-primary hover:underline">→ Coût de la vie et logement</a></li>
+            <li><a href="#demarches-installation" class="text-primary hover:underline">→ Démarches d'installation</a></li>
+            <li><a href="#faq-installation" class="text-primary hover:underline">→ Questions fréquentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 1 : Qualité de Vie -->
+        <article id="qualite-vie" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Heart className="w-6 h-6 text-primary" />
+            </div>
+            <span>Qualité de Vie Exceptionnelle</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              <strong>Chambéry</strong> est régulièrement classée parmi les <strong>meilleures villes françaises</strong> pour la qualité de vie. Cette cité historique de Savoie offre un parfait équilibre entre patrimoine culturel, nature préservée et modernité.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Sun className="w-6 h-6 text-green-600" />
+                  <h3 class="font-bold text-xl text-gray-900">Climat Agréable</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>300 jours de soleil</strong> par an</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Hivers doux</strong> (température moyenne : 5°C)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Été tempéré</strong> (25°C en moyenne)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Pluviométrie modérée</strong> (900mm/an)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <TreePine className="w-6 h-6 text-blue-600" />
+                  <h3 class="font-bold text-xl text-gray-900">Environnement Naturel</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Parcs et jardins</strong> en centre-ville</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lac du Bourget</strong> à 15 minutes</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Montagnes</strong> accessibles en 30 minutes</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Air pur</strong> (classement Afnor)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏆 Classements Nationaux</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+              <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 text-center border-2 border-yellow-500">
+                <div class="text-4xl font-black text-yellow-600 mb-2">#3</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Qualité de Vie</div>
+                <div class="text-sm text-gray-700">Classement L'Express 2024</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center border-2 border-green-500">
+                <div class="text-4xl font-black text-green-600 mb-2">#5</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Sécurité</div>
+                <div class="text-sm text-gray-700">Villes les plus sûres</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center border-2 border-blue-500">
+                <div class="text-4xl font-black text-blue-600 mb-2">#4</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Éducation</div>
+                <div class="text-sm text-gray-700">Excellence académique</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 2 : Quartiers Familiaux -->
+        <article id="quartiers-familiaux" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <span>Quartiers Familiaux Recommandés</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              <strong>Chambéry</strong> compte plusieurs quartiers particulièrement adaptés aux familles. Chaque secteur a ses spécificités, ses avantages et son ambiance. Voici notre sélection des <strong>meilleurs quartiers familiaux</strong>.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏘️ Centre-Ville Historique</h3>
+
+            <div class="bg-white border-2 border-primary/20 rounded-xl p-6 mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold text-xl mb-4 text-gray-900 flex items-center gap-2">
+                    <Home className="w-5 h-5 text-primary" />
+                    Caractéristiques
+                  </h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span><strong>Appartements familiaux</strong> (T3-T5)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span><strong>Proximité immédiate</strong> de tous les services</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span><strong>Transports excellents</strong> (bus, train)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span><strong>Commerces</strong> à pied</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-xl mb-4 text-gray-900 flex items-center gap-2">
+                    <Star className="w-5 h-5 text-primary" />
+                    Points forts
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="bg-primary/10 rounded-lg p-3">
+                      <div class="text-sm font-semibold text-primary">Prix au m²</div>
+                      <div class="text-lg font-bold text-gray-900">3 800 - 4 500 €</div>
+                    </div>
+                    <div class="bg-green-100 rounded-lg p-3">
+                      <div class="text-sm font-semibold text-green-600">Note familles</div>
+                      <div class="text-lg font-bold text-gray-900">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🌳 Quartiers Résidentiels Calmes</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-green-600 font-bold">B</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Biol</h4>
+                    <p class="text-sm text-gray-600">Quartier pavillonnaire</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Maisons familiales avec jardins, écoles à proximité, ambiance village.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Prix : 3 200-3 800 €/m²</p>
+                  <p>👨‍👩‍👧‍👦 Idéal pour familles</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-blue-600 font-bold">M</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Montjay</h4>
+                    <p class="text-sm text-gray-600">Quartier résidentiel</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Résidences modernes, parcs, commerces de proximité.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Prix : 3 500-4 200 €/m²</p>
+                  <p>🏫 Écoles excellentes</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span class="text-purple-600 font-bold">V</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Vaugelas</h4>
+                    <p class="text-sm text-gray-600">Quartier bourgeois</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Hôtels particuliers, jardins privés, proximité centre historique.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Prix : 4 000-5 000 €/m²</p>
+                  <p>🌟 Standing premium</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🚶‍♀️ Quartiers Périphériques</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                    <span class="text-orange-600 font-bold">C</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Cognin</h4>
+                    <p class="text-sm text-gray-600">Commune limitrophe</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Ville dynamique, nombreux commerces, excellentes écoles.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Prix : 2 800-3 500 €/m²</p>
+                  <p>🚗 5 min du centre</p>
+                  <p>⭐⭐⭐⭐⭐ Note : 4.8/5</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
+                    <span class="text-teal-600 font-bold">J</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Jacob-Bellecombette</h4>
+                    <p class="text-sm text-gray-600">Commune résidentielle</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Cadre verdoyant, maisons familiales, tranquillité assurée.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Prix : 3 000-3 800 €/m²</p>
+                  <p>🌲 Environnement nature</p>
+                  <p>⭐⭐⭐⭐⭐ Note : 4.7/5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 3 : Écoles et Éducation -->
+        <article id="ecoles-education" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <GraduationCap className="w-6 h-6 text-primary" />
+            </div>
+            <span>Écoles et Système Éducatif</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              <strong>Chambéry</strong> brille par l'<strong>excellence de son système éducatif</strong>. La ville compte de nombreux établissements scolaires de qualité, de la maternelle à l'enseignement supérieur.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏫 Écoles Primaires d'Excellence</h3>
+
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">École</th>
+                    <th class="px-6 py-4 text-left font-semibold">Quartier</th>
+                    <th class="px-6 py-4 text-left font-semibold">Note Parents</th>
+                    <th class="px-6 py-4 text-left font-semibold">Spécialités</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">École Jules Ferry</td>
+                    <td class="px-6 py-4 text-gray-700">Centre-ville</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">⭐⭐⭐⭐⭐ 4.9/5</td>
+                    <td class="px-6 py-4 text-gray-700">Pédagogie innovante</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">École Jean Moulin</td>
+                    <td class="px-6 py-4 text-gray-700">Biol</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">⭐⭐⭐⭐⭐ 4.8/5</td>
+                    <td class="px-6 py-4 text-gray-700">Environnement bilingue</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">École Sainte-Thérèse</td>
+                    <td class="px-6 py-4 text-gray-700">Montjay</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">⭐⭐⭐⭐⭐ 4.7/5</td>
+                    <td class="px-6 py-4 text-gray-700">Éducation catholique</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">École Lamartine</td>
+                    <td class="px-6 py-4 text-gray-700">Vaugelas</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">⭐⭐⭐⭐⭐ 4.8/5</td>
+                    <td class="px-6 py-4 text-gray-700">Arts et culture</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🎓 Collèges et Lycées Renommés</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <BookOpen className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-xl text-gray-900">Collèges Publics</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Collège Louise de Savoie</strong> - Note : 4.6/5</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Collège Jean Moulin</strong> - Note : 4.5/5</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Collège Vaugelas</strong> - Note : 4.7/5</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <GraduationCap className="w-6 h-6 text-green-600" />
+                  <h4 class="font-bold text-xl text-gray-900">Lycées d'Excellence</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lycée Vaugelas</strong> - Taux réussite : 96%</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lycée Louis Armand</strong> - Scientifique</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lycée Jean Moulin</strong> - Littéraire</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🎨 Activités Extrascolaires</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Dumbbell className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Sports</h4>
+                    <p class="text-sm text-gray-600">Clubs et associations</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Plus de 50 clubs sportifs : football, tennis, natation, escalade, ski.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🏆 80% des enfants pratiquent un sport</p>
+                  <p>💰 Tarifs préférentiels pour familles</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Baby className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Jeunesse</h4>
+                    <p class="text-sm text-gray-600">Centres et animations</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Maisons de quartier, centres aérés, colonies de vacances.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🎨 Ateliers créatifs</p>
+                  <p>🎪 Sorties éducatives</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Culture</h4>
+                    <p class="text-sm text-gray-600">Musées et spectacles</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Musée des Beaux-Arts, théâtre, cinéma, bibliothèque.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🎭 Tarifs réduits -26 ans</p>
+                  <p>📚 Prêt gratuit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 4 : Sécurité -->
+        <article id="securite-ville" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Shield className="w-6 h-6 text-primary" />
+            </div>
+            <span>Sécurité et Tranquillité</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              <strong>Chambéry</strong> est l'une des <strong>villes les plus sûres de France</strong>. La municipalité a mis en place une politique de sécurité proactive qui fait de cette ville un havre de paix pour les familles.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center border-2 border-green-500">
+                <div class="text-4xl font-black text-green-600 mb-2">#5</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Classement National</div>
+                <div class="text-sm text-gray-700">Villes les plus sûres</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
+                <div class="text-4xl font-black text-blue-600 mb-2">24h/24</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Vidéo-surveillance</div>
+                <div class="text-sm text-gray-700">350 caméras en ville</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 text-center">
+                <div class="text-4xl font-black text-purple-600 mb-2">15 min</div>
+                <div class="text-lg text-gray-900 font-semibold mb-2">Temps d'intervention</div>
+                <div class="text-sm text-gray-700">Police et secours</div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">👮‍♀️ Dispositif de Sécurité</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Police Municipale</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Patrouilles pédestres</strong> en centre-ville</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Îlotage</strong> dans les quartiers sensibles</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Médiation sociale</strong> préventive</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Prévention et Éducation</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Programmes scolaires</strong> de sécurité routière</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Actions de proximité</strong> avec les jeunes</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Partenariat</strong> avec associations locales</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏠 Quartiers les Plus Sûrs</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-green-600 font-bold">1</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Biol</h4>
+                    <p class="text-sm text-gray-600">Ultra-sécurisé</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Quartier pavillonnaire calme, voisins vigilants.</p>
+                <div class="text-sm text-gray-600">
+                  <p>⭐ Note sécurité : 4.9/5</p>
+                  <p>🚔 Taux criminalité : Très faible</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-blue-600 font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Vaugelas</h4>
+                    <p class="text-sm text-gray-600">Quartier bourgeois</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Hôtels particuliers, rues calmes, sécurité premium.</p>
+                <div class="text-sm text-gray-600">
+                  <p>⭐ Note sécurité : 4.8/5</p>
+                  <p>🏛️ Standing élevé</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span class="text-purple-600 font-bold">3</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Montjay</h4>
+                    <p class="text-sm text-gray-600">Résidentiel moderne</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Résidences sécurisées, parcs surveillés.</p>
+                <div class="text-sm text-gray-600">
+                  <p>⭐ Note sécurité : 4.7/5</p>
+                  <p>🏢 Résidences modernes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 5 : Transports -->
+        <article id="transports-mobilite" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Train className="w-6 h-6 text-primary" />
+            </div>
+            <span>Transports et Mobilité</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              <strong>Chambéry</strong> bénéficie d'un <strong>réseau de transports exceptionnel</strong> qui facilite les déplacements quotidiens. La ville est particulièrement bien desservie, tant localement que nationalement.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🚆 Transports Ferroviaires</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Train className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-xl text-gray-900">Gare TGV</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Paris</strong> : 3h00 direct</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lyon</strong> : 1h15 direct</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Grenoble</strong> : 45 min</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Genève</strong> : 1h30</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Car className="w-6 h-6 text-green-600" />
+                  <h4 class="font-bold text-xl text-gray-900">Accès Routiers</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Autoroute A43</strong> : 2 min</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Lyon</strong> : 1h00</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Grenoble</strong> : 45 min</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Annecy</strong> : 45 min</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🚌 Réseau de Bus Synchro</h3>
+
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Ligne</th>
+                    <th class="px-6 py-4 text-left font-semibold">Desserte Principale</th>
+                    <th class="px-6 py-4 text-left font-semibold">Fréquence</th>
+                    <th class="px-6 py-4 text-left font-semibold">Tarif</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Ligne 1</td>
+                    <td class="px-6 py-4 text-gray-700">Gare ↔ Centre-Ville</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">5 min</td>
+                    <td class="px-6 py-4 text-gray-700">1,60 €</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Ligne 2</td>
+                    <td class="px-6 py-4 text-gray-700">Université ↔ Hôpitaux</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">8 min</td>
+                    <td class="px-6 py-4 text-gray-700">1,60 €</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Ligne 3</td>
+                    <td class="px-6 py-4 text-gray-700">Technopôle ↔ Centre</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">10 min</td>
+                    <td class="px-6 py-4 text-gray-700">1,60 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 6 : Vie Locale -->
+        <article id="vie-locale-activites" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <span>Vie Locale et Activités</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              La <strong>vie locale à Chambéry</strong> est riche et variée. La ville propose de <strong>nombreuses activités</strong> pour tous les âges et tous les goûts, dans un cadre historique et naturel exceptionnel.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🛍️ Commerces et Shopping</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Centre Historique</h4>
+                    <p class="text-sm text-gray-600">Rue de Boigne</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Boutiques indépendantes, artisans, produits locaux.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🏪 200+ commerces</p>
+                  <p>🕒 Ouvert 7j/7</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <ShoppingBag className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Zone Landiers</h4>
+                    <p class="text-sm text-gray-600">Centre commercial</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">150+ magasins : Ikea, Leroy Merlin, H&M, restaurants.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🅿️ Parking gratuit</p>
+                  <p>🚗 Accès autoroute</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Coffee className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Marchés Locaux</h4>
+                    <p class="text-sm text-gray-600">Place du Palais</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Marchés bi-hebdomadaires, produits bio et régionaux.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🌱 Produits frais</p>
+                  <p>👥 Ambiance conviviale</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🎭 Culture et Loisirs</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Patrimoine Historique</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Château des Ducs de Savoie</strong> (gratuit)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Fontaine des Éléphants</strong> (symbole de la ville)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Rue piétonne historique</strong> (shopping)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Activités Culturelles</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Musée des Beaux-Arts</strong> (gratuit -18 ans)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Théâtre Charles Dullin</strong> (spectacles variés)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Festival Jazz</strong> (été)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 7 : Coût de la Vie -->
+        <article id="cout-vie-logement" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6 text-primary" />
+            </div>
+            <span>Coût de la Vie et Logement</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              Le <strong>coût de la vie à Chambéry</strong> est <strong>15% moins cher qu'à Lyon</strong> et <strong>10% moins cher qu'à Grenoble</strong>. Cette attractivité économique est un atout majeur pour les familles.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏠 Prix de l'Immobilier</h3>
+
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Type de Bien</th>
+                    <th class="px-6 py-4 text-left font-semibold">Prix Moyen</th>
+                    <th class="px-6 py-4 text-left font-semibold">Prix au m²</th>
+                    <th class="px-6 py-4 text-left font-semibold">Évolution 2025</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Appartement T3 Centre</td>
+                    <td class="px-6 py-4 text-gray-700">280 000 €</td>
+                    <td class="px-6 py-4 text-gray-700">3 800 €/m²</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+4%</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Maison T5 Périphérie</td>
+                    <td class="px-6 py-4 text-gray-700">420 000 €</td>
+                    <td class="px-6 py-4 text-gray-700">3 200 €/m²</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+3,5%</td>
+                  </tr>
+                  <tr class="hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-900">Appartement T2 Périphérie</td>
+                    <td class="px-6 py-4 text-gray-700">180 000 €</td>
+                    <td class="px-6 py-4 text-gray-700">2 900 €/m²</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">+5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💰 Budget Mensuel Familial</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">🛒 Courses Alimentaires</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex justify-between">
+                    <span>Famille 4 personnes</span>
+                    <strong class="text-primary">450-550 €</strong>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Marchés locaux</span>
+                    <strong class="text-green-600">-20%</strong>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Hypermarchés</span>
+                    <strong class="text-blue-600">Prix moyens</strong>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">🚗 Transports</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex justify-between">
+                    <span>Bus mensuel</span>
+                    <strong class="text-primary">48 €</strong>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Parking centre</span>
+                    <strong class="text-green-600">Gratuit</strong>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Essence</span>
+                    <strong class="text-blue-600">Prix régionaux</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section 8 : Démarches d'Installation -->
+        <article id="demarches-installation" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Briefcase className="w-6 h-6 text-primary" />
+            </div>
+            <span>Démarches d'Installation</span>
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+              S'installer à <strong>Chambéry</strong> est simple grâce aux <strong>démarches en ligne</strong> et aux services d'accompagnement. Voici le guide complet pour réussir votre déménagement.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">📋 Démarches Administratives</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Avant l'Arrivée</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Inscription scolaire</strong> en ligne</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Transfert dossier médical</strong> (CPAM)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Changement d'adresse</strong> (impôts, CAF)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span><strong>Contrat électricité/gaz</strong> (EDF/Engie)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">À l'Arrivée</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Carte d'identité</strong> (mairie)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Inscription listes électorales</strong></span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Immatriculation véhicule</strong> (préfecture)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Ouverture compte bancaire</strong></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏢 Services d'Accompagnement</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Building className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Mairie</h4>
+                    <p class="text-sm text-gray-600">Accueil déménagement</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Service d'accueil des nouveaux arrivants, informations locales.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Place du Palais de Justice</p>
+                  <p>🕒 Lun-Ven : 8h30-17h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Users className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Point Info Famille</h4>
+                    <p class="text-sm text-gray-600">Guichet unique</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Accompagnement familial, aides sociales, crèches, écoles.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Hôtel de Ville</p>
+                  <p>🕒 Lun-Ven : 9h-12h, 14h-17h</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <Home className="w-8 h-8 text-primary" />
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Agence Immobilière</h4>
+                    <p class="text-sm text-gray-600">L'Agence de Voglans</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Accompagnement personnalisé, estimation gratuite, suivi déménagement.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📞 07 57 83 02 62</p>
+                  <p>💼 Expertise locale</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FAQ Section -->
+        <article id="faq-installation" class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <span>Questions Fréquentes</span>
+          </h2>
+
+          <div class="space-y-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🌡️ Quel est le climat à Chambéry ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Chambéry bénéficie d'un <strong>climat semi-continental</strong> avec des hivers doux (5°C en moyenne) et des étés tempérés (25°C). La ville compte <strong>300 jours de soleil par an</strong> et une pluviométrie modérée de 900mm/an. L'altitude (270m) offre un air pur et une qualité de vie exceptionnelle.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🏫 Quelles sont les meilleures écoles de Chambéry ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Les écoles les plus réputées sont <strong>l'école Jules Ferry (4.9/5)</strong> en centre-ville, <strong>l'école Jean Moulin (4.8/5)</strong> dans le quartier Biol, et <strong>l'école Lamartine (4.8/5)</strong> dans le quartier Vaugelas. Le système éducatif public est excellent avec un taux de réussite au bac de 96%.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🚗 Comment se déplacer à Chambéry ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Chambéry est très bien desservie avec <strong>3 lignes de bus principales</strong> (fréquence 5-10 min), une <strong>gare TGV</strong> (Paris 3h, Lyon 1h15), et un <strong>réseau autoroutier</strong> (A43). Le centre-ville est majoritairement piéton avec de nombreux parkings gratuits en périphérie.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">💰 Quel budget pour s'installer à Chambéry ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Le coût de la vie est <strong>15% moins cher qu'à Lyon</strong>. Comptez <strong>280 000 € pour un T3</strong> en centre-ville et <strong>450-550 €/mois</strong> pour les courses d'une famille de 4. Les transports sont abordables (48 €/mois) et le stationnement est majoritairement gratuit.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🏠 Quels sont les meilleurs quartiers pour une famille ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Les quartiers les plus familiaux sont <strong>Biol (4.9/5)</strong> pour son cadre pavillonnaire, <strong>Vaugelas (4.8/5)</strong> pour son standing, et <strong>Montjay (4.7/5)</strong> pour ses résidences modernes. Cognin et Jacob-Bellecombette sont aussi excellents avec des prix plus abordables.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">⚡ Combien de temps pour trouver un logement ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Le marché est <strong>tendue mais fluide</strong>. Comptez <strong>2-4 semaines</strong> pour trouver un bien familial. La demande est forte mais l'offre reste diversifiée. Les agences locales comme L'Agence de Voglans peuvent vous accompagner pour accélérer le processus avec des estimations gratuites sous 48h.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTA Final -->
+        <div class="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 text-center text-white mb-16">
+          <h2 class="text-3xl font-bold mb-4">Prêt à vous installer à Chambéry ?</h2>
+          <p class="text-xl mb-6 opacity-90">La ville parfaite pour votre famille vous attend en Savoie !</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+33757830262" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+              <Phone className="w-5 h-5" />
+              Estimation gratuite
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-white px-8 py-3 rounded-full font-bold hover:bg-white/30 transition">
+              Nous contacter
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Animations personnalisées */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

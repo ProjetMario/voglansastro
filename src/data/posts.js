@@ -1,15 +1,15 @@
 // Données des 300 articles du blog
 export const posts = [
   {
-    title: "Guide Complet Zone Commerciale des Landiers à Chambéry : Magasins, Services et Bonnes Affaires",
-    description: "Découvrez tous les magasins et services de la zone commerciale des Landiers à Chambéry. Shopping, restauration, services : votre guide complet pour faire vos achats aux Landiers.",
-    href: "/blog/zone-commerciale-landiers-chambery",
-    date: "25 janvier 2025",
-    readingTime: "18 min",
-    category: "Guide Shopping",
+    title: "S'installer à Chambéry : Guide Complet Famille, Écoles, Vie Locale et Sécurité 2025",
+    description: "Guide complet pour s'installer à Chambéry avec votre famille : meilleures écoles, quartiers familiaux, sécurité, vie locale, transports et qualité de vie en Savoie.",
+    href: "/blog/installer-chambery-famille-ecoles-vie-locale-securite",
+    date: "26 janvier 2025",
+    readingTime: "20 min",
+    category: "Guide Installation",
     featured: true,
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop&q=80",
-    tags: ["zone commerciale Landiers", "magasins Chambéry", "shopping Landiers", "commerces Chambéry", "centre commercial Chambéry"]
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80",
+    tags: ["s'installer Chambéry", "famille Chambéry", "écoles Chambéry", "sécurité Chambéry", "vie locale Chambéry", "déménager Savoie"]
   },
   {
     title: "Vendre une Maison à Chambéry en 2025 : Guide Complet",
