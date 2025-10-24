@@ -5,11 +5,24 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Pas de redirection wildcard - Astro gère les routes
-# [[redirects]]
-#   from = "/*"
-#   to = "/index.html"
-#   status = 200
+# Force HTTPS et non-www (URL canonique unique)
+[[redirects]]
+  from = "http://agencevoglans.fr/*"
+  to = "https://agencevoglans.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.agencevoglans.fr/*"
+  to = "https://agencevoglans.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.agencevoglans.fr/*"
+  to = "https://agencevoglans.fr/:splat"
+  status = 301
+  force = true
 
 [functions]
   directory = "netlify/functions"
