@@ -1,5 +1,27 @@
-// Données des 300 articles du blog
+// Données des 302 articles du blog
 export const posts = [
+  {
+    title: "Guide Complet Zone Commerciale des Landiers à Chambéry : Magasins, Services et Bonnes Affaires",
+    description: "Découvrez tous les magasins et services de la zone commerciale des Landiers à Chambéry. Shopping, restauration, services : votre guide complet pour faire vos achats aux Landiers.",
+    href: "/blog/zone-commerciale-landiers-chambery",
+    date: "25 janvier 2025",
+    readingTime: "14 min",
+    category: "Guide local",
+    featured: true,
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop&q=80",
+    tags: ["zone commerciale Landiers", "magasins Chambéry", "shopping Landiers", "commerces Chambéry", "centre commercial Chambéry"]
+  },
+  {
+    title: "Investir dans la Zone Commerciale des Landiers à Chambéry : Guide Investisseurs Professionnels",
+    description: "Analyse complète de la zone commerciale des Landiers : opportunités d'investissement professionnel, rendements locatifs commerciaux, bureaux et locaux d'activité à Chambéry.",
+    href: "/blog/investir-landiers-chambery",
+    date: "22 janvier 2025",
+    readingTime: "15 min",
+    category: "Investissement",
+    featured: true,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
+    tags: ["investissement commercial Chambéry", "zone Landiers", "immobilier professionnel Savoie", "bureaux Chambéry", "locaux commerciaux"]
+  },
   {
     title: "Mairie de Montmélian : Guide Complet 2025 - Services et Démarches",
     description: "Tout savoir sur la mairie de Montmélian : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
