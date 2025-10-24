@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ImageCard from '../../components/blog/ImageCard.astro';
-import ChamberyMairieHeader from '../../components/blog/headers/ChamberyMairieHeader.astro';
+import CogninMairieHeader from '../../components/blog/headers/CogninMairieHeader.astro';
 import {
   ArrowLeft,
   MapPin,
@@ -24,21 +23,20 @@ import {
   Star
 } from 'lucide-react';
 
-const publishDate = new Date('2025-01-19');
+const publishDate = new Date('2025-01-22');
 
 const meta = {
-  title: "Mairie de Chambéry : Guide Complet 2025 - Services et Démarches",
-  description: "Tout savoir sur la mairie de Chambéry : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
-  keywords: ["mairie Chambéry", "services administratifs Chambéry", "démarches en ligne Chambéry", "état civil Chambéry", "urbanisme Chambéry"]
+  title: "Mairie de Cognin : Guide Complet 2025 - Services et Démarches",
+  description: "Tout savoir sur la mairie de Cognin : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
+  keywords: ["mairie Cognin", "services administratifs Cognin", "démarches en ligne Cognin", "état civil Cognin", "urbanisme Cognin"]
 };
 
-// Article Schema pour SEO
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Mairie de Chambéry : Guide Complet 2025 - Services et Démarches",
-  "description": "Tout savoir sur la mairie de Chambéry : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
-  "image": "https://agencevoglans.fr/images/blog/mairie-chambery-guide.jpg",
+  "headline": "Mairie de Cognin : Guide Complet 2025 - Services et Démarches",
+  "description": "Tout savoir sur la mairie de Cognin : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
+  "image": "https://agencevoglans.fr/images/blog/mairie-cognin.jpg",
   "author": {
     "@type": "Organization",
     "name": "L'Agence de Voglans",
@@ -52,21 +50,21 @@ const articleSchema = {
       "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
     }
   },
-  "datePublished": "2025-01-19T10:00:00+02:00",
-  "dateModified": "2025-01-19T10:00:00+02:00",
+  "datePublished": "2025-01-22T10:00:00+02:00",
+  "dateModified": "2025-01-22T10:00:00+02:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://agencevoglans.fr/blog/mairie-chambery-guide-complet"
+    "@id": "https://agencevoglans.fr/blog/mairie-cognin-guide-complet"
   },
   "articleSection": "Services publics et démarches administratives",
-  "keywords": ["mairie Chambéry", "services administratifs Chambéry", "démarches en ligne Chambéry", "état civil Chambéry", "urbanisme Chambéry"]
+  "keywords": ["mairie Cognin", "services administratifs Cognin", "démarches en ligne Cognin", "état civil Cognin", "urbanisme Cognin"]
 };
 ---
 
 <Base title={meta.title} description={meta.description}>
     <meta slot="head"  name="keywords" content={meta.keywords.join(', ')} />
 
-  <ChamberyMairieHeader />
+  <CogninMairieHeader />
 
   <!-- Navigation retour -->
   <section class="py-8 bg-white border-b">
@@ -85,33 +83,30 @@ const articleSchema = {
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
 
-        <!-- Article Header -->
         <header class="mb-16 text-center">
           <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <Calendar className="w-4 h-4" />
-            <span>Publié le 19 janvier 2025</span>
+            <span>Publié le 22 janvier 2025</span>
           </div>
 
           <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
-            Mairie de Chambéry : Guide Complet 2025
+            Mairie de Cognin : Guide Complet 2025
           </h1>
 
           <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            La <strong>mairie de Chambéry</strong> est le cœur administratif de la capitale savoyarde. Découvrez tous les <strong>services publics</strong>, horaires d'ouverture et démarches en ligne disponibles pour les 60 000 habitants.
+            La <strong>mairie de Cognin</strong> est le cœur administratif de cette ville dynamique de 6 500 habitants. Découvrez tous les <strong>services publics</strong>, horaires d'ouverture et démarches en ligne disponibles.
           </p>
         </header>
 
-        <!-- Introduction -->
         <div class="prose prose-lg max-w-none mb-16">
           <p class="text-lg leading-relaxed text-gray-700">
-            La <strong>mairie de Chambéry</strong>, installée dans l'Hôtel de Ville historique place du Palais de Justice, est le centre névralgique des services administratifs de la ville. Avec plus de <strong>400 agents</strong> et une cinquantaine de services différents, elle accompagne quotidiennement les habitants dans leurs démarches administratives, sociales et urbaines.
+            La <strong>mairie de Cognin</strong>, ville résidentielle située aux portes de Chambéry, dispose d'une administration moderne et efficace. Avec plus de <strong>80 agents</strong> et une douzaine de services différents, elle accompagne quotidiennement les habitants dans leurs démarches administratives, sociales et économiques.
           </p>
           <p class="text-lg leading-relaxed text-gray-700">
-            Que vous ayez besoin d'un acte d'état civil, d'une autorisation d'urbanisme, d'une inscription scolaire ou d'informations sur les services sociaux, la mairie de Chambéry met à disposition des guichets spécialisés et des plateformes en ligne modernes pour faciliter toutes vos démarches.
+            Que vous ayez besoin d'un acte d'état civil, d'une autorisation d'urbanisme, d'une inscription à une activité culturelle ou d'informations sur la vie locale, la mairie de Cognin met à disposition des guichets spécialisés et des plateformes en ligne performantes.
           </p>
         </div>
 
-        <!-- Table des matières -->
         <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
             <span class="text-2xl">📋</span>
@@ -125,7 +120,7 @@ const articleSchema = {
             <li><a href="#etat-civil" class="text-blue-600 hover:underline">→ État civil et formalités</a></li>
             <li><a href="#urbanisme-construction" class="text-blue-600 hover:underline">→ Urbanisme et construction</a></li>
             <li><a href="#services-sociaux" class="text-blue-600 hover:underline">→ Services sociaux et famille</a></li>
-            <li><a href="#culture-sports" class="text-blue-600 hover:underline">→ Culture, sports et loisirs</a></li>
+            <li><a href="#vie-locale" class="text-blue-600 hover:underline">→ Vie locale et associations</a></li>
             <li><a href="#faq-mairie" class="text-blue-600 hover:underline">→ Questions fréquentes</a></li>
           </ul>
         </div>
@@ -141,7 +136,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> est située en plein cœur historique de la ville, facilement accessible en transports en commun et à pied depuis tous les quartiers.
+              La <strong>mairie de Cognin</strong> est située en plein cœur de la ville, facilement accessible depuis Chambéry et les communes environnantes.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -151,10 +146,10 @@ const articleSchema = {
                   <h3 class="font-bold text-xl text-gray-900">Adresse</h3>
                 </div>
                 <div class="text-gray-700 space-y-2">
-                  <p><strong>Hôtel de Ville de Chambéry</strong></p>
-                  <p>Place du Palais de Justice</p>
-                  <p>73000 Chambéry</p>
-                  <p><strong>Coordonnées GPS :</strong> 45.5648° N, 5.9178° E</p>
+                  <p><strong>Hôtel de Ville de Cognin</strong></p>
+                  <p>Place de la Mairie</p>
+                  <p>73160 Cognin</p>
+                  <p><strong>Coordonnées GPS :</strong> 45.5625° N, 5.9042° E</p>
                 </div>
               </div>
 
@@ -164,10 +159,10 @@ const articleSchema = {
                   <h3 class="font-bold text-xl text-gray-900">Téléphone</h3>
                 </div>
                 <div class="text-gray-700 space-y-2">
-                  <p><strong>Standard :</strong> 04 79 60 20 20</p>
-                  <p><strong>État Civil :</strong> 04 79 60 20 30</p>
-                  <p><strong>Urbanisme :</strong> 04 79 60 20 40</p>
-                  <p><strong>Numéro d'urgence :</strong> 04 79 60 20 99</p>
+                  <p><strong>Standard :</strong> 04 79 61 10 00</p>
+                  <p><strong>État Civil :</strong> 04 79 61 10 10</p>
+                  <p><strong>Urbanisme :</strong> 04 79 61 10 20</p>
+                  <p><strong>Vie Locale :</strong> 04 79 61 10 30</p>
                 </div>
               </div>
             </div>
@@ -178,9 +173,9 @@ const articleSchema = {
                 <div>
                   <h4 class="font-bold text-lg mb-2">📧 Contact Email</h4>
                   <p class="text-gray-700">
-                    <strong>Contact général :</strong> contact@mairie-chambery.fr<br>
-                    <strong>État civil :</strong> etat-civil@mairie-chambery.fr<br>
-                    <strong>Urbanisme :</strong> urbanisme@mairie-chambery.fr
+                    <strong>Contact général :</strong> contact@mairie-cognin.fr<br>
+                    <strong>État civil :</strong> etat-civil@mairie-cognin.fr<br>
+                    <strong>Urbanisme :</strong> urbanisme@mairie-cognin.fr
                   </p>
                 </div>
               </div>
@@ -199,7 +194,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> adapte ses horaires aux besoins des administrés avec des créneaux étendus et des services en ligne disponibles 24h/24.
+              La <strong>mairie de Cognin</strong> adapte ses horaires aux besoins des administrés avec des créneaux étendus et des services en ligne disponibles 24h/24.
             </p>
 
             <div class="overflow-x-auto mb-8">
@@ -232,16 +227,10 @@ const articleSchema = {
                     <td class="px-6 py-4 text-gray-700">RDV recommandé</td>
                   </tr>
                   <tr class="hover:bg-blue-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-900">Services Sociaux</td>
-                    <td class="px-6 py-4 text-gray-700">8h30 - 16h30</td>
-                    <td class="px-6 py-4 text-gray-700">Fermé</td>
-                    <td class="px-6 py-4 text-gray-700">Urgences sociales : 04 79 60 20 99</td>
-                  </tr>
-                  <tr class="hover:bg-blue-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-900">Démarches en Ligne</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">24h/24</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">24h/24</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">7j/7</td>
+                    <td class="px-6 py-4 font-medium text-gray-900">Vie Locale</td>
+                    <td class="px-6 py-4 text-gray-700">9h00 - 17h00</td>
+                    <td class="px-6 py-4 text-gray-700">9h00 - 16h00</td>
+                    <td class="px-6 py-4 text-gray-700">Événements : horaires variables</td>
                   </tr>
                 </tbody>
               </table>
@@ -256,7 +245,7 @@ const articleSchema = {
                     <li>• <strong>Accueil téléphonique</strong> : 8h30-17h30 en semaine</li>
                     <li>• <strong>Urgences</strong> : Service d'astreinte 24h/24</li>
                     <li>• <strong>Rendez-vous</strong> : Recommandé pour état civil et urbanisme</li>
-                    <li>• <strong>Temps d'attente</strong> : 10-15 min en moyenne aux guichets</li>
+                    <li>• <strong>Parking</strong> : Gratuit devant la mairie</li>
                   </ul>
                 </div>
               </div>
@@ -275,7 +264,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> propose une <strong>cinquantaine de services administratifs</strong> organisés en pôles thématiques pour faciliter l'accès aux démarches des administrés.
+              La <strong>mairie de Cognin</strong> propose une <strong>douzaine de services administratifs</strong> organisés en pôles thématiques pour faciliter l'accès aux démarches des administrés.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏛️ Pôle Population et Citoyenneté</h3>
@@ -351,13 +340,13 @@ const articleSchema = {
                   <Car className="w-8 h-8 text-blue-600" />
                   <div>
                     <h4 class="font-bold text-lg text-gray-900">Stationnement</h4>
-                    <p class="text-sm text-gray-600">Cartes résident</p>
+                    <p class="text-sm text-gray-600">Zones bleues</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Cartes de stationnement résidentiel, zones bleues, parkings.</p>
+                <p class="text-gray-700 mb-3">Cartes de stationnement, zones bleues, parkings publics.</p>
                 <div class="text-sm text-gray-600">
-                  <p>💰 Tarifs dégressifs</p>
-                  <p>🏠 Justificatif domicile</p>
+                  <p>💰 Tarifs modérés</p>
+                  <p>🚗 Proximité Chambéry</p>
                 </div>
               </div>
 
@@ -365,14 +354,14 @@ const articleSchema = {
                 <div class="flex items-center gap-3 mb-4">
                   <FileText className="w-8 h-8 text-blue-600" />
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Déclaration Travaux</h4>
-                    <p class="text-sm text-gray-600">Formalités</p>
+                    <h4 class="font-bold text-lg text-gray-900">Urbanisme</h4>
+                    <p class="text-sm text-gray-600">Réglementation</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Déclaration de travaux, autorisations d'enseigne, occupation domaine public.</p>
+                <p class="text-gray-700 mb-3">PLU, COS, règles d'urbanisme, autorisations diverses.</p>
                 <div class="text-sm text-gray-600">
-                  <p>📝 Formulaires Cerfa</p>
-                  <p>⚡ Traitement rapide</p>
+                  <p>📐 Plan Local d'Urbanisme</p>
+                  <p>⚡ Règles spécifiques</p>
                 </div>
               </div>
             </div>
@@ -390,7 +379,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> a massivement <strong>digitalisé ses services</strong> pour offrir aux administrés un accès 24h/24 aux démarches administratives les plus courantes.
+              La <strong>mairie de Cognin</strong> a <strong>digitalisé ses services</strong> pour offrir aux administrés un accès 24h/24 aux démarches administratives les plus courantes.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🌐 Portail Citoyen en Ligne</h3>
@@ -420,13 +409,13 @@ const articleSchema = {
                     <span class="text-white font-bold text-sm">C</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Chambéry Citoyen</h4>
+                    <h4 class="font-bold text-lg text-gray-900">Cognin</h4>
                     <p class="text-sm text-gray-600">App officielle</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Signalements, actualités, événements, services en ligne.</p>
+                <p class="text-gray-700 mb-3">Signalements, actualités, vie locale, services en ligne.</p>
                 <div class="text-sm text-gray-600">
-                  <p>⭐ Note : 4.2/5</p>
+                  <p>⭐ Note : 4.1/5</p>
                   <p>📱 iOS & Android</p>
                 </div>
               </div>
@@ -434,17 +423,17 @@ const articleSchema = {
               <div class="bg-white border border-gray-200 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">P</span>
+                    <span class="text-white font-bold text-sm">V</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Parking Chambéry</h4>
-                    <p class="text-sm text-gray-600">Stationnement</p>
+                    <h4 class="font-bold text-lg text-gray-900">Vie Locale</h4>
+                    <p class="text-sm text-gray-600">Associations</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Paiement parking, zones bleues, horodateurs connectés.</p>
+                <p class="text-gray-700 mb-3">Agenda culturel, associations, événements, sports.</p>
                 <div class="text-sm text-gray-600">
-                  <p>💳 Paiement mobile</p>
-                  <p>🅿️ Temps réel</p>
+                  <p>🎭 Activités variées</p>
+                  <p>🏃‍♂️ Sports et loisirs</p>
                 </div>
               </div>
             </div>
@@ -462,7 +451,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              Le <strong>service état civil de la mairie de Chambéry</strong> traite quotidiennement les formalités administratives des 60 000 habitants de la ville et de l'agglomération.
+              Le <strong>service état civil de la mairie de Cognin</strong> traite quotidiennement les formalités administratives des 6 500 habitants de la ville.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">📋 Documents Délivrés</h3>
@@ -476,7 +465,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Demande en ligne ou guichet. Délivrance immédiate si né à Chambéry.</p>
+                <p class="text-gray-700 mb-3">Demande en ligne ou guichet. Délivrance immédiate si né à Cognin.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ Immédiat</p>
@@ -491,7 +480,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Pour les mariages célébrés à Chambéry. Pièces justificatives requises.</p>
+                <p class="text-gray-700 mb-3">Pour les mariages célébrés à Cognin. Pièces justificatives requises.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ 48h</p>
@@ -506,7 +495,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Pour les décès déclarés à Chambéry. Livret de famille requis.</p>
+                <p class="text-gray-700 mb-3">Pour les décès déclarés à Cognin. Livret de famille requis.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ Immédiat</p>
@@ -514,7 +503,7 @@ const articleSchema = {
               </div>
             </div>
 
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💒 Mariages et PACS</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💒 Mariages et Cérémonies</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -529,11 +518,11 @@ const articleSchema = {
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Cérémonie</strong> : Salle des mariages (gratuite)</span>
+                    <span><strong>Cérémonie</strong> : Salle des mariages moderne</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Capacité</strong> : 50 invités maximum</span>
+                    <span><strong>Capacité</strong> : 80 invités maximum</span>
                   </li>
                 </ul>
               </div>
@@ -573,7 +562,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              Le <strong>service urbanisme de la mairie de Chambéry</strong> accompagne les particuliers et professionnels dans tous leurs projets de construction, rénovation et aménagement.
+              Le <strong>service urbanisme de la mairie de Cognin</strong> accompagne les particuliers et professionnels dans tous leurs projets de construction et d'aménagement.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏗️ Types d'Autorisations</h3>
@@ -605,7 +594,7 @@ const articleSchema = {
                     <td class="px-6 py-4 font-medium text-gray-900">Permis d'Aménager</td>
                     <td class="px-6 py-4 text-gray-700">Lotissement</td>
                     <td class="px-6 py-4 text-gray-700">3 mois</td>
-                    <td class="px-6 py-4 text-gray-700">Selon surface</td>
+                    <td class="px-6 py-4 text-gray-700">Variable*</td>
                   </tr>
                   <tr class="hover:bg-blue-50 transition-colors">
                     <td class="px-6 py-4 font-medium text-gray-900">Certificat d'Urbanisme</td>
@@ -618,51 +607,20 @@ const articleSchema = {
               <p class="text-sm text-gray-600 mt-4">*Coût calculé selon la surface : 50 €/m² + 25 €/m² au-delà de 100 m²</p>
             </div>
 
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">📋 Documents à Fournir</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏘️ Spécificités Locales</h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div class="bg-white border border-gray-200 rounded-xl p-6">
-                <h4 class="font-bold text-lg mb-4 text-gray-900">Pour Déclaration Préalable</h4>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span><strong>Formulaire Cerfa 13703</strong></span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span><strong>Plan de situation</strong></span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span><strong>Plan de masse</strong></span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span><strong>Photos du terrain</strong></span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="bg-white border border-gray-200 rounded-xl p-6">
-                <h4 class="font-bold text-lg mb-4 text-gray-900">Pour Permis de Construire</h4>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
-                    <span><strong>Formulaire Cerfa 13406</strong></span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
-                    <span><strong>Plans détaillés</strong> (coupes, façades)</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
-                    <span><strong>Notice descriptive</strong></span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
-                    <span><strong>Étude thermique</strong> (RT 2012)</span>
-                  </li>
-                </ul>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 mb-8">
+              <div class="flex items-start gap-4">
+                <Building className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 class="font-bold text-lg mb-2">🏘️ Ville Résidentielle</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Proximité Chambéry</strong> : Règles d'urbanisme harmonisées</li>
+                    <li>• <strong>Ville résidentielle</strong> : Construction de qualité exigée</li>
+                    <li>• <strong>Transports</strong> : Proximité gare et autoroutes</li>
+                    <li>• <strong>Environnement</strong> : Respect des espaces verts</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -679,7 +637,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> met à disposition des <strong>services sociaux complets</strong> pour accompagner les familles, les personnes en difficulté et les seniors dans leur quotidien.
+              La <strong>mairie de Cognin</strong> met à disposition des <strong>services sociaux complets</strong> pour accompagner les familles et les personnes en difficulté dans leur quotidien.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">👶 Services à la Petite Enfance</h3>
@@ -693,9 +651,9 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">0-3 ans</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">8 crèches municipales, capacité 400 places, tarifs selon revenus.</p>
+                <p class="text-gray-700 mb-3">3 crèches municipales, capacité 150 places, tarifs selon revenus.</p>
                 <div class="text-sm text-gray-600">
-                  <p>📍 8 sites en ville</p>
+                  <p>📍 3 sites en ville</p>
                   <p>💰 Revenus modérés</p>
                 </div>
               </div>
@@ -710,7 +668,7 @@ const articleSchema = {
                 </div>
                 <p class="text-gray-700 mb-3">Inscription en ligne, sectorisation par quartier, cantine et garderie.</p>
                 <div class="text-sm text-gray-600">
-                  <p>📚 25 écoles publiques</p>
+                  <p>📚 4 écoles publiques</p>
                   <p>🍽️ Cantine bio</p>
                 </div>
               </div>
@@ -779,118 +737,126 @@ const articleSchema = {
           </div>
         </article>
 
-        <!-- Section 8 : Culture et Sports -->
-        <article id="culture-sports" class="mb-16">
+        <!-- Section 8 : Vie Locale -->
+        <article id="vie-locale" class="mb-16">
           <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
             <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
               <Star className="w-6 h-6 text-blue-600" />
             </div>
-            <span>Culture, Sports et Loisirs</span>
+            <span>Vie Locale et Associations</span>
           </h2>
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> propose une <strong>offre culturelle et sportive</strong> riche et variée pour tous les âges et tous les budgets.
+              <strong>Cognin</strong> est une <strong>ville dynamique</strong> avec une vie associative riche et de nombreux événements culturels et sportifs tout au long de l'année.
             </p>
 
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🎭 Culture et Patrimoine</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div class="bg-white border border-gray-200 rounded-xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                  <Building className="w-6 h-6 text-red-500" />
-                  <h4 class="font-bold text-lg text-gray-900">Musées Gratuits</h4>
-                </div>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Musée des Beaux-Arts</strong> : Collections permanentes gratuites</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Musée Savoisien</strong> : Histoire locale gratuite</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Expositions temporaires</strong> : Tarifs réduits</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="bg-white border border-gray-200 rounded-xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                  <Star className="w-6 h-6 text-yellow-500" />
-                  <h4 class="font-bold text-lg text-gray-900">Événements Annuels</h4>
-                </div>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Festival Jazz</strong> : Juillet, concerts gratuits</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Fête du Livre</strong> : Septembre, dédicaces</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Marché de Noël</strong> : Décembre, animations</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏃‍♂️ Sports et Loisirs</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏛️ Équipements Publics</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
                 <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span class="text-green-600 font-bold">P</span>
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-blue-600 font-bold">🎭</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Piscine Olympique</h4>
-                    <p class="text-sm text-gray-600">Natation</p>
+                    <h4 class="font-bold text-lg text-gray-900">Salle des Fêtes</h4>
+                    <p class="text-sm text-gray-600">Événements</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Bassin olympique, cours d'aquagym, tarifs familiaux.</p>
+                <p class="text-gray-700 mb-3">Salle polyvalente de 400 places pour spectacles, concerts, mariages.</p>
                 <div class="text-sm text-gray-600">
-                  <p>💧 25m et 50m</p>
-                  <p>👨‍👩‍👧‍👦 Tarifs réduits</p>
+                  <p>🎪 400 places</p>
+                  <p>💒 Mariages, événements</p>
                 </div>
               </div>
 
               <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
                 <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span class="text-orange-600 font-bold">T</span>
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-green-600 font-bold">🏊</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Tennis Municipal</h4>
-                    <p class="text-sm text-gray-600">Courts</p>
+                    <h4 class="font-bold text-lg text-gray-900">Complexe Sportif</h4>
+                    <p class="text-sm text-gray-600">Sports</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">12 courts extérieurs, 4 couverts, leçons pour tous niveaux.</p>
+                <p class="text-gray-700 mb-3">Piscine, gymnases, terrains de sport, stade municipal.</p>
                 <div class="text-sm text-gray-600">
-                  <p>🎾 Location matériel</p>
-                  <p>🏆 Compétitions</p>
+                  <p>🏊‍♂️ Piscine couverte</p>
+                  <p>⚽ Terrains multisports</p>
                 </div>
               </div>
 
               <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span class="text-purple-600 font-bold">S</span>
+                    <span class="text-purple-600 font-bold">📚</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Stade Municipal</h4>
-                    <p class="text-sm text-gray-600">Athlétisme</p>
+                    <h4 class="font-bold text-lg text-gray-900">Médiathèque</h4>
+                    <p class="text-sm text-gray-600">Culture</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Stade d'athlétisme, football, rugby, piste d'athlétisme.</p>
+                <p class="text-gray-700 mb-3">Livres, CD, DVD, ateliers, conférences, espace numérique.</p>
                 <div class="text-sm text-gray-600">
-                  <p>🏃‍♂️ 400m synthétique</p>
-                  <p>⚽ Terrains gazon</p>
+                  <p>📖 50 000 documents</p>
+                  <p>💻 Espace numérique</p>
                 </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏃‍♂️ Vie Associative</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Users className="w-6 h-6 text-blue-600" />
+                  <h4 class="font-bold text-lg text-gray-900">Sports</h4>
+                </div>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Football</strong> : Club municipal, équipes jeunes</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Tennis</strong> : Courts couverts et extérieurs</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Basket</strong> : Équipes loisirs et compétition</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <span><strong>Danse</strong> : Cours pour tous les âges</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <Star className="w-6 h-6 text-purple-600" />
+                  <h4 class="font-bold text-lg text-gray-900">Culture & Loisirs</h4>
+                </div>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <span><strong>Théâtre</strong> : Troupe amateur, spectacles</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <span><strong>Musique</strong> : École de musique intercommunale</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <span><strong>Peinture</strong> : Ateliers d'arts plastiques</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <span><strong>Seniors</strong> : Club du 3ème âge, activités</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -907,44 +873,44 @@ const articleSchema = {
 
           <div class="space-y-6">
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <h3 class="text-xl font-semibold mb-3 text-gray-900">🕒 Quels sont les horaires d'ouverture de la mairie de Chambéry ?</h3>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🕒 Quels sont les horaires d'ouverture de la mairie de Cognin ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                La mairie de Chambéry est ouverte du <strong>lundi au vendredi de 8h30 à 17h30</strong> et le <strong>samedi de 9h00 à 12h00</strong>. L'accueil téléphonique est disponible aux mêmes horaires. Les services en ligne sont accessibles 24h/24 via le portail citoyen.
-              </p>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <h3 class="text-xl font-semibold mb-3 text-gray-900">📋 Comment obtenir un acte d'état civil ?</h3>
-              <p class="text-gray-700 leading-relaxed">
-                Vous pouvez obtenir un acte de naissance, mariage ou décès <strong>gratuitement</strong> de trois façons : en ligne via le portail citoyen (délivrance immédiate), par email avec justificatifs, ou directement au guichet (délivrance immédiate si événement à Chambéry).
+                La mairie de Cognin est ouverte du <strong>lundi au vendredi de 8h30 à 17h30</strong> et le <strong>samedi de 9h00 à 12h00</strong>. L'accueil téléphonique est disponible aux mêmes horaires. Les services en ligne sont accessibles 24h/24 via le portail citoyen.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">🏗️ Comment faire une demande de permis de construire ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                Pour une demande de permis de construire à Chambéry, déposez votre dossier en ligne via le <strong>portail urbanisme</strong> ou au guichet urbanisme de la mairie. Le délai d'instruction est de <strong>2 mois pour les maisons individuelles</strong> et 3 mois pour les autres constructions.
+                Pour une demande de permis de construire à Cognin, déposez votre dossier en ligne via le <strong>portail urbanisme</strong> ou au guichet urbanisme de la mairie. Le délai d'instruction est de <strong>2 mois pour les maisons individuelles</strong> et 3 mois pour les constructions collectives. La ville résidentielle impose des règles de qualité architecturale.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">👨‍👩‍👧‍👦 Comment inscrire son enfant à l'école ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                L'inscription scolaire se fait <strong>en ligne</strong> via le portail famille de la mairie de Chambéry. Préparez votre justificatif de domicile, livret de famille et carnet de santé. L'affectation se fait selon la <strong>sectorisation par quartier</strong>. La cantine et garderie sont disponibles dans toutes les écoles.
+                L'inscription scolaire se fait <strong>en ligne</strong> via le portail famille de la mairie de Cognin. Préparez votre justificatif de domicile, livret de famille et carnet de santé. L'affectation se fait selon la <strong>sectorisation par quartier</strong>. La cantine et garderie sont disponibles dans toutes les écoles.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <h3 class="text-xl font-semibold mb-3 text-gray-900">🚗 Comment obtenir une carte de stationnement résidentiel ?</h3>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🚗 Comment obtenir une carte de stationnement ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                La carte de stationnement résidentiel s'obtient <strong>en ligne</strong> ou au guichet de la mairie avec un justificatif de domicile et la carte grise du véhicule. Le tarif est <strong>dégressif selon la durée</strong> : 20 €/mois, 180 €/an. La zone bleue est gratuite avec disque 1h30.
+                La carte de stationnement s'obtient <strong>au guichet de la mairie</strong> avec un justificatif de domicile et la carte grise du véhicule. Le tarif est <strong>modéré pour les habitants</strong> : 20 €/mois, 200 €/an. Cognin dispose de nombreuses <strong>zones bleues gratuites</strong> pour faciliter le stationnement de courte durée.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🎭 Quelles sont les activités culturelles proposées ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Cognin propose une <strong>vie culturelle riche</strong> avec sa médiathèque (50 000 documents), des spectacles à la salle des fêtes, une école de musique intercommunale, et des ateliers d'arts plastiques. La ville organise également de nombreux <strong>événements gratuits</strong> : concerts, théâtre, festivals.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">📞 Comment contacter les services d'urgence ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                En cas d'urgence administrative, contactez le <strong>04 79 60 20 99</strong> (numéro d'astreinte 24h/24). Pour les urgences médicales, appelez le <strong>15 (SAMU)</strong>, pour la police le <strong>17</strong>, et pour les pompiers le <strong>18</strong>. La mairie dispose d'un service d'astreinte pour les urgences techniques.
+                En cas d'urgence administrative, contactez le <strong>04 79 61 10 99</strong> (numéro d'astreinte 24h/24). Pour les urgences médicales, appelez le <strong>15 (SAMU)</strong>, pour la police le <strong>17</strong>, et pour les pompiers le <strong>18</strong>. La mairie dispose d'un service d'astreinte pour les urgences techniques.
               </p>
             </div>
           </div>
@@ -953,7 +919,7 @@ const articleSchema = {
         <!-- CTA Final -->
         <div class="bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-8 text-center text-white mb-16">
           <h2 class="text-3xl font-bold mb-4">Besoin d'Aide pour vos Démarches ?</h2>
-          <p class="text-xl mb-6 opacity-90">L'Agence de Voglans vous accompagne dans votre installation à Chambéry !</p>
+          <p class="text-xl mb-6 opacity-90">L'Agence de Voglans vous accompagne dans votre installation à Cognin !</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+33757830262" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
               <Phone className="w-5 h-5" />

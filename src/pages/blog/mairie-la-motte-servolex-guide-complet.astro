@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ImageCard from '../../components/blog/ImageCard.astro';
-import ChamberyMairieHeader from '../../components/blog/headers/ChamberyMairieHeader.astro';
+import LaMotteServolexMairieHeader from '../../components/blog/headers/LaMotteServolexMairieHeader.astro';
 import {
   ArrowLeft,
   MapPin,
@@ -24,21 +23,20 @@ import {
   Star
 } from 'lucide-react';
 
-const publishDate = new Date('2025-01-19');
+const publishDate = new Date('2025-01-21');
 
 const meta = {
-  title: "Mairie de Chambéry : Guide Complet 2025 - Services et Démarches",
-  description: "Tout savoir sur la mairie de Chambéry : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
-  keywords: ["mairie Chambéry", "services administratifs Chambéry", "démarches en ligne Chambéry", "état civil Chambéry", "urbanisme Chambéry"]
+  title: "Mairie de La Motte-Servolex : Guide Complet 2025 - Services et Démarches",
+  description: "Tout savoir sur la mairie de La Motte-Servolex : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
+  keywords: ["mairie La Motte-Servolex", "services administratifs Motte-Servolex", "démarches en ligne Motte-Servolex", "état civil Motte-Servolex", "urbanisme Motte-Servolex"]
 };
 
-// Article Schema pour SEO
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Mairie de Chambéry : Guide Complet 2025 - Services et Démarches",
-  "description": "Tout savoir sur la mairie de Chambéry : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
-  "image": "https://agencevoglans.fr/images/blog/mairie-chambery-guide.jpg",
+  "headline": "Mairie de La Motte-Servolex : Guide Complet 2025 - Services et Démarches",
+  "description": "Tout savoir sur la mairie de La Motte-Servolex : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
+  "image": "https://agencevoglans.fr/images/blog/mairie-motte-servolex.jpg",
   "author": {
     "@type": "Organization",
     "name": "L'Agence de Voglans",
@@ -52,21 +50,63 @@ const articleSchema = {
       "url": "https://agencevoglans.fr/images/logo-agence-voglans.png"
     }
   },
-  "datePublished": "2025-01-19T10:00:00+02:00",
-  "dateModified": "2025-01-19T10:00:00+02:00",
+  "datePublished": "2025-01-21T10:00:00+02:00",
+  "dateModified": "2025-01-21T10:00:00+02:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://agencevoglans.fr/blog/mairie-chambery-guide-complet"
+    "@id": "https://agencevoglans.fr/blog/mairie-la-motte-servolex-guide-complet"
   },
   "articleSection": "Services publics et démarches administratives",
-  "keywords": ["mairie Chambéry", "services administratifs Chambéry", "démarches en ligne Chambéry", "état civil Chambéry", "urbanisme Chambéry"]
+  "keywords": ["mairie La Motte-Servolex", "services administratifs Motte-Servolex", "démarches en ligne Motte-Servolex", "état civil Motte-Servolex", "urbanisme Motte-Servolex"]
 };
 ---
 
 <Base title={meta.title} description={meta.description}>
     <meta slot="head"  name="keywords" content={meta.keywords.join(', ')} />
 
-  <ChamberyMairieHeader />
+  <!-- Hero Section -->
+  <section class="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-20 left-20 w-4 h-4 bg-blue-600 rounded-full animate-float"></div>
+      <div class="absolute top-40 right-40 w-6 h-6 bg-blue-600 rounded-full animate-float delay-1000"></div>
+      <div class="absolute bottom-40 left-40 w-3 h-3 bg-blue-600 rounded-full animate-float delay-500"></div>
+      <div class="absolute bottom-20 right-20 w-5 h-5 bg-blue-600 rounded-full animate-float delay-1500"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <Building className="w-4 h-4" />
+          <span>Services Publics</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black mb-8 leading-none">
+          <span class="block text-gray-900">
+            Mairie de
+          </span>
+          <span class="block bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+            La Motte-Servolex
+          </span>
+        </h1>
+
+        <p class="text-2xl md:text-3xl text-gray-600 font-light mb-12 max-w-4xl leading-relaxed">
+          Guide complet des services administratifs, horaires,<br>
+          démarches en ligne et contacts de la mairie de La Motte-Servolex.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a href="#services-administratifs" class="group relative bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-600/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <FileText className="w-5 h-5 group-hover:animate-bounce" />
+            <span>Découvrir les Services</span>
+          </a>
+          <a href="tel:+33757830262" class="group relative bg-white/20 backdrop-blur-xl border border-blue-600/30 text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-600/25 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105">
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span>Nous Appeler</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Navigation retour -->
   <section class="py-8 bg-white border-b">
@@ -85,33 +125,30 @@ const articleSchema = {
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
 
-        <!-- Article Header -->
         <header class="mb-16 text-center">
           <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <Calendar className="w-4 h-4" />
-            <span>Publié le 19 janvier 2025</span>
+            <span>Publié le 21 janvier 2025</span>
           </div>
 
           <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
-            Mairie de Chambéry : Guide Complet 2025
+            Mairie de La Motte-Servolex : Guide Complet 2025
           </h1>
 
           <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            La <strong>mairie de Chambéry</strong> est le cœur administratif de la capitale savoyarde. Découvrez tous les <strong>services publics</strong>, horaires d'ouverture et démarches en ligne disponibles pour les 60 000 habitants.
+            La <strong>mairie de La Motte-Servolex</strong> est le cœur administratif de cette ville dynamique de 12 000 habitants. Découvrez tous les <strong>services publics</strong>, horaires d'ouverture et démarches en ligne disponibles.
           </p>
         </header>
 
-        <!-- Introduction -->
         <div class="prose prose-lg max-w-none mb-16">
           <p class="text-lg leading-relaxed text-gray-700">
-            La <strong>mairie de Chambéry</strong>, installée dans l'Hôtel de Ville historique place du Palais de Justice, est le centre névralgique des services administratifs de la ville. Avec plus de <strong>400 agents</strong> et une cinquantaine de services différents, elle accompagne quotidiennement les habitants dans leurs démarches administratives, sociales et urbaines.
+            La <strong>mairie de La Motte-Servolex</strong>, ville en pleine expansion située entre Chambéry et Aix-les-Bains, dispose d'une administration moderne et réactive. Avec plus de <strong>200 agents</strong> et une trentaine de services différents, elle accompagne quotidiennement les habitants dans leurs démarches administratives, sociales et économiques.
           </p>
           <p class="text-lg leading-relaxed text-gray-700">
-            Que vous ayez besoin d'un acte d'état civil, d'une autorisation d'urbanisme, d'une inscription scolaire ou d'informations sur les services sociaux, la mairie de Chambéry met à disposition des guichets spécialisés et des plateformes en ligne modernes pour faciliter toutes vos démarches.
+            Que vous ayez besoin d'un acte d'état civil, d'une autorisation d'urbanisme, d'une inscription à une activité sportive ou d'informations sur les entreprises locales, la mairie de La Motte-Servolex met à disposition des guichets spécialisés et des plateformes en ligne performantes.
           </p>
         </div>
 
-        <!-- Table des matières -->
         <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
             <span class="text-2xl">📋</span>
@@ -125,7 +162,7 @@ const articleSchema = {
             <li><a href="#etat-civil" class="text-blue-600 hover:underline">→ État civil et formalités</a></li>
             <li><a href="#urbanisme-construction" class="text-blue-600 hover:underline">→ Urbanisme et construction</a></li>
             <li><a href="#services-sociaux" class="text-blue-600 hover:underline">→ Services sociaux et famille</a></li>
-            <li><a href="#culture-sports" class="text-blue-600 hover:underline">→ Culture, sports et loisirs</a></li>
+            <li><a href="#economie-entreprises" class="text-blue-600 hover:underline">→ Économie et entreprises</a></li>
             <li><a href="#faq-mairie" class="text-blue-600 hover:underline">→ Questions fréquentes</a></li>
           </ul>
         </div>
@@ -141,7 +178,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> est située en plein cœur historique de la ville, facilement accessible en transports en commun et à pied depuis tous les quartiers.
+              La <strong>mairie de La Motte-Servolex</strong> est située en plein cœur de la ville, facilement accessible en transports en commun depuis Chambéry et Aix-les-Bains.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -151,10 +188,10 @@ const articleSchema = {
                   <h3 class="font-bold text-xl text-gray-900">Adresse</h3>
                 </div>
                 <div class="text-gray-700 space-y-2">
-                  <p><strong>Hôtel de Ville de Chambéry</strong></p>
-                  <p>Place du Palais de Justice</p>
-                  <p>73000 Chambéry</p>
-                  <p><strong>Coordonnées GPS :</strong> 45.5648° N, 5.9178° E</p>
+                  <p><strong>Hôtel de Ville de La Motte-Servolex</strong></p>
+                  <p>Place de l'Hôtel de Ville</p>
+                  <p>73290 La Motte-Servolex</p>
+                  <p><strong>Coordonnées GPS :</strong> 45.5987° N, 5.8765° E</p>
                 </div>
               </div>
 
@@ -164,10 +201,10 @@ const articleSchema = {
                   <h3 class="font-bold text-xl text-gray-900">Téléphone</h3>
                 </div>
                 <div class="text-gray-700 space-y-2">
-                  <p><strong>Standard :</strong> 04 79 60 20 20</p>
-                  <p><strong>État Civil :</strong> 04 79 60 20 30</p>
-                  <p><strong>Urbanisme :</strong> 04 79 60 20 40</p>
-                  <p><strong>Numéro d'urgence :</strong> 04 79 60 20 99</p>
+                  <p><strong>Standard :</strong> 04 79 65 18 00</p>
+                  <p><strong>État Civil :</strong> 04 79 65 18 10</p>
+                  <p><strong>Urbanisme :</strong> 04 79 65 18 20</p>
+                  <p><strong>Entreprises :</strong> 04 79 65 18 30</p>
                 </div>
               </div>
             </div>
@@ -178,9 +215,9 @@ const articleSchema = {
                 <div>
                   <h4 class="font-bold text-lg mb-2">📧 Contact Email</h4>
                   <p class="text-gray-700">
-                    <strong>Contact général :</strong> contact@mairie-chambery.fr<br>
-                    <strong>État civil :</strong> etat-civil@mairie-chambery.fr<br>
-                    <strong>Urbanisme :</strong> urbanisme@mairie-chambery.fr
+                    <strong>Contact général :</strong> contact@mairie-lamotteservolex.fr<br>
+                    <strong>État civil :</strong> etat-civil@mairie-lamotteservolex.fr<br>
+                    <strong>Urbanisme :</strong> urbanisme@mairie-lamotteservolex.fr
                   </p>
                 </div>
               </div>
@@ -199,7 +236,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> adapte ses horaires aux besoins des administrés avec des créneaux étendus et des services en ligne disponibles 24h/24.
+              La <strong>mairie de La Motte-Servolex</strong> adapte ses horaires aux besoins des administrés avec des créneaux étendus et des services en ligne disponibles 24h/24.
             </p>
 
             <div class="overflow-x-auto mb-8">
@@ -232,16 +269,10 @@ const articleSchema = {
                     <td class="px-6 py-4 text-gray-700">RDV recommandé</td>
                   </tr>
                   <tr class="hover:bg-blue-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-900">Services Sociaux</td>
-                    <td class="px-6 py-4 text-gray-700">8h30 - 16h30</td>
+                    <td class="px-6 py-4 font-medium text-gray-900">Entreprises</td>
+                    <td class="px-6 py-4 text-gray-700">9h00 - 17h00</td>
                     <td class="px-6 py-4 text-gray-700">Fermé</td>
-                    <td class="px-6 py-4 text-gray-700">Urgences sociales : 04 79 60 20 99</td>
-                  </tr>
-                  <tr class="hover:bg-blue-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-900">Démarches en Ligne</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">24h/24</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">24h/24</td>
-                    <td class="px-6 py-4 text-green-600 font-semibold">7j/7</td>
+                    <td class="px-6 py-4 text-gray-700">Accompagnement économique</td>
                   </tr>
                 </tbody>
               </table>
@@ -256,7 +287,7 @@ const articleSchema = {
                     <li>• <strong>Accueil téléphonique</strong> : 8h30-17h30 en semaine</li>
                     <li>• <strong>Urgences</strong> : Service d'astreinte 24h/24</li>
                     <li>• <strong>Rendez-vous</strong> : Recommandé pour état civil et urbanisme</li>
-                    <li>• <strong>Temps d'attente</strong> : 10-15 min en moyenne aux guichets</li>
+                    <li>• <strong>Temps d'attente</strong> : 5-10 min en moyenne aux guichets</li>
                   </ul>
                 </div>
               </div>
@@ -275,7 +306,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> propose une <strong>cinquantaine de services administratifs</strong> organisés en pôles thématiques pour faciliter l'accès aux démarches des administrés.
+              La <strong>mairie de La Motte-Servolex</strong> propose une <strong>trentaine de services administratifs</strong> organisés en pôles thématiques pour faciliter l'accès aux démarches des administrés.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏛️ Pôle Population et Citoyenneté</h3>
@@ -365,11 +396,11 @@ const articleSchema = {
                 <div class="flex items-center gap-3 mb-4">
                   <FileText className="w-8 h-8 text-blue-600" />
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Déclaration Travaux</h4>
-                    <p class="text-sm text-gray-600">Formalités</p>
+                    <h4 class="font-bold text-lg text-gray-900">Commerce</h4>
+                    <p class="text-sm text-gray-600">Développement économique</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Déclaration de travaux, autorisations d'enseigne, occupation domaine public.</p>
+                <p class="text-gray-700 mb-3">Autorisations d'enseigne, terrasses, implantation commerciale.</p>
                 <div class="text-sm text-gray-600">
                   <p>📝 Formulaires Cerfa</p>
                   <p>⚡ Traitement rapide</p>
@@ -390,7 +421,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> a massivement <strong>digitalisé ses services</strong> pour offrir aux administrés un accès 24h/24 aux démarches administratives les plus courantes.
+              La <strong>mairie de La Motte-Servolex</strong> a massivement <strong>digitalisé ses services</strong> pour offrir aux administrés un accès 24h/24 aux démarches administratives les plus courantes.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🌐 Portail Citoyen en Ligne</h3>
@@ -417,16 +448,16 @@ const articleSchema = {
               <div class="bg-white border border-gray-200 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">C</span>
+                    <span class="text-white font-bold text-sm">M</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Chambéry Citoyen</h4>
+                    <h4 class="font-bold text-lg text-gray-900">Motte-Servolex</h4>
                     <p class="text-sm text-gray-600">App officielle</p>
                   </div>
                 </div>
                 <p class="text-gray-700 mb-3">Signalements, actualités, événements, services en ligne.</p>
                 <div class="text-sm text-gray-600">
-                  <p>⭐ Note : 4.2/5</p>
+                  <p>⭐ Note : 4.1/5</p>
                   <p>📱 iOS & Android</p>
                 </div>
               </div>
@@ -434,17 +465,17 @@ const articleSchema = {
               <div class="bg-white border border-gray-200 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">P</span>
+                    <span class="text-white font-bold text-sm">E</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg text-gray-900">Parking Chambéry</h4>
-                    <p class="text-sm text-gray-600">Stationnement</p>
+                    <h4 class="font-bold text-lg text-gray-900">Entreprises</h4>
+                    <p class="text-sm text-gray-600">Développement économique</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Paiement parking, zones bleues, horodateurs connectés.</p>
+                <p class="text-gray-700 mb-3">Implantation, aides, recrutement, formation professionnelle.</p>
                 <div class="text-sm text-gray-600">
-                  <p>💳 Paiement mobile</p>
-                  <p>🅿️ Temps réel</p>
+                  <p>💼 Accompagnement</p>
+                  <p>🏭 Zones d'activités</p>
                 </div>
               </div>
             </div>
@@ -462,7 +493,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              Le <strong>service état civil de la mairie de Chambéry</strong> traite quotidiennement les formalités administratives des 60 000 habitants de la ville et de l'agglomération.
+              Le <strong>service état civil de la mairie de La Motte-Servolex</strong> traite quotidiennement les formalités administratives des 12 000 habitants de la ville.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">📋 Documents Délivrés</h3>
@@ -476,7 +507,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Demande en ligne ou guichet. Délivrance immédiate si né à Chambéry.</p>
+                <p class="text-gray-700 mb-3">Demande en ligne ou guichet. Délivrance immédiate si né à La Motte-Servolex.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ Immédiat</p>
@@ -491,7 +522,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Pour les mariages célébrés à Chambéry. Pièces justificatives requises.</p>
+                <p class="text-gray-700 mb-3">Pour les mariages célébrés à La Motte-Servolex. Pièces justificatives requises.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ 48h</p>
@@ -506,7 +537,7 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">Extrait ou copie</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">Pour les décès déclarés à Chambéry. Livret de famille requis.</p>
+                <p class="text-gray-700 mb-3">Pour les décès déclarés à La Motte-Servolex. Livret de famille requis.</p>
                 <div class="text-sm text-gray-600">
                   <p>💰 Gratuit</p>
                   <p>⏱️ Immédiat</p>
@@ -514,7 +545,7 @@ const articleSchema = {
               </div>
             </div>
 
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💒 Mariages et PACS</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💒 Mariages et Cérémonies</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -529,11 +560,11 @@ const articleSchema = {
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Cérémonie</strong> : Salle des mariages (gratuite)</span>
+                    <span><strong>Cérémonie</strong> : Salle des mariages moderne</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Capacité</strong> : 50 invités maximum</span>
+                    <span><strong>Capacité</strong> : 100 invités maximum</span>
                   </li>
                 </ul>
               </div>
@@ -573,7 +604,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              Le <strong>service urbanisme de la mairie de Chambéry</strong> accompagne les particuliers et professionnels dans tous leurs projets de construction, rénovation et aménagement.
+              Le <strong>service urbanisme de la mairie de La Motte-Servolex</strong> accompagne les particuliers et professionnels dans tous leurs projets de construction et de développement.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏗️ Types d'Autorisations</h3>
@@ -679,7 +710,7 @@ const articleSchema = {
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> met à disposition des <strong>services sociaux complets</strong> pour accompagner les familles, les personnes en difficulté et les seniors dans leur quotidien.
+              La <strong>mairie de La Motte-Servolex</strong> met à disposition des <strong>services sociaux complets</strong> pour accompagner les familles et les personnes en difficulté dans leur quotidien.
             </p>
 
             <h3 class="text-2xl font-semibold mb-6 text-gray-900">👶 Services à la Petite Enfance</h3>
@@ -693,9 +724,9 @@ const articleSchema = {
                     <p class="text-sm text-gray-600">0-3 ans</p>
                   </div>
                 </div>
-                <p class="text-gray-700 mb-3">8 crèches municipales, capacité 400 places, tarifs selon revenus.</p>
+                <p class="text-gray-700 mb-3">4 crèches municipales, capacité 200 places, tarifs selon revenus.</p>
                 <div class="text-sm text-gray-600">
-                  <p>📍 8 sites en ville</p>
+                  <p>📍 4 sites en ville</p>
                   <p>💰 Revenus modérés</p>
                 </div>
               </div>
@@ -710,7 +741,7 @@ const articleSchema = {
                 </div>
                 <p class="text-gray-700 mb-3">Inscription en ligne, sectorisation par quartier, cantine et garderie.</p>
                 <div class="text-sm text-gray-600">
-                  <p>📚 25 écoles publiques</p>
+                  <p>📚 8 écoles publiques</p>
                   <p>🍽️ Cantine bio</p>
                 </div>
               </div>
@@ -779,40 +810,95 @@ const articleSchema = {
           </div>
         </article>
 
-        <!-- Section 8 : Culture et Sports -->
-        <article id="culture-sports" class="mb-16">
+        <!-- Section 8 : Économie -->
+        <article id="economie-entreprises" class="mb-16">
           <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
             <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
               <Star className="w-6 h-6 text-blue-600" />
             </div>
-            <span>Culture, Sports et Loisirs</span>
+            <span>Économie et Entreprises</span>
           </h2>
 
           <div class="prose prose-lg max-w-none">
             <p class="text-lg leading-relaxed text-gray-700 mb-8">
-              La <strong>mairie de Chambéry</strong> propose une <strong>offre culturelle et sportive</strong> riche et variée pour tous les âges et tous les budgets.
+              <strong>La Motte-Servolex</strong> est une <strong>ville économique dynamique</strong> avec plus de 800 entreprises et une zone d'activités en pleine expansion.
             </p>
 
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🎭 Culture et Patrimoine</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">💼 Accompagnement des Entreprises</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-blue-600 font-bold">800+</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Entreprises</h4>
+                    <p class="text-sm text-gray-600">Tissu économique</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">PME, PMI, startups, artisans, professions libérales.</p>
+                <div class="text-sm text-gray-600">
+                  <p>🏭 Zones d'activités</p>
+                  <p>💼 Services aux entreprises</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-green-600 font-bold">ZA</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Zones d'Activités</h4>
+                    <p class="text-sm text-gray-600">Implantation</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">3 zones d'activités, terrains disponibles, accompagnement personnalisé.</p>
+                <div class="text-sm text-gray-600">
+                  <p>📍 Proximité autoroutes</p>
+                  <p>🚗 Accès rapide</p>
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span class="text-purple-600 font-bold">AI</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg text-gray-900">Aides et Subventions</h4>
+                    <p class="text-sm text-gray-600">Soutien économique</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-3">Aides à l'implantation, subventions, formation, recrutement.</p>
+                <div class="text-sm text-gray-600">
+                  <p>💰 Dispositifs régionaux</p>
+                  <p>🏆 Accompagnement gratuit</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏛️ Services aux Entreprises</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div class="bg-white border border-gray-200 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                   <Building className="w-6 h-6 text-red-500" />
-                  <h4 class="font-bold text-lg text-gray-900">Musées Gratuits</h4>
+                  <h4 class="font-bold text-lg text-gray-900">Implantation</h4>
                 </div>
                 <ul class="space-y-2 text-gray-700">
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Musée des Beaux-Arts</strong> : Collections permanentes gratuites</span>
+                    <span><strong>Terrains disponibles</strong> : 5 à 50 000 m²</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Musée Savoisien</strong> : Histoire locale gratuite</span>
+                    <span><strong>Viabilisation</strong> : Réseaux, électricité, gaz</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span><strong>Expositions temporaires</strong> : Tarifs réduits</span>
+                    <span><strong>Accès</strong> : Autoroutes A43, A41</span>
                   </li>
                 </ul>
               </div>
@@ -820,77 +906,22 @@ const articleSchema = {
               <div class="bg-white border border-gray-200 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                   <Star className="w-6 h-6 text-yellow-500" />
-                  <h4 class="font-bold text-lg text-gray-900">Événements Annuels</h4>
+                  <h4 class="font-bold text-lg text-gray-900">Développement</h4>
                 </div>
                 <ul class="space-y-2 text-gray-700">
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Festival Jazz</strong> : Juillet, concerts gratuits</span>
+                    <span><strong>Formation</strong> : Pôle emploi, GRETA, CCI</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Fête du Livre</strong> : Septembre, dédicaces</span>
+                    <span><strong>Réseautage</strong> : Clubs d'entreprises, événements</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                    <span><strong>Marché de Noël</strong> : Décembre, animations</span>
+                    <span><strong>Innovation</strong> : Accompagnement startups</span>
                   </li>
                 </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-semibold mb-6 text-gray-900">🏃‍♂️ Sports et Loisirs</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span class="text-green-600 font-bold">P</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-lg text-gray-900">Piscine Olympique</h4>
-                    <p class="text-sm text-gray-600">Natation</p>
-                  </div>
-                </div>
-                <p class="text-gray-700 mb-3">Bassin olympique, cours d'aquagym, tarifs familiaux.</p>
-                <div class="text-sm text-gray-600">
-                  <p>💧 25m et 50m</p>
-                  <p>👨‍👩‍👧‍👦 Tarifs réduits</p>
-                </div>
-              </div>
-
-              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span class="text-orange-600 font-bold">T</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-lg text-gray-900">Tennis Municipal</h4>
-                    <p class="text-sm text-gray-600">Courts</p>
-                  </div>
-                </div>
-                <p class="text-gray-700 mb-3">12 courts extérieurs, 4 couverts, leçons pour tous niveaux.</p>
-                <div class="text-sm text-gray-600">
-                  <p>🎾 Location matériel</p>
-                  <p>🏆 Compétitions</p>
-                </div>
-              </div>
-
-              <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span class="text-purple-600 font-bold">S</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-lg text-gray-900">Stade Municipal</h4>
-                    <p class="text-sm text-gray-600">Athlétisme</p>
-                  </div>
-                </div>
-                <p class="text-gray-700 mb-3">Stade d'athlétisme, football, rugby, piste d'athlétisme.</p>
-                <div class="text-sm text-gray-600">
-                  <p>🏃‍♂️ 400m synthétique</p>
-                  <p>⚽ Terrains gazon</p>
-                </div>
               </div>
             </div>
           </div>
@@ -907,30 +938,23 @@ const articleSchema = {
 
           <div class="space-y-6">
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <h3 class="text-xl font-semibold mb-3 text-gray-900">🕒 Quels sont les horaires d'ouverture de la mairie de Chambéry ?</h3>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">🕒 Quels sont les horaires d'ouverture de la mairie de La Motte-Servolex ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                La mairie de Chambéry est ouverte du <strong>lundi au vendredi de 8h30 à 17h30</strong> et le <strong>samedi de 9h00 à 12h00</strong>. L'accueil téléphonique est disponible aux mêmes horaires. Les services en ligne sont accessibles 24h/24 via le portail citoyen.
-              </p>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <h3 class="text-xl font-semibold mb-3 text-gray-900">📋 Comment obtenir un acte d'état civil ?</h3>
-              <p class="text-gray-700 leading-relaxed">
-                Vous pouvez obtenir un acte de naissance, mariage ou décès <strong>gratuitement</strong> de trois façons : en ligne via le portail citoyen (délivrance immédiate), par email avec justificatifs, ou directement au guichet (délivrance immédiate si événement à Chambéry).
+                La mairie de La Motte-Servolex est ouverte du <strong>lundi au vendredi de 8h30 à 17h30</strong> et le <strong>samedi de 9h00 à 12h00</strong>. L'accueil téléphonique est disponible aux mêmes horaires. Les services en ligne sont accessibles 24h/24 via le portail citoyen.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">🏗️ Comment faire une demande de permis de construire ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                Pour une demande de permis de construire à Chambéry, déposez votre dossier en ligne via le <strong>portail urbanisme</strong> ou au guichet urbanisme de la mairie. Le délai d'instruction est de <strong>2 mois pour les maisons individuelles</strong> et 3 mois pour les autres constructions.
+                Pour une demande de permis de construire à La Motte-Servolex, déposez votre dossier en ligne via le <strong>portail urbanisme</strong> ou au guichet urbanisme de la mairie. Le délai d'instruction est de <strong>2 mois pour les maisons individuelles</strong> et 3 mois pour les autres constructions.
               </p>
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">👨‍👩‍👧‍👦 Comment inscrire son enfant à l'école ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                L'inscription scolaire se fait <strong>en ligne</strong> via le portail famille de la mairie de Chambéry. Préparez votre justificatif de domicile, livret de famille et carnet de santé. L'affectation se fait selon la <strong>sectorisation par quartier</strong>. La cantine et garderie sont disponibles dans toutes les écoles.
+                L'inscription scolaire se fait <strong>en ligne</strong> via le portail famille de la mairie de La Motte-Servolex. Préparez votre justificatif de domicile, livret de famille et carnet de santé. L'affectation se fait selon la <strong>sectorisation par quartier</strong>. La cantine et garderie sont disponibles dans toutes les écoles.
               </p>
             </div>
 
@@ -942,9 +966,16 @@ const articleSchema = {
             </div>
 
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">💼 Comment implanter son entreprise à La Motte-Servolex ?</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Pour implanter votre entreprise, contactez le <strong>service économique de la mairie</strong> qui vous accompagne gratuitement. Des terrains sont disponibles dans les 3 zones d'activités. La ville propose des <strong>aides à l'implantation</strong> et facilite les démarches administratives.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h3 class="text-xl font-semibold mb-3 text-gray-900">📞 Comment contacter les services d'urgence ?</h3>
               <p class="text-gray-700 leading-relaxed">
-                En cas d'urgence administrative, contactez le <strong>04 79 60 20 99</strong> (numéro d'astreinte 24h/24). Pour les urgences médicales, appelez le <strong>15 (SAMU)</strong>, pour la police le <strong>17</strong>, et pour les pompiers le <strong>18</strong>. La mairie dispose d'un service d'astreinte pour les urgences techniques.
+                En cas d'urgence administrative, contactez le <strong>04 79 65 18 99</strong> (numéro d'astreinte 24h/24). Pour les urgences médicales, appelez le <strong>15 (SAMU)</strong>, pour la police le <strong>17</strong>, et pour les pompiers le <strong>18</strong>. La mairie dispose d'un service d'astreinte pour les urgences techniques.
               </p>
             </div>
           </div>
@@ -953,7 +984,7 @@ const articleSchema = {
         <!-- CTA Final -->
         <div class="bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-8 text-center text-white mb-16">
           <h2 class="text-3xl font-bold mb-4">Besoin d'Aide pour vos Démarches ?</h2>
-          <p class="text-xl mb-6 opacity-90">L'Agence de Voglans vous accompagne dans votre installation à Chambéry !</p>
+          <p class="text-xl mb-6 opacity-90">L'Agence de Voglans vous accompagne dans votre installation à La Motte-Servolex !</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+33757830262" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
               <Phone className="w-5 h-5" />

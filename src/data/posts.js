@@ -1,15 +1,15 @@
 // Données des 300 articles du blog
 export const posts = [
   {
-    title: "Mairie de Chambéry : Guide Complet 2025 - Services et Démarches",
-    description: "Tout savoir sur la mairie de Chambéry : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
-    href: "/blog/mairie-chambery-guide-complet",
-    date: "19 janvier 2025",
-    readingTime: "16 min",
+    title: "Mairie de Montmélian : Guide Complet 2025 - Services et Démarches",
+    description: "Tout savoir sur la mairie de Montmélian : horaires d'ouverture, services administratifs, démarches en ligne, état civil, urbanisme et contact mairie.",
+    href: "/blog/mairie-montmelian-guide-complet",
+    date: "23 janvier 2025",
+    readingTime: "12 min",
     category: "Services publics",
     featured: true,
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80",
-    tags: ["mairie Chambéry", "services administratifs", "démarches en ligne", "état civil", "urbanisme"]
+    tags: ["mairie Montmélian", "services administratifs", "démarches en ligne", "état civil", "patrimoine"]
   },
   {
     title: "Vendre une Maison à Chambéry en 2025 : Guide Complet",

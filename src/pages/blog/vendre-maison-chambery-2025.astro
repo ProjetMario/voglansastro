@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ChamberyVenteHeader from '../../components/blog/headers/ChamberyVenteHeader.astro';
 import ImageCard from '../../components/blog/ImageCard.astro';
+import { CheckCircle } from 'lucide-react';
 
 const meta = {
   title: "Vendre une Maison à Chambéry en 2025 : Guide Complet Prix & Conseils",
@@ -11,9 +12,7 @@ const meta = {
 ---
 
 <Base title={meta.title} description={meta.description}>
-  <Fragment slot="head">
-    <meta name="keywords" content={meta.keywords.join(', ')} />
-  </Fragment>
+    <meta slot="head"  name="keywords" content={meta.keywords.join(', ')} />
 
   <!-- Header personnalisé -->
   <ChamberyVenteHeader />

@@ -73,9 +73,7 @@ const articleSchema = {
 ---
 
 <Base title={meta.title} description={meta.description}>
-  <Fragment slot="head">
-    <meta name="keywords" content={meta.keywords.join(', ')} />
-  </Fragment>
+    <meta slot="head"  name="keywords" content={meta.keywords.join(', ')} />
 
   <!-- Header personnalisé -->
   <LandiersHeader />
