@@ -24,6 +24,12 @@
   status = 301
   force = true
 
+# Supprime trailing slash pour cohérence SEO (sauf homepage)
+[[redirects]]
+  from = "https://agencevoglans.fr/*/"
+  to = "https://agencevoglans.fr/:splat"
+  status = 301
+
 [functions]
   directory = "netlify/functions"
 

@@ -8,6 +8,7 @@ export default defineConfig({
   output: 'hybrid',
   adapter: netlify(),
   site: 'https://agencevoglans.fr',
+  trailingSlash: 'never', // Force URLs sans trailing slash (SEO)
   integrations: [
     react(),
     tailwind({
@@ -111,6 +112,15 @@ export default defineConfig({
     }),
   ],
   redirects: {
+    // Nettoyage URLs obsolètes et -old (fix 404)
+    '/blog/investir-voglans-2025-old': '/blog/investir-voglans-2025',
+    '/blog/vendre-maison-chambery-2025-old': '/blog/vendre-maison-chambery-2025',
+    '/blog/estimation-bien-voglans': '/blog/marche-immobilier-voglans-2025',
+    '/blog/quartiers-chambery': '/blog/installer-chambery-famille-ecoles-vie-locale-securite',
+    '/blog/agence-digitale-fonctionnement': '/blog',
+    '/savoie': '/zone-intervention',
+    '/le-bourget-du-lac': '/estimation/le-bourget-du-lac',
+    
     // Redirections 301 pour variantes d'URL sans tirets
     '/estimationchambery': '/estimation/chambery',
     '/estimationaixlesbains': '/estimation/aix-les-bains',
