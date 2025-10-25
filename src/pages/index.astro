@@ -50,58 +50,8 @@ const websiteSchema = {
   }
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "L'Agence de Voglans",
-  "alternateName": "Agence de Voglans",
-  "url": "https://agencevoglans.fr",
-  "logo": "https://agencevoglans.fr/images/logo-agence-voglans.png",
-  "description": "Agence immobilière 100% locale et humaine à Voglans, Savoie. Expertise en vente, achat et estimation immobilière.",
-  "telephone": "+33757830262",
-  "email": "contact@agencevoglans.fr",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Voglans",
-    "addressLocality": "Voglans",
-    "postalCode": "73420",
-    "addressRegion": "Savoie",
-    "addressCountry": "FR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 45.6167,
-    "longitude": 5.8833
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "87",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Voglans"
-    },
-    {
-      "@type": "City",
-      "name": "Chambéry"
-    },
-    {
-      "@type": "City",
-      "name": "Aix-les-Bains"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Savoie"
-    }
-  ],
-  "sameAs": [
-    "https://agencevoglans.fr"
-  ]
-};
+// organizationSchema supprimé - Déjà défini dans Base.astro avec @graph complet
+// Évite duplication et conflit détecté par Google Rich Results
 
 const faqItems = [
   {
@@ -130,7 +80,7 @@ const faqItems = [
 <Base title="L'Agence de Voglans | Immobilier d'Exception en Savoie">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <!-- organizationSchema défini dans Base.astro avec @graph -->
   </Fragment>
 
   <!-- Hero Section -->

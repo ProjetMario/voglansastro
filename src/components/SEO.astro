@@ -60,47 +60,4 @@ const imageUrl = new URL(image, siteUrl).href;
 <meta name="geo.position" content="45.6167;5.8833" />
 <meta name="ICBM" content="45.6167, 5.8833" />
 
-<!-- Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "L'Agence de Voglans",
-  "description": "Agence immobilière locale spécialisée dans la vente, l'achat et l'estimation de biens immobiliers à Voglans et en Savoie.",
-  "url": "https://agencevoglans.fr",
-  "telephone": "07 57 83 02 62",
-  "email": "contact@agencevoglans.fr",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Voglans",
-    "addressLocality": "Voglans",
-    "postalCode": "73420",
-    "addressRegion": "Savoie",
-    "addressCountry": "FR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 45.6167,
-    "longitude": 5.8833
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "87",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "areaServed": {
-    "@type": "Place",
-    "name": "Savoie, Auvergne-Rhône-Alpes"
-  },
-  "serviceType": [
-    "Vente immobilière",
-    "Achat immobilier",
-    "Estimation immobilière",
-    "Conseil immobilier"
-  ],
-  "priceRange": "€€",
-  "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-12:00"
-}
-</script>
+<!-- Business Schema défini dans Base.astro avec @graph pour éviter duplications -->
