@@ -3,6 +3,7 @@ import Base from '@/layouts/Base.astro';
 import Section from '@/components/ui/Section.astro';
 import Logo from '@/components/Logo.astro';
 import ReviewSchema from '@/components/ReviewSchema.astro';
+import FAQSchema from '@/components/FAQSchema.astro';
 import {
   ArrowDown,
   Calculator,
@@ -72,6 +73,13 @@ const organizationSchema = {
     "latitude": 45.6167,
     "longitude": 5.8833
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "87",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "areaServed": [
     {
       "@type": "City",
@@ -94,6 +102,29 @@ const organizationSchema = {
     "https://agencevoglans.fr"
   ]
 };
+
+const faqItems = [
+  {
+    question: "Combien coûte une estimation immobilière à Voglans ?",
+    answer: "L'estimation immobilière est 100% GRATUITE et sans engagement. Vous recevez votre rapport détaillé sous 48h avec une analyse comparative du marché local."
+  },
+  {
+    question: "Combien de temps pour vendre ma maison en Savoie ?",
+    answer: "Le délai moyen de vente en Savoie est de 75 jours pour un bien correctement estimé. Avec nos photos professionnelles et notre diffusion optimale, nos biens se vendent 15% plus vite que la moyenne."
+  },
+  {
+    question: "Quels secteurs couvrez-vous en Savoie ?",
+    answer: "Nous intervenons à Voglans, Chambéry, Aix-les-Bains, La Ravoire, Bassens et l'ensemble du bassin chambérien. Nous connaissons parfaitement le marché local de chaque commune."
+  },
+  {
+    question: "Pourquoi choisir l'Agence de Voglans ?",
+    answer: "Expertise 100% locale, accompagnement personnalisé, estimation précise basée sur le marché réel (pas d'algorithme), photos professionnelles, diffusion maximale et +200 clients satisfaits avec une note de 4,8/5."
+  },
+  {
+    question: "Comment se déroule une estimation immobilière ?",
+    answer: "1) Vous remplissez le formulaire en ligne (2 min). 2) Nous visitons votre bien (30-45 min). 3) Vous recevez un rapport détaillé sous 48h avec prix recommandé, fourchette de prix et analyse comparative. Sans engagement."
+  }
+];
 ---
 
 <Base title="L'Agence de Voglans | Immobilier d'Exception en Savoie">
@@ -451,3 +482,6 @@ const organizationSchema = {
   const firstCounter = document.querySelector('.count') as HTMLElement;
   if (firstCounter) observer.observe(firstCounter);
 </script>
+
+<!-- FAQ Schema for Featured Snippets -->
+<FAQSchema items={faqItems} />
