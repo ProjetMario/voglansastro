@@ -121,6 +121,9 @@ export default defineConfig({
     '/savoie': '/zone-intervention',
     '/le-bourget-du-lac': '/estimation/le-bourget-du-lac',
     
+    // Redirection page vente dupliquée vers vendre principale
+    '/vente': '/vendre',
+    
     // Redirections 301 pour variantes d'URL sans tirets
     '/estimationchambery': '/estimation/chambery',
     '/estimationaixlesbains': '/estimation/aix-les-bains',

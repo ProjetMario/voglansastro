@@ -3,6 +3,10 @@ import Base from '@/layouts/Base.astro';
 ---
 
 <Base title="Guides Gratuits Immobiliers | L'Agence de Voglans" description="Téléchargez nos 5 guides immobiliers gratuits pour réussir votre projet : vente, diagnostics, estimation, fiscalité, préparation.">
+  <Fragment slot="head">
+    <!-- Canonical URL guides index -->
+    <link rel="canonical" href="https://agencevoglans.fr/guides" />
+  </Fragment>
   <section class="min-h-screen bg-gradient-to-br from-primary/5 via-white to-primary/10 py-20">
     <div class="container mx-auto px-4">
       <div class="max-w-7xl mx-auto">
