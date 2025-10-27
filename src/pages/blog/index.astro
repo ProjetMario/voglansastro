@@ -267,6 +267,10 @@ const description = "📰 Blog Immobilier Voglans & Savoie ⭐ Conseils experts 
 </style>
 
 <Base title={title} description={description}>
+  <Fragment slot="head">
+    <!-- Canonical URL blog index -->
+    <link rel="canonical" href="https://agencevoglans.fr/blog" />
+  </Fragment>
   <!-- Hero Section Ultra-Moderne -->
   <HeroUltra>
     <!-- Menu hamburger mobile sophistiqué -->
