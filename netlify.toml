@@ -5,30 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Force HTTPS et non-www (URL canonique unique)
-[[redirects]]
-  from = "http://agencevoglans.fr/*"
-  to = "https://agencevoglans.fr/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.agencevoglans.fr/*"
-  to = "https://agencevoglans.fr/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.agencevoglans.fr/*"
-  to = "https://agencevoglans.fr/:splat"
-  status = 301
-  force = true
-
-# Supprime trailing slash pour cohérence SEO (sauf homepage)
-[[redirects]]
-  from = "https://agencevoglans.fr/*/"
-  to = "https://agencevoglans.fr/:splat"
-  status = 301
+# Les redirections sont gérées dans public/_redirects (meilleure pratique)
 
 [functions]
   directory = "netlify/functions"
