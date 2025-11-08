@@ -401,8 +401,12 @@ const {
           setTimeout(() => {
             if (window.HubSpotConversations) {
               window.HubSpotConversations.widget.load();
+              // Ouvrir automatiquement le chat après chargement
+              setTimeout(() => {
+                window.HubSpotConversations.widget.open();
+              }, 1000);
             }
-          }, 5000);
+          }, 2000); // Réduit à 2 secondes pour une ouverture plus rapide
         }
       });
     </script>
