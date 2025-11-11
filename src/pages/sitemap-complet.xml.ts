@@ -1,8 +1,7 @@
----
-// Route dynamique pour générer le sitemap complet
+import type { APIRoute } from 'astro';
 import { ALL_SITEMAP_URLS } from '../sitemap-urls.js';
 
-export async function get() {
+export const GET: APIRoute = async () => {
   // Générer le XML du sitemap
   const urlset = ALL_SITEMAP_URLS.map(url => {
     // Déterminer la priorité et la fréquence selon l'URL
@@ -51,12 +50,10 @@ export async function get() {
 ${urlset}
 </urlset>`;
 
-  return {
-    body: sitemap,
+  return new Response(sitemap, {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 'public, max-age=3600' // Cache 1 heure
     }
-  };
-}
----
+  });
+};
