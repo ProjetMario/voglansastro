@@ -16,14 +16,6 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) => !page.includes('/admin/'),
-      customPages: [
-        'https://agencevoglans.fr/',
-        'https://agencevoglans.fr/estimation',
-        'https://agencevoglans.fr/vendre',
-        'https://agencevoglans.fr/acheter',
-        'https://agencevoglans.fr/contact',
-        'https://agencevoglans.fr/blog',
-      ],
       serialize(item) {
         // Homepage - priorité maximale
         if (item.url === 'https://agencevoglans.fr/') {
