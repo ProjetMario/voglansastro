@@ -397,21 +397,24 @@ const description = "📰 Blog Immobilier Voglans & Savoie ⭐ Conseils experts 
 
         <!-- Blog Posts Grid - Responsive amélioré -->
         <div id="blog-posts" class="blog-grid grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto">
-          {posts.map((post, index) => (
-            <div class={`animate-on-scroll ${index % 2 === 0 ? 'sm:mt-0' : 'sm:mt-8'}`}>
-              <BlogPostCard
-                title={post.title}
-                description={post.description}
-                href={post.href}
-                date={post.date}
-                readingTime={post.readingTime}
-                category={post.category}
-                featured={post.featured}
-                image={post.image}
-                tags={post.tags}
-              />
-            </div>
-          ))}
+          {posts.map((post, index) => {
+            const href = post.href.endsWith('/') ? post.href : `${post.href}/`;
+            return (
+              <div class={`animate-on-scroll ${index % 2 === 0 ? 'sm:mt-0' : 'sm:mt-8'}`}>
+                <BlogPostCard
+                  title={post.title}
+                  description={post.description}
+                  href={href}
+                  date={post.date}
+                  readingTime={post.readingTime}
+                  category={post.category}
+                  featured={post.featured}
+                  image={post.image}
+                  tags={post.tags}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <!-- Indicateur de scroll avec storytelling -->

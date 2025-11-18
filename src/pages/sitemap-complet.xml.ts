@@ -561,7 +561,11 @@ const ALL_SITEMAP_URLS = [
 
 export const GET: APIRoute = async () => {
   // Générer le XML du sitemap
-  const urlset = ALL_SITEMAP_URLS.map(url => {
+  const urlset = ALL_SITEMAP_URLS.map(originalUrl => {
+    // Normaliser les URLs de blog avec un trailing slash pour éviter les redirections 301
+    const url = originalUrl.includes('/blog/') && !originalUrl.endsWith('/')
+      ? `${originalUrl}/`
+      : originalUrl;
     // Déterminer la priorité et la fréquence selon l'URL
     let priority = '0.5';
     let changefreq = 'monthly';

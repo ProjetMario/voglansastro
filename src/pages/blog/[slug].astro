@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const canonicalUrl = `https://agencevoglans.fr${post.href}`;
+const canonicalUrl = `https://agencevoglans.fr${post.href.endsWith('/') ? post.href : post.href + '/'}`;
 const imageUrl = post.image || 'https://agencevoglans.fr/images/og-default.jpg';
 
 // Maillage interne intelligent : trouver 4-5 articles connexes

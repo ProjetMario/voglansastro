@@ -3,6 +3,7 @@
 ## 🎯 Structure d'un Article Parfait (1500-2000 mots)
 
 ### 1. **Front Matter (Métadonnées)**
+
 ```astro
 ---
 import Base from '@/layouts/Base.astro';
@@ -91,6 +92,7 @@ const articleSchema = {
 ## 🏗️ **Structure Type d'Article**
 
 ### **1. Hero Section (Above the fold)**
+
 ```astro
 <HeroUltra>
   <div slot="badge">
@@ -115,6 +117,7 @@ const articleSchema = {
 ```
 
 ### **2. Introduction (100-150 mots)**
+
 ```html
 <section class="py-24 bg-white">
   <div class="container mx-auto px-4">
@@ -153,6 +156,7 @@ const articleSchema = {
 ```
 
 ### **3. Table des Matières (Optionnel mais recommandé pour articles >1500 mots)**
+
 ```html
       <!-- Table des matières -->
       <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
@@ -170,6 +174,7 @@ const articleSchema = {
 ```
 
 ### **4. Sections de Contenu (3-5 sections H2)**
+
 ```html
       <!-- Section 1 -->
       <article id="section-1" class="mb-20">
@@ -241,6 +246,7 @@ const articleSchema = {
 ```
 
 ### **5. Tableau de Données (Optimisé SEO)**
+
 ```html
       <!-- Tableau (très bon pour SEO) -->
       <div class="overflow-x-auto mb-12">
@@ -268,6 +274,7 @@ const articleSchema = {
 ```
 
 ### **6. FAQ Section (Optimisé Featured Snippet)**
+
 ```html
       <!-- FAQ (excellent pour SEO + Featured Snippets) -->
       <section class="mb-20">
@@ -295,6 +302,7 @@ const articleSchema = {
 ```
 
 ### **7. Conclusion + CTA Final**
+
 ```html
       <!-- Conclusion -->
       <section class="mb-16">
@@ -325,6 +333,7 @@ const articleSchema = {
 ```
 
 ### **8. Liens Internes (Obligatoire)**
+
 ```html
       <!-- Articles connexes -->
       <section class="mt-20 pt-12 border-t border-gray-200">
@@ -355,6 +364,7 @@ const articleSchema = {
 ## 🎨 **Éléments Visuels Recommandés**
 
 ### **Images**
+
 ```html
 <!-- Image avec alt text optimisé -->
 <figure class="my-12">
@@ -373,6 +383,7 @@ const articleSchema = {
 ```
 
 ### **Cartes Statistiques**
+
 ```html
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
   <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center">
@@ -388,11 +399,13 @@ const articleSchema = {
 ## 📊 **Mots-Clés : Stratégie d'Intégration**
 
 ### **Densité Optimale**
+
 - **Mot-clé principal** : 1-2% (10-20 fois dans un article de 1500 mots)
 - **Mots-clés secondaires** : 0.5-1% (5-10 fois)
 - **Mots-clés longue traîne** : 2-3 fois
 
 ### **Emplacements Stratégiques**
+
 1. ✅ Titre H1 (début si possible)
 2. ✅ URL slug
 3. ✅ Meta description
@@ -406,7 +419,7 @@ const articleSchema = {
 Pour un article sur "Prix immobilier Savoie 2025" :
 
 - **Mot-clé principal** : "prix immobilier Savoie 2025" (15 fois)
-- **Secondaires** : 
+- **Secondaires** :
   - "marché immobilier Savoie" (8 fois)
   - "estimation immobilière Savoie" (6 fois)
   - "tendances immobilier 2025" (5 fois)
@@ -419,6 +432,7 @@ Pour un article sur "Prix immobilier Savoie 2025" :
 ## 🔗 **Stratégie de Liens**
 
 ### **Liens Internes (3-5 minimum)**
+
 ```html
 <!-- Lien vers page estimation -->
 <a href="/estimation" class="text-primary hover:underline font-semibold">
@@ -437,6 +451,7 @@ Pour un article sur "Prix immobilier Savoie 2025" :
 ```
 
 ### **Liens Externes (2-3 vers sources fiables)**
+
 ```html
 <!-- Source officielle -->
 <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" 
