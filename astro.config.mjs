@@ -15,7 +15,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/admin/'),
+      filter: (page) => !page.includes('/admin/') && page !== '/about' && page !== '/achat',
       serialize(item) {
         // Homepage - priorité maximale
         if (item.url === 'https://agencevoglans.fr/') {
@@ -112,6 +112,10 @@ export default defineConfig({
     '/blog/agence-digitale-fonctionnement': '/blog',
     '/savoie': '/zone-intervention',
     '/le-bourget-du-lac': '/estimation/le-bourget-du-lac',
+
+    // Canonicalisation pages alias (éviter pages avec redirection dans GSC)
+    '/about': '/a-propos',
+    '/achat': '/acheter',
     
     // Redirection page vente dupliquée vers vendre principale
     '/vente': '/vendre',

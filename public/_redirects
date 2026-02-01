@@ -2,6 +2,14 @@
 # IMPORTANT : Ne PAS ajouter de redirection trailing slash ici
 # Astro gère déjà les trailing slashes via trailingSlash: 'never'
 
+ # Fix redirection chains (www/http + legacy routes) in ONE hop
+ http://agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
+ http://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
+ https://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
+ http://agencevoglans.fr/achat https://agencevoglans.fr/acheter 301!
+ http://www.agencevoglans.fr/achat https://agencevoglans.fr/acheter 301!
+ https://www.agencevoglans.fr/achat https://agencevoglans.fr/acheter 301!
+
 # Force HTTPS (HTTP -> HTTPS)
 http://agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
 http://www.agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
@@ -14,3 +22,7 @@ https://www.agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
 /savoie /zone-intervention 301
 /le-bourget-du-lac /estimation/le-bourget-du-lac 301
 /blog/vendre-villa-prestige-tressserve-strategie-discretion /blog/vendre-villa-prestige-tresserve-strategie-discretion 301
+
+ # Alias pages (éviter duplication / cannibalisation)
+ /about /a-propos 301
+ /achat /acheter 301
