@@ -54,10 +54,32 @@ const imageUrl = new URL(image, siteUrl).href;
 <meta name="theme-color" content="#1E5F4F" />
 <meta name="msapplication-TileColor" content="#1E5F4F" />
 
-<!-- Geo Tags -->
+<!-- Geo Tags (SEO Local) -->
 <meta name="geo.region" content="FR-73" />
-<meta name="geo.placename" content="Voglans, Savoie" />
+<meta name="geo.placename" content="Voglans, Savoie, France" />
 <meta name="geo.position" content="45.6167;5.8833" />
 <meta name="ICBM" content="45.6167, 5.8833" />
+
+<!-- Extended Geo Tags for Local SEO -->
+<meta name="DC.title" content={fullTitle} />
+<meta name="DC.creator" content="L'Agence de Voglans" />
+<meta name="DC.subject" content="Immobilier, Agence immobilière, Savoie, Voglans, Chambéry, Aix-les-Bains" />
+<meta name="DC.description" content={description} />
+<meta name="DC.publisher" content="L'Agence de Voglans" />
+<meta name="DC.coverage" content="Savoie, Auvergne-Rhône-Alpes, France" />
+<meta name="DC.language" content="fr" />
+
+<!-- Local Business Tags -->
+<meta name="business:contact_data:street_address" content="93 Chemin de la Combe" />
+<meta name="business:contact_data:locality" content="Voglans" />
+<meta name="business:contact_data:region" content="Savoie" />
+<meta name="business:contact_data:postal_code" content="73420" />
+<meta name="business:contact_data:country_name" content="France" />
+<meta name="business:contact_data:phone_number" content="+33757830262" />
+<meta name="business:contact_data:website" content="https://agencevoglans.fr" />
+
+<!-- Place Tags for Google -->
+<meta name="place:location:latitude" content="45.6167" />
+<meta name="place:location:longitude" content="5.8833" />
 
 <!-- Business Schema défini dans Base.astro avec @graph pour éviter duplications -->
