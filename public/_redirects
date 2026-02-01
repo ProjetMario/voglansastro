@@ -26,3 +26,26 @@ https://www.agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
  # Alias pages (éviter duplication / cannibalisation)
  /about /a-propos 301
  /achat /acheter 301
+
+# Fix 404 - Pages villes manquantes (redirection vers pages génériques)
+# Vimines
+/locaux-commerciaux-vimines /locaux-commerciaux 301
+/vendre-terrain-vimines /vendre-terrain 301
+
+# Le Viviers (typo pour viviers-du-lac)
+/immeuble-rapport-le-viviers /immeubles-rapport 301
+/vendre-appartement-le-viviers /vendre-appartement 301
+/locaux-commerciaux-le-viviers /locaux-commerciaux 301
+
+# Saint-Baldoph
+/propriete-prestige-saint-baldoph /proprietes-prestige 301
+
+# Brison-Saint-Innocent
+/vendre-terrain-brison-saint-innocent /vendre-terrain 301
+/immeuble-rapport-brison-saint-innocent /immeubles-rapport 301
+
+# Montagnole
+/fonds-commerce-montagnole /fonds-commerce 301
+
+# La Chapelle-du-Mont-du-Chat
+/immeuble-rapport-la-chapelle-du-mont-du-chat /immeubles-rapport 301
