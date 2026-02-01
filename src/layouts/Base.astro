@@ -3,8 +3,14 @@ import Navigation from '@/components/Navigation.astro';
 import Footer from '@/components/Footer.astro';
 import SEO from '@/components/SEO.astro';
 import ContactSection from '@/components/ui/ContactSection.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/lib/utils';
 import '@/styles/global.css';
+
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
 
 export interface Props {
   title?: string;
@@ -12,6 +18,7 @@ export interface Props {
   image?: string;
   type?: 'website' | 'article';
   noIndex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const {
@@ -20,6 +27,7 @@ const {
   image = '/images/og-default.jpg',
   type = 'website',
   noIndex = false,
+  breadcrumbs,
 } = Astro.props;
 ---
 
@@ -343,6 +351,12 @@ const {
   
   <body class="min-h-screen bg-background text-foreground antialiased">
     <Navigation />
+    
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <div class="container mx-auto px-4">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+    )}
     
     <main>
       <slot />
