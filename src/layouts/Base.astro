@@ -47,8 +47,11 @@ const {
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://js-eu1.hs-scripts.com" />
     
+    <!-- Preload Critical Fonts (Core Web Vitals - LCP optimization) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" />
+    
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/images/logo-agence-voglans.png" as="image" type="image/png" />
+    <link rel="preload" href="/images/logo-agence-voglans.png" as="image" type="image/png" fetchpriority="high" />
     
     <!-- Resource Hints for Performance -->
     <link rel="prefetch" href="/estimation" />
