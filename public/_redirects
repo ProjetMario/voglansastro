@@ -1,8 +1,10 @@
 # Redirections Netlify - Gestion des URL canoniques
-# IMPORTANT : Ne PAS ajouter de redirection trailing slash ici
-# Astro gère déjà les trailing slashes via trailingSlash: 'never'
 
- # Fix redirection chains (www/http + legacy routes) in ONE hop
+# Force suppression trailing slash (canonical = sans slash)
+# Cette règle redirige /path/ vers /path pour toutes les URLs
+/*/ /:splat 301!
+
+# Fix redirection chains (www/http + legacy routes) in ONE hop
  http://agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
  http://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
  https://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
@@ -49,3 +51,11 @@ https://www.agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
 
 # La Chapelle-du-Mont-du-Chat
 /immeuble-rapport-la-chapelle-du-mont-du-chat /immeubles-rapport 301
+
+# Fix "Explorée non indexée" - Articles blog manquants
+/blog/maison-perd-500-euros-mois-attendre-pourquoi /blog 301
+/blog/acheter-residence-secondaire-lac-bourget-choix-strategique /blog 301
+/blog/vendre-tresserve-secteur-haut-gamme-bord-lac /blog 301
+/blog/estimation-quartier-puer-aix-les-bains-familial-recherche /blog 301
+/blog/mairie-bassens-guide-complet /blog 301
+/blog/prix-immobilier-quartier-verney-chambery-opportunites-2025 /blog 301
