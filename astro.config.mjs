@@ -149,8 +149,17 @@ export default defineConfig({
     '/estimationleviviers': '/estimation/le-viviers',
   },
   compressHTML: true,
+  image: {
+    // Optimisation automatique des images (WebP, AVIF)
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+    domains: ['agencevoglans.fr'],
+    remotePatterns: [{ protocol: 'https' }],
+  },
   build: {
     inlineStylesheets: 'auto',
+    assets: '_astro',
   },
   vite: {
     resolve: {
