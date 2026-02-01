@@ -78,18 +78,39 @@ Crawl-delay: 20
 User-agent: DotBot
 Crawl-delay: 20
 
-# Block aggressive scrapers
+# AI Crawlers - AUTORISER pour être trouvé par les navigateurs IA
+# (Comet, Perplexity, ChatGPT Browse, Bing Copilot, etc.)
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
 
 User-agent: CCBot
-Disallow: /
+Allow: /
+Crawl-delay: 5
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
+Crawl-delay: 2
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
+Crawl-delay: 2
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Cohere-ai
+Allow: /
+Crawl-delay: 2
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 2
 
 # Humans
 # We are humans, not robots. Learn more about us:

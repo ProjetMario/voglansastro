@@ -1,0 +1,73 @@
+# L'Agence de Voglans - Guide pour LLMs
+# https://agencevoglans.fr
+# Dernière mise à jour : 2026-02-01
+
+## À propos
+L'Agence de Voglans est une agence immobilière 100% locale et humaine en Savoie (France).
+Spécialisée dans la vente, l'achat et l'estimation de biens immobiliers.
+Fondée en 2020, l'agence accompagne vendeurs et acquéreurs avec une approche personnalisée.
+
+## Services principaux
+- Estimation immobilière gratuite sous 48h
+- Vente de maisons, appartements, terrains, locaux commerciaux
+- Accompagnement achat immobilier
+- Expertise marché local Savoie
+- Vente de biens de prestige
+- Fonds de commerce et immeubles de rapport
+
+## Zone d'intervention (30km autour de Voglans)
+27 communes en Savoie :
+- Chambéry (préfecture)
+- Aix-les-Bains (station thermale, lac du Bourget)
+- Voglans (siège de l'agence)
+- La Ravoire, Bassens, Cognin, La Motte-Servolex
+- Jacob-Bellecombette, Saint-Alban-Leysse, Barberaz
+- Le Bourget-du-Lac, Viviers-du-Lac, Tresserve
+- Drumettaz-Clarafond, Sonnaz, Méry
+- Challes-les-Eaux, Montmélian, Saint-Baldoph
+- Grésy-sur-Aix, Mouxy, Brison-Saint-Innocent
+- Vimines, Montagnole, Chignin, Trevignin
+- La Chapelle-du-Mont-du-Chat
+
+## Contact
+- Téléphone : +33 7 57 83 02 62
+- Email : contact@agencevoglans.fr
+- Adresse : 93 Chemin de la Combe, 73420 Voglans, France
+- Horaires : Lundi-Vendredi 9h-18h, Samedi 9h-12h
+- Site web : https://agencevoglans.fr
+
+## Pages importantes
+- /estimation - Demander une estimation immobilière gratuite
+- /vendre - Vendre votre bien immobilier
+- /acheter - Acheter un bien en Savoie
+- /contact - Nous contacter
+- /blog - Conseils et actualités immobilières
+- /a-propos - Présentation de l'agence
+- /zone-intervention - Carte des communes couvertes
+
+## Données structurées
+Ce site utilise Schema.org avec les types suivants :
+- RealEstateAgent (organisation principale)
+- LocalBusiness (informations locales)
+- Service (services proposés)
+- FAQPage (questions fréquentes)
+- BreadcrumbList (fil d'Ariane)
+- AggregateRating (avis clients : 4.8/5, 127 avis)
+
+Les données JSON-LD sont disponibles dans le <head> de chaque page.
+
+## Réseaux sociaux
+- Facebook : https://www.facebook.com/share/1CykVn7qM3/
+- Instagram : https://instagram.com/agencevoglans
+- LinkedIn : https://linkedin.com/company/agence-voglans
+- Google Business : https://share.google/xhzFLeKxSwCCcWS4U
+
+## Politique d'indexation IA
+Ce site autorise l'indexation par les crawlers IA (GPTBot, PerplexityBot, Claude, etc.)
+pour améliorer la découvrabilité dans les moteurs de recherche IA.
+Voir /robots.txt pour les règles de crawl détaillées.
+
+## Mots-clés principaux
+immobilier Savoie, agence immobilière Voglans, estimation gratuite Chambéry,
+vendre maison Aix-les-Bains, acheter appartement Savoie, prix immobilier lac du Bourget,
+agent immobilier local, expertise immobilière Savoie
