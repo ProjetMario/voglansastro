@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 96, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 83, in main
+    response = publisher(body=body).execute()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:481475134747'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'consumer': 'projects/481475134747', 'quota_metric': 'indexing.googleapis.com/v3_publish_requests', 'quota_limit_value': '200', 'quota_limit': 'DefaultPublishRequestsPerDayPerProject', 'service': 'indexing.googleapis.com', 'quota_unit': '1/d/{project}'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 96, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 83, in main
+    response = publisher(body=body).execute()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:481475134747'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'indexing.googleapis.com', 'quota_metric': 'indexing.googleapis.com/v3_publish_requests', 'quota_limit_value': '200', 'quota_location': 'global', 'consumer': 'projects/481475134747', 'quota_unit': '1/d/{project}', 'quota_limit': 'DefaultPublishRequestsPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">

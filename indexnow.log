@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 82, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 78, in main
+    push_to_indexnow(urls)
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 69, in push_to_indexnow
+    raise RuntimeError(
+RuntimeError: IndexNow error 429: {"code":"TooManyRequests","message":"We're sorry, but you have sent too many requests to us recently."}
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 82, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 78, in main
+    push_to_indexnow(urls)
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/scripts/indexnow_push.py", line 69, in push_to_indexnow
+    raise RuntimeError(
+RuntimeError: IndexNow error 429: {"code":"TooManyRequests","message":"We're sorry, but you have sent too many requests to us recently."}
