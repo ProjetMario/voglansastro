@@ -1,9 +1,5 @@
 # Redirections Netlify - Gestion des URL canoniques
 
-# Force suppression trailing slash (canonical = sans slash)
-# Cette règle redirige /path/ vers /path pour toutes les URLs
-/*/ /:splat 301!
-
 # Fix redirection chains (www/http + legacy routes) in ONE hop
  http://agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
  http://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
