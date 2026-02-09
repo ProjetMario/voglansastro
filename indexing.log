@@ -22,3 +22,675 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
     raise HttpError(resp, content, uri=self.uri)
 googleapiclient.errors.HttpError: <HttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:481475134747'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'indexing.googleapis.com', 'quota_metric': 'indexing.googleapis.com/v3_publish_requests', 'quota_limit_value': '200', 'quota_location': 'global', 'consumer': 'projects/481475134747', 'quota_unit': '1/d/{project}', 'quota_limit': 'DefaultPublishRequestsPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/httplib2/__init__.py", line 1369, in _conn_request
+    conn.connect()
+  File "/usr/local/lib/python3.11/site-packages/httplib2/__init__.py", line 1145, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.14_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/google_auth_httplib2.py", line 117, in __call__
+    response, data = self.http.request(
+                     ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/httplib2/__init__.py", line 1727, in request
+    (response, content) = self._request(
+                          ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/httplib2/__init__.py", line 1447, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/httplib2/__init__.py", line 1376, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.error.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 96, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 83, in main
+    response = publisher(body=body).execute()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/google_auth_httplib2.py", line 207, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File "/usr/local/lib/python3.11/site-packages/google/auth/credentials.py", line 230, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.11/site-packages/google/auth/credentials.py", line 193, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.11/site-packages/google/auth/credentials.py", line 367, in refresh
+    self._perform_refresh_token(request)
+  File "/usr/local/lib/python3.11/site-packages/google/oauth2/service_account.py", line 457, in _perform_refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/google/oauth2/_client.py", line 303, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/google/oauth2/_client.py", line 263, in _token_endpoint_request
+    ) = _token_endpoint_request_no_throw(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/google_auth_httplib2.py", line 124, in __call__
+    raise exceptions.TransportError(exc)
+google.auth.exceptions.TransportError: Unable to find the server at oauth2.googleapis.com
+[1/186] https://agencevoglans.fr/ -> OK at N/A
+[2/186] https://agencevoglans.fr/estimation -> OK at N/A
+[3/186] https://agencevoglans.fr/vendre -> OK at N/A
+[4/186] https://agencevoglans.fr/acheter -> OK at N/A
+[5/186] https://agencevoglans.fr/contact -> OK at N/A
+[6/186] https://agencevoglans.fr/a-propos -> OK at N/A
+[7/186] https://agencevoglans.fr/blog -> OK at N/A
+[8/186] https://agencevoglans.fr/zone-intervention -> OK at N/A
+[9/186] https://agencevoglans.fr/investisseurs -> OK at N/A
+[10/186] https://agencevoglans.fr/sitemap -> OK at N/A
+[11/186] https://agencevoglans.fr/estimation/chambery -> OK at N/A
+[12/186] https://agencevoglans.fr/estimation/la-ravoire -> OK at N/A
+[13/186] https://agencevoglans.fr/estimation/voglans -> OK at N/A
+[14/186] https://agencevoglans.fr/estimation/aix-les-bains -> OK at N/A
+[15/186] https://agencevoglans.fr/estimation/barberaz -> OK at N/A
+[16/186] https://agencevoglans.fr/estimation/bassens -> OK at N/A
+[17/186] https://agencevoglans.fr/estimation/cognin -> OK at N/A
+[18/186] https://agencevoglans.fr/estimation/jacob-bellecombette -> OK at N/A
+[19/186] https://agencevoglans.fr/estimation/saint-alban-leysse -> OK at N/A
+[20/186] https://agencevoglans.fr/estimation/la-motte-servolex -> OK at N/A
+[21/186] https://agencevoglans.fr/estimation/sonnaz -> OK at N/A
+[22/186] https://agencevoglans.fr/estimation/challes-les-eaux -> OK at N/A
+[23/186] https://agencevoglans.fr/estimation/saint-baldoph -> OK at N/A
+[24/186] https://agencevoglans.fr/estimation/vimines -> OK at N/A
+[25/186] https://agencevoglans.fr/estimation/montagnole -> OK at N/A
+[26/186] https://agencevoglans.fr/estimation/gresy-sur-aix -> OK at N/A
+[27/186] https://agencevoglans.fr/estimation/tresserve -> OK at N/A
+[28/186] https://agencevoglans.fr/estimation/mouxy -> OK at N/A
+[29/186] https://agencevoglans.fr/estimation/brison-saint-innocent -> OK at N/A
+[30/186] https://agencevoglans.fr/estimation/drumettaz-clarafond -> OK at N/A
+[31/186] https://agencevoglans.fr/estimation/le-bourget-du-lac -> OK at N/A
+[32/186] https://agencevoglans.fr/estimation/viviers-du-lac -> OK at N/A
+[33/186] https://agencevoglans.fr/estimation/mery -> OK at N/A
+[34/186] https://agencevoglans.fr/estimation/bourdeau -> OK at N/A
+[35/186] https://agencevoglans.fr/estimation/la-chapelle-du-mont-du-chat -> OK at N/A
+[36/186] https://agencevoglans.fr/estimation/le-viviers -> OK at N/A
+[37/186] https://agencevoglans.fr/blog/investir-landiers-chambery -> OK at N/A
+[38/186] https://agencevoglans.fr/blog/zone-commerciale-landiers-chambery -> OK at N/A
+[39/186] https://agencevoglans.fr/blog/vendre-maison-chambery-2025 -> OK at N/A
+[40/186] https://agencevoglans.fr/blog/acheter-lac-bourget-2025 -> OK at N/A
+[41/186] https://agencevoglans.fr/blog/investir-voglans-2025 -> OK at N/A
+[42/186] https://agencevoglans.fr/blog/marche-immobilier-voglans-2025 -> OK at N/A
+[43/186] https://agencevoglans.fr/blog/investir-voglans-savoie -> OK at N/A
+[44/186] https://agencevoglans.fr/blog/quartiers-voglans-guide-complet -> OK at N/A
+[45/186] https://agencevoglans.fr/blog/prix-immobilier-aix-les-bains-lac-bourget-2025 -> OK at N/A
+[46/186] https://agencevoglans.fr/blog/estimation-maison-voglans-2025 -> OK at N/A
+[47/186] https://agencevoglans.fr/blog/vendre-maison-mery-conseils-rapides -> OK at N/A
+[48/186] https://agencevoglans.fr/blog/erreurs-vente-maison-chambery -> OK at N/A
+[49/186] https://agencevoglans.fr/blog/estimation-immobiliere-la-motte-servolex-2025 -> OK at N/A
+[50/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-tresserve-marche-lac -> OK at N/A
+[51/186] https://agencevoglans.fr/blog/estimation-appartement-aix-les-bains-centre-marlioz -> OK at N/A
+[52/186] https://agencevoglans.fr/blog/vendre-rapidement-drumettaz-pugny-chatenod -> OK at N/A
+[53/186] https://agencevoglans.fr/blog/meilleur-moment-vendre-voglans-bourget-du-lac -> OK at N/A
+[54/186] https://agencevoglans.fr/blog/immobilier-chambery-vendre-maintenant-ou-attendre-2026 -> OK at N/A
+[55/186] https://agencevoglans.fr/blog/home-staging-sublimer-maison-avant-vente-savoie -> OK at N/A
+[56/186] https://agencevoglans.fr/blog/marche-immobilier-chambery-ou-investir-vendre-2025 -> OK at N/A
+[57/186] https://agencevoglans.fr/blog/preparer-vente-maison-la-motte-servolex -> OK at N/A
+[58/186] https://agencevoglans.fr/blog/diagnostics-immobiliers-2025-changements-vendeurs-savoie -> OK at N/A
+[59/186] https://agencevoglans.fr/blog/estimation-maison-saint-baldoph-marche-dynamique-2025 -> OK at N/A
+[60/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-evolution-prix-3-ans -> OK at N/A
+[61/186] https://agencevoglans.fr/blog/vendre-seul-avec-aide-agence-locale-voglans -> OK at N/A
+[62/186] https://agencevoglans.fr/blog/vendre-sans-agence-aix-les-bains-bonne-ou-mauvaise-idee -> OK at N/A
+[63/186] https://agencevoglans.fr/blog/mandat-exclusif-ou-simple-chambery-verite -> OK at N/A
+[64/186] https://agencevoglans.fr/blog/temoignage-vente-rapide-viviers-du-lac-15-jours -> OK at N/A
+[65/186] https://agencevoglans.fr/blog/vendeurs-regrettent-fixer-prix-eux-memes -> OK at N/A
+[66/186] https://agencevoglans.fr/blog/impot-plus-value-vendre-malin-aix-les-bains-2025 -> OK at N/A
+[67/186] https://agencevoglans.fr/blog/vendre-printemps-voglans-moment-ideal-prix -> OK at N/A
+[68/186] https://agencevoglans.fr/blog/agence-locale-vend-mieux-que-grande-franchise -> OK at N/A
+[69/186] https://agencevoglans.fr/blog/immobilier-chambery-2025-vendeurs-reprennent-main -> OK at N/A
+[70/186] https://agencevoglans.fr/blog/preparer-mise-en-vente-maison-viviers-du-lac -> OK at N/A
+[71/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-exclusif-lac-bourget -> OK at N/A
+[72/186] https://agencevoglans.fr/blog/prix-m2-aix-les-bains-communes-voisines -> OK at N/A
+[73/186] https://agencevoglans.fr/blog/estimation-maison-mery-criteres-acheteurs-2025 -> OK at N/A
+[74/186] https://agencevoglans.fr/blog/vendre-chambery-ou-drumettaz-biens-partent-vite -> OK at N/A
+[75/186] https://agencevoglans.fr/blog/erreurs-font-fuir-acheteurs-chambery -> OK at N/A
+[76/186] https://agencevoglans.fr/blog/estimation-villa-vue-lac-bourget-du-lac -> OK at N/A
+[77/186] https://agencevoglans.fr/blog/maison-trevignin-vendue-15-jours-cas-concret -> OK at N/A
+[78/186] https://agencevoglans.fr/blog/taxe-fonciere-dpe-diagnostics-vendre-sans-stress-savoie -> OK at N/A
+[79/186] https://agencevoglans.fr/blog/2025-annee-ideale-vendre-bassin-aixois -> OK at N/A
+[80/186] https://agencevoglans.fr/blog/5-communes-chambery-maisons-vendent-plus-vite -> OK at N/A
+[81/186] https://agencevoglans.fr/blog/biens-vendent-mieux-aix-les-bains-2025 -> OK at N/A
+[82/186] https://agencevoglans.fr/blog/deroulement-estimation-domicile-voglans -> OK at N/A
+[83/186] https://agencevoglans.fr/blog/vendre-residence-secondaire-lac-bourget-acheteurs-lyon-geneve -> OK at N/A
+[84/186] https://agencevoglans.fr/blog/valeur-appartement-vue-lac-aix-les-bains-2025 -> OK at N/A
+[85/186] https://agencevoglans.fr/blog/vendre-maison-caractere-chambery-valoriser-ancien -> OK at N/A
+[86/186] https://agencevoglans.fr/blog/vendre-bien-herite-voglans-sans-blocage-familial -> OK at N/A
+[87/186] https://agencevoglans.fr/blog/terrains-constructibles-chambery-prix-explosent-vendre-maintenant -> OK at N/A
+[88/186] https://agencevoglans.fr/blog/vendre-logement-dpe-f-g-aix-les-bains-solutions-2026 -> OK at N/A
+[89/186] https://agencevoglans.fr/blog/vendre-maison-renover-tresserve-mery-sans-brader -> OK at N/A
+[90/186] https://agencevoglans.fr/blog/maisons-piscine-lac-bourget-vendent-20-pourcent-plus-cher -> OK at N/A
+[91/186] https://agencevoglans.fr/blog/vendre-vite-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[92/186] https://agencevoglans.fr/blog/vendre-villa-prestige-tresserve-strategie-discretion -> OK at N/A
+[93/186] https://agencevoglans.fr/blog/vendre-bien-atypique-savoie-grange-loft-commerce -> OK at N/A
+[94/186] https://agencevoglans.fr/blog/estimation-immobiliere-voglans-73420-prix-conseils-vente -> OK at N/A
+[95/186] https://agencevoglans.fr/blog/vendre-maison-la-motte-servolex-prix-m2-2025-astuces -> OK at N/A
+[96/186] https://agencevoglans.fr/blog/estimation-maison-sonnaz-gratuite-marche-2025 -> OK at N/A
+[97/186] https://agencevoglans.fr/blog/estimation-maison-mery-marche-familial-demande -> OK at N/A
+[98/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-haut-gamme-lac-bourget -> OK at N/A
+[99/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-prix-m2-estimation-maison -> OK at N/A
+[100/186] https://agencevoglans.fr/blog/prix-immobilier-bourget-du-lac-vendre-meilleur-moment -> OK at N/A
+[101/186] https://agencevoglans.fr/blog/estimation-maison-drumettaz-clarafond-marche-essor -> OK at N/A
+[102/186] https://agencevoglans.fr/blog/vendre-maison-pugny-chatenod-fixer-bon-prix -> OK at N/A
+[103/186] https://agencevoglans.fr/blog/estimation-maison-trevignin-secteur-recherche-aix -> OK at N/A
+[104/186] https://agencevoglans.fr/blog/immobilier-saint-baldoph-prix-grimpent-vendre -> OK at N/A
+[105/186] https://agencevoglans.fr/blog/estimation-chignin-maisons-vignes-charme-savoyard -> OK at N/A
+[106/186] https://agencevoglans.fr/blog/vendre-cognin-marche-immobilier-2025-guide -> OK at N/A
+[107/186] https://agencevoglans.fr/blog/estimation-maison-jacob-bellecombette-marche-recherche -> OK at N/A
+[108/186] https://agencevoglans.fr/blog/prix-m2-barberaz-conseils-vendre-maison -> OK at N/A
+[109/186] https://agencevoglans.fr/blog/estimation-challes-les-eaux-prix-montent-2025 -> OK at N/A
+[110/186] https://agencevoglans.fr/blog/vendre-maison-saint-alban-leysse-guide-complet-2025 -> OK at N/A
+[111/186] https://agencevoglans.fr/blog/estimation-maison-les-deserts-marche-calme-porteur -> OK at N/A
+[112/186] https://agencevoglans.fr/blog/vendre-chalet-revard-prix-marche-saison -> OK at N/A
+[113/186] https://agencevoglans.fr/blog/estimation-montagnole-vendre-vite-secteur-prise -> OK at N/A
+[114/186] https://agencevoglans.fr/blog/vendre-maison-brison-saint-innocent-marche-recherche-lac -> OK at N/A
+[115/186] https://agencevoglans.fr/blog/estimation-immobiliere-mouxy-prix-montent-2025 -> OK at N/A
+[116/186] https://agencevoglans.fr/blog/immobilier-gresy-sur-aix-valeur-maison-2025 -> OK at N/A
+[117/186] https://agencevoglans.fr/blog/vendre-maison-alby-sur-cheran-entre-annecy-aix-dynamique -> OK at N/A
+[118/186] https://agencevoglans.fr/blog/estimation-maison-saint-offenge-atouts-village-recherche -> OK at N/A
+[119/186] https://agencevoglans.fr/blog/vendre-saint-jean-arvey-maisons-terrain-cote -> OK at N/A
+[120/186] https://agencevoglans.fr/blog/estimation-immobiliere-lescheraines-marche-nature-lacs-montagnes -> OK at N/A
+[121/186] https://agencevoglans.fr/blog/vendre-la-ravoire-proximite-immediate-chambery -> OK at N/A
+[122/186] https://agencevoglans.fr/blog/immobilier-barby-valeur-bien-2025 -> OK at N/A
+[123/186] https://agencevoglans.fr/blog/vendre-maison-saint-cassin-marche-essor-10min-chambery -> OK at N/A
+[124/186] https://agencevoglans.fr/blog/estimation-maison-saint-sulpice-campagne-prisee-lac-bourget -> OK at N/A
+[125/186] https://agencevoglans.fr/blog/immobilier-les-echelles-vendre-rapidement-reconversion -> OK at N/A
+[126/186] https://agencevoglans.fr/blog/vendre-saint-pierre-curtille-charme-lac-patrimoine -> OK at N/A
+[127/186] https://agencevoglans.fr/blog/estimation-immobiliere-saint-ours-marche-hausse -> OK at N/A
+[128/186] https://agencevoglans.fr/blog/vendre-hautecombe-cadre-exceptionnel-biens-rares -> OK at N/A
+[129/186] https://agencevoglans.fr/blog/prix-immobilier-cusy-valeur-sure-aix-annecy -> OK at N/A
+[130/186] https://agencevoglans.fr/blog/vendre-drumettaz-equilibre-campagne-ville -> OK at N/A
+[131/186] https://agencevoglans.fr/blog/immobilier-albens-pole-attractif-chambery-annecy -> OK at N/A
+[132/186] https://agencevoglans.fr/blog/estimation-maison-la-biolle-marche-actif-aix -> OK at N/A
+[133/186] https://agencevoglans.fr/blog/vendre-bien-gresy-sur-isere-secteur-devenir-combe-savoie -> OK at N/A
+[134/186] https://agencevoglans.fr/blog/7-signes-temps-vendre-maison -> OK at N/A
+[135/186] https://agencevoglans.fr/blog/pourquoi-attendre-fait-perdre-argent-vente -> OK at N/A
+[136/186] https://agencevoglans.fr/blog/vendeurs-attendu-6-mois-trop-retour-experience -> OK at N/A
+[137/186] https://agencevoglans.fr/blog/vendre-apres-divorce-bons-choix-immobiliers -> OK at N/A
+[138/186] https://agencevoglans.fr/blog/vendre-acheter-plus-grand-double-projet-chambery -> OK at N/A
+[139/186] https://agencevoglans.fr/blog/vendre-5-10-pourcent-plus-cher-sans-travaux -> OK at N/A
+[140/186] https://agencevoglans.fr/blog/petites-renovations-grimper-valeur-maison-savoie -> OK at N/A
+[141/186] https://agencevoglans.fr/blog/savoir-si-maison-sous-evaluee -> OK at N/A
+[142/186] https://agencevoglans.fr/blog/criteres-varient-prix-bien-aix-les-bains -> OK at N/A
+[143/186] https://agencevoglans.fr/blog/bien-vendre-maison-louee-locataire -> OK at N/A
+[144/186] https://agencevoglans.fr/blog/2025-annee-favorable-vendeurs-savoie -> OK at N/A
+[145/186] https://agencevoglans.fr/blog/acheteurs-lyon-geneve-installent-lac-bourget -> OK at N/A
+[146/186] https://agencevoglans.fr/blog/communes-maisons-vendent-plus-vite-chambery -> OK at N/A
+[147/186] https://agencevoglans.fr/blog/profiter-demande-forte-maisons-jardin -> OK at N/A
+[148/186] https://agencevoglans.fr/blog/boom-maisons-campagne-aix-les-bains -> OK at N/A
+[149/186] https://agencevoglans.fr/blog/agence-locale-vs-site-mise-relation-regrets-vendeurs -> OK at N/A
+[150/186] https://agencevoglans.fr/blog/agence-locale-difference-prix-vente -> OK at N/A
+[151/186] https://agencevoglans.fr/blog/etapes-cles-vente-accompagnee-professionnel -> OK at N/A
+[152/186] https://agencevoglans.fr/blog/choisir-bonne-agence-immobiliere-chambery -> OK at N/A
+[153/186] https://agencevoglans.fr/blog/pourquoi-estimation-gratuite-suffit-pas-bien-vendre -> OK at N/A
+[154/186] https://agencevoglans.fr/blog/deroulement-estimation-immobiliere-domicile -> OK at N/A
+[155/186] https://agencevoglans.fr/blog/frais-prevoir-vendre-maison-reduire -> OK at N/A
+[156/186] https://agencevoglans.fr/blog/documents-indispensables-avant-mise-vente -> OK at N/A
+[157/186] https://agencevoglans.fr/blog/vendre-rapidement-grace-mandat-exclusif -> OK at N/A
+[158/186] https://agencevoglans.fr/blog/10-conseils-equipe-vendre-vite-bien-savoie -> OK at N/A
+[159/186] https://agencevoglans.fr/blog/vendre-appartement-deja-loue-chambery -> OK at N/A
+[160/186] https://agencevoglans.fr/blog/vendre-maison-heritee-aix-les-bains-etapes-pieges -> OK at N/A
+[161/186] https://agencevoglans.fr/blog/vendre-bien-renover-sans-sous-evaluer-viviers-du-lac -> OK at N/A
+[162/186] https://agencevoglans.fr/blog/faut-il-vendre-residence-secondaire-bourget-du-lac-2025 -> OK at N/A
+[163/186] https://agencevoglans.fr/blog/vendre-villa-vue-lac-tresserve-valoriser-prestige -> OK at N/A
+[164/186] https://agencevoglans.fr/blog/vendre-bien-atypique-grange-loft-ecole-savoie -> OK at N/A
+[165/186] https://agencevoglans.fr/blog/vendre-logement-energivore-avant-2026-la-motte-servolex -> OK at N/A
+[166/186] https://agencevoglans.fr/blog/vendre-maison-ancienne-chignin-saint-baldoph-valoriser-authenticite -> OK at N/A
+[167/186] https://agencevoglans.fr/blog/vendre-terrain-batir-chambery-prix-demarches-2025 -> OK at N/A
+[168/186] https://agencevoglans.fr/blog/bien-vendre-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[169/186] https://agencevoglans.fr/blog/vendre-immeuble-rapport-chambery-marche-investisseurs -> OK at N/A
+[170/186] https://agencevoglans.fr/blog/estimation-chalet-revard-marche-residences-altitude -> OK at N/A
+[171/186] https://agencevoglans.fr/blog/maisons-piscine-bourget-du-lac-20-pourcent-plus-cher -> OK at N/A
+[172/186] https://agencevoglans.fr/blog/vendre-bien-indivision-chambery-sans-blocage -> OK at N/A
+[173/186] https://agencevoglans.fr/blog/vendre-bien-grand-terrain-eviter-decote-fonciere -> OK at N/A
+[174/186] https://agencevoglans.fr/blog/vendre-studio-etudiant-chambery-forte-demande -> OK at N/A
+[175/186] https://agencevoglans.fr/blog/vendre-bien-zone-inondable-viviers-du-lac -> OK at N/A
+[176/186] https://agencevoglans.fr/blog/vendre-maison-isolee-cusy-les-deserts-points-cles -> OK at N/A
+[177/186] https://agencevoglans.fr/blog/vendre-maison-sans-raccordement-tout-egout -> OK at N/A
+[178/186] https://agencevoglans.fr/blog/vendre-viager-aix-les-bains-qui-comment-pourquoi -> OK at N/A
+[179/186] https://agencevoglans.fr/blog/vendre-maison-eco-renovee-chambery-valeur-monte -> OK at N/A
+[180/186] https://agencevoglans.fr/blog/vendre-bien-divisible-lotir-aix-les-bains -> OK at N/A
+[181/186] https://agencevoglans.fr/blog/vendre-maison-servitude-passage-mode-emploi -> OK at N/A
+[182/186] https://agencevoglans.fr/blog/vendre-ou-louer-maison-bord-lac-arbitrage -> OK at N/A
+[183/186] https://agencevoglans.fr/blog/vendre-apres-separation-chambery-bons-reflexes -> OK at N/A
+[184/186] https://agencevoglans.fr/blog/agence-specialiste-lac-bourget-villages-perches -> OK at N/A
+[185/186] https://agencevoglans.fr/blog/agence-simplifie-ventes-familiales-successions-indivisions -> OK at N/A
+[186/186] https://agencevoglans.fr/blog/vendre-bien-dpe-f-g-avant-interdictions-2026 -> OK at N/A
+Batch terminé. Prochain index: 0
+[1/186] https://agencevoglans.fr/ -> OK at N/A
+[2/186] https://agencevoglans.fr/estimation -> OK at N/A
+[3/186] https://agencevoglans.fr/vendre -> OK at N/A
+[4/186] https://agencevoglans.fr/acheter -> OK at N/A
+[5/186] https://agencevoglans.fr/contact -> OK at N/A
+[6/186] https://agencevoglans.fr/a-propos -> OK at N/A
+[7/186] https://agencevoglans.fr/blog -> OK at N/A
+[8/186] https://agencevoglans.fr/zone-intervention -> OK at N/A
+[9/186] https://agencevoglans.fr/investisseurs -> OK at N/A
+[10/186] https://agencevoglans.fr/sitemap -> OK at N/A
+[11/186] https://agencevoglans.fr/estimation/chambery -> OK at N/A
+[12/186] https://agencevoglans.fr/estimation/la-ravoire -> OK at N/A
+[13/186] https://agencevoglans.fr/estimation/voglans -> OK at N/A
+[14/186] https://agencevoglans.fr/estimation/aix-les-bains -> OK at N/A
+[15/186] https://agencevoglans.fr/estimation/barberaz -> OK at N/A
+[16/186] https://agencevoglans.fr/estimation/bassens -> OK at N/A
+[17/186] https://agencevoglans.fr/estimation/cognin -> OK at N/A
+[18/186] https://agencevoglans.fr/estimation/jacob-bellecombette -> OK at N/A
+[19/186] https://agencevoglans.fr/estimation/saint-alban-leysse -> OK at N/A
+[20/186] https://agencevoglans.fr/estimation/la-motte-servolex -> OK at N/A
+[21/186] https://agencevoglans.fr/estimation/sonnaz -> OK at N/A
+[22/186] https://agencevoglans.fr/estimation/challes-les-eaux -> OK at N/A
+[23/186] https://agencevoglans.fr/estimation/saint-baldoph -> OK at N/A
+[24/186] https://agencevoglans.fr/estimation/vimines -> OK at N/A
+[25/186] https://agencevoglans.fr/estimation/montagnole -> OK at N/A
+[26/186] https://agencevoglans.fr/estimation/gresy-sur-aix -> OK at N/A
+[27/186] https://agencevoglans.fr/estimation/tresserve -> OK at N/A
+[28/186] https://agencevoglans.fr/estimation/mouxy -> OK at N/A
+[29/186] https://agencevoglans.fr/estimation/brison-saint-innocent -> OK at N/A
+[30/186] https://agencevoglans.fr/estimation/drumettaz-clarafond -> OK at N/A
+[31/186] https://agencevoglans.fr/estimation/le-bourget-du-lac -> OK at N/A
+[32/186] https://agencevoglans.fr/estimation/viviers-du-lac -> OK at N/A
+[33/186] https://agencevoglans.fr/estimation/mery -> OK at N/A
+[34/186] https://agencevoglans.fr/estimation/bourdeau -> OK at N/A
+[35/186] https://agencevoglans.fr/estimation/la-chapelle-du-mont-du-chat -> OK at N/A
+[36/186] https://agencevoglans.fr/estimation/le-viviers -> OK at N/A
+[37/186] https://agencevoglans.fr/blog/investir-landiers-chambery -> OK at N/A
+[38/186] https://agencevoglans.fr/blog/zone-commerciale-landiers-chambery -> OK at N/A
+[39/186] https://agencevoglans.fr/blog/vendre-maison-chambery-2025 -> OK at N/A
+[40/186] https://agencevoglans.fr/blog/acheter-lac-bourget-2025 -> OK at N/A
+[41/186] https://agencevoglans.fr/blog/investir-voglans-2025 -> OK at N/A
+[42/186] https://agencevoglans.fr/blog/marche-immobilier-voglans-2025 -> OK at N/A
+[43/186] https://agencevoglans.fr/blog/investir-voglans-savoie -> OK at N/A
+[44/186] https://agencevoglans.fr/blog/quartiers-voglans-guide-complet -> OK at N/A
+[45/186] https://agencevoglans.fr/blog/prix-immobilier-aix-les-bains-lac-bourget-2025 -> OK at N/A
+[46/186] https://agencevoglans.fr/blog/estimation-maison-voglans-2025 -> OK at N/A
+[47/186] https://agencevoglans.fr/blog/vendre-maison-mery-conseils-rapides -> OK at N/A
+[48/186] https://agencevoglans.fr/blog/erreurs-vente-maison-chambery -> OK at N/A
+[49/186] https://agencevoglans.fr/blog/estimation-immobiliere-la-motte-servolex-2025 -> OK at N/A
+[50/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-tresserve-marche-lac -> OK at N/A
+[51/186] https://agencevoglans.fr/blog/estimation-appartement-aix-les-bains-centre-marlioz -> OK at N/A
+[52/186] https://agencevoglans.fr/blog/vendre-rapidement-drumettaz-pugny-chatenod -> OK at N/A
+[53/186] https://agencevoglans.fr/blog/meilleur-moment-vendre-voglans-bourget-du-lac -> OK at N/A
+[54/186] https://agencevoglans.fr/blog/immobilier-chambery-vendre-maintenant-ou-attendre-2026 -> OK at N/A
+[55/186] https://agencevoglans.fr/blog/home-staging-sublimer-maison-avant-vente-savoie -> OK at N/A
+[56/186] https://agencevoglans.fr/blog/marche-immobilier-chambery-ou-investir-vendre-2025 -> OK at N/A
+[57/186] https://agencevoglans.fr/blog/preparer-vente-maison-la-motte-servolex -> OK at N/A
+[58/186] https://agencevoglans.fr/blog/diagnostics-immobiliers-2025-changements-vendeurs-savoie -> OK at N/A
+[59/186] https://agencevoglans.fr/blog/estimation-maison-saint-baldoph-marche-dynamique-2025 -> OK at N/A
+[60/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-evolution-prix-3-ans -> OK at N/A
+[61/186] https://agencevoglans.fr/blog/vendre-seul-avec-aide-agence-locale-voglans -> OK at N/A
+[62/186] https://agencevoglans.fr/blog/vendre-sans-agence-aix-les-bains-bonne-ou-mauvaise-idee -> OK at N/A
+[63/186] https://agencevoglans.fr/blog/mandat-exclusif-ou-simple-chambery-verite -> OK at N/A
+[64/186] https://agencevoglans.fr/blog/temoignage-vente-rapide-viviers-du-lac-15-jours -> OK at N/A
+[65/186] https://agencevoglans.fr/blog/vendeurs-regrettent-fixer-prix-eux-memes -> OK at N/A
+[66/186] https://agencevoglans.fr/blog/impot-plus-value-vendre-malin-aix-les-bains-2025 -> OK at N/A
+[67/186] https://agencevoglans.fr/blog/vendre-printemps-voglans-moment-ideal-prix -> OK at N/A
+[68/186] https://agencevoglans.fr/blog/agence-locale-vend-mieux-que-grande-franchise -> OK at N/A
+[69/186] https://agencevoglans.fr/blog/immobilier-chambery-2025-vendeurs-reprennent-main -> OK at N/A
+[70/186] https://agencevoglans.fr/blog/preparer-mise-en-vente-maison-viviers-du-lac -> OK at N/A
+[71/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-exclusif-lac-bourget -> OK at N/A
+[72/186] https://agencevoglans.fr/blog/prix-m2-aix-les-bains-communes-voisines -> OK at N/A
+[73/186] https://agencevoglans.fr/blog/estimation-maison-mery-criteres-acheteurs-2025 -> OK at N/A
+[74/186] https://agencevoglans.fr/blog/vendre-chambery-ou-drumettaz-biens-partent-vite -> OK at N/A
+[75/186] https://agencevoglans.fr/blog/erreurs-font-fuir-acheteurs-chambery -> OK at N/A
+[76/186] https://agencevoglans.fr/blog/estimation-villa-vue-lac-bourget-du-lac -> OK at N/A
+[77/186] https://agencevoglans.fr/blog/maison-trevignin-vendue-15-jours-cas-concret -> OK at N/A
+[78/186] https://agencevoglans.fr/blog/taxe-fonciere-dpe-diagnostics-vendre-sans-stress-savoie -> OK at N/A
+[79/186] https://agencevoglans.fr/blog/2025-annee-ideale-vendre-bassin-aixois -> OK at N/A
+[80/186] https://agencevoglans.fr/blog/5-communes-chambery-maisons-vendent-plus-vite -> OK at N/A
+[81/186] https://agencevoglans.fr/blog/biens-vendent-mieux-aix-les-bains-2025 -> OK at N/A
+[82/186] https://agencevoglans.fr/blog/deroulement-estimation-domicile-voglans -> OK at N/A
+[83/186] https://agencevoglans.fr/blog/vendre-residence-secondaire-lac-bourget-acheteurs-lyon-geneve -> OK at N/A
+[84/186] https://agencevoglans.fr/blog/valeur-appartement-vue-lac-aix-les-bains-2025 -> OK at N/A
+[85/186] https://agencevoglans.fr/blog/vendre-maison-caractere-chambery-valoriser-ancien -> OK at N/A
+[86/186] https://agencevoglans.fr/blog/vendre-bien-herite-voglans-sans-blocage-familial -> OK at N/A
+[87/186] https://agencevoglans.fr/blog/terrains-constructibles-chambery-prix-explosent-vendre-maintenant -> OK at N/A
+[88/186] https://agencevoglans.fr/blog/vendre-logement-dpe-f-g-aix-les-bains-solutions-2026 -> OK at N/A
+[89/186] https://agencevoglans.fr/blog/vendre-maison-renover-tresserve-mery-sans-brader -> OK at N/A
+[90/186] https://agencevoglans.fr/blog/maisons-piscine-lac-bourget-vendent-20-pourcent-plus-cher -> OK at N/A
+[91/186] https://agencevoglans.fr/blog/vendre-vite-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[92/186] https://agencevoglans.fr/blog/vendre-villa-prestige-tresserve-strategie-discretion -> OK at N/A
+[93/186] https://agencevoglans.fr/blog/vendre-bien-atypique-savoie-grange-loft-commerce -> OK at N/A
+[94/186] https://agencevoglans.fr/blog/estimation-immobiliere-voglans-73420-prix-conseils-vente -> OK at N/A
+[95/186] https://agencevoglans.fr/blog/vendre-maison-la-motte-servolex-prix-m2-2025-astuces -> OK at N/A
+[96/186] https://agencevoglans.fr/blog/estimation-maison-sonnaz-gratuite-marche-2025 -> OK at N/A
+[97/186] https://agencevoglans.fr/blog/estimation-maison-mery-marche-familial-demande -> OK at N/A
+[98/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-haut-gamme-lac-bourget -> OK at N/A
+[99/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-prix-m2-estimation-maison -> OK at N/A
+[100/186] https://agencevoglans.fr/blog/prix-immobilier-bourget-du-lac-vendre-meilleur-moment -> OK at N/A
+[101/186] https://agencevoglans.fr/blog/estimation-maison-drumettaz-clarafond-marche-essor -> OK at N/A
+[102/186] https://agencevoglans.fr/blog/vendre-maison-pugny-chatenod-fixer-bon-prix -> OK at N/A
+[103/186] https://agencevoglans.fr/blog/estimation-maison-trevignin-secteur-recherche-aix -> OK at N/A
+[104/186] https://agencevoglans.fr/blog/immobilier-saint-baldoph-prix-grimpent-vendre -> OK at N/A
+[105/186] https://agencevoglans.fr/blog/estimation-chignin-maisons-vignes-charme-savoyard -> OK at N/A
+[106/186] https://agencevoglans.fr/blog/vendre-cognin-marche-immobilier-2025-guide -> OK at N/A
+[107/186] https://agencevoglans.fr/blog/estimation-maison-jacob-bellecombette-marche-recherche -> OK at N/A
+[108/186] https://agencevoglans.fr/blog/prix-m2-barberaz-conseils-vendre-maison -> OK at N/A
+[109/186] https://agencevoglans.fr/blog/estimation-challes-les-eaux-prix-montent-2025 -> OK at N/A
+[110/186] https://agencevoglans.fr/blog/vendre-maison-saint-alban-leysse-guide-complet-2025 -> OK at N/A
+[111/186] https://agencevoglans.fr/blog/estimation-maison-les-deserts-marche-calme-porteur -> OK at N/A
+[112/186] https://agencevoglans.fr/blog/vendre-chalet-revard-prix-marche-saison -> OK at N/A
+[113/186] https://agencevoglans.fr/blog/estimation-montagnole-vendre-vite-secteur-prise -> OK at N/A
+[114/186] https://agencevoglans.fr/blog/vendre-maison-brison-saint-innocent-marche-recherche-lac -> OK at N/A
+[115/186] https://agencevoglans.fr/blog/estimation-immobiliere-mouxy-prix-montent-2025 -> OK at N/A
+[116/186] https://agencevoglans.fr/blog/immobilier-gresy-sur-aix-valeur-maison-2025 -> OK at N/A
+[117/186] https://agencevoglans.fr/blog/vendre-maison-alby-sur-cheran-entre-annecy-aix-dynamique -> OK at N/A
+[118/186] https://agencevoglans.fr/blog/estimation-maison-saint-offenge-atouts-village-recherche -> OK at N/A
+[119/186] https://agencevoglans.fr/blog/vendre-saint-jean-arvey-maisons-terrain-cote -> OK at N/A
+[120/186] https://agencevoglans.fr/blog/estimation-immobiliere-lescheraines-marche-nature-lacs-montagnes -> OK at N/A
+[121/186] https://agencevoglans.fr/blog/vendre-la-ravoire-proximite-immediate-chambery -> OK at N/A
+[122/186] https://agencevoglans.fr/blog/immobilier-barby-valeur-bien-2025 -> OK at N/A
+[123/186] https://agencevoglans.fr/blog/vendre-maison-saint-cassin-marche-essor-10min-chambery -> OK at N/A
+[124/186] https://agencevoglans.fr/blog/estimation-maison-saint-sulpice-campagne-prisee-lac-bourget -> OK at N/A
+[125/186] https://agencevoglans.fr/blog/immobilier-les-echelles-vendre-rapidement-reconversion -> OK at N/A
+[126/186] https://agencevoglans.fr/blog/vendre-saint-pierre-curtille-charme-lac-patrimoine -> OK at N/A
+[127/186] https://agencevoglans.fr/blog/estimation-immobiliere-saint-ours-marche-hausse -> OK at N/A
+[128/186] https://agencevoglans.fr/blog/vendre-hautecombe-cadre-exceptionnel-biens-rares -> OK at N/A
+[129/186] https://agencevoglans.fr/blog/prix-immobilier-cusy-valeur-sure-aix-annecy -> OK at N/A
+[130/186] https://agencevoglans.fr/blog/vendre-drumettaz-equilibre-campagne-ville -> OK at N/A
+[131/186] https://agencevoglans.fr/blog/immobilier-albens-pole-attractif-chambery-annecy -> OK at N/A
+[132/186] https://agencevoglans.fr/blog/estimation-maison-la-biolle-marche-actif-aix -> OK at N/A
+[133/186] https://agencevoglans.fr/blog/vendre-bien-gresy-sur-isere-secteur-devenir-combe-savoie -> OK at N/A
+[134/186] https://agencevoglans.fr/blog/7-signes-temps-vendre-maison -> OK at N/A
+[135/186] https://agencevoglans.fr/blog/pourquoi-attendre-fait-perdre-argent-vente -> OK at N/A
+[136/186] https://agencevoglans.fr/blog/vendeurs-attendu-6-mois-trop-retour-experience -> OK at N/A
+[137/186] https://agencevoglans.fr/blog/vendre-apres-divorce-bons-choix-immobiliers -> OK at N/A
+[138/186] https://agencevoglans.fr/blog/vendre-acheter-plus-grand-double-projet-chambery -> OK at N/A
+[139/186] https://agencevoglans.fr/blog/vendre-5-10-pourcent-plus-cher-sans-travaux -> OK at N/A
+[140/186] https://agencevoglans.fr/blog/petites-renovations-grimper-valeur-maison-savoie -> OK at N/A
+[141/186] https://agencevoglans.fr/blog/savoir-si-maison-sous-evaluee -> OK at N/A
+[142/186] https://agencevoglans.fr/blog/criteres-varient-prix-bien-aix-les-bains -> OK at N/A
+[143/186] https://agencevoglans.fr/blog/bien-vendre-maison-louee-locataire -> OK at N/A
+[144/186] https://agencevoglans.fr/blog/2025-annee-favorable-vendeurs-savoie -> OK at N/A
+[145/186] https://agencevoglans.fr/blog/acheteurs-lyon-geneve-installent-lac-bourget -> OK at N/A
+[146/186] https://agencevoglans.fr/blog/communes-maisons-vendent-plus-vite-chambery -> OK at N/A
+[147/186] https://agencevoglans.fr/blog/profiter-demande-forte-maisons-jardin -> OK at N/A
+[148/186] https://agencevoglans.fr/blog/boom-maisons-campagne-aix-les-bains -> OK at N/A
+[149/186] https://agencevoglans.fr/blog/agence-locale-vs-site-mise-relation-regrets-vendeurs -> OK at N/A
+[150/186] https://agencevoglans.fr/blog/agence-locale-difference-prix-vente -> OK at N/A
+[151/186] https://agencevoglans.fr/blog/etapes-cles-vente-accompagnee-professionnel -> OK at N/A
+[152/186] https://agencevoglans.fr/blog/choisir-bonne-agence-immobiliere-chambery -> OK at N/A
+[153/186] https://agencevoglans.fr/blog/pourquoi-estimation-gratuite-suffit-pas-bien-vendre -> OK at N/A
+[154/186] https://agencevoglans.fr/blog/deroulement-estimation-immobiliere-domicile -> OK at N/A
+[155/186] https://agencevoglans.fr/blog/frais-prevoir-vendre-maison-reduire -> OK at N/A
+[156/186] https://agencevoglans.fr/blog/documents-indispensables-avant-mise-vente -> OK at N/A
+[157/186] https://agencevoglans.fr/blog/vendre-rapidement-grace-mandat-exclusif -> OK at N/A
+[158/186] https://agencevoglans.fr/blog/10-conseils-equipe-vendre-vite-bien-savoie -> OK at N/A
+[159/186] https://agencevoglans.fr/blog/vendre-appartement-deja-loue-chambery -> OK at N/A
+[160/186] https://agencevoglans.fr/blog/vendre-maison-heritee-aix-les-bains-etapes-pieges -> OK at N/A
+[161/186] https://agencevoglans.fr/blog/vendre-bien-renover-sans-sous-evaluer-viviers-du-lac -> OK at N/A
+[162/186] https://agencevoglans.fr/blog/faut-il-vendre-residence-secondaire-bourget-du-lac-2025 -> OK at N/A
+[163/186] https://agencevoglans.fr/blog/vendre-villa-vue-lac-tresserve-valoriser-prestige -> OK at N/A
+[164/186] https://agencevoglans.fr/blog/vendre-bien-atypique-grange-loft-ecole-savoie -> OK at N/A
+[165/186] https://agencevoglans.fr/blog/vendre-logement-energivore-avant-2026-la-motte-servolex -> OK at N/A
+[166/186] https://agencevoglans.fr/blog/vendre-maison-ancienne-chignin-saint-baldoph-valoriser-authenticite -> OK at N/A
+[167/186] https://agencevoglans.fr/blog/vendre-terrain-batir-chambery-prix-demarches-2025 -> OK at N/A
+[168/186] https://agencevoglans.fr/blog/bien-vendre-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[169/186] https://agencevoglans.fr/blog/vendre-immeuble-rapport-chambery-marche-investisseurs -> OK at N/A
+[170/186] https://agencevoglans.fr/blog/estimation-chalet-revard-marche-residences-altitude -> OK at N/A
+[171/186] https://agencevoglans.fr/blog/maisons-piscine-bourget-du-lac-20-pourcent-plus-cher -> OK at N/A
+[172/186] https://agencevoglans.fr/blog/vendre-bien-indivision-chambery-sans-blocage -> OK at N/A
+[173/186] https://agencevoglans.fr/blog/vendre-bien-grand-terrain-eviter-decote-fonciere -> OK at N/A
+[174/186] https://agencevoglans.fr/blog/vendre-studio-etudiant-chambery-forte-demande -> OK at N/A
+[175/186] https://agencevoglans.fr/blog/vendre-bien-zone-inondable-viviers-du-lac -> OK at N/A
+[176/186] https://agencevoglans.fr/blog/vendre-maison-isolee-cusy-les-deserts-points-cles -> OK at N/A
+[177/186] https://agencevoglans.fr/blog/vendre-maison-sans-raccordement-tout-egout -> OK at N/A
+[178/186] https://agencevoglans.fr/blog/vendre-viager-aix-les-bains-qui-comment-pourquoi -> OK at N/A
+[179/186] https://agencevoglans.fr/blog/vendre-maison-eco-renovee-chambery-valeur-monte -> OK at N/A
+[180/186] https://agencevoglans.fr/blog/vendre-bien-divisible-lotir-aix-les-bains -> OK at N/A
+[181/186] https://agencevoglans.fr/blog/vendre-maison-servitude-passage-mode-emploi -> OK at N/A
+[182/186] https://agencevoglans.fr/blog/vendre-ou-louer-maison-bord-lac-arbitrage -> OK at N/A
+[183/186] https://agencevoglans.fr/blog/vendre-apres-separation-chambery-bons-reflexes -> OK at N/A
+[184/186] https://agencevoglans.fr/blog/agence-specialiste-lac-bourget-villages-perches -> OK at N/A
+[185/186] https://agencevoglans.fr/blog/agence-simplifie-ventes-familiales-successions-indivisions -> OK at N/A
+[186/186] https://agencevoglans.fr/blog/vendre-bien-dpe-f-g-avant-interdictions-2026 -> OK at N/A
+Batch terminé. Prochain index: 0
+[1/186] https://agencevoglans.fr/ -> OK at N/A
+[2/186] https://agencevoglans.fr/estimation -> OK at N/A
+[3/186] https://agencevoglans.fr/vendre -> OK at N/A
+[4/186] https://agencevoglans.fr/acheter -> OK at N/A
+[5/186] https://agencevoglans.fr/contact -> OK at N/A
+[6/186] https://agencevoglans.fr/a-propos -> OK at N/A
+[7/186] https://agencevoglans.fr/blog -> OK at N/A
+[8/186] https://agencevoglans.fr/zone-intervention -> OK at N/A
+[9/186] https://agencevoglans.fr/investisseurs -> OK at N/A
+[10/186] https://agencevoglans.fr/sitemap -> OK at N/A
+[11/186] https://agencevoglans.fr/estimation/chambery -> OK at N/A
+[12/186] https://agencevoglans.fr/estimation/la-ravoire -> OK at N/A
+[13/186] https://agencevoglans.fr/estimation/voglans -> OK at N/A
+[14/186] https://agencevoglans.fr/estimation/aix-les-bains -> OK at N/A
+[15/186] https://agencevoglans.fr/estimation/barberaz -> OK at N/A
+[16/186] https://agencevoglans.fr/estimation/bassens -> OK at N/A
+[17/186] https://agencevoglans.fr/estimation/cognin -> OK at N/A
+[18/186] https://agencevoglans.fr/estimation/jacob-bellecombette -> OK at N/A
+[19/186] https://agencevoglans.fr/estimation/saint-alban-leysse -> OK at N/A
+[20/186] https://agencevoglans.fr/estimation/la-motte-servolex -> OK at N/A
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 96, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 83, in main
+    response = publisher(body=body).execute()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:481475134747'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'indexing.googleapis.com/v3_publish_requests', 'consumer': 'projects/481475134747', 'service': 'indexing.googleapis.com', 'quota_limit_value': '200', 'quota_unit': '1/d/{project}', 'quota_limit': 'DefaultPublishRequestsPerDayPerProject', 'quota_location': 'global'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+Traceback (most recent call last):
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 96, in <module>
+    main()
+  File "/Users/zazouino/CascadeProjects/windsurf-project/voglansastro/indexing_push_daily.py", line 83, in main
+    response = publisher(body=body).execute()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:481475134747'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_limit_value': '200', 'quota_metric': 'indexing.googleapis.com/v3_publish_requests', 'service': 'indexing.googleapis.com', 'quota_location': 'global', 'consumer': 'projects/481475134747', 'quota_limit': 'DefaultPublishRequestsPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+[1/186] https://agencevoglans.fr/ -> OK at N/A
+[2/186] https://agencevoglans.fr/estimation -> OK at N/A
+[3/186] https://agencevoglans.fr/vendre -> OK at N/A
+[4/186] https://agencevoglans.fr/acheter -> OK at N/A
+[5/186] https://agencevoglans.fr/contact -> OK at N/A
+[6/186] https://agencevoglans.fr/a-propos -> OK at N/A
+[7/186] https://agencevoglans.fr/blog -> OK at N/A
+[8/186] https://agencevoglans.fr/zone-intervention -> OK at N/A
+[9/186] https://agencevoglans.fr/investisseurs -> OK at N/A
+[10/186] https://agencevoglans.fr/sitemap -> OK at N/A
+[11/186] https://agencevoglans.fr/estimation/chambery -> OK at N/A
+[12/186] https://agencevoglans.fr/estimation/la-ravoire -> OK at N/A
+[13/186] https://agencevoglans.fr/estimation/voglans -> OK at N/A
+[14/186] https://agencevoglans.fr/estimation/aix-les-bains -> OK at N/A
+[15/186] https://agencevoglans.fr/estimation/barberaz -> OK at N/A
+[16/186] https://agencevoglans.fr/estimation/bassens -> OK at N/A
+[17/186] https://agencevoglans.fr/estimation/cognin -> OK at N/A
+[18/186] https://agencevoglans.fr/estimation/jacob-bellecombette -> OK at N/A
+[19/186] https://agencevoglans.fr/estimation/saint-alban-leysse -> OK at N/A
+[20/186] https://agencevoglans.fr/estimation/la-motte-servolex -> OK at N/A
+[21/186] https://agencevoglans.fr/estimation/sonnaz -> OK at N/A
+[22/186] https://agencevoglans.fr/estimation/challes-les-eaux -> OK at N/A
+[23/186] https://agencevoglans.fr/estimation/saint-baldoph -> OK at N/A
+[24/186] https://agencevoglans.fr/estimation/vimines -> OK at N/A
+[25/186] https://agencevoglans.fr/estimation/montagnole -> OK at N/A
+[26/186] https://agencevoglans.fr/estimation/gresy-sur-aix -> OK at N/A
+[27/186] https://agencevoglans.fr/estimation/tresserve -> OK at N/A
+[28/186] https://agencevoglans.fr/estimation/mouxy -> OK at N/A
+[29/186] https://agencevoglans.fr/estimation/brison-saint-innocent -> OK at N/A
+[30/186] https://agencevoglans.fr/estimation/drumettaz-clarafond -> OK at N/A
+[31/186] https://agencevoglans.fr/estimation/le-bourget-du-lac -> OK at N/A
+[32/186] https://agencevoglans.fr/estimation/viviers-du-lac -> OK at N/A
+[33/186] https://agencevoglans.fr/estimation/mery -> OK at N/A
+[34/186] https://agencevoglans.fr/estimation/bourdeau -> OK at N/A
+[35/186] https://agencevoglans.fr/estimation/la-chapelle-du-mont-du-chat -> OK at N/A
+[36/186] https://agencevoglans.fr/estimation/le-viviers -> OK at N/A
+[37/186] https://agencevoglans.fr/blog/investir-landiers-chambery -> OK at N/A
+[38/186] https://agencevoglans.fr/blog/zone-commerciale-landiers-chambery -> OK at N/A
+[39/186] https://agencevoglans.fr/blog/vendre-maison-chambery-2025 -> OK at N/A
+[40/186] https://agencevoglans.fr/blog/acheter-lac-bourget-2025 -> OK at N/A
+[41/186] https://agencevoglans.fr/blog/investir-voglans-2025 -> OK at N/A
+[42/186] https://agencevoglans.fr/blog/marche-immobilier-voglans-2025 -> OK at N/A
+[43/186] https://agencevoglans.fr/blog/investir-voglans-savoie -> OK at N/A
+[44/186] https://agencevoglans.fr/blog/quartiers-voglans-guide-complet -> OK at N/A
+[45/186] https://agencevoglans.fr/blog/prix-immobilier-aix-les-bains-lac-bourget-2025 -> OK at N/A
+[46/186] https://agencevoglans.fr/blog/estimation-maison-voglans-2025 -> OK at N/A
+[47/186] https://agencevoglans.fr/blog/vendre-maison-mery-conseils-rapides -> OK at N/A
+[48/186] https://agencevoglans.fr/blog/erreurs-vente-maison-chambery -> OK at N/A
+[49/186] https://agencevoglans.fr/blog/estimation-immobiliere-la-motte-servolex-2025 -> OK at N/A
+[50/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-tresserve-marche-lac -> OK at N/A
+[51/186] https://agencevoglans.fr/blog/estimation-appartement-aix-les-bains-centre-marlioz -> OK at N/A
+[52/186] https://agencevoglans.fr/blog/vendre-rapidement-drumettaz-pugny-chatenod -> OK at N/A
+[53/186] https://agencevoglans.fr/blog/meilleur-moment-vendre-voglans-bourget-du-lac -> OK at N/A
+[54/186] https://agencevoglans.fr/blog/immobilier-chambery-vendre-maintenant-ou-attendre-2026 -> OK at N/A
+[55/186] https://agencevoglans.fr/blog/home-staging-sublimer-maison-avant-vente-savoie -> OK at N/A
+[56/186] https://agencevoglans.fr/blog/marche-immobilier-chambery-ou-investir-vendre-2025 -> OK at N/A
+[57/186] https://agencevoglans.fr/blog/preparer-vente-maison-la-motte-servolex -> OK at N/A
+[58/186] https://agencevoglans.fr/blog/diagnostics-immobiliers-2025-changements-vendeurs-savoie -> OK at N/A
+[59/186] https://agencevoglans.fr/blog/estimation-maison-saint-baldoph-marche-dynamique-2025 -> OK at N/A
+[60/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-evolution-prix-3-ans -> OK at N/A
+[61/186] https://agencevoglans.fr/blog/vendre-seul-avec-aide-agence-locale-voglans -> OK at N/A
+[62/186] https://agencevoglans.fr/blog/vendre-sans-agence-aix-les-bains-bonne-ou-mauvaise-idee -> OK at N/A
+[63/186] https://agencevoglans.fr/blog/mandat-exclusif-ou-simple-chambery-verite -> OK at N/A
+[64/186] https://agencevoglans.fr/blog/temoignage-vente-rapide-viviers-du-lac-15-jours -> OK at N/A
+[65/186] https://agencevoglans.fr/blog/vendeurs-regrettent-fixer-prix-eux-memes -> OK at N/A
+[66/186] https://agencevoglans.fr/blog/impot-plus-value-vendre-malin-aix-les-bains-2025 -> OK at N/A
+[67/186] https://agencevoglans.fr/blog/vendre-printemps-voglans-moment-ideal-prix -> OK at N/A
+[68/186] https://agencevoglans.fr/blog/agence-locale-vend-mieux-que-grande-franchise -> OK at N/A
+[69/186] https://agencevoglans.fr/blog/immobilier-chambery-2025-vendeurs-reprennent-main -> OK at N/A
+[70/186] https://agencevoglans.fr/blog/preparer-mise-en-vente-maison-viviers-du-lac -> OK at N/A
+[71/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-exclusif-lac-bourget -> OK at N/A
+[72/186] https://agencevoglans.fr/blog/prix-m2-aix-les-bains-communes-voisines -> OK at N/A
+[73/186] https://agencevoglans.fr/blog/estimation-maison-mery-criteres-acheteurs-2025 -> OK at N/A
+[74/186] https://agencevoglans.fr/blog/vendre-chambery-ou-drumettaz-biens-partent-vite -> OK at N/A
+[75/186] https://agencevoglans.fr/blog/erreurs-font-fuir-acheteurs-chambery -> OK at N/A
+[76/186] https://agencevoglans.fr/blog/estimation-villa-vue-lac-bourget-du-lac -> OK at N/A
+[77/186] https://agencevoglans.fr/blog/maison-trevignin-vendue-15-jours-cas-concret -> OK at N/A
+[78/186] https://agencevoglans.fr/blog/taxe-fonciere-dpe-diagnostics-vendre-sans-stress-savoie -> OK at N/A
+[79/186] https://agencevoglans.fr/blog/2025-annee-ideale-vendre-bassin-aixois -> OK at N/A
+[80/186] https://agencevoglans.fr/blog/5-communes-chambery-maisons-vendent-plus-vite -> OK at N/A
+[81/186] https://agencevoglans.fr/blog/biens-vendent-mieux-aix-les-bains-2025 -> OK at N/A
+[82/186] https://agencevoglans.fr/blog/deroulement-estimation-domicile-voglans -> OK at N/A
+[83/186] https://agencevoglans.fr/blog/vendre-residence-secondaire-lac-bourget-acheteurs-lyon-geneve -> OK at N/A
+[84/186] https://agencevoglans.fr/blog/valeur-appartement-vue-lac-aix-les-bains-2025 -> OK at N/A
+[85/186] https://agencevoglans.fr/blog/vendre-maison-caractere-chambery-valoriser-ancien -> OK at N/A
+[86/186] https://agencevoglans.fr/blog/vendre-bien-herite-voglans-sans-blocage-familial -> OK at N/A
+[87/186] https://agencevoglans.fr/blog/terrains-constructibles-chambery-prix-explosent-vendre-maintenant -> OK at N/A
+[88/186] https://agencevoglans.fr/blog/vendre-logement-dpe-f-g-aix-les-bains-solutions-2026 -> OK at N/A
+[89/186] https://agencevoglans.fr/blog/vendre-maison-renover-tresserve-mery-sans-brader -> OK at N/A
+[90/186] https://agencevoglans.fr/blog/maisons-piscine-lac-bourget-vendent-20-pourcent-plus-cher -> OK at N/A
+[91/186] https://agencevoglans.fr/blog/vendre-vite-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[92/186] https://agencevoglans.fr/blog/vendre-villa-prestige-tresserve-strategie-discretion -> OK at N/A
+[93/186] https://agencevoglans.fr/blog/vendre-bien-atypique-savoie-grange-loft-commerce -> OK at N/A
+[94/186] https://agencevoglans.fr/blog/estimation-immobiliere-voglans-73420-prix-conseils-vente -> OK at N/A
+[95/186] https://agencevoglans.fr/blog/vendre-maison-la-motte-servolex-prix-m2-2025-astuces -> OK at N/A
+[96/186] https://agencevoglans.fr/blog/estimation-maison-sonnaz-gratuite-marche-2025 -> OK at N/A
+[97/186] https://agencevoglans.fr/blog/estimation-maison-mery-marche-familial-demande -> OK at N/A
+[98/186] https://agencevoglans.fr/blog/vendre-tresserve-marche-haut-gamme-lac-bourget -> OK at N/A
+[99/186] https://agencevoglans.fr/blog/immobilier-viviers-du-lac-prix-m2-estimation-maison -> OK at N/A
+[100/186] https://agencevoglans.fr/blog/prix-immobilier-bourget-du-lac-vendre-meilleur-moment -> OK at N/A
+[101/186] https://agencevoglans.fr/blog/estimation-maison-drumettaz-clarafond-marche-essor -> OK at N/A
+[102/186] https://agencevoglans.fr/blog/vendre-maison-pugny-chatenod-fixer-bon-prix -> OK at N/A
+[103/186] https://agencevoglans.fr/blog/estimation-maison-trevignin-secteur-recherche-aix -> OK at N/A
+[104/186] https://agencevoglans.fr/blog/immobilier-saint-baldoph-prix-grimpent-vendre -> OK at N/A
+[105/186] https://agencevoglans.fr/blog/estimation-chignin-maisons-vignes-charme-savoyard -> OK at N/A
+[106/186] https://agencevoglans.fr/blog/vendre-cognin-marche-immobilier-2025-guide -> OK at N/A
+[107/186] https://agencevoglans.fr/blog/estimation-maison-jacob-bellecombette-marche-recherche -> OK at N/A
+[108/186] https://agencevoglans.fr/blog/prix-m2-barberaz-conseils-vendre-maison -> OK at N/A
+[109/186] https://agencevoglans.fr/blog/estimation-challes-les-eaux-prix-montent-2025 -> OK at N/A
+[110/186] https://agencevoglans.fr/blog/vendre-maison-saint-alban-leysse-guide-complet-2025 -> OK at N/A
+[111/186] https://agencevoglans.fr/blog/estimation-maison-les-deserts-marche-calme-porteur -> OK at N/A
+[112/186] https://agencevoglans.fr/blog/vendre-chalet-revard-prix-marche-saison -> OK at N/A
+[113/186] https://agencevoglans.fr/blog/estimation-montagnole-vendre-vite-secteur-prise -> OK at N/A
+[114/186] https://agencevoglans.fr/blog/vendre-maison-brison-saint-innocent-marche-recherche-lac -> OK at N/A
+[115/186] https://agencevoglans.fr/blog/estimation-immobiliere-mouxy-prix-montent-2025 -> OK at N/A
+[116/186] https://agencevoglans.fr/blog/immobilier-gresy-sur-aix-valeur-maison-2025 -> OK at N/A
+[117/186] https://agencevoglans.fr/blog/vendre-maison-alby-sur-cheran-entre-annecy-aix-dynamique -> OK at N/A
+[118/186] https://agencevoglans.fr/blog/estimation-maison-saint-offenge-atouts-village-recherche -> OK at N/A
+[119/186] https://agencevoglans.fr/blog/vendre-saint-jean-arvey-maisons-terrain-cote -> OK at N/A
+[120/186] https://agencevoglans.fr/blog/estimation-immobiliere-lescheraines-marche-nature-lacs-montagnes -> OK at N/A
+[121/186] https://agencevoglans.fr/blog/vendre-la-ravoire-proximite-immediate-chambery -> OK at N/A
+[122/186] https://agencevoglans.fr/blog/immobilier-barby-valeur-bien-2025 -> OK at N/A
+[123/186] https://agencevoglans.fr/blog/vendre-maison-saint-cassin-marche-essor-10min-chambery -> OK at N/A
+[124/186] https://agencevoglans.fr/blog/estimation-maison-saint-sulpice-campagne-prisee-lac-bourget -> OK at N/A
+[125/186] https://agencevoglans.fr/blog/immobilier-les-echelles-vendre-rapidement-reconversion -> OK at N/A
+[126/186] https://agencevoglans.fr/blog/vendre-saint-pierre-curtille-charme-lac-patrimoine -> OK at N/A
+[127/186] https://agencevoglans.fr/blog/estimation-immobiliere-saint-ours-marche-hausse -> OK at N/A
+[128/186] https://agencevoglans.fr/blog/vendre-hautecombe-cadre-exceptionnel-biens-rares -> OK at N/A
+[129/186] https://agencevoglans.fr/blog/prix-immobilier-cusy-valeur-sure-aix-annecy -> OK at N/A
+[130/186] https://agencevoglans.fr/blog/vendre-drumettaz-equilibre-campagne-ville -> OK at N/A
+[131/186] https://agencevoglans.fr/blog/immobilier-albens-pole-attractif-chambery-annecy -> OK at N/A
+[132/186] https://agencevoglans.fr/blog/estimation-maison-la-biolle-marche-actif-aix -> OK at N/A
+[133/186] https://agencevoglans.fr/blog/vendre-bien-gresy-sur-isere-secteur-devenir-combe-savoie -> OK at N/A
+[134/186] https://agencevoglans.fr/blog/7-signes-temps-vendre-maison -> OK at N/A
+[135/186] https://agencevoglans.fr/blog/pourquoi-attendre-fait-perdre-argent-vente -> OK at N/A
+[136/186] https://agencevoglans.fr/blog/vendeurs-attendu-6-mois-trop-retour-experience -> OK at N/A
+[137/186] https://agencevoglans.fr/blog/vendre-apres-divorce-bons-choix-immobiliers -> OK at N/A
+[138/186] https://agencevoglans.fr/blog/vendre-acheter-plus-grand-double-projet-chambery -> OK at N/A
+[139/186] https://agencevoglans.fr/blog/vendre-5-10-pourcent-plus-cher-sans-travaux -> OK at N/A
+[140/186] https://agencevoglans.fr/blog/petites-renovations-grimper-valeur-maison-savoie -> OK at N/A
+[141/186] https://agencevoglans.fr/blog/savoir-si-maison-sous-evaluee -> OK at N/A
+[142/186] https://agencevoglans.fr/blog/criteres-varient-prix-bien-aix-les-bains -> OK at N/A
+[143/186] https://agencevoglans.fr/blog/bien-vendre-maison-louee-locataire -> OK at N/A
+[144/186] https://agencevoglans.fr/blog/2025-annee-favorable-vendeurs-savoie -> OK at N/A
+[145/186] https://agencevoglans.fr/blog/acheteurs-lyon-geneve-installent-lac-bourget -> OK at N/A
+[146/186] https://agencevoglans.fr/blog/communes-maisons-vendent-plus-vite-chambery -> OK at N/A
+[147/186] https://agencevoglans.fr/blog/profiter-demande-forte-maisons-jardin -> OK at N/A
+[148/186] https://agencevoglans.fr/blog/boom-maisons-campagne-aix-les-bains -> OK at N/A
+[149/186] https://agencevoglans.fr/blog/agence-locale-vs-site-mise-relation-regrets-vendeurs -> OK at N/A
+[150/186] https://agencevoglans.fr/blog/agence-locale-difference-prix-vente -> OK at N/A
+[151/186] https://agencevoglans.fr/blog/etapes-cles-vente-accompagnee-professionnel -> OK at N/A
+[152/186] https://agencevoglans.fr/blog/choisir-bonne-agence-immobiliere-chambery -> OK at N/A
+[153/186] https://agencevoglans.fr/blog/pourquoi-estimation-gratuite-suffit-pas-bien-vendre -> OK at N/A
+[154/186] https://agencevoglans.fr/blog/deroulement-estimation-immobiliere-domicile -> OK at N/A
+[155/186] https://agencevoglans.fr/blog/frais-prevoir-vendre-maison-reduire -> OK at N/A
+[156/186] https://agencevoglans.fr/blog/documents-indispensables-avant-mise-vente -> OK at N/A
+[157/186] https://agencevoglans.fr/blog/vendre-rapidement-grace-mandat-exclusif -> OK at N/A
+[158/186] https://agencevoglans.fr/blog/10-conseils-equipe-vendre-vite-bien-savoie -> OK at N/A
+[159/186] https://agencevoglans.fr/blog/vendre-appartement-deja-loue-chambery -> OK at N/A
+[160/186] https://agencevoglans.fr/blog/vendre-maison-heritee-aix-les-bains-etapes-pieges -> OK at N/A
+[161/186] https://agencevoglans.fr/blog/vendre-bien-renover-sans-sous-evaluer-viviers-du-lac -> OK at N/A
+[162/186] https://agencevoglans.fr/blog/faut-il-vendre-residence-secondaire-bourget-du-lac-2025 -> OK at N/A
+[163/186] https://agencevoglans.fr/blog/vendre-villa-vue-lac-tresserve-valoriser-prestige -> OK at N/A
+[164/186] https://agencevoglans.fr/blog/vendre-bien-atypique-grange-loft-ecole-savoie -> OK at N/A
+[165/186] https://agencevoglans.fr/blog/vendre-logement-energivore-avant-2026-la-motte-servolex -> OK at N/A
+[166/186] https://agencevoglans.fr/blog/vendre-maison-ancienne-chignin-saint-baldoph-valoriser-authenticite -> OK at N/A
+[167/186] https://agencevoglans.fr/blog/vendre-terrain-batir-chambery-prix-demarches-2025 -> OK at N/A
+[168/186] https://agencevoglans.fr/blog/bien-vendre-maison-mitoyenne-la-motte-servolex -> OK at N/A
+[169/186] https://agencevoglans.fr/blog/vendre-immeuble-rapport-chambery-marche-investisseurs -> OK at N/A
+[170/186] https://agencevoglans.fr/blog/estimation-chalet-revard-marche-residences-altitude -> OK at N/A
+[171/186] https://agencevoglans.fr/blog/maisons-piscine-bourget-du-lac-20-pourcent-plus-cher -> OK at N/A
+[172/186] https://agencevoglans.fr/blog/vendre-bien-indivision-chambery-sans-blocage -> OK at N/A
+[173/186] https://agencevoglans.fr/blog/vendre-bien-grand-terrain-eviter-decote-fonciere -> OK at N/A
+[174/186] https://agencevoglans.fr/blog/vendre-studio-etudiant-chambery-forte-demande -> OK at N/A
+[175/186] https://agencevoglans.fr/blog/vendre-bien-zone-inondable-viviers-du-lac -> OK at N/A
+[176/186] https://agencevoglans.fr/blog/vendre-maison-isolee-cusy-les-deserts-points-cles -> OK at N/A
+[177/186] https://agencevoglans.fr/blog/vendre-maison-sans-raccordement-tout-egout -> OK at N/A
+[178/186] https://agencevoglans.fr/blog/vendre-viager-aix-les-bains-qui-comment-pourquoi -> OK at N/A
+[179/186] https://agencevoglans.fr/blog/vendre-maison-eco-renovee-chambery-valeur-monte -> OK at N/A
+[180/186] https://agencevoglans.fr/blog/vendre-bien-divisible-lotir-aix-les-bains -> OK at N/A
+[181/186] https://agencevoglans.fr/blog/vendre-maison-servitude-passage-mode-emploi -> OK at N/A
+[182/186] https://agencevoglans.fr/blog/vendre-ou-louer-maison-bord-lac-arbitrage -> OK at N/A
+[183/186] https://agencevoglans.fr/blog/vendre-apres-separation-chambery-bons-reflexes -> OK at N/A
+[184/186] https://agencevoglans.fr/blog/agence-specialiste-lac-bourget-villages-perches -> OK at N/A
+[185/186] https://agencevoglans.fr/blog/agence-simplifie-ventes-familiales-successions-indivisions -> OK at N/A
+[186/186] https://agencevoglans.fr/blog/vendre-bien-dpe-f-g-avant-interdictions-2026 -> OK at N/A
+Batch terminé. Prochain index: 0
