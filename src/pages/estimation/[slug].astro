@@ -24,7 +24,7 @@ interface Props {
 }
 
 const { commune } = Astro.props;
-const { name, slug, zone, dept, meta, localContext, communesProches } = commune;
+const { name, slug, zone, dept, meta, localContext, communesProches, marketStats, localScenarios } = commune;
 
 // Canonical URL
 const canonicalURL = new URL(`/estimation/${slug}`, Astro.site);
@@ -185,6 +185,62 @@ const faqSchema = {
     atouts={localContext.atouts}
     biens={localContext.biens}
   />
+
+  {marketStats && (
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+        <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-2">Chiffres clés 2025</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+          {name} : les indicateurs marché à connaître
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-100">
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Maisons</h3>
+            <p class="text-lg text-gray-900 leading-relaxed">{marketStats.priceHouse}</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-100">
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Appartements</h3>
+            <p class="text-lg text-gray-900 leading-relaxed">{marketStats.priceApartment}</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-100">
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Demande acheteurs</h3>
+            <p class="text-lg text-gray-900 leading-relaxed">{marketStats.demand}</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-100">
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Délai moyen</h3>
+            <p class="text-lg text-gray-900 leading-relaxed">{marketStats.delai}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {localScenarios && localScenarios.length > 0 && (
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-sm font-semibold uppercase tracking-widest text-primary">Cas concrets</span>
+        <span class="text-xs text-gray-400">Insights terrain</span>
+      </div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Résultats obtenus récemment à {name}
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {localScenarios.map((scenario) => (
+          <article class="h-full bg-white border border-gray-100 rounded-2xl shadow-sm p-6 flex flex-col">
+            <div>
+              <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+                {scenario.title}
+              </p>
+              <p class="text-lg font-semibold text-gray-900 mb-3">{scenario.result}</p>
+            </div>
+            <p class="text-sm text-gray-600 mt-auto bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <span class="font-semibold text-gray-900">Le secret :</span> {scenario.lesson}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- SEO Content -->
   <CitySEOContent name={name} seoContent={commune.seoContent} />

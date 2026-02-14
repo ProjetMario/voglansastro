@@ -15,7 +15,28 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/admin/') && page !== '/about' && page !== '/achat',
+      filter: (page) => {
+        // Exclure pages admin et alias
+        if (page.includes('/admin/') || page === '/about' || page === '/achat') return false;
+        
+        // Exclure pages noindex (thin content générées en masse)
+        const noindexPatterns = [
+          /\/vendre-garage-/,
+          /\/locaux-commerciaux-[a-z]/,  // Exclure locaux-commerciaux-ville mais pas /locaux-commerciaux
+          /\/fonds-commerce-[a-z]/,       // Exclure fonds-commerce-ville mais pas /fonds-commerce
+          /\/immeuble-rapport-/,
+          /\/propriete-prestige-/,
+          /\/vendre-terrain-/,
+          /\/vendre-appartement-/,
+          /\/vendre-maison-[a-z]/,        // Exclure vendre-maison-ville mais pas /vendre-maison
+        ];
+        
+        for (const pattern of noindexPatterns) {
+          if (pattern.test(page)) return false;
+        }
+        
+        return true;
+      },
       serialize(item) {
         // Homepage - priorité maximale
         if (item.url === 'https://agencevoglans.fr/') {
@@ -39,13 +60,11 @@ export default defineConfig({
           item.priority = 0.9;
           item.lastmod = new Date();
         }
-        // Pages estimation par ville - haute priorité (pages de conversion)
+        // Pages estimation par ville - TRÈS haute priorité (pages de conversion principales)
         else if (item.url.includes('/estimation/')) {
           item.changefreq = 'weekly';
-          item.priority = 0.85;
-          const weekAgo = new Date();
-          weekAgo.setDate(weekAgo.getDate() - 7);
-          item.lastmod = weekAgo;
+          item.priority = 0.9;
+          item.lastmod = new Date(); // Toujours récent pour forcer le recrawl
         }
         // Articles blog catégorie Vente & Estimation - priorité haute (conversion)
         else if (item.url.includes('/blog/') && 

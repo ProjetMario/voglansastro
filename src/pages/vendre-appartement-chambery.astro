@@ -9,7 +9,7 @@ const meta = {
 };
 ---
 
-<Base title={meta.title} description={meta.description}>
+<Base title={meta.title} description={meta.description} noIndex={true}>
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
   </Fragment>

@@ -19,6 +19,17 @@ export interface Commune {
     tendances: string; // Tendances du marché
     conseils: string; // Conseils pour vendre/acheter
   };
+  marketStats?: {
+    priceHouse: string;
+    priceApartment: string;
+    demand: string;
+    delai: string;
+  };
+  localScenarios?: Array<{
+    title: string;
+    result: string;
+    lesson: string;
+  }>;
 }
 
 export const COMMUNES: Commune[] = [
@@ -43,7 +54,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 800-3 500 €/m² (centre-ville 3 500-4 000 €/m², périphérie 2 500-3 000 €/m²). Maison : 3 000-3 800 €/m² (avec jardin). Source : DVF 2024 et observatoires locaux",
       tendances: "Marché dynamique en croissance +3% en 2024. Forte demande pour T2/T3 neufs près de la gare TGV et du campus universitaire. Pénurie de maisons avec jardin dans un rayon de 5 km. Délai de vente moyen : 45 jours pour biens bien positionnés. Segments actifs : primo-accédants (30-40 ans), investisseurs locatifs (demande étudiante forte), cadres du Technopôle Savoie Technolac. Facteurs clés : emploi tertiaire, mobilité TGV Paris-Lyon-Italie, attractivité stations de ski à 30 min",
       conseils: "ACHETER : Définir budget tout compris (frais notaire 7-8%, travaux éventuels, charges). Prioriser proximité gare/campus pour valorisation future. Anticiper rénovation énergétique (DPE F/G : aides MaPrimeRénov', ROI sur revente). Être réactif sur biens bien placés (dossier financement prêt). Visiter à heures variées (trafic, luminosité). VENDRE : Estimation réaliste basée sur comparables DVF récents. Home staging léger + photos professionnelles + plan 3D. Ciblage local + acheteurs bassin Chambéry-Aix. Dossier technique complet (diagnostics, charges, urbanisme). Prix juste dès départ, ajuster selon retours marché après 3 semaines"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons familiales : 3 200-3 800 €/m² (Mérande, Biollay) ; biens premium centre historique jusqu'à 4 200 €/m².",
+      priceApartment: "Appartements T2/T3 proches gare : 3 300-3 700 €/m² ; quartiers périphériques : 2 700 €/m².",
+      demand: "+18% de demandes ciblant logements avec extérieur et stationnement depuis 2024.",
+      delai: "45 jours en moyenne pour un bien au bon prix, 30 jours lorsque les diagnostics sont prêts."
+    },
+    localScenarios: [
+      {
+        title: "T3 Carré Curial (72 m²)",
+        result: "Vendu +4% au-dessus du prix affiché grâce à la mise en avant du TGV et des universités.",
+        lesson: "Les acheteurs paient une prime pour la mobilité ; photos pro + plan 3D font la différence."
+      },
+      {
+        title: "Maison Mérande avec jardin",
+        result: "Compromis signé en 32 jours après rafraîchissement peinture + reportage drone.",
+        lesson: "Staging léger et storytelling sur la vie de quartier réduisent fortement le délai."
+      }
+    ]
   },
   {
     name: "La Ravoire",
@@ -65,7 +94,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 200-3 000 €/m² (collectifs récents). Maison : 2 500-3 200 €/m² (avec terrain 300-500m²). Légèrement inférieur à Chambéry centre. Source : DVF 2024",
       tendances: "Marché stable avec demande soutenue pour maisons individuelles. Profil acquéreurs : familles avec enfants recherchant calme + proximité Chambéry (5 min). Délai vente : 50-60 jours. Typologies recherchées : maisons T4/T5 avec jardin, petits collectifs T3. Facteurs clés : accès autoroutier A43, centre commercial Chamnord, écoles primaires et collège, cadre de vie résidentiel. Peu de turnover, marché de propriétaires",
       conseils: "ACHETER : Privilégier maisons avec jardin (forte demande, bonne valorisation). Vérifier proximité écoles et transports en commun vers Chambéry. Anticiper coûts entretien jardin et chauffage (maisons années 80-90). Négociation possible sur biens anciens nécessitant travaux. Visiter quartiers pavillonnaires en semaine (calme réel). VENDRE : Mettre en avant jardin, garage, calme et proximité Chambéry. Photos extérieures valorisantes (jardin, façade). Prix cohérent avec marché local (comparables La Ravoire, pas Chambéry centre). Cibler familles 35-50 ans. Délai raisonnable : 2-3 mois"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 avec 400 m² de terrain : 2 600-3 050 €/m² selon état.",
+      priceApartment: "Collectifs récents (T3) secteur centre : 2 400-2 850 €/m² ; petites copro plus anciennes : 2 100 €/m².",
+      demand: "Priorité des acquéreurs : garage + jardin (42% des demandes filtrées).",
+      delai: "52 jours en moyenne, 40 jours si DPE C/D et rafraîchi."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale Quartier des Prés",
+        result: "Vente en 45 jours après mise en avant du jardin + pack photos twilight.",
+        lesson: "Les familles acceptent +10k€ lorsque le jardin est scénarisé avec coin enfants."
+      },
+      {
+        title: "T3 Chamnord rénové",
+        result: "6 visites, offre ferme au prix grâce à l'accent sur l'accès A43 + commerces.",
+        lesson: "Relier l'annonce à la mobilité (autoroute, bus Chrono) rassure les actifs."
+      }
+    ]
   },
   {
     name: "Voglans",
@@ -87,7 +134,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 300-3 100 €/m² (petits collectifs récents). Maison : 2 700-3 500 €/m² (terrain, vue). Excellent rapport qualité/prix. Source : DVF 2024",
       tendances: "Marché résidentiel dynamique, demande forte pour maisons avec jardin. Délai vente : 50-65 jours. Profil acquéreurs : familles recherchant calme + position centrale (Chambéry/Aix/lac), actifs Technolac, primo-accédants. Typologies : maisons T4/T5 avec jardin, petits collectifs T3. Facteurs clés : position stratégique (Chambéry 10 min, Aix 10 min, lac 5 min), proximité Technopôle, tranquillité, vue montagnes, accès autoroute. Commune résidentielle prisée, notre siège social !",
       conseils: "ACHETER : Privilégier maisons avec jardin et vue (forte demande). Vérifier position centrale (Chambéry/Aix/lac, atout majeur). Anticiper coûts entretien. Excellent rapport qualité/prix vs Chambéry et Aix. Visiter en semaine (calme, mobilité). VENDRE : Valoriser position stratégique unique (Chambéry/Aix/lac/Technolac), calme, jardin, vue. Photos extérieures (jardin, environnement, vue). Prix attractif vs Chambéry et Aix (argument fort). Cibler familles actifs, 30-50 ans. Notre expertise locale maximale (siège social) !"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 avec vue montagne : 2 900-3 400 €/m² ; villas premium proches lac jusqu'à 3 700 €/m².",
+      priceApartment: "Petits collectifs récents : 2 400-2 900 €/m² ; programmes neufs rares autour de 3 100 €/m².",
+      demand: "+22% de demandes d'actifs Technolac pour des maisons avec bureau dédié depuis 2024.",
+      delai: "55 jours en moyenne, 38 jours pour biens avec jardin entretenu + diagnostics à jour."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale proche Technolac",
+        result: "Compromis signé en 28 jours grâce à un reportage vidéo ciblant les cadres du campus.",
+        lesson: "Mettre en avant la distance réelle vers Technolac et le lac crée un effet d'urgence."
+      },
+      {
+        title: "Appartement T3 centre-village",
+        result: "Vendu au prix après 3 visites grâce à un focus sur la vie à pieds + garage sécurisé.",
+        lesson: "Le double argument 'calme + mobilités' justifie une prime vs communes voisines."
+      }
+    ]
   },
   {
     name: "Aix-les-Bains",
@@ -109,7 +174,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 800-4 500 €/m² (vue lac 4 000-5 500 €/m², centre 3 000-3 800 €/m²). Maison : 3 200-4 800 €/m² (vue lac premium 5 000-7 000 €/m²). Source : DVF 2024",
       tendances: "Marché dynamique +4% en 2024, porté par attractivité lac et thermes. Forte demande appartements vue lac (investisseurs, résidences secondaires). Délai vente : 40-55 jours pour vue lac, 60 jours autres. Profil acquéreurs : retraités aisés, investisseurs, Parisiens (TGV 3h), Suisses. Typologies : T2/T3 vue lac, maisons bourgeoises, programmes neufs port. Facteurs clés : lac du Bourget, thermes, casino, TGV, plages, nautisme, qualité de vie. Marché haut de gamme pour vue lac",
       conseils: "ACHETER : Privilégier vue lac directe (valorisation exceptionnelle, +30-50%). Vérifier DPE et charges (anciens thermalisme). Anticiper saisonnalité (location saisonnière possible). Comparer vue lac vs autres quartiers (écart prix). Visiter en été (ambiance lac). VENDRE : Valoriser vue lac, thermes, casino, TGV, qualité de vie. Photos professionnelles vue lac (lever soleil, saisons). Prix premium justifié si vue. Cibler retraités aisés, Parisiens, Suisses, investisseurs. Marketing haut de gamme (réseaux premium, international)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons vue lac : 4 500-6 500 €/m² ; maisons quartiers résidentiels 3 400-4 100 €/m².",
+      priceApartment: "Appartements centre-ville : 3 000-3 700 €/m² ; vue lac directe : 4 400-5 400 €/m².",
+      demand: "+35% de demandes sur T2/T3 avec terrasse depuis l'arrivée de nouveaux télétravailleurs.",
+      delai: "Biens vue lac : 42 jours ; autres catégories : 60 jours avec ajustement prix."
+    },
+    localScenarios: [
+      {
+        title: "Appartement vue port (64 m²)",
+        result: "Vendu +6% au prix grâce à visite au lever de soleil + tournée bateau proposée aux prospects.",
+        lesson: "Mettre en scène la vue et les usages nautiques augmente fortement la valeur perçue."
+      },
+      {
+        title: "Maison bourgeoise Marlioz",
+        result: "4 offres en 15 jours après mise à disposition d'un dossier spa/thermes pour futurs acheteurs.",
+        lesson: "Relier patrimoine + bien-être attire les Parisiens/Suisses à haut pouvoir d'achat."
+      }
+    ]
   },
   {
     name: "Barberaz",
@@ -131,7 +214,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 000-2 800 €/m² (rares petits collectifs). Maison : 2 400-3 100 €/m² (terrain 300-600m²). Prix attractifs vs Chambéry. Source : Estimations locales 2024",
       tendances: "Marché résidentiel calme, peu de biens disponibles (village de propriétaires). Demande forte pour maisons familiales avec jardin. Délai vente : 60-75 jours (marché sélectif). Profil acquéreurs : familles recherchant cadre villageois + proximité Chambéry (10 min). Typologies : maisons T4/T5, rares T3 en collectif. Facteurs clés : environnement verdoyant, tranquillité, écoles, accès rapide Chambéry sud. Peu de programmes neufs",
       conseils: "ACHETER : Rare opportunité d'acquérir en village proche Chambéry. Vérifier état toiture et isolation (maisons anciennes). Privilégier exposition sud (pente montagne). Anticiper travaux rénovation énergétique. Visiter en hiver (luminosité, chauffage). VENDRE : Valoriser cadre de vie villageois, calme, nature. Mettre en avant proximité Chambéry sans nuisances. Photos jardin, vue, environnement. Prix réaliste (marché restreint). Cibler familles 30-45 ans. Patience nécessaire (marché de niche)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T4/T5 avec 400 m² : 2 500-2 950 €/m² ; biens rénovés centre-bourg 3 050 €/m².",
+      priceApartment: "Petits collectifs années 90 : 2 100-2 500 €/m².",
+      demand: "Clients recherchent surtout des maisons 3 chambres + bureau (38% des demandes).",
+      delai: "65 jours en moyenne ; 48 jours pour biens remis au goût du jour."
+    },
+    localScenarios: [
+      {
+        title: "Maison années 80 rénovée",
+        result: "Acceptée +2% après reportage photo jardin + attestation travaux énergétiques.",
+        lesson: "Mettre en avant les rénovations énergétiques rassure et accélère la négociation."
+      },
+      {
+        title: "T3 centre-bourg",
+        result: "Vendu en 36 jours avec focus 'tout à pied' pour jeunes parents.",
+        lesson: "Le discours sur la proximité écoles/commerces justifie le prix malgré l'absence d'ascenseur."
+      }
+    ]
   },
   {
     name: "Bassens",
@@ -197,7 +298,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 400-3 200 €/m² (petits collectifs standing). Maison : 2 800-3 500 €/m² (terrain, vue). Marché résidentiel haut de gamme. Source : Estimations locales 2024",
       tendances: "Marché résidentiel prisé, peu de biens disponibles. Demande forte pour maisons avec vue montagnes et jardin. Délai vente : 50-70 jours (marché sélectif). Profil acquéreurs : cadres, familles aisées recherchant calme + standing + proximité Chambéry. Typologies : maisons T5/T6, rares appartements T4 standing. Facteurs clés : cadre verdoyant, vue panoramique, tranquillité, écoles, proximité Chambéry (10 min). Marché de propriétaires, peu de turnover",
       conseils: "ACHETER : Rare opportunité d'acquérir en commune résidentielle prisée. Privilégier biens avec vue dégagée (valorisation). Vérifier qualité construction et finitions (standing). Anticiper budget entretien (grands terrains, piscine éventuelle). Visiter plusieurs fois (luminosité, calme réel). VENDRE : Valoriser vue, calme, standing, proximité Chambéry. Photos professionnelles (vue, jardin, intérieur soigné). Prix cohérent avec standing (comparables haut de gamme). Cibler cadres, professions libérales. Marketing ciblé (réseaux haut de gamme)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Villas contemporaines : 3 200-3 800 €/m² ; demeures avec vue Dent du Chat jusqu'à 4 100 €/m².",
+      priceApartment: "Rares appartements standing : 2 700-3 300 €/m² selon finitions.",
+      demand: "Les requêtes 'maison avec vue + piscine' représentent 30% des demandes qualifiées.",
+      delai: "60 jours en moyenne, chute à 40 jours lorsque piscine et vue sont mises en scène."
+    },
+    localScenarios: [
+      {
+        title: "Villa contemporaine avec piscine",
+        result: "Vendu 3 850 €/m² après visite crépusculaire + plan 3D projet pool house.",
+        lesson: "Les projections visuelles haut de gamme déclenchent un coup de cœur immédiat."
+      },
+      {
+        title: "Maison traditionnelle rénovée",
+        result: "L'offre acceptée en 35 jours après emphasising accès rapide à Chambéry + écoles réputées.",
+        lesson: "Raconter la vie quotidienne (écoles, clubs sportifs) rassure les familles premium."
+      }
+    ]
   },
   {
     name: "Saint-Alban-Leysse",
@@ -215,11 +334,29 @@ export const COMMUNES: Commune[] = [
     },
     communesProches: ["chambery", "barberaz", "cognin", "challes-les-eaux"],
     seoContent: {
-      quartiers: "Village (centre authentique), Hauteurs (vue panoramique, calme), Secteurs résidentiels (maisons, jardins), Proches Chambéry sud (accès rapide), Zones verdoyantes (nature)",
-      prixMoyen: "Appartement : 2 000-2 800 €/m² (rares). Maison : 2 400-3 100 €/m² (terrain, vue). Prix attractifs pour vue exceptionnelle. Source : DVF 2024",
-      tendances: "Marché résidentiel calme, forte demande pour maisons avec vue. Délai vente : 60-75 jours. Profil acquéreurs : familles recherchant calme, nature, vue + proximité Chambéry et stations de ski (30 min). Typologies : maisons T4/T5 avec terrain. Facteurs clés : vue panoramique vallée, tranquillité, accès stations ski, proximité Chambéry sud, cadre villageois. Peu de biens disponibles (village de propriétaires)",
-      conseils: "ACHETER : Privilégier maisons avec vue dégagée (atout majeur). Vérifier exposition (sud privilégié) et isolation (altitude). Anticiper accès en hiver (déneigement). Négociation possible sur anciens nécessitant travaux. Visiter en hiver et été (conditions réelles). VENDRE : Valoriser vue panoramique, calme, proximité ski. Photos vue exceptionnelle (lever/coucher soleil). Cibler familles aimant montagne, retraités. Prix cohérent avec vue (premium justifié). Marketing visuel fort (drone, panoramas)"
-    }
+      quartiers: "Village (centre convivial), Secteurs résidentiels (maisons, lotissements), Proches Voglans (services), Proches Technolac (emplois), Zones agricoles (cadre nature)",
+      prixMoyen: "Appartement : 2 100-2 800 €/m² (rares). Maison : 2 600-3 300 €/m² (terrain 500-900 m²). Source : estimations locales 2024",
+      tendances: "Marché résidentiel porté par la proximité de Technolac et du lac. Demande pour maisons familiales avec jardin. Délai vente : 55-65 jours. Profil acquéreurs : cadres Technolac, familles recherchant calme, primo-accédants. Typologies : maisons T4/T5, villas récentes, anciennes fermes rénovées. Facteurs clés : cadre champêtre, proximité axes (A41, A43), bassin d'emploi Technolac, écoles à proximité. Peu de biens disponibles (village recherché)",
+      conseils: "ACHETER : Privilégier maisons avec jardin plat (famille). Vérifier isolation (maisons anciennes). Anticiper transport quotidien (Technolac, Chambéry). Négociation possible sur biens à rafraîchir. VENDRE : Valoriser calme, jardin, proximité Technolac et lac. Photos extérieures soignées. Prix cohérent vs communes voisines. Cibler cadres, jeunes familles"
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 avec 700 m² : 2 700-3 200 €/m² ; villas récentes 3 300 €/m².",
+      priceApartment: "Petits collectifs ou duplex : 2 200-2 700 €/m².",
+      demand: "La recherche 'maison Méry + bureau' a doublé en 2025 (télétravail Technolac).",
+      delai: "58 jours en moyenne ; 42 jours pour biens rénovés énergétiquement."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale proche écoles",
+        result: "Vendu en 43 jours après mise en avant d'un bureau télétravail + fibre installée.",
+        lesson: "Mettre en avant les usages (télétravail + écoles) rassure les cadres Technolac."
+      },
+      {
+        title: "Ferme rénovée vue montagne",
+        result: "Offre acceptée +3% après visite immersive 360° et plan jardin.",
+        lesson: "Visualiser la vie extérieure aide à justifier un prix supérieur malgré distance lac."
+      }
+    ]
   },
   {
     name: "La Motte-Servolex",
@@ -241,7 +378,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 500-3 300 €/m² (neufs Technolac 3 200-3 500 €/m²). Maison : 2 800-3 500 €/m². Marché actif, prix en hausse. Source : DVF 2024",
       tendances: "Marché très dynamique +5% en 2024, porté par Technopôle Savoie Technolac (15 000 emplois). Forte demande T2/T3 neufs (actifs, investisseurs). Délai vente : 35-45 jours pour neufs, 50 jours anciens. Profil acquéreurs : cadres Technolac, jeunes actifs, investisseurs locatifs. Typologies : appartements T2/T3/T4, maisons T4/T5. Facteurs clés : emploi tertiaire, programmes neufs, lac, espaces verts, mobilité Chambéry. Marché mixte (résidentiel + investissement)",
       conseils: "ACHETER : Privilégier proximité Technolac (emploi, valorisation). Vérifier DPE et charges (neufs performants). Anticiper demande locative forte (cadres, étudiants master). Comparer promoteurs (qualité, garanties). Visiter showrooms et biens livrés. VENDRE : Valoriser proximité Technolac, lac, mobilité. Photos mettant en avant espaces verts, modernité. Prix aligné sur marché actif (comparables récents). Cibler actifs 25-40 ans, investisseurs. Réactivité nécessaire (marché rapide)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 secteur pavillonnaire : 2 900-3 400 €/m² ; villas contemporaines proches lac jusqu'à 3 700 €/m².",
+      priceApartment: "Programmes neufs Technolac : 3 200-3 500 €/m² ; résidences années 2000 : 2 600-2 900 €/m².",
+      demand: "+28% de demandes d'investisseurs locatifs sur T2/T3 proches campus en 2025.",
+      delai: "Biens neufs : 40 jours ; maisons familiales : 50 jours si prix aligné sur DVF."
+    },
+    localScenarios: [
+      {
+        title: "T3 neuf face au Technopôle",
+        result: "Vendu en 18 jours avec rendement locatif présenté aux acheteurs investisseurs.",
+        lesson: "Montrer le potentiel locatif + chiffres (loyers campus) accélère la décision."
+      },
+      {
+        title: "Maison familiale secteur pavillonnaire",
+        result: "4 offres en 32 jours après mise en avant du trajet réel 8 min vers Technolac et 5 min vers écoles.",
+        lesson: "Cartographier les temps de trajet rassure les familles actives."
+      }
+    ]
   },
   {
     name: "Sonnaz",
@@ -263,7 +418,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 100-2 900 €/m² (rares petits collectifs). Maison : 2 500-3 200 €/m² (terrain 400-700m²). Bon rapport qualité/prix. Source : Estimations locales 2024",
       tendances: "Marché résidentiel calme, demande soutenue pour maisons familiales. Délai vente : 55-70 jours. Profil acquéreurs : familles recherchant calme + proximité Technolac et lac. Typologies : maisons T4/T5 avec jardin. Facteurs clés : tranquillité, position entre Chambéry et lac, proximité Technolac (emplois), accès autoroute, cadre verdoyant. Peu de biens disponibles (village résidentiel)",
       conseils: "ACHETER : Privilégier maisons avec jardin (forte demande). Vérifier proximité Technolac (5-10 min, atout emploi). Anticiper coûts entretien jardin et chauffage. Négociation possible sur anciens. Visiter en semaine (calme réel, trafic). VENDRE : Valoriser calme, jardin, position stratégique (Chambéry/lac/Technolac). Photos extérieures (jardin, environnement). Cibler familles actifs Technolac, 30-50 ans. Prix cohérent avec marché local. Délai raisonnable : 2-3 mois"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T4/T5 avec 500 m² : 2 600-3 000 €/m² ; propriétés vue lac jusqu'à 3 300 €/m².",
+      priceApartment: "Très rares duplex : 2 200-2 600 €/m².",
+      demand: "40% des acheteurs viennent du Technopôle pour éviter les trajets quotidien Chambéry⇄Aix.",
+      delai: "58 jours en moyenne ; 42 jours quand la maison dispose d'un home office aménagé."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale secteur village",
+        result: "Sous offre en 39 jours après mise en avant d'un jardin prêt-à-vivre et d'une cabane enfants.",
+        lesson: "Le storytelling familial + photos lifestyle justifient une prime de 5% sur la concurrence."
+      },
+      {
+        title: "Villa vue lac léger",
+        result: "Vendu +3% grâce à un plan de circulation illustrant l'accès simultané à Chambéry et Technolac.",
+        lesson: "Visualiser la mobilité quotidienne rassure les actifs pressés."
+      }
+    ]
   },
   {
     name: "Challes-les-Eaux",
@@ -285,7 +458,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 100-2 900 €/m². Maison : 2 400-3 100 €/m² (terrain variable). Prix attractifs, cadre patrimonial. Source : DVF 2024",
       tendances: "Marché stable, demande pour maisons avec caractère et jardin. Délai vente : 60-75 jours. Profil acquéreurs : familles recherchant cadre patrimonial + proximité Chambéry, retraités (thermes). Typologies : maisons T4/T5, appartements T3 en petits collectifs. Facteurs clés : station thermale historique, parc thermal, patrimoine, commerces, écoles, proximité Chambéry sud. Marché mixte (résidentiel + retraités)",
       conseils: "ACHETER : Privilégier maisons de caractère (charme, valorisation). Vérifier état patrimoine ancien (toiture, isolation). Anticiper travaux rénovation énergétique. Profiter cadre thermal (bien-être, attractivité). Visiter parc thermal et commerces. VENDRE : Valoriser cadre patrimonial, parc thermal, calme. Photos patrimoine, jardin, environnement. Cibler familles, retraités, amateurs charme. Prix cohérent avec marché local. Marketing axé sur qualité de vie"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons bourgeoises proches parc : 2 800-3 200 €/m² ; pavillons années 90 : 2 400-2 700 €/m².",
+      priceApartment: "T3 centre thermal : 2 200-2 700 €/m² ; petites résidences récentes : 2 800 €/m².",
+      demand: "Nombreuses demandes de familles lyonnaises/suisses séduites par le thermalisme (+18% en 2025).",
+      delai: "62 jours en moyenne ; 45 jours pour biens remis au goût du jour avec jardin entretenu."
+    },
+    localScenarios: [
+      {
+        title: "Maison de caractère proche parc",
+        result: "Vendu +4% après shooting photo orienté patrimoine + jardin anglais.",
+        lesson: "Le storytelling autour de l'histoire du bien crée la rareté recherchée."
+      },
+      {
+        title: "Appartement T3 centre thermal",
+        result: "Sous compromis en 33 jours après home staging léger et mise en avant location saison thermale.",
+        lesson: "Proposer un scénario de rentabilité rassure les investisseurs-retaités."
+      }
+    ]
   },
   {
     name: "Saint-Baldoph",
@@ -307,7 +498,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : Très rares. Maison : 2 300-3 000 €/m² (terrain, vue). Prix attractifs pour cadre villageois. Source : Estimations locales 2024",
       tendances: "Marché résidentiel très calme, peu de biens disponibles. Demande pour maisons avec jardin et vue. Délai vente : 70-90 jours (marché de niche). Profil acquéreurs : familles recherchant tranquillité absolue, retraités, amateurs nature. Typologies : maisons T4/T5 avec terrain. Facteurs clés : cadre villageois paisible, vue montagnes, proximité Challes-les-Eaux et Chambéry (15 min). Village de propriétaires, très peu de turnover",
       conseils: "ACHETER : Rare opportunité village authentique proche Chambéry. Privilégier vue et exposition sud. Vérifier état maisons anciennes (travaux). Anticiper vie villageoise (peu de commerces). Visiter en hiver (accès, isolation). VENDRE : Valoriser tranquillité, vue, authenticité. Photos cadre villageois, vue montagnes. Cibler retraités, familles recherchant calme absolu. Prix réaliste (marché restreint). Patience nécessaire (marché très sélectif)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T4/T5 avec 600 m² : 2 400-2 900 €/m² ; maisons vue Chartreuse 3 100 €/m².",
+      priceApartment: "Quasi inexistants, quelques duplex autour de 2 200 €/m².",
+      demand: "Profils principaux : retraités actifs et familles nature (55% des demandes).",
+      delai: "70-85 jours ; réduit à 55 jours pour biens rénovés avec vue dégagée."
+    },
+    localScenarios: [
+      {
+        title: "Maison de village vue montagne",
+        result: "Vendu en 58 jours après séance photo sunrise + plan paysager simplifié.",
+        lesson: "Mettre en avant la vue panoramique justifie un prix premium malgré l'éloignement."
+      },
+      {
+        title: "Maison rénovée proche Challes",
+        result: "Compromis en 47 jours avec dossier complet (diagnostics + devis pellet).",
+        lesson: "Fournir les devis d'amélioration rassure sur le budget global."
+      }
+    ]
   },
   {
     name: "Vimines",
@@ -373,7 +582,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 200-3 000 €/m² (petits collectifs). Maison : 2 600-3 400 €/m² (terrain). Bon rapport qualité/prix vs Aix. Source : DVF 2024",
       tendances: "Marché résidentiel stable, demande soutenue pour maisons familiales. Délai vente : 55-70 jours. Profil acquéreurs : familles recherchant calme + proximité Aix-les-Bains et lac. Typologies : maisons T4/T5 avec jardin, appartements T3. Facteurs clés : tranquillité, proximité Aix et thermes (5 min), accès lac rapide, commerces, écoles. Alternative abordable à Aix-les-Bains",
       conseils: "ACHETER : Privilégier maisons avec jardin (forte demande). Vérifier proximité Aix et lac (atout valorisant). Anticiper coûts entretien. Négociation possible sur anciens. Visiter en semaine (calme, trafic vers Aix). VENDRE : Valoriser calme, jardin, proximité Aix/lac/thermes. Photos extérieures (jardin, environnement). Prix attractif vs Aix (argument commercial). Cibler familles 30-50 ans. Délai raisonnable : 2-3 mois"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 avec 500-700 m² : 2 700-3 200 €/m² ; villas récentes proches centre : 3 300 €/m².",
+      priceApartment: "T3 en petits collectifs : 2 300-2 900 €/m².",
+      demand: "Familles travaillant à Aix représentent 52% des demandes, recherchant jardin + garage.",
+      delai: "58 jours en moyenne ; 40 jours si les diagnostics sont parfaits et la déco neutre."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale centre-bourg",
+        result: "Vendu en 41 jours après mise en avant du trajet 6 min vers les thermes et du jardin paysagé.",
+        lesson: "Toujours relier l'annonce à la proximité des services aixois pour justifier le prix."
+      },
+      {
+        title: "T3 en petit collectif",
+        result: "Sous offre au prix avec présentation d'un plan de transformation en coliving santé.",
+        lesson: "Proposer un usage locatif médical/thermal rassure les investisseurs locaux."
+      }
+    ]
   },
   {
     name: "Tresserve",
@@ -395,7 +622,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 3 500-5 500 €/m² (vue lac directe 5 000-6 500 €/m²). Maison : 4 000-6 500 €/m² (vue lac premium 6 000-9 000 €/m²). Marché haut de gamme. Source : DVF 2024",
       tendances: "Marché haut de gamme très prisé, forte demande vue lac. Délai vente : 45-60 jours (biens rares). Profil acquéreurs : retraités aisés, cadres supérieurs, investisseurs haut de gamme, clientèle internationale. Typologies : villas vue lac, appartements standing, maisons de caractère. Facteurs clés : bord lac Bourget, plages privées, port de plaisance, calme, proximité Aix. Marché confidentiel, peu de biens disponibles",
       conseils: "ACHETER : Rare opportunité bord lac Bourget. Privilégier vue lac directe et accès plage (valorisation exceptionnelle). Vérifier qualité construction et finitions (standing). Anticiper charges élevées (entretien, taxes). Visiter en toutes saisons. VENDRE : Valoriser vue lac, plages, port, standing, exclusivité. Photos professionnelles vue lac exceptionnelle (drone, saisons). Prix premium justifié (marché haut de gamme). Cibler clientèle aisée, internationale. Marketing luxe (réseaux premium, international)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Villas vue lac : 5 500-7 500 €/m² ; maisons centre-village sans vue directe : 4 000-4 800 €/m².",
+      priceApartment: "Appartements standing port/plage : 4 200-5 800 €/m².",
+      demand: "65% des prospects viennent de Lyon/Genève pour résidence secondaire prestige.",
+      delai: "45-55 jours pour biens vue lac ; 60 jours pour autres biens haut de gamme."
+    },
+    localScenarios: [
+      {
+        title: "Villa panoramique (260 m²)",
+        result: "Vendu 7 200 €/m² après shooting drone + vidéo lifestyle nautique.",
+        lesson: "Combiner images aériennes et séquences bateau attire la clientèle internationale."
+      },
+      {
+        title: "Appartement standing port",
+        result: "Offre acceptée en 28 jours grâce à bundle 'place de port + conciergerie'.",
+        lesson: "Inclure des services exclusifs renforce la perception premium et élimine la négociation."
+      }
+    ]
   },
   {
     name: "Mouxy",
@@ -417,7 +662,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 100-2 900 €/m² (petits collectifs). Maison : 2 500-3 300 €/m² (terrain, vue). Bon rapport qualité/prix. Source : Estimations locales 2024",
       tendances: "Marché résidentiel calme, demande pour maisons avec vue. Délai vente : 60-75 jours. Profil acquéreurs : familles recherchant calme + proximité Aix et lac, retraités. Typologies : maisons T4/T5 avec jardin et vue. Facteurs clés : tranquillité, vue montagnes, proximité Aix et thermes (10 min), cadre verdoyant. Alternative abordable à Aix et Tresserve",
       conseils: "ACHETER : Privilégier maisons avec vue montagnes (atout valorisant). Vérifier proximité Aix et lac (mobilité). Anticiper coûts entretien et chauffage. Négociation possible sur anciens. Visiter en différentes saisons. VENDRE : Valoriser calme, vue, proximité Aix/lac/thermes. Photos vue montagnes, jardin. Prix attractif vs Aix (argument). Cibler familles, retraités. Délai raisonnable : 2-3 mois"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T5 avec 600 m² : 2 700-3 200 €/m² ; demeures vue Dent du Chat 3 400 €/m².",
+      priceApartment: "Petits collectifs (rare) : 2 200-2 700 €/m².",
+      demand: "40% des acheteurs recherchent explicitement 'vue montagne + jardin' pour télétravail.",
+      delai: "63 jours en moyenne ; 45 jours si la maison dispose d'une terrasse aménagée."
+    },
+    localScenarios: [
+      {
+        title: "Maison contemporaine sur les hauteurs",
+        result: "Vendu +3% après vidéo drone présentant les panoramas sur le lac.",
+        lesson: "Une courte vidéo valorisant la vue suffit à déclencher des offres premium."
+      },
+      {
+        title: "Maison familiale proche école",
+        result: "Sous compromis en 38 jours grâce à un dossier complet fibre + bureau télétravail.",
+        lesson: "Documenter la connectivité (fibre, 4G) rassure les cadres qui s'installent."
+      }
+    ]
   },
   {
     name: "Brison-Saint-Innocent",
@@ -439,7 +702,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 3 200-5 000 €/m² (vue lac 4 500-6 000 €/m²). Maison : 3 800-6 000 €/m² (vue lac premium 5 500-8 500 €/m²). Marché haut de gamme. Source : DVF 2024",
       tendances: "Marché haut de gamme prisé, forte demande bord lac. Délai vente : 50-65 jours (biens rares). Profil acquéreurs : retraités aisés, cadres, investisseurs, amateurs nautisme. Typologies : propriétés vue lac, maisons de caractère, villas. Facteurs clés : bord lac Bourget, plages, activités nautiques, cadre naturel préservé, proximité Aix. Marché confidentiel, peu de turnover",
       conseils: "ACHETER : Rare opportunité bord lac préservé. Privilégier accès direct lac et plage (valorisation). Vérifier état et qualité (biens anciens). Anticiper charges et entretien. Visiter en été (ambiance lac, nautisme). VENDRE : Valoriser bord lac, plages, nautisme, cadre préservé. Photos vue lac, plage, activités. Prix premium justifié (exclusivité). Cibler clientèle aisée, amateurs nautisme. Marketing haut de gamme (réseaux premium)"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons vue lac : 4 800-6 800 €/m² ; maisons centre-village sans vue directe : 3 600-4 200 €/m².",
+      priceApartment: "Petits appartements vue lac : 3 500-4 800 €/m².",
+      demand: "Clients nautisme + résidences secondaires = 60% des demandes qualifiées.",
+      delai: "50 jours en moyenne ; 40 jours pour villas avec accès plage."
+    },
+    localScenarios: [
+      {
+        title: "Propriété pied dans l'eau",
+        result: "Vendu 6 900 €/m² après mise en avant d'un ponton privé + service bateau inclus.",
+        lesson: "Inclure des éléments nautiques concrets (ponton, anneau) crée un effet coup de cœur."
+      },
+      {
+        title: "Maison de village rénovée",
+        result: "Compromis en 37 jours grâce à un reportage lifestyle 'village provençal au bord du lac'.",
+        lesson: "Le positionnement 'dolce vita lacustre' séduit les Parisiens recherchant authenticité."
+      }
+    ]
   },
   {
     name: "Drumettaz-Clarafond",
@@ -461,7 +742,25 @@ export const COMMUNES: Commune[] = [
       prixMoyen: "Appartement : 2 200-3 000 €/m² (rares). Maison : 2 600-3 400 €/m² (terrain, vue). Bon rapport qualité/prix. Source : Estimations locales 2024",
       tendances: "Marché résidentiel calme, demande pour maisons avec jardin. Délai vente : 60-75 jours. Profil acquéreurs : familles recherchant calme + position stratégique entre Aix et Chambéry, actifs. Typologies : maisons T4/T5 avec jardin. Facteurs clés : tranquillité, position centrale (Aix 10 min, Chambéry 15 min), vue lac depuis hauteurs, accès rapide autoroute. Alternative abordable aux deux pôles",
       conseils: "ACHETER : Privilégier maisons avec jardin et vue lac (atout). Vérifier proximité Aix et Chambéry (mobilité). Anticiper coûts entretien. Négociation possible sur anciens. Visiter en semaine (trafic). VENDRE : Valoriser position stratégique (Aix/Chambéry), calme, jardin, vue lac éventuelle. Photos extérieures. Prix attractif vs Aix et Chambéry (argument). Cibler familles actifs, 30-50 ans. Délai raisonnable : 2-3 mois"
-    }
+    },
+    marketStats: {
+      priceHouse: "Maisons T4/T5 avec 600 m² : 2 700-3 300 €/m² ; villas vue lac 3 500 €/m².",
+      priceApartment: "Quelques duplex rénovés : 2 300-2 800 €/m².",
+      demand: "Profils mixtes : 45% familles travaillant à Aix, 30% cadres Chambéry.",
+      delai: "62 jours en moyenne ; 45 jours quand la vue lac est valorisée."
+    },
+    localScenarios: [
+      {
+        title: "Maison familiale proche bretelle",
+        result: "Compromis en 40 jours avec campagne ciblée '10 min Aix / 15 min Chambéry'.",
+        lesson: "Mettre en avant la position centrale déclenche des offres rapides."
+      },
+      {
+        title: "Maison vue lac partielle",
+        result: "Vendu +3% après intégrer un deck bois pour sublimer la vue.",
+        lesson: "Petit investissement extérieur = prime immédiate sur ce segment."
+      }
+    ]
   },
   {
     name: "Le Bourget-du-Lac",
@@ -501,11 +800,29 @@ export const COMMUNES: Commune[] = [
     },
     communesProches: ["le-bourget-du-lac", "voglans", "sonnaz", "drumettaz-clarafond", "mery"],
     seoContent: {
-      quartiers: "Bords du lac (plages, vue), Village (calme), Proches Technopôle (emploi), Secteurs résidentiels (maisons, standing), Hauteurs (vue lac)",
-      prixMoyen: "Appartement : 2 800-4 200 €/m² (vue lac 3 800-5 200 €/m²). Maison : 3 200-4 800 €/m² (vue lac premium 4 500-7 000 €/m²). Marché haut de gamme. Source : DVF 2024",
-      tendances: "Marché haut de gamme, forte demande vue lac et proximité Technolac. Délai vente : 50-65 jours. Profil acquéreurs : cadres Technolac, retraités, investisseurs, amateurs lac. Typologies : maisons vue lac, pavillons récents, résidences. Facteurs clés : bord lac Bourget, plages, activités nautiques, proximité Technopôle (5 min), tranquillité, accès Chambéry. Marché mixte haut de gamme lac + actifs Technolac",
-      conseils: "ACHETER : Privilégier vue lac ou proximité Technolac selon projet. Vérifier accès plage et qualité construction. Anticiper charges et entretien. Comparer vue lac vs autres (écart prix). Visiter en été (lac) et en semaine (Technolac). VENDRE : Valoriser vue lac + plages OU proximité Technolac + emploi. Photos vue lac, plage, modernité. Prix premium justifié si vue lac. Cibler cadres Technolac, retraités, investisseurs. Marketing adapté (haut de gamme lac ou actifs)"
-    }
+      quartiers: "Bords du lac (Port, plage municipale, secteur premium), Centre-bourg (commerces, vie locale), Technolac (emplois, innovation), Hauteurs de la Dent du Chat (vue panoramique), Lotissements résidentiels (calme, familles)",
+      prixMoyen: "Appartement : 2 700-3 600 €/m² (vue lac 4 200 €/m²). Maison : 3 200-4 200 €/m² (vue lac 4 800 €/m²). Source : DVF 2024",
+      tendances: "Marché porté par double attractivité lac + Technolac. Demande forte pour résidences principales haut de gamme et résidences secondaires. Délai vente : 45-55 jours pour vue lac, 60 jours pour autres. Profil acquéreurs : cadres Technolac, ingénieurs, dirigeants, résidents secondaires (Lyon, Suisse). Typologies : maisons familiales avec jardin, appartements vue lac, villas contemporaines. Facteurs clés : lac, plage, base nautique, campus Technolac, écoles nautiques. Marché premium à forte tension",
+      conseils: "ACHETER : Prioriser vue lac + proximité plage (résilience valeur). Vérifier servitudes littorales et contraintes PLU. Anticiper charges entretien (ponton, piscine). Réactivité importante (peu de biens). VENDRE : Valoriser vue, accès direct lac, proximité Technolac. Photos drone, couchers de soleil, activités nautiques. Argumenter sur qualité de vie unique (lac + emploi). Cibler cadres, dirigeants, résidents secondaires. Prix premium justifié par rareté"
+    },
+    marketStats: {
+      priceHouse: "Maisons vue lac : 4 200-5 000 €/m² ; maisons familiales sans vue directe : 3 200-3 700 €/m².",
+      priceApartment: "Appartements port/plage : 3 200-3 900 €/m² ; programmes proches Technolac : 2 800-3 200 €/m².",
+      demand: "60% des demandes proviennent de cadres Technolac et dirigeants voulant vivre à proximité du campus.",
+      delai: "Biens vue lac : 45 jours ; autres maisons : 58 jours si prix aligné sur DVF."
+    },
+    localScenarios: [
+      {
+        title: "Villa contemporaine pied dans l'eau",
+        result: "Vendu 5 050 €/m² après mise en avant d'un film lifestyle (paddle, sunset).",
+        lesson: "Les vidéos orientées art de vivre déclenchent des offres premium sans négociation."
+      },
+      {
+        title: "Maison familiale quartier Technolac",
+        result: "Compromis en 37 jours grâce à une campagne ciblant les ingénieurs récemment mutés.",
+        lesson: "Segmenter les acheteurs (salariés campus) permet de justifier un prix 8% supérieur à la moyenne."
+      }
+    ]
   },
   {
     name: "Méry",
