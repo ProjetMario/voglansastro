@@ -11,14 +11,8 @@
 [build.processing.html]
   pretty_urls = false
 
-# Désactiver le trailing slash automatique (fix erreur redirection GSC)
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
-  force = true
-
 # Les redirections sont gérées dans public/_redirects (meilleure pratique)
+# Note: Ne pas utiliser /*/ → /:splat avec mode hybrid (cause boucle infinie)
 
 [functions]
   directory = "netlify/functions"
