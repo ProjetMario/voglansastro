@@ -177,6 +177,7 @@ export default defineConfig({
     remotePatterns: [{ protocol: 'https' }],
   },
   build: {
+    format: 'file', // Génère /page.html au lieu de /page/index.html (fix redirection GSC)
     inlineStylesheets: 'auto',
     assets: '_astro',
   },

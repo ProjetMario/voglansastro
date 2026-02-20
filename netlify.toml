@@ -5,6 +5,19 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = false
+
+# Désactiver le trailing slash automatique (fix erreur redirection GSC)
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
+  force = true
+
 # Les redirections sont gérées dans public/_redirects (meilleure pratique)
 
 [functions]
