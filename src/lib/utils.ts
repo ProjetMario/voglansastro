@@ -87,7 +87,7 @@ export function getBadgeLabel(badge: string): string {
 // Configuration du site
 export const siteConfig = {
   name: "L'Agence de Voglans",
-  description: "🏡 Agence immobilière Voglans & Savoie ⭐ Estimation gratuite en 48h ✅ Vente rapide ✅ Accompagnement personnalisé ✅ +200 clients satisfaits. Contactez-nous !",
+  description: "🏡 Agence immobilière Voglans & Savoie ⭐ Estimation gratuite en 48h ✅ Vente rapide ✅ Accompagnement personnalisé ✅ Agence 100% locale. Contactez-nous !",
   url: "https://agencevoglans.fr",
   contact: {
     phone: "07 57 83 02 62",
