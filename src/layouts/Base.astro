@@ -246,7 +246,7 @@ const {
             "@id": "https://agencevoglans.fr/#website",
             "url": "https://agencevoglans.fr",
             "name": "L'Agence de Voglans",
-            "description": "Agence immobilière 100% locale en Savoie - Estimation gratuite, vente et achat",
+            "description": "Agence immobilière 100% locale en Savoie - Estimation gratuite, vente et achat de biens immobiliers à Chambéry, Aix-les-Bains, Voglans et 27 communes",
             "publisher": {
               "@id": "https://agencevoglans.fr/#organization"
             },
@@ -254,11 +254,61 @@ const {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://agencevoglans.fr/estimation?ville={search_term_string}"
+                "urlTemplate": "https://agencevoglans.fr/estimation/{search_term_string}"
               },
               "query-input": "required name=search_term_string"
             },
-            "inLanguage": "fr-FR"
+            "inLanguage": "fr-FR",
+            "hasPart": [
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/acheter/#acheter",
+                "name": "Nos Biens Immobiliers",
+                "description": "Découvrez notre sélection de maisons, appartements et terrains à vendre en Savoie",
+                "url": "https://agencevoglans.fr/acheter",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/estimation/#estimation",
+                "name": "Estimation Gratuite",
+                "description": "Estimez gratuitement votre bien immobilier en 48h par nos experts locaux",
+                "url": "https://agencevoglans.fr/estimation",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/vendre/#vendre",
+                "name": "Vendre votre Bien",
+                "description": "Accompagnement complet pour vendre votre maison ou appartement en Savoie",
+                "url": "https://agencevoglans.fr/vendre",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/estimation/chambery/#chambery",
+                "name": "Agences immobilières locales",
+                "description": "Nos agences couvrent Chambéry, Aix-les-Bains, Voglans et 27 communes de Savoie",
+                "url": "https://agencevoglans.fr/estimation/chambery",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/blog/#blog",
+                "name": "Blog Immobilier",
+                "description": "Conseils, analyses et tendances du marché immobilier en Savoie",
+                "url": "https://agencevoglans.fr/blog",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://agencevoglans.fr/guides/#guides",
+                "name": "Guides Pratiques",
+                "description": "Guides complets pour acheter, vendre et investir en immobilier",
+                "url": "https://agencevoglans.fr/guides",
+                "isPartOf": {"@id": "https://agencevoglans.fr/#website"}
+              }
+            ]
           },
           {
             "@type": "BreadcrumbList",
@@ -271,6 +321,98 @@ const {
                 "item": "https://agencevoglans.fr"
               }
             ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://agencevoglans.fr/#webpage",
+            "url": "https://agencevoglans.fr/",
+            "name": "L'Agence de Voglans - Immobilier Savoie",
+            "isPartOf": {"@id": "https://agencevoglans.fr/#website"},
+            "about": {"@id": "https://agencevoglans.fr/#organization"},
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://agencevoglans.fr/images/og-default.jpg"
+            }
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://agencevoglans.fr/#navigation",
+            "name": "Navigation principale",
+            "hasPart": [
+              {"@type": "SiteNavigationElement", "name": "Accueil", "url": "https://agencevoglans.fr/"},
+              {"@type": "SiteNavigationElement", "name": "Acheter", "url": "https://agencevoglans.fr/acheter"},
+              {"@type": "SiteNavigationElement", "name": "Vendre", "url": "https://agencevoglans.fr/vendre"},
+              {"@type": "SiteNavigationElement", "name": "Estimation", "url": "https://agencevoglans.fr/estimation"},
+              {"@type": "SiteNavigationElement", "name": "Blog", "url": "https://agencevoglans.fr/blog"},
+              {"@type": "SiteNavigationElement", "name": "Contact", "url": "https://agencevoglans.fr/contact"}
+            ]
+          }
+        ]
+      }
+    </script>
+    
+    <!-- Services Schema pour sitelinks enrichis -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Estimation immobilière gratuite",
+            "description": "Estimation gratuite et précise de votre bien immobilier en Savoie sous 48h. Basée sur les transactions récentes du marché local de Chambéry, Aix-les-Bains et 27 communes.",
+            "provider": {
+              "@type": "RealEstateAgent",
+              "name": "L'Agence de Voglans",
+              "@id": "https://agencevoglans.fr/#organization"
+            },
+            "areaServed": ["Savoie", "Chambéry", "Aix-les-Bains", "Voglans"],
+            "serviceType": "Property Valuation",
+            "url": "https://agencevoglans.fr/estimation",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Estimation gratuite sans engagement"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Vente immobilière",
+            "description": "Accompagnement complet pour la vente de votre bien : estimation, photos professionnelles, diffusion multi-portails, négociation et signature. Vente rapide en 75 jours en moyenne.",
+            "provider": {
+              "@type": "RealEstateAgent",
+              "name": "L'Agence de Voglans",
+              "@id": "https://agencevoglans.fr/#organization"
+            },
+            "areaServed": ["Savoie", "Chambéry", "Aix-les-Bains", "Voglans"],
+            "serviceType": "Property Sales",
+            "url": "https://agencevoglans.fr/vendre"
+          },
+          {
+            "@type": "Service",
+            "name": "Achat immobilier",
+            "description": "Recherche personnalisée de biens immobiliers en Savoie. Accompagnement de la visite à la signature chez le notaire. Maisons, appartements, terrains.",
+            "provider": {
+              "@type": "RealEstateAgent",
+              "name": "L'Agence de Voglans",
+              "@id": "https://agencevoglans.fr/#organization"
+            },
+            "areaServed": ["Savoie", "Chambéry", "Aix-les-Bains", "Voglans"],
+            "serviceType": "Property Purchase",
+            "url": "https://agencevoglans.fr/acheter"
+          },
+          {
+            "@type": "Service",
+            "name": "Conseil en investissement locatif",
+            "description": "Analyse de rentabilité, optimisation fiscale (LMNP, déficit foncier), sélection de biens à fort potentiel locatif près du Lac du Bourget et Chambéry.",
+            "provider": {
+              "@type": "RealEstateAgent",
+              "name": "L'Agence de Voglans",
+              "@id": "https://agencevoglans.fr/#organization"
+            },
+            "areaServed": ["Savoie", "Chambéry", "Aix-les-Bains", "Le Bourget-du-Lac"],
+            "serviceType": "Investment Advisory",
+            "url": "https://agencevoglans.fr/blog/investir-voglans-2025"
           }
         ]
       }
