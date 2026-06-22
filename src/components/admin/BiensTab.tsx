@@ -99,26 +99,26 @@ export default function BiensTab() {
 
   const filtered = biens.filter(
     (b) =>
-      b.reference.toLowerCase().includes(search.toLowerCase()) ||
-      b.titre.toLowerCase().includes(search.toLowerCase()) ||
+      (b.reference && b.reference.toLowerCase().includes(search.toLowerCase())) ||
+      (b.titre && b.titre.toLowerCase().includes(search.toLowerCase())) ||
       (b.ville && b.ville.toLowerCase().includes(search.toLowerCase())) ||
       (b.adresse && b.adresse.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getStatusColor = (s: BienStatut) => BIEN_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-gray-400';
+  const getStatusColor = (s: BienStatut) => BIEN_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-[#a9b8aa]';
   const getStatusLabel = (s: BienStatut) => BIEN_STATUTS.find((x) => x.value === s)?.label || s;
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-        <h2 className="text-xl font-bold text-white">Biens</h2>
+        <h2 className="text-xl font-bold text-[#f2f1e4]">Biens</h2>
         <Button onClick={openCreate}>
           <Plus size={16} className="mr-1" /> Nouveau bien
         </Button>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6f8174]" size={16} />
         <TextInput
           placeholder="Rechercher par référence, titre, ville..."
           value={search}
@@ -144,7 +144,7 @@ export default function BiensTab() {
           <TableBody>
             {filtered.map((b) => (
               <TableRow key={b.id} onClick={() => openEdit(b)}>
-                <TableCell className="font-mono text-[#C9A84C]">{b.reference}</TableCell>
+                <TableCell className="font-mono text-[#2BCA8F]">{b.reference}</TableCell>
                 <TableCell className="font-medium max-w-[200px] truncate">{b.titre}</TableCell>
                 <TableCell>{b.type_bien}</TableCell>
                 <TableCell>{b.ville || '-'}</TableCell>
@@ -167,7 +167,7 @@ export default function BiensTab() {
             ))}
             {filtered.length === 0 && (
               <TableRow>
-                <TableCell colSpan={8} className="text-center text-gray-500 py-8">
+                <TableCell colSpan={8} className="text-center text-[#6f8174] py-8">
                   Aucun bien trouvé
                 </TableCell>
               </TableRow>

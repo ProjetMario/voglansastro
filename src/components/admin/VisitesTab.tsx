@@ -52,6 +52,7 @@ export default function VisitesTab() {
       type_bien: '',
       surface: undefined,
       prix: undefined,
+      agence: 'Voglans',
       notes: '',
     });
     setModalOpen(true);
@@ -64,7 +65,7 @@ export default function VisitesTab() {
   }
 
   async function save() {
-    if (!form.nom || !form.date_visite) return;
+    if ((!form.nom && !form.visiteur_nom) || !form.date_visite) return;
     const payload = { ...form, updated_at: new Date().toISOString() };
     if (editing) {
       await supabase.from('visites').update(payload).eq('id', editing.id);
@@ -83,25 +84,32 @@ export default function VisitesTab() {
 
   const filtered = visites.filter(
     (v) =>
-      v.nom.toLowerCase().includes(search.toLowerCase()) ||
-      (v.ville && v.ville.toLowerCase().includes(search.toLowerCase())) ||
-      (v.adresse_bien && v.adresse_bien.toLowerCase().includes(search.toLowerCase()))
+      (v.visiteur_nom && v.visiteur_nom.toLowerCase().includes(search.toLowerCase())) ||
+      (v.property_label && v.property_label.toLowerCase().includes(search.toLowerCase())) ||
+      (v.property_ref && v.property_ref.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getStatusColor = (s: VisiteStatut) => VISITE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-gray-400';
+  const getStatusColor = (s: VisiteStatut) => VISITE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-[#a9b8aa]';
   const getStatusLabel = (s: VisiteStatut) => VISITE_STATUTS.find((x) => x.value === s)?.label || s;
+
+  const getAgenceBadge = (agence?: string | null) => {
+    const is2Savoie = agence && agence.toLowerCase().includes('2 savoie');
+    return is2Savoie
+      ? { label: '2 Savoie', className: 'bg-amber-500/15 text-amber-400 border border-amber-500/20' }
+      : { label: 'Voglans', className: 'bg-[#2BCA8F]/15 text-[#2BCA8F] border border-[#2BCA8F]/20' };
+  };
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-        <h2 className="text-xl font-bold text-white">Visites</h2>
+        <h2 className="text-xl font-bold text-[#f2f1e4]">Visites</h2>
         <Button onClick={openCreate}>
           <Plus size={16} className="mr-1" /> Nouvelle visite
         </Button>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6f8174]" size={16} />
         <TextInput
           placeholder="Rechercher par nom, ville ou adresse..."
           value={search}
@@ -121,21 +129,28 @@ export default function VisitesTab() {
             <TableHeadCell>Adresse</TableHeadCell>
             <TableHeadCell>Ville</TableHeadCell>
             <TableHeadCell>Statut</TableHeadCell>
+            <TableHeadCell>Agence</TableHeadCell>
             <TableHeadCell className="text-right">Actions</TableHeadCell>
           </TableHead>
           <TableBody>
             {filtered.map((v) => (
               <TableRow key={v.id} onClick={() => openEdit(v)}>
                 <TableCell>
-                  <div className="text-white">{v.date_visite}</div>
-                  {v.heure_visite && <div className="text-gray-500 text-xs">{v.heure_visite}</div>}
+                  <div className="text-[#f2f1e4]">{v.date_visite}</div>
+                  {v.heure_visite && <div className="text-[#6f8174] text-xs">{v.heure_visite}</div>}
                 </TableCell>
-                <TableCell className="font-medium">{v.nom}</TableCell>
-                <TableCell>{v.telephone || '-'}</TableCell>
-                <TableCell>{v.adresse_bien || '-'}</TableCell>
-                <TableCell>{v.ville || '-'}</TableCell>
+                <TableCell className="font-medium">{v.visiteur_nom || v.nom || '-'}</TableCell>
+                <TableCell>{v.visiteur_telephone || v.telephone || '-'}</TableCell>
+                <TableCell>{v.property_ref || v.adresse_bien || '-'}</TableCell>
+                <TableCell>{v.property_label || v.ville || '-'}</TableCell>
                 <TableCell>
                   <Badge className={getStatusColor(v.statut)}>{getStatusLabel(v.statut)}</Badge>
+                </TableCell>
+                <TableCell>
+                  {(() => {
+                    const a = getAgenceBadge(v.agence);
+                    return <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${a.className}`}>{a.label}</span>;
+                  })()}
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex gap-2 justify-end" onClick={(e) => e.stopPropagation()}>
@@ -151,7 +166,7 @@ export default function VisitesTab() {
             ))}
             {filtered.length === 0 && (
               <TableRow>
-                <TableCell colSpan={7} className="text-center text-gray-500 py-8">
+                <TableCell colSpan={8} className="text-center text-[#6f8174] py-8">
                   Aucune visite trouvée
                 </TableCell>
               </TableRow>
@@ -169,13 +184,13 @@ export default function VisitesTab() {
             <TextInput type="time" value={form.heure_visite || ''} onChange={(e) => setForm({ ...form, heure_visite: e.target.value })} />
           </Field>
           <Field label="Nom *">
-            <TextInput value={form.nom || ''} onChange={(e) => setForm({ ...form, nom: e.target.value })} placeholder="Nom du contact" />
+            <TextInput value={form.visiteur_nom || form.nom || ''} onChange={(e) => setForm({ ...form, visiteur_nom: e.target.value, nom: e.target.value })} placeholder="Nom du contact" />
           </Field>
           <Field label="Email">
-            <TextInput type="email" value={form.email || ''} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            <TextInput type="email" value={form.visiteur_email || form.email || ''} onChange={(e) => setForm({ ...form, visiteur_email: e.target.value, email: e.target.value })} />
           </Field>
           <Field label="Téléphone">
-            <TextInput value={form.telephone || ''} onChange={(e) => setForm({ ...form, telephone: e.target.value })} />
+            <TextInput value={form.visiteur_telephone || form.telephone || ''} onChange={(e) => setForm({ ...form, visiteur_telephone: e.target.value, telephone: e.target.value })} />
           </Field>
           <Field label="Statut">
             <Select
@@ -184,11 +199,11 @@ export default function VisitesTab() {
               options={VISITE_STATUTS.map((s) => ({ value: s.value, label: s.label }))}
             />
           </Field>
-          <Field label="Adresse du bien">
-            <TextInput value={form.adresse_bien || ''} onChange={(e) => setForm({ ...form, adresse_bien: e.target.value })} />
+          <Field label="Référence bien">
+            <TextInput value={form.property_ref || form.adresse_bien || ''} onChange={(e) => setForm({ ...form, property_ref: e.target.value, adresse_bien: e.target.value })} />
           </Field>
-          <Field label="Ville">
-            <TextInput value={form.ville || ''} onChange={(e) => setForm({ ...form, ville: e.target.value })} />
+          <Field label="Libellé bien">
+            <TextInput value={form.property_label || form.ville || ''} onChange={(e) => setForm({ ...form, property_label: e.target.value, ville: e.target.value })} />
           </Field>
           <Field label="Type de bien">
             <TextInput value={form.type_bien || ''} onChange={(e) => setForm({ ...form, type_bien: e.target.value })} placeholder="Maison, Appartement..." />

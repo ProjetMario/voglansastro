@@ -58,22 +58,22 @@ export default function DemandesTab() {
 
   const filtered = demandes.filter(
     (d) =>
-      d.nom.toLowerCase().includes(search.toLowerCase()) ||
-      d.type_demande.toLowerCase().includes(search.toLowerCase()) ||
+      (d.nom && d.nom.toLowerCase().includes(search.toLowerCase())) ||
+      (d.type_demande && d.type_demande.toLowerCase().includes(search.toLowerCase())) ||
       (d.ville_souhaitee && d.ville_souhaitee.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getStatusColor = (s: DemandeStatut) => DEMANDE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-gray-400';
+  const getStatusColor = (s: DemandeStatut) => DEMANDE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-[#a9b8aa]';
   const getStatusLabel = (s: DemandeStatut) => DEMANDE_STATUTS.find((x) => x.value === s)?.label || s;
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-        <h2 className="text-xl font-bold text-white">Demandes</h2>
+        <h2 className="text-xl font-bold text-[#f2f1e4]">Demandes</h2>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6f8174]" size={16} />
         <TextInput
           placeholder="Rechercher par nom, type ou ville..."
           value={search}
@@ -100,7 +100,7 @@ export default function DemandesTab() {
             {filtered.map((d) => (
               <TableRow key={d.id} onClick={() => openEdit(d)}>
                 <TableCell>
-                  <div className="text-white text-xs">{new Date(d.created_at).toLocaleDateString('fr-FR')}</div>
+                  <div className="text-[#f2f1e4] text-xs">{new Date(d.created_at).toLocaleDateString('fr-FR')}</div>
                 </TableCell>
                 <TableCell className="font-medium">{d.nom}</TableCell>
                 <TableCell>{d.type_demande}</TableCell>
@@ -127,7 +127,7 @@ export default function DemandesTab() {
             ))}
             {filtered.length === 0 && (
               <TableRow>
-                <TableCell colSpan={8} className="text-center text-gray-500 py-8">
+                <TableCell colSpan={8} className="text-center text-[#6f8174] py-8">
                   Aucune demande trouvée
                 </TableCell>
               </TableRow>

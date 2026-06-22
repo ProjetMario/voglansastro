@@ -1,21 +1,19 @@
 ---
 export const prerender = false;
 import AdminApp from '@/components/admin/AdminApp';
+import '@/styles/admin.css';
 ---
 
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr" class="admin-root">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Espace administration — Agence Voglans</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <style>
-      body { background: #0C0C0C; margin: 0; }
-    </style>
   </head>
-  <body>
+  <body class="admin-root">
     <AdminApp client:only="react" />
   </body>
 </html>

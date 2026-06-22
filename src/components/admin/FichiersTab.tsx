@@ -73,7 +73,7 @@ export default function FichiersTab({ mandats }: { mandats: Mandat[] }) {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-white">Documents par mandat</h2>
+      <h2 className="text-xl font-bold text-[#f2f1e4]">Documents par mandat</h2>
 
       <Card>
         <Field label="Sélectionner un mandat">
@@ -88,10 +88,10 @@ export default function FichiersTab({ mandats }: { mandats: Mandat[] }) {
         </Field>
 
         {selectedMandat && (
-          <div className="mt-4 rounded-lg bg-[#0C0C0C] border border-[#2A2A2A] p-4 space-y-1 text-sm">
-            <p className="text-[#C9A84C] font-medium">{selectedMandat.reference}</p>
-            <p className="text-white">{selectedMandat.vendeur_nom}</p>
-            <p className="text-gray-400">{selectedMandat.adresse_bien}, {selectedMandat.ville}</p>
+          <div className="mt-4 rounded-lg bg-[#14241b] border border-[#f2f1e4]/10 p-4 space-y-1 text-sm">
+            <p className="text-[#2BCA8F] font-medium">{selectedMandat.reference}</p>
+            <p className="text-[#f2f1e4]">{selectedMandat.vendeur_nom}</p>
+            <p className="text-[#a9b8aa]">{selectedMandat.adresse_bien}, {selectedMandat.ville}</p>
           </div>
         )}
       </Card>
@@ -99,7 +99,7 @@ export default function FichiersTab({ mandats }: { mandats: Mandat[] }) {
       {selectedMandatId && (
         <>
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-semibold text-white">Fichiers</h3>
+            <h3 className="text-lg font-semibold text-[#f2f1e4]">Fichiers</h3>
             <div className="relative">
               <input
                 type="file"
@@ -131,7 +131,7 @@ export default function FichiersTab({ mandats }: { mandats: Mandat[] }) {
                 {files.map((f) => (
                   <TableRow key={f.path}>
                     <TableCell className="flex items-center gap-2">
-                      <File size={16} className="text-[#C9A84C]" />
+                      <File size={16} className="text-[#2BCA8F]" />
                       <span className="font-medium">{f.name}</span>
                     </TableCell>
                     <TableCell>{formatSize(f.size)}</TableCell>
@@ -150,7 +150,7 @@ export default function FichiersTab({ mandats }: { mandats: Mandat[] }) {
                 ))}
                 {files.length === 0 && (
                   <TableRow>
-                    <TableCell colSpan={4} className="text-center text-gray-500 py-8">
+                    <TableCell colSpan={4} className="text-center text-[#6f8174] py-8">
                       Aucun fichier pour ce mandat
                     </TableCell>
                   </TableRow>

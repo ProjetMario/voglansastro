@@ -35,7 +35,10 @@ export default function DashboardTab({
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-white">Tableau de bord</h2>
+      <div>
+        <h2 className="text-2xl font-bold text-[#f2f1e4]">Tableau de bord</h2>
+        <p className="text-sm text-[#a9b8aa] mt-1">Vue d'ensemble de l'activité de l'agence</p>
+      </div>
 
       {/* KPIs principaux */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -56,77 +59,77 @@ export default function DashboardTab({
       {/* Récapitulatifs */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
-          <h3 className="text-lg font-semibold text-white mb-4">Visites</h3>
+          <h3 className="text-lg font-semibold text-[#f2f1e4] mb-4">Visites</h3>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Planifiées / Confirmées</span>
-              <span className="text-white font-medium">{visitesPlanifiees}</span>
+              <span className="text-[#a9b8aa]">Planifiées / Confirmées</span>
+              <span className="text-[#f2f1e4] font-medium">{visitesPlanifiees}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Effectuées</span>
-              <span className="text-white font-medium">{visitesEffectuees}</span>
+              <span className="text-[#a9b8aa]">Effectuées</span>
+              <span className="text-[#f2f1e4] font-medium">{visitesEffectuees}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Total visites</span>
-              <span className="text-white font-medium">{visites.length}</span>
+              <span className="text-[#a9b8aa]">Total visites</span>
+              <span className="text-[#f2f1e4] font-medium">{visites.length}</span>
             </div>
           </div>
         </Card>
 
         <Card>
-          <h3 className="text-lg font-semibold text-white mb-4">Mandats</h3>
+          <h3 className="text-lg font-semibold text-[#f2f1e4] mb-4">Mandats</h3>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Actifs</span>
+              <span className="text-[#a9b8aa]">Actifs</span>
               <span className="text-emerald-400 font-medium">{mandatsActifs}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Compromis</span>
+              <span className="text-[#a9b8aa]">Compromis</span>
               <span className="text-purple-400 font-medium">{mandatsCompromis}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Vendus</span>
-              <span className="text-[#C9A84C] font-medium">{mandatsVendus}</span>
+              <span className="text-[#a9b8aa]">Vendus</span>
+              <span className="text-[#2BCA8F] font-medium">{mandatsVendus}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Total mandats</span>
-              <span className="text-white font-medium">{mandats.length}</span>
-            </div>
-          </div>
-        </Card>
-
-        <Card>
-          <h3 className="text-lg font-semibold text-white mb-4">Pipeline</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">En cours</span>
-              <span className="text-white font-medium">{pipelineEnCours}</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Gagnées</span>
-              <span className="text-[#C9A84C] font-medium">{pipelineGagne}</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Total opportunités</span>
-              <span className="text-white font-medium">{opportunites.length}</span>
+              <span className="text-[#a9b8aa]">Total mandats</span>
+              <span className="text-[#f2f1e4] font-medium">{mandats.length}</span>
             </div>
           </div>
         </Card>
 
         <Card>
-          <h3 className="text-lg font-semibold text-white mb-4">Biens</h3>
+          <h3 className="text-lg font-semibold text-[#f2f1e4] mb-4">Pipeline</h3>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Disponibles / Nouveaux</span>
+              <span className="text-[#a9b8aa]">En cours</span>
+              <span className="text-[#f2f1e4] font-medium">{pipelineEnCours}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-[#a9b8aa]">Gagnées</span>
+              <span className="text-[#2BCA8F] font-medium">{pipelineGagne}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-[#a9b8aa]">Total opportunités</span>
+              <span className="text-[#f2f1e4] font-medium">{opportunites.length}</span>
+            </div>
+          </div>
+        </Card>
+
+        <Card>
+          <h3 className="text-lg font-semibold text-[#f2f1e4] mb-4">Biens</h3>
+          <div className="space-y-3">
+            <div className="flex justify-between text-sm">
+              <span className="text-[#a9b8aa]">Disponibles / Nouveaux</span>
               <span className="text-emerald-400 font-medium">{biensDispo}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Sous offre</span>
+              <span className="text-[#a9b8aa]">Sous offre</span>
               <span className="text-orange-400 font-medium">{biensSousOffre}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Total biens</span>
-              <span className="text-white font-medium">{biens.length}</span>
+              <span className="text-[#a9b8aa]">Total biens</span>
+              <span className="text-[#f2f1e4] font-medium">{biens.length}</span>
             </div>
           </div>
         </Card>

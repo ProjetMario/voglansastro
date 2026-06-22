@@ -102,7 +102,7 @@ export default function ClientsTab() {
 
   const filteredContacts = contacts.filter(
     (c) =>
-      c.nom.toLowerCase().includes(search.toLowerCase()) ||
+      (c.nom && c.nom.toLowerCase().includes(search.toLowerCase())) ||
       (c.email && c.email.toLowerCase().includes(search.toLowerCase())) ||
       (c.ville && c.ville.toLowerCase().includes(search.toLowerCase()))
   );
@@ -111,11 +111,18 @@ export default function ClientsTab() {
     (o) =>
       (o.titre && o.titre.toLowerCase().includes(search.toLowerCase())) ||
       (o.contact_nom && o.contact_nom.toLowerCase().includes(search.toLowerCase())) ||
-      o.type_opportunite.toLowerCase().includes(search.toLowerCase())
+      (o.type_opportunite && o.type_opportunite.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getStatusColor = (s: PipelineStatut) => PIPELINE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-gray-400';
+  const getStatusColor = (s: PipelineStatut) => PIPELINE_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-[#a9b8aa]';
   const getStatusLabel = (s: PipelineStatut) => PIPELINE_STATUTS.find((x) => x.value === s)?.label || s;
+
+  const getAgenceBadge = (source?: string | null) => {
+    const is2Savoie = source && source.toLowerCase().includes('2 savoie');
+    return is2Savoie
+      ? { label: '2 Savoie', className: 'bg-amber-500/15 text-amber-400 border border-amber-500/20' }
+      : { label: 'Voglans', className: 'bg-[#2BCA8F]/15 text-[#2BCA8F] border border-[#2BCA8F]/20' };
+  };
 
   const pipelineCounts = PIPELINE_STATUTS.map((s) => ({
     ...s,
@@ -125,7 +132,7 @@ export default function ClientsTab() {
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-        <h2 className="text-xl font-bold text-white">CRM — Clients & Opportunités</h2>
+        <h2 className="text-xl font-bold text-[#f2f1e4]">CRM — Clients & Opportunités</h2>
         <div className="flex gap-2">
           {activeSubTab === 'contacts' && (
             <Button onClick={openCreateContact}>
@@ -140,15 +147,15 @@ export default function ClientsTab() {
         </div>
       </div>
 
-      <div className="flex gap-2 border-b border-[#2A2A2A] pb-1">
+      <div className="flex gap-2 border-b border-[#f2f1e4]/10 pb-1">
         {(['contacts', 'opportunites', 'pipeline'] as const).map((t) => (
           <button
             key={t}
             onClick={() => setActiveSubTab(t)}
             className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors ${
               activeSubTab === t
-                ? 'text-[#C9A84C] border-b-2 border-[#C9A84C]'
-                : 'text-gray-400 hover:text-white'
+                ? 'text-[#2BCA8F] border-b-2 border-[#2BCA8F]'
+                : 'text-[#a9b8aa] hover:text-[#f2f1e4]'
             }`}
           >
             {t === 'contacts' ? 'Contacts' : t === 'opportunites' ? 'Opportunités' : 'Pipeline'}
@@ -157,7 +164,7 @@ export default function ClientsTab() {
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6f8174]" size={16} />
         <TextInput
           placeholder="Rechercher..."
           value={search}
@@ -177,6 +184,7 @@ export default function ClientsTab() {
             <TableHeadCell>Téléphone</TableHeadCell>
             <TableHeadCell>Ville</TableHeadCell>
             <TableHeadCell>Statut</TableHeadCell>
+            <TableHeadCell>Agence</TableHeadCell>
             <TableHeadCell className="text-right">Actions</TableHeadCell>
           </TableHead>
           <TableBody>
@@ -191,8 +199,14 @@ export default function ClientsTab() {
                   <Badge className={
                     c.statut === 'client' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' :
                     c.statut === 'prospect' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' :
-                    'bg-gray-500/20 text-gray-400 border-gray-500/30'
+                    'bg-gray-500/20 text-[#a9b8aa] border-gray-500/30'
                   }>{c.statut}</Badge>
+                </TableCell>
+                <TableCell>
+                  {(() => {
+                    const a = getAgenceBadge(c.source);
+                    return <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${a.className}`}>{a.label}</span>;
+                  })()}
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex gap-2 justify-end" onClick={(e) => e.stopPropagation()}>
@@ -203,7 +217,7 @@ export default function ClientsTab() {
               </TableRow>
             ))}
             {filteredContacts.length === 0 && (
-              <TableRow><TableCell colSpan={7} className="text-center text-gray-500 py-8">Aucun contact trouvé</TableCell></TableRow>
+              <TableRow><TableCell colSpan={8} className="text-center text-[#6f8174] py-8">Aucun contact trouvé</TableCell></TableRow>
             )}
           </TableBody>
         </TableShell>
@@ -215,6 +229,7 @@ export default function ClientsTab() {
             <TableHeadCell>Contact</TableHeadCell>
             <TableHeadCell>Valeur estimée</TableHeadCell>
             <TableHeadCell>Statut</TableHeadCell>
+            <TableHeadCell>Agence</TableHeadCell>
             <TableHeadCell className="text-right">Actions</TableHeadCell>
           </TableHead>
           <TableBody>
@@ -225,6 +240,12 @@ export default function ClientsTab() {
                 <TableCell>{o.contact_nom || '-'}</TableCell>
                 <TableCell>{o.valeur_estimee ? `${o.valeur_estimee.toLocaleString('fr-FR')} €` : '-'}</TableCell>
                 <TableCell><Badge className={getStatusColor(o.statut)}>{getStatusLabel(o.statut)}</Badge></TableCell>
+                <TableCell>
+                  {(() => {
+                    const a = getAgenceBadge(o.source);
+                    return <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${a.className}`}>{a.label}</span>;
+                  })()}
+                </TableCell>
                 <TableCell className="text-right">
                   <div className="flex gap-2 justify-end" onClick={(e) => e.stopPropagation()}>
                     <Button variant="ghost" size="sm" onClick={() => openEditOpp(o)}><Pencil size={14} /></Button>
@@ -234,7 +255,7 @@ export default function ClientsTab() {
               </TableRow>
             ))}
             {filteredOpps.length === 0 && (
-              <TableRow><TableCell colSpan={6} className="text-center text-gray-500 py-8">Aucune opportunité trouvée</TableCell></TableRow>
+              <TableRow><TableCell colSpan={7} className="text-center text-[#6f8174] py-8">Aucune opportunité trouvée</TableCell></TableRow>
             )}
           </TableBody>
         </TableShell>
@@ -242,8 +263,8 @@ export default function ClientsTab() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {pipelineCounts.map((s) => (
             <Card key={s.value} className="text-center">
-              <p className="text-gray-400 text-xs mb-1">{s.label}</p>
-              <p className="text-2xl font-bold text-white">{s.count}</p>
+              <p className="text-[#a9b8aa] text-xs mb-1">{s.label}</p>
+              <p className="text-2xl font-bold text-[#f2f1e4]">{s.count}</p>
               <div className={`mt-2 h-1 rounded-full ${s.color.split(' ')[0].replace('/20', '')} w-full`} />
             </Card>
           ))}

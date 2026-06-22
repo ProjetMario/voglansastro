@@ -13,11 +13,22 @@ export interface Visite {
   surface?: number;
   prix?: number;
   statut: VisiteStatut;
+  agence?: string;
   notes?: string;
   agent_id?: string;
   bien_id?: string;
   mandat_id?: string;
   source?: string;
+  // Champs hérités du système 2 Savoie
+  property_ref?: string;
+  property_label?: string;
+  visiteur_nom?: string;
+  visiteur_email?: string;
+  visiteur_telephone?: string;
+  agent?: string;
+  niveau_interet?: string;
+  feedback?: string;
+  suite_a_donner?: string;
 }
 
 export type VisiteStatut =
@@ -31,7 +42,7 @@ export type VisiteStatut =
 export const VISITE_STATUTS: { value: VisiteStatut; label: string; color: string }[] = [
   { value: 'planifiée', label: 'Planifiée', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
   { value: 'confirmée', label: 'Confirmée', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-  { value: 'effectuée', label: 'Effectuée', color: 'bg-[#C9A84C]/20 text-[#C9A84C] border-[#C9A84C]/30' },
+  { value: 'effectuée', label: 'Effectuée', color: 'bg-green-500/20 text-green-500 border-green-500/30' },
   { value: 'annulée', label: 'Annulée', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
   { value: 'reportée', label: 'Reportée', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
   { value: 'no-show', label: 'No-show', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
@@ -41,28 +52,39 @@ export interface Mandat {
   id: string;
   created_at: string;
   updated_at?: string;
-  reference: string;
-  type_mandat: 'exclusif' | 'semi-exclusif' | 'simple' | 'recherche';
+  /** @deprecated Utiliser numero (structure 2 Savoie) */
+  reference?: string;
+  numero?: string;
+  type_mandat?: 'exclusif' | 'semi-exclusif' | 'simple' | 'recherche';
+  /** @deprecated Utiliser type (structure 2 Savoie) */
+  type?: string;
   statut: MandatStatut;
   date_signature?: string;
   date_fin?: string;
+  date_echeance?: string;
   duree_mois?: number;
   prix_net_vendeur?: number;
+  prix?: number;
   honoraires_pourcent?: number;
   honoraires_montant?: number;
+  honoraires?: number;
   prix_total?: number;
   bien_id?: string;
+  property_ref?: string;
   vendeur_id?: string;
   vendeur_nom?: string;
+  mandant?: string;
   vendeur_email?: string;
   vendeur_telephone?: string;
   adresse_bien?: string;
+  property_adresse?: string;
   ville?: string;
   type_bien?: string;
   surface?: number;
   nombre_pieces?: number;
   description?: string;
   agent_id?: string;
+  agence?: string;
   notes?: string;
   documents?: string[];
 }
@@ -82,7 +104,7 @@ export const MANDAT_STATUTS: { value: MandatStatut; label: string; color: string
   { value: 'a_renouveler', label: 'À renouveler', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
   { value: 'expire', label: 'Expiré', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
   { value: 'resilie', label: 'Résilié', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
-  { value: 'vendu', label: 'Vendu', color: 'bg-[#C9A84C]/20 text-[#C9A84C] border-[#C9A84C]/30' },
+  { value: 'vendu', label: 'Vendu', color: 'bg-green-500/20 text-green-500 border-green-500/30' },
   { value: 'compromis', label: 'Compromis', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
 ];
 
@@ -93,9 +115,13 @@ export interface Demande {
   nom: string;
   email?: string;
   telephone?: string;
-  type_demande: DemandeType;
+  type_demande?: DemandeType;
+  /** @deprecated Utiliser type (structure 2 Savoie) */
+  type?: string;
   statut: DemandeStatut;
   ville_souhaitee?: string;
+  message?: string;
+  page_source?: string;
   budget_min?: number;
   budget_max?: number;
   surface_min?: number;
@@ -106,6 +132,7 @@ export interface Demande {
   commentaire?: string;
   agent_id?: string;
   source?: string;
+  agence?: string;
 }
 
 export type DemandeType =
@@ -149,7 +176,7 @@ export const DEMANDE_STATUTS: { value: DemandeStatut; label: string; color: stri
   { value: 'mandat_signe', label: 'Mandat signé', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
   { value: 'offre_en_cours', label: 'Offre en cours', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
   { value: 'compromis', label: 'Compromis', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
-  { value: 'acte_signe', label: 'Acte signé', color: 'bg-[#C9A84C]/20 text-[#C9A84C] border-[#C9A84C]/30' },
+  { value: 'acte_signe', label: 'Acte signé', color: 'bg-green-500/20 text-green-500 border-green-500/30' },
   { value: 'perdue', label: 'Perdue', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
   { value: 'archivee', label: 'Archivée', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
 ];
@@ -215,7 +242,7 @@ export const BIEN_STATUTS: { value: BienStatut; label: string; color: string }[]
   { value: 'disponible', label: 'Disponible', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
   { value: 'sous_offre', label: 'Sous offre', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
   { value: 'compromis', label: 'Compromis', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
-  { value: 'vendu', label: 'Vendu', color: 'bg-[#C9A84C]/20 text-[#C9A84C] border-[#C9A84C]/30' },
+  { value: 'vendu', label: 'Vendu', color: 'bg-green-500/20 text-green-500 border-green-500/30' },
   { value: 'suspendu', label: 'Suspendu', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
   { value: 'retire', label: 'Retiré', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
   { value: 'nouveau', label: 'Nouveau', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
@@ -299,7 +326,7 @@ export const PIPELINE_STATUTS: { value: PipelineStatut; label: string; color: st
   { value: 'negociation', label: 'Négociation', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
   { value: 'compromis', label: 'Compromis', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
   { value: 'acte', label: 'Acte', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
-  { value: 'gagne', label: 'Gagné', color: 'bg-[#C9A84C]/20 text-[#C9A84C] border-[#C9A84C]/30' },
+  { value: 'gagne', label: 'Gagné', color: 'bg-green-500/20 text-green-500 border-green-500/30' },
   { value: 'perdu', label: 'Perdu', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
 ];
 

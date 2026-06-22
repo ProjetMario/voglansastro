@@ -47,6 +47,7 @@ export default function MandatsTab() {
     setEditing(null);
     setForm({
       reference: `M-${Date.now().toString(36).slice(-4).toUpperCase()}`,
+      agence: 'Voglans',
       type_mandat: 'exclusif',
       statut: 'actif',
       date_signature: new Date().toISOString().slice(0, 10),
@@ -93,26 +94,32 @@ export default function MandatsTab() {
 
   const filtered = mandats.filter(
     (m) =>
-      m.reference.toLowerCase().includes(search.toLowerCase()) ||
-      m.vendeur_nom?.toLowerCase().includes(search.toLowerCase()) ||
-      m.ville?.toLowerCase().includes(search.toLowerCase()) ||
-      m.adresse_bien?.toLowerCase().includes(search.toLowerCase())
+      ((m.numero || m.reference) && (m.numero || m.reference)!.toLowerCase().includes(search.toLowerCase())) ||
+      ((m.mandant || m.vendeur_nom) && (m.mandant || m.vendeur_nom)!.toLowerCase().includes(search.toLowerCase())) ||
+      ((m.property_adresse || m.ville || m.adresse_bien) && (m.property_adresse || m.ville || m.adresse_bien)!.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getStatusColor = (s: MandatStatut) => MANDAT_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-gray-400';
+  const getStatusColor = (s: MandatStatut) => MANDAT_STATUTS.find((x) => x.value === s)?.color || 'bg-gray-500/20 text-[#a9b8aa]';
   const getStatusLabel = (s: MandatStatut) => MANDAT_STATUTS.find((x) => x.value === s)?.label || s;
+
+  const getAgenceBadge = (agence?: string | null) => {
+    const is2Savoie = agence && agence.toLowerCase().includes('2 savoie');
+    return is2Savoie
+      ? { label: '2 Savoie', className: 'bg-amber-500/15 text-amber-400 border border-amber-500/20' }
+      : { label: 'Voglans', className: 'bg-[#2BCA8F]/15 text-[#2BCA8F] border border-[#2BCA8F]/20' };
+  };
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-        <h2 className="text-xl font-bold text-white">Mandats</h2>
+        <h2 className="text-xl font-bold text-[#f2f1e4]">Mandats</h2>
         <Button onClick={openCreate}>
           <Plus size={16} className="mr-1" /> Nouveau mandat
         </Button>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6f8174]" size={16} />
         <TextInput
           placeholder="Rechercher par référence, vendeur, ville..."
           value={search}
@@ -133,21 +140,28 @@ export default function MandatsTab() {
             <TableHeadCell>Ville</TableHeadCell>
             <TableHeadCell>Prix net</TableHeadCell>
             <TableHeadCell>Statut</TableHeadCell>
+            <TableHeadCell>Agence</TableHeadCell>
             <TableHeadCell className="text-right">Actions</TableHeadCell>
           </TableHead>
           <TableBody>
             {filtered.map((m) => (
               <TableRow key={m.id} onClick={() => openEdit(m)}>
-                <TableCell className="font-mono text-[#C9A84C]">{m.reference}</TableCell>
-                <TableCell className="font-medium">{m.vendeur_nom || '-'}</TableCell>
+                <TableCell className="font-mono text-[#2BCA8F]">{m.numero || m.reference || '-'}</TableCell>
+                <TableCell className="font-medium">{m.mandant || m.vendeur_nom || '-'}</TableCell>
                 <TableCell>
-                  <span className="text-gray-300">{m.type_mandat}</span>
+                  <span className="text-[#cdd6cc]">{m.type || m.type_mandat || '-'}</span>
                 </TableCell>
-                <TableCell>{m.adresse_bien || '-'}</TableCell>
+                <TableCell>{m.property_adresse || m.adresse_bien || '-'}</TableCell>
                 <TableCell>{m.ville || '-'}</TableCell>
-                <TableCell>{m.prix_net_vendeur ? `${m.prix_net_vendeur.toLocaleString('fr-FR')} €` : '-'}</TableCell>
+                <TableCell>{(m.prix ?? m.prix_net_vendeur) ? `${(m.prix ?? m.prix_net_vendeur!).toLocaleString('fr-FR')} €` : '-'}</TableCell>
                 <TableCell>
                   <Badge className={getStatusColor(m.statut)}>{getStatusLabel(m.statut)}</Badge>
+                </TableCell>
+                <TableCell>
+                  {(() => {
+                    const a = getAgenceBadge(m.agence);
+                    return <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${a.className}`}>{a.label}</span>;
+                  })()}
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex gap-2 justify-end" onClick={(e) => e.stopPropagation()}>
@@ -163,7 +177,7 @@ export default function MandatsTab() {
             ))}
             {filtered.length === 0 && (
               <TableRow>
-                <TableCell colSpan={8} className="text-center text-gray-500 py-8">
+                <TableCell colSpan={9} className="text-center text-[#6f8174] py-8">
                   Aucun mandat trouvé
                 </TableCell>
               </TableRow>

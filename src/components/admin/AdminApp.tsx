@@ -130,68 +130,81 @@ export default function AdminApp() {
 
   if (loadingAuth) {
     return (
-      <div className="min-h-screen bg-[#0C0C0C] flex items-center justify-center">
-        <Loader2 className="animate-spin text-[#C9A84C]" size={32} />
+      <div className="min-h-screen flex items-center justify-center bg-[#14241b]">
+        <Loader2 className="animate-spin text-[#2BCA8F]" size={32} />
       </div>
     );
   }
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-[#0C0C0C] flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#C9A84C]/20 text-[#C9A84C] mb-3">
-              <span className="text-xl font-bold">V</span>
+      <div className="min-h-screen flex items-center justify-center p-4 bg-[#14241b] relative overflow-hidden">
+        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#2BCA8F]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#2BCA8F]/5 blur-3xl" />
+        <div className="adm-fade-up w-full max-w-md">
+          <Card className="backdrop-blur-sm">
+            <div className="text-center mb-7">
+              <div className="mx-auto mb-5 inline-flex items-center justify-center rounded-2xl overflow-hidden ring-1 ring-[#f2f1e4]/15 shadow-lg">
+                <img src="/images/logo-agence-voglans.png" alt="L'Agence de Voglans" className="h-24 w-24 object-cover" />
+              </div>
+              <h1 className="admin-serif text-2xl font-bold text-[#f2f1e4]">
+                Agence <span className="text-[#2BCA8F]">Voglans</span>
+              </h1>
+              <p className="text-sm text-[#a9b8aa] mt-1">Espace administration</p>
             </div>
-            <h1 className="text-2xl font-bold text-white">Agence Voglans</h1>
-            <p className="text-gray-400 text-sm mt-1">Espace administration</p>
-          </div>
 
-          <form onSubmit={handleLogin} className="space-y-4">
-            <Field label="Email">
-              <TextInput
-                type="email"
-                value={loginEmail}
-                onChange={(e) => setLoginEmail(e.target.value)}
-                placeholder="admin@agencevoglans.fr"
-                required
-              />
-            </Field>
-            <Field label="Mot de passe">
-              <TextInput
-                type="password"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-              />
-            </Field>
-            {loginError && <p className="text-sm text-red-400">{loginError}</p>}
-            <Button type="submit" className="w-full" disabled={loginLoading}>
-              {loginLoading ? 'Connexion...' : 'Se connecter'}
-            </Button>
-          </form>
-        </Card>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <Field label="Email">
+                <TextInput
+                  type="email"
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                  placeholder="admin@agencevoglans.fr"
+                  required
+                />
+              </Field>
+              <Field label="Mot de passe">
+                <TextInput
+                  type="password"
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                  placeholder="••••••••"
+                  required
+                />
+              </Field>
+              {loginError && (
+                <p className="rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-2 text-sm text-red-300">
+                  {loginError}
+                </p>
+              )}
+              <Button type="submit" size="lg" className="w-full" disabled={loginLoading}>
+                {loginLoading ? 'Connexion...' : 'Se connecter'}
+              </Button>
+            </form>
+          </Card>
+          <p className="text-center text-xs text-[#6f8174] mt-5">L'immobilier local, 100% digital</p>
+        </div>
       </div>
     );
   }
 
   if (checkingRole) {
     return (
-      <div className="min-h-screen bg-[#0C0C0C] flex items-center justify-center">
-        <Loader2 className="animate-spin text-[#C9A84C]" size={32} />
+      <div className="min-h-screen flex items-center justify-center bg-[#14241b]">
+        <Loader2 className="animate-spin text-[#2BCA8F]" size={32} />
       </div>
     );
   }
 
   if (!profile || profile.role !== 'admin') {
     return (
-      <div className="min-h-screen bg-[#0C0C0C] flex items-center justify-center p-4">
-        <Card className="w-full max-w-md text-center">
-          <ShieldAlert className="mx-auto text-red-400 mb-3" size={48} />
-          <h2 className="text-xl font-bold text-white mb-2">Accès refusé</h2>
-          <p className="text-gray-400 mb-4">Votre compte n'a pas les permissions d'administrateur.</p>
+      <div className="min-h-screen flex items-center justify-center p-4 bg-[#14241b]">
+        <Card className="w-full max-w-md text-center adm-fade-up">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/15">
+            <ShieldAlert className="text-red-300" size={28} />
+          </div>
+          <h2 className="admin-serif text-xl font-bold text-[#f2f1e4] mb-2">Accès refusé</h2>
+          <p className="text-[#a9b8aa] mb-5">Votre compte n'a pas les permissions d'administrateur.</p>
           <Button onClick={handleLogout}>Déconnexion</Button>
         </Card>
       </div>
@@ -199,23 +212,25 @@ export default function AdminApp() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0C0C0C] text-white">
+    <div className="min-h-screen bg-[#14241b] text-[#f2f1e4]">
       {/* Top bar */}
-      <header className="border-b border-[#2A2A2A] bg-[#141414]">
-        <div className="flex items-center justify-between px-4 py-3">
+      <header className="sticky top-0 z-30 border-b border-[#f2f1e4]/10 bg-[#1f3528]/95 backdrop-blur">
+        <div className="flex items-center justify-between px-4 lg:px-6 py-3">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#C9A84C]/20 text-[#C9A84C] flex items-center justify-center font-bold text-sm">
-              V
+            <div className="h-10 w-10 rounded-xl overflow-hidden ring-1 ring-[#f2f1e4]/15">
+              <img src="/images/logo-agence-voglans.png" alt="Agence Voglans" className="h-full w-full object-cover" />
             </div>
             <div>
-              <h1 className="text-sm font-bold text-white">Agence Voglans</h1>
-              <p className="text-xs text-gray-500">Admin</p>
+              <h1 className="admin-serif text-base font-bold leading-tight">
+                Agence <span className="text-[#2BCA8F]">Voglans</span>
+              </h1>
+              <p className="text-[11px] uppercase tracking-wider text-[#a9b8aa]">Administration</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-400 hidden sm:inline">{profile.email}</span>
-            <Button variant="ghost" size="sm" onClick={handleLogout}>
-              <LogOut size={16} className="mr-1" /> Déconnexion
+            <span className="text-sm text-[#a9b8aa] hidden sm:inline">{profile.email}</span>
+            <Button variant="secondary" size="sm" onClick={handleLogout}>
+              <LogOut size={15} /> Déconnexion
             </Button>
           </div>
         </div>
@@ -223,18 +238,21 @@ export default function AdminApp() {
 
       <div className="flex flex-col lg:flex-row">
         {/* Sidebar */}
-        <aside className="lg:w-56 lg:min-h-[calc(100vh-57px)] border-b lg:border-b-0 lg:border-r border-[#2A2A2A] bg-[#141414]">
-          <nav className="flex lg:flex-col overflow-x-auto lg:overflow-visible p-2 gap-1">
+        <aside className="lg:w-60 lg:min-h-[calc(100vh-65px)] border-b lg:border-b-0 lg:border-r border-[#f2f1e4]/10 bg-[#1f3528]">
+          <nav className="flex lg:flex-col overflow-x-auto lg:overflow-visible p-3 gap-1">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                className={`group relative flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                   activeTab === tab.id
-                    ? 'bg-[#C9A84C]/10 text-[#C9A84C]'
-                    : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                    ? 'bg-[#2BCA8F]/15 text-[#2BCA8F]'
+                    : 'text-[#a9b8aa] hover:text-[#f2f1e4] hover:bg-[#f2f1e4]/6'
                 }`}
               >
+                {activeTab === tab.id && (
+                  <span className="absolute left-0 top-1/2 hidden h-5 w-1 -translate-y-1/2 rounded-r-full bg-[#2BCA8F] lg:block" />
+                )}
                 {tab.icon}
                 {tab.label}
               </button>
@@ -243,7 +261,7 @@ export default function AdminApp() {
         </aside>
 
         {/* Content */}
-        <main className="flex-1 p-4 lg:p-6 overflow-auto">
+        <main className="flex-1 p-4 lg:p-8 overflow-auto adm-fade-up" key={activeTab}>
           {activeTab === 'dashboard' && (
             <DashboardTab
               visites={data.visites}
