@@ -16,25 +16,8 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) => {
-        // Exclure pages admin et alias
+        // Exclure seulement pages admin et alias
         if (page.includes('/admin/') || page === '/about' || page === '/achat') return false;
-        
-        // Exclure pages noindex (thin content générées en masse)
-        const noindexPatterns = [
-          /\/vendre-garage-/,
-          /\/locaux-commerciaux-[a-z]/,  // Exclure locaux-commerciaux-ville mais pas /locaux-commerciaux
-          /\/fonds-commerce-[a-z]/,       // Exclure fonds-commerce-ville mais pas /fonds-commerce
-          /\/immeuble-rapport-/,
-          /\/propriete-prestige-/,
-          /\/vendre-terrain-/,
-          /\/vendre-appartement-/,
-          /\/vendre-maison-[a-z]/,        // Exclure vendre-maison-ville mais pas /vendre-maison
-        ];
-        
-        for (const pattern of noindexPatterns) {
-          if (pattern.test(page)) return false;
-        }
-        
         return true;
       },
       serialize(item) {
