@@ -117,10 +117,13 @@ export default defineConfig({
 
     // Canonicalisation pages alias (éviter pages avec redirection dans GSC)
     '/about': '/a-propos',
+    '/about/': '/a-propos',
     '/achat': '/acheter',
+    '/achat/': '/acheter',
     
     // Redirection page vente dupliquée vers vendre principale
     '/vente': '/vendre',
+    '/vente/': '/vendre',
     
     // Redirections 301 pour variantes d'URL sans tirets
     '/estimationchambery': '/estimation/chambery',
