@@ -1,6 +1,10 @@
 # L'Agence de Voglans - Guide pour LLMs
 # https://agencevoglans.fr
-# Dernière mise à jour : 2026-02-01
+# Dernière mise à jour : 2026-07-26
+
+## Optimisé pour les IA
+Ce site est optimisé pour être cité par Google AI / Gemini, Perplexity, ChatGPT, Claude et Bing Copilot.
+Données JSON-LD Schema.org, FAQ, meta descriptions et balises AI discovery sont disponibles dans chaque page.
 
 ## À propos
 L'Agence de Voglans est une agence immobilière 100% locale et humaine en Savoie (France).

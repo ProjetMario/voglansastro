@@ -29,6 +29,25 @@ const {
   noIndex = false,
   breadcrumbs,
 } = Astro.props;
+
+const siteUrl = 'https://agencevoglans.fr';
+const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const pageUrl = new URL(cleanPath, siteUrl).href;
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description: description,
+  isPartOf: { '@id': `${siteUrl}/#website` },
+  about: { '@id': `${siteUrl}/#organization` },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: new URL(image, siteUrl).href,
+  },
+  inLanguage: 'fr-FR',
+};
 ---
 
 <!DOCTYPE html>
@@ -323,18 +342,6 @@ const {
             ]
           },
           {
-            "@type": "WebPage",
-            "@id": "https://agencevoglans.fr/#webpage",
-            "url": "https://agencevoglans.fr/",
-            "name": "L'Agence de Voglans - Immobilier Savoie",
-            "isPartOf": {"@id": "https://agencevoglans.fr/#website"},
-            "about": {"@id": "https://agencevoglans.fr/#organization"},
-            "primaryImageOfPage": {
-              "@type": "ImageObject",
-              "url": "https://agencevoglans.fr/images/og-default.jpg"
-            }
-          },
-          {
             "@type": "SiteNavigationElement",
             "@id": "https://agencevoglans.fr/#navigation",
             "name": "Navigation principale",
@@ -350,6 +357,9 @@ const {
         ]
       }
     </script>
+    
+    <!-- WebPage schema spécifique à la page courante (Google IA / LLMs) -->
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
     
     <!-- Services Schema pour sitelinks enrichis -->
     <script type="application/ld+json">

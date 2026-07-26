@@ -27,7 +27,7 @@ Accessibilité: WCAG 2.1 AA
 Expertise Savoie depuis 2024
 
 /* SEO */
-Optimisé pour: Google, Bing, DuckDuckGo
+Optimisé pour: Google, Bing, DuckDuckGo, Google AI / Gemini, Perplexity, ChatGPT
 Schema.org: RealEstateAgent, LocalBusiness, FAQPage
 Open Graph: Oui
 Twitter Cards: Oui
