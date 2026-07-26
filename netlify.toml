@@ -9,7 +9,7 @@
   skip_processing = false
 
 [build.processing.html]
-  pretty_urls = false
+  pretty_urls = true
 
 # Les redirections sont gérées dans public/_redirects (meilleure pratique)
 # Note: Ne pas utiliser /*/ → /:splat avec mode hybrid (cause boucle infinie)

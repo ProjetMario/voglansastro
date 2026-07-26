@@ -19,7 +19,8 @@ const {
 
 const siteUrl = 'https://agencevoglans.fr';
 const fullTitle = title.includes('L\'Agence de Voglans') ? title : `${title} | L'Agence de Voglans`;
-const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const canonicalPath = Astro.url.pathname.replace(/\.html$/, '');
+const canonicalUrl = canonical || new URL(canonicalPath, siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
 ---
 
