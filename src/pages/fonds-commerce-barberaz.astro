@@ -2,30 +2,79 @@
 import Base from '@/layouts/Base.astro';
 import Section from '@/components/ui/Section.astro';
 import Badge from '@/components/ui/Badge.astro';
-import { Calculator, Euro, TrendingUp } from 'lucide-react';
+import { Calculator, Euro, TrendingUp, CheckCircle, MapPin, Building2, Users } from 'lucide-react';
 
 const meta = {
   title: "Fonds de Commerce Barberaz | Cession Entreprise Savoie",
-  description: "Cédez votre fonds de commerce à Barberaz (Savoie) au meilleur prix. Expertise locale, réseau d'acquéreurs qualifiés, vente rapide. Estimation gratuite sous 48h !",
-  keywords: ["fonds commerce barberaz", "cession entreprise barberaz"]
+  description: "🏪 Cédez votre fonds de commerce à Barberaz (Savoie) ⭐ Estimation gratuite 48h ✅ Réseau 120 acquéreurs ✅ Taux réussite 85% ✅ Accompagnement complet. Contactez-nous !",
+  keywords: ["fonds commerce barberaz", "cession entreprise barberaz", "vente commerce barberaz", "cession restaurant barberaz", "commerce savoie"]
+};
+
+const canonicalUrl = "https://agencevoglans.fr/fonds-commerce-barberaz/";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien vaut un fonds de commerce à Barberaz ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La valeur d'un fonds de commerce à Barberaz dépend du secteur d'activité, du CA, de l'emplacement et du bail. Un commerce de proximité se cède entre 50 000€ et 150 000€, un restaurant entre 80 000€ et 250 000€. Notre estimation gratuite vous donne une valeur précise sous 48h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le délai pour céder un fonds de commerce à Barberaz ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le délai moyen de cession à Barberaz est de 4 à 8 mois entre la mise en vente et la signature définitive. Avec notre réseau de 120 acquéreurs actifs et notre accompagnement, nous réduisons souvent ce délai à 3-5 mois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels types de commerces se vendent bien à Barberaz ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les commerces les plus demandés à Barberaz sont : restaurants et snacks (proximité zones d'activité), commerces alimentaires de proximité (boulangerie, épicerie), salons de coiffure/esthétique, et services automobiles. La croissance démographique de la commune soutient la demande."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels documents préparer pour la cession ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour céder votre fonds à Barberaz, préparez : bilans des 3 derniers exercices, bail commercial en cours, état des lieux du local, inventaire du matériel, liste du personnel et contrats de travail, contrats fournisseurs. Notre équipe vous accompagne dans la constitution du dossier."
+      }
+    }
+  ]
 };
 ---
 
 <Base title={meta.title} description={meta.description} noIndex={false}>
   <Fragment slot="head">
     <meta name="keywords" content={meta.keywords.join(', ')} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <Section size="lg" className="bg-gradient-to-b from-primary/5 to-background">
     <div class="text-center mb-16">
       <Badge variant="success" className="mb-6">
-        Barberaz Proche Chambéry
+        Barberaz — Proche Chambéry
       </Badge>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
         Fonds de Commerce <span class="gradient-text">Barberaz</span>
       </h1>
       <p class="text-xl text-muted max-w-3xl mx-auto mb-12">
         Cédez votre activité commerciale à Barberaz avec notre expertise du marché local.
+        Réseau de 120 acquéreurs qualifiés, accompagnement complet de A à Z.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -34,22 +83,188 @@ const meta = {
             <Euro className="w-6 h-6 text-primary" />
           </div>
           <div class="text-3xl font-bold text-primary mb-2">150k€</div>
-          <div class="text-sm text-muted font-medium">CA moyen</div>
+          <div class="text-sm text-muted font-medium">CA moyen cédé</div>
         </div>
         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
           <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
             <TrendingUp className="w-6 h-6 text-primary" />
           </div>
-          <div class="text-3xl font-bold text-primary mb-2">13%</div>
-          <div class="text-sm text-muted font-medium">Rentabilité</div>
+          <div class="text-3xl font-bold text-primary mb-2">85%</div>
+          <div class="text-sm text-muted font-medium">Taux de réussite</div>
         </div>
         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 shadow-lg">
           <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
             <Calculator className="w-6 h-6 text-primary" />
           </div>
-          <div class="text-3xl font-bold text-primary mb-2">56j</div>
-          <div class="text-sm text-muted font-medium">Délai cession</div>
+          <div class="text-3xl font-bold text-primary mb-2">4-6 mois</div>
+          <div class="text-sm text-muted font-medium">Délai moyen cession</div>
         </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Pourquoi céder votre fonds de commerce à Barberaz ?</h2>
+      
+      <div class="prose prose-lg max-w-none mb-12">
+        <p>
+          Barberaz est une commune dynamique de 5 200 habitants, située en première couronne de Chambéry. 
+          Sa position stratégique entre le centre-ville (5 minutes), l'autoroute A43 et la zone commerciale 
+          de La Ravoire en fait un emplacement commercial recherché. La commune bénéficie d'un flux de 
+          chalandise régulier grâce à la RD1006 qui la traverse et aux nombreux lotissements résidentiels 
+          qui assurent une clientèle locale fidèle.
+        </p>
+        <p>
+          Le tissu commercial de Barberaz comprend environ 80 commerces et services : restaurants, 
+          boulangeries, salons de coiffure, garages automobiles, et commerces de proximité. La demande 
+          de reprise est soutenue par les entrepreneurs venant de Chambéry qui cherchent des loyers plus 
+          accessibles (30-40% moins chers qu'en centre-ville) tout en conservant une excellente visibilité.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-8 text-center">Les secteurs porteurs à Barberaz</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <Building2 className="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Restauration & Alimentation</h3>
+          <p class="text-muted leading-relaxed">
+            Forte demande pour restaurants, pizzerias, snacks et commerces alimentaires de proximité. 
+            Le flux de passage RD1006 et la clientèle résidentielle assurent un CA régulier. 
+            Valorisation : 50-80% du CA annuel.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <Users className="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Services à la personne</h3>
+          <p class="text-muted leading-relaxed">
+            Salons de coiffure, instituts de beauté, pressing : les services de proximité sont très 
+            recherchés. Population résidentielle stable et fidèle. Valorisation : 60-90% du CA.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <MapPin className="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Services automobiles</h3>
+          <p class="text-muted leading-relaxed">
+            Garages, carrosseries, centres auto : la position sur la RD1006 (axe Chambéry-Grenoble) 
+            est idéale. Locaux avec surface disponible et stationnement facile. 
+            Valorisation : selon équipement et clientèle.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <CheckCircle className="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Commerce de détail</h3>
+          <p class="text-muted leading-relaxed">
+            Boutiques d'artisanat, fleuristes, opticiens, pharmacies : la commune manque encore 
+            de certains services de proximité. Les opportunités de création ou reprise sont réelles. 
+            Loyers accessibles : 100-200€/m²/an.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-8 text-center">Notre accompagnement pour votre cession</h2>
+      
+      <div class="prose prose-lg max-w-none mb-12">
+        <p>
+          La cession d'un fonds de commerce est une opération complexe qui nécessite un accompagnement 
+          professionnel. Notre équipe vous guide à chaque étape :
+        </p>
+        <ul>
+          <li><strong>Estimation gratuite sous 48h</strong> : valorisation basée sur le CA, l'EBE, l'emplacement et le bail</li>
+          <li><strong>Constitution du dossier de cession</strong> : bilan, inventaire, contrats, bail</li>
+          <li><strong>Recherche d'acquéreurs</strong> : diffusion ciblée auprès de notre réseau de 120 repreneurs actifs</li>
+          <li><strong>Sélection et qualification</strong> : vérification capacité financière et projet de reprise</li>
+          <li><strong>Négociation</strong> : obtention du meilleur prix dans les meilleurs délais</li>
+          <li><strong>Accompagnement juridique</strong> : protocole de cession, séquestre, formalités légales</li>
+        </ul>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-8 text-center">Valorisation d'un fonds de commerce à Barberaz</h2>
+      
+      <div class="prose prose-lg max-w-none mb-12">
+        <p>
+          La valorisation d'un fonds de commerce à Barberaz repose sur plusieurs critères spécifiques au marché local :
+        </p>
+        <ul>
+          <li><strong>Le chiffre d'affaires</strong> : base de calcul principale (coefficient selon activité)</li>
+          <li><strong>L'excédent brut d'exploitation (EBE)</strong> : multiple de 3 à 5× selon rentabilité</li>
+          <li><strong>L'emplacement</strong> : flux piéton/voiture, visibilité, stationnement</li>
+          <li><strong>Le bail commercial</strong> : durée restante, loyer, clause de cession</li>
+          <li><strong>L'état du local</strong> : superficie, aménagements, normes (accessibilité, sécurité)</li>
+          <li><strong>La clientèle</strong> : fidélité, régularité, diversification</li>
+        </ul>
+        <p>
+          À Barberaz, les loyers commerciaux se situent entre 100 et 200€/m²/an selon l'emplacement et 
+          la surface, ce qui reste 30-40% en dessous des prix pratiqués dans le centre de Chambéry. 
+          C'est un atout pour attirer les repreneurs qui cherchent un bon rapport visibilité/coût.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section className="bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Questions fréquentes</h2>
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-gray-900">Combien vaut un fonds de commerce à Barberaz ?</h3>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-muted">
+            La valeur dépend du secteur d'activité, du CA, de l'emplacement et du bail. Un commerce de proximité 
+            se cède entre 50 000€ et 150 000€, un restaurant entre 80 000€ et 250 000€. Notre estimation 
+            gratuite vous donne une valeur précise sous 48h.
+          </div>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-gray-900">Quel est le délai pour céder un fonds de commerce ?</h3>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-muted">
+            Le délai moyen est de 4 à 8 mois entre la mise en vente et la signature définitive. Avec notre 
+            réseau de 120 acquéreurs actifs, nous réduisons souvent ce délai à 3-5 mois.
+          </div>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-gray-900">Quels types de commerces se vendent bien à Barberaz ?</h3>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-muted">
+            Les commerces les plus demandés : restaurants et snacks, commerces alimentaires de proximité, 
+            salons de coiffure/esthétique, et services automobiles. La croissance démographique soutient la demande.
+          </div>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-gray-900">Quels documents préparer pour la cession ?</h3>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-muted">
+            Préparez : bilans des 3 derniers exercices, bail commercial en cours, état des lieux, inventaire 
+            du matériel, liste du personnel et contrats, contrats fournisseurs. Nous vous accompagnons dans 
+            la constitution du dossier.
+          </div>
+        </details>
       </div>
     </div>
   </Section>
@@ -60,12 +275,18 @@ const meta = {
         Évaluer votre fonds de commerce à Barberaz
       </h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Estimation précise basée sur votre chiffre d'affaires et le marché local.
+        Estimation gratuite et confidentielle sous 48h. Basée sur votre chiffre d'affaires, 
+        votre emplacement et les transactions récentes du secteur.
       </p>
-      <a href="/estimation" class="btn bg-white text-primary hover:bg-white/90">
-        <Calculator className="w-5 h-5" />
-        Estimation gratuite
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/estimation" class="btn bg-white text-primary hover:bg-white/90">
+          <Calculator className="w-5 h-5" />
+          Estimation gratuite
+        </a>
+        <a href="/contact" class="btn border-2 border-white text-white hover:bg-white/10">
+          Nous contacter
+        </a>
+      </div>
     </div>
   </Section>
 </Base>

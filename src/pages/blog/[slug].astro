@@ -374,6 +374,18 @@ const breadcrumbSchema = {
         </p>
       </div>
 
+      <!-- Contenu unique spécifique à l'article -->
+      {post.uniqueContent && (
+        <div class="prose prose-lg max-w-none mb-8">
+          {post.uniqueContent.map((section: { title: string; text: string }) => (
+            <>
+              <h2>{section.title}</h2>
+              <p set:html={section.text} />
+            </>
+          ))}
+        </div>
+      )}
+
       <!-- Contenu principal dynamique -->
       <div class="prose prose-lg max-w-none mb-12">
         {post.category === "Estimation" && (
