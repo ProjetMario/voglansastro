@@ -4,6 +4,11 @@
 /mentions-legales/ /mentions-legales 301!
 /blog/investir-landiers-chambery/ /blog/investir-landiers-chambery 301!
 
+# Fix "Autre page avec balise canonique correcte" (GSC: 4 pages)
+/blog/zone-commerciale-landiers-chambery.html /blog/zone-commerciale-landiers-chambery 301!
+/blog/installer-chambery-famille-ecoles-vie-locale-securite/ /blog/installer-chambery-famille-ecoles-vie-locale-securite 301!
+/vendre-terrain-myans/ /vendre-terrain-myans 301!
+
 # Fix redirection chains (www/http + legacy routes) in ONE hop
  http://agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
  http://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
@@ -27,10 +32,10 @@ https://www.agencevoglans.fr/* https://agencevoglans.fr/:splat 301!
 /blog/vendre-villa-prestige-tressserve-strategie-discretion /blog/vendre-villa-prestige-tresserve-strategie-discretion 301
 
  # Alias pages (éviter duplication / cannibalisation)
- /about /a-propos 301
- /about/ /a-propos 301
- /achat /acheter 301
- /achat/ /acheter 301
+ /about /a-propos 301!
+ /about/ /a-propos 301!
+ /achat /acheter 301!
+ /achat/ /acheter 301!
 
 # Fix 404 - Pages villes manquantes (redirection vers pages génériques)
 # Vimines
