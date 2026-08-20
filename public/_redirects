@@ -1,5 +1,9 @@
 # Redirections Netlify - Gestion des URL canoniques
 
+# Fix trailing slash -> redirect vers version sans slash (GSC: "Page avec redirection")
+/mentions-legales/ /mentions-legales 301!
+/blog/investir-landiers-chambery/ /blog/investir-landiers-chambery 301!
+
 # Fix redirection chains (www/http + legacy routes) in ONE hop
  http://agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
  http://www.agencevoglans.fr/about https://agencevoglans.fr/a-propos 301!
